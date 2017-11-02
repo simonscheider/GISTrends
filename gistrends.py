@@ -13,25 +13,27 @@ import pytrends
 from pytrends.request import TrendReq
 
 import csv
+import arcpy
 
 
 def main():
 
-    google_username = "smionscheider@web.de"
+    google_username = "simonscheider@web.de"
     google_password = "5z4cxCbN"
     pytrends = TrendReq(hl='en-US')
 
-    kw_list = []#['zonal', 'areal interpolation', 'raster calculator', 'ArcGIS' ]
+    kw_list=['ArcGIS', 'GRASS GIS', 'QGIS', 'R studio', 'Interpolation']#'MapInfo']'ILWIS'
+    #kw_list = ['ArcMap','Extract by Mask', 'Set Null', 'IDW', 'Raster calculator']#['zonal', 'areal interpolation', 'raster calculator', 'ArcGIS' ]
 
     with open('spatialanalysttools.csv', 'rb') as csvfile:
         spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
         i =0
         for row in spamreader:
-            print row[0]
-            kw_list.append('GIS '+row[0])
+            #print row[0]
+            #kw_list.append(row[1])
             i+=1
-            if i ==5: break
-
+            if i ==4: break
+    print ('Tools '+str(len(arcpy.ListTools())))
 
     #kw_list = ['zonal', 'areal interpolation', 'raster calculator', 'ArcGIS' ]
 
