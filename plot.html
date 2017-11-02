@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<head>
+  <title>Vega-Lite Chart</title>
+  <meta charset="utf-8">
+
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega/2.6.5/vega.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/1.2.1/vega-lite.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/2.2.0/vega-embed.min.js" charset="utf-8"></script>
+
+  <style media="screen">
+    /* Add space between vega-embed links  */
+    .vega-actions a {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Container for the visualization -->
+  <div id="vis"></div>
+
+  <script>
+  var vlSpec = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v1.2.1.json", 
+    "mark": "bar", 
+    "data": {
+        "values": [
+            {
+                "GT Popularity": 20.9096385542, 
+                "Conversion Tools(conversion)": "Table To Excel"
+            }, 
+            {
+                "GT Popularity": 0.0301204819277, 
+                "Conversion Tools(conversion)": "Raster To Polygon"
+            }, 
+            {
+                "GT Popularity": 0.00602409638554, 
+                "Conversion Tools(conversion)": "Point To Raster"
+            }, 
+            {
+                "GT Popularity": 0.00602409638554, 
+                "Conversion Tools(conversion)": "Raster To Point"
+            }, 
+            {
+                "GT Popularity": 20.9096385542, 
+                "Conversion Tools(conversion)": "Excel To Table"
+            }, 
+            {
+                "GT Popularity": 0.0301204819277, 
+                "Conversion Tools(conversion)": "Polygon To Raster"
+            }, 
+            {
+                "GT Popularity": 0.927710843373, 
+                "Spatial Analyst Tools(sa)": "Create Signatures"
+            }, 
+            {
+                "GT Popularity": 0.0180722891566, 
+                "Spatial Analyst Tools(sa)": "Hill Shade"
+            }, 
+            {
+                "GT Popularity": 2.44578313253, 
+                "Spatial Analyst Tools(sa)": "Boolean Or"
+            }, 
+            {
+                "GT Popularity": 3.27108433735, 
+                "Spatial Analyst Tools(sa)": "Line Statistics"
+            }, 
+            {
+                "GT Popularity": 1.51807228916, 
+                "Spatial Analyst Tools(sa)": "Highest Position"
+            }, 
+            {
+                "GT Popularity": 49.8253012048, 
+                "Spatial Analyst Tools(sa)": "Corridor"
+            }, 
+            {
+                "GT Popularity": 0.0120481927711, 
+                "Spatial Analyst Tools(sa)": "Darcy Velocity"
+            }, 
+            {
+                "GT Popularity": 2.29518072289, 
+                "Spatial Analyst Tools(sa)": "Path Distance"
+            }, 
+            {
+                "GT Popularity": 0.867469879518, 
+                "Spatial Analyst Tools(sa)": "Log10"
+            }, 
+            {
+                "GT Popularity": 2.6686746988, 
+                "Spatial Analyst Tools(sa)": "Kriging"
+            }, 
+            {
+                "GT Popularity": 1.14457831325, 
+                "Spatial Analyst Tools(sa)": "Bitwise Or"
+            }, 
+            {
+                "GT Popularity": 0.481927710843, 
+                "Spatial Analyst Tools(sa)": "Equal To Frequency"
+            }, 
+            {
+                "GT Popularity": 3.11445783133, 
+                "Spatial Analyst Tools(sa)": "Cost Allocation"
+            }, 
+            {
+                "GT Popularity": 0.548192771084, 
+                "Spatial Analyst Tools(sa)": "Bitwise Not"
+            }, 
+            {
+                "GT Popularity": 1.37951807229, 
+                "Spatial Analyst Tools(sa)": "Tan H"
+            }, 
+            {
+                "GT Popularity": 0.0240963855422, 
+                "Spatial Analyst Tools(sa)": "Sin H"
+            }, 
+            {
+                "GT Popularity": 17.5301204819, 
+                "Spatial Analyst Tools(sa)": "Curvature"
+            }, 
+            {
+                "GT Popularity": 6.92771084337, 
+                "Spatial Analyst Tools(sa)": "Cost Distance"
+            }, 
+            {
+                "GT Popularity": 67.9096385542, 
+                "Spatial Analyst Tools(sa)": "Aggregate"
+            }, 
+            {
+                "GT Popularity": 0.939759036145, 
+                "Spatial Analyst Tools(sa)": "Stream Link"
+            }, 
+            {
+                "GT Popularity": 1.29518072289, 
+                "Spatial Analyst Tools(sa)": "Boolean And"
+            }, 
+            {
+                "GT Popularity": 0.843373493976, 
+                "Spatial Analyst Tools(sa)": "Flow Direction"
+            }, 
+            {
+                "GT Popularity": 5.5421686747, 
+                "Spatial Analyst Tools(sa)": "Point Density"
+            }, 
+            {
+                "GT Popularity": 0.0301204819277, 
+                "Spatial Analyst Tools(sa)": "Bitwise Left Shift"
+            }, 
+            {
+                "GT Popularity": 0.289156626506, 
+                "Spatial Analyst Tools(sa)": "Raster Calculator"
+            }, 
+            {
+                "GT Popularity": 3.23493975904, 
+                "Spatial Analyst Tools(sa)": "A Cos"
+            }, 
+            {
+                "GT Popularity": 11.7771084337, 
+                "Spatial Analyst Tools(sa)": "Idw"
+            }, 
+            {
+                "GT Popularity": 5.88554216867, 
+                "Spatial Analyst Tools(sa)": "Popularity"
+            }, 
+            {
+                "GT Popularity": 0.078313253012, 
+                "Spatial Analyst Tools(sa)": "Darcy Flow"
+            }, 
+            {
+                "GT Popularity": 49.3734939759, 
+                "Spatial Analyst Tools(sa)": "Watershed"
+            }, 
+            {
+                "GT Popularity": 0.228915662651, 
+                "Spatial Analyst Tools(sa)": "Less Than Frequency"
+            }, 
+            {
+                "GT Popularity": 0.240963855422, 
+                "Spatial Analyst Tools(sa)": "Cell Statistics"
+            }, 
+            {
+                "GT Popularity": 1.62048192771, 
+                "Spatial Analyst Tools(sa)": "Cut Fill"
+            }, 
+            {
+                "GT Popularity": 1.83734939759, 
+                "Spatial Analyst Tools(sa)": "Stream Order"
+            }, 
+            {
+                "GT Popularity": 0.0421686746988, 
+                "Spatial Analyst Tools(sa)": "Natural Neighbor"
+            }, 
+            {
+                "GT Popularity": 0.00602409638554, 
+                "Spatial Analyst Tools(sa)": "Focal Statistics"
+            }, 
+            {
+                "GT Popularity": 1.23493975904, 
+                "Spatial Analyst Tools(sa)": "Class Probability"
+            }, 
+            {
+                "GT Popularity": 1.44578313253, 
+                "Spatial Analyst Tools(sa)": "Combinatorial And"
+            }, 
+            {
+                "GT Popularity": 36.765060241, 
+                "Spatial Analyst Tools(sa)": "Visibility"
+            }, 
+            {
+                "GT Popularity": 13.5481927711, 
+                "Spatial Analyst Tools(sa)": "Is Null"
+            }, 
+            {
+                "GT Popularity": 1.86746987952, 
+                "Spatial Analyst Tools(sa)": "Cost Path"
+            }, 
+            {
+                "GT Popularity": 1.34337349398, 
+                "Spatial Analyst Tools(sa)": "Line Density"
+            }, 
+            {
+                "GT Popularity": 1.01204819277, 
+                "Spatial Analyst Tools(sa)": "Log2"
+            }, 
+            {
+                "GT Popularity": 2.22289156627, 
+                "Spatial Analyst Tools(sa)": "Point Statistics"
+            }, 
+            {
+                "GT Popularity": 2.66265060241, 
+                "Spatial Analyst Tools(sa)": "Greater Than Equal"
+            }, 
+            {
+                "GT Popularity": 0.638554216867, 
+                "Spatial Analyst Tools(sa)": "Nibble"
+            }, 
+            {
+                "GT Popularity": 0.00602409638554, 
+                "Spatial Analyst Tools(sa)": "Zonal Statistics"
+            }, 
+            {
+                "GT Popularity": 2.23493975904, 
+                "Spatial Analyst Tools(sa)": "Bitwise And"
+            }, 
+            {
+                "GT Popularity": 18.9638554217, 
+                "Spatial Analyst Tools(sa)": "A Tan"
+            }, 
+            {
+                "GT Popularity": 2.66265060241, 
+                "Spatial Analyst Tools(sa)": "Less Than Equal"
+            }, 
+            {
+                "GT Popularity": 0.0180722891566, 
+                "Spatial Analyst Tools(sa)": "Round Up"
+            }, 
+            {
+                "GT Popularity": 2.61445783133, 
+                "Spatial Analyst Tools(sa)": "Boolean Not"
+            }, 
+            {
+                "GT Popularity": 30.7710843373, 
+                "Spatial Analyst Tools(sa)": "Spline"
+            }, 
+            {
+                "GT Popularity": 1.16265060241, 
+                "Spatial Analyst Tools(sa)": "Dendrogram"
+            }
+        ]
+    }, 
+    "description": "A simple bar chart with embedded data.", 
+    "encoding": {
+        "y": {
+            "field": "GT Popularity"
+        }, 
+        "x": {
+            "sort": {
+                "field": "GT Popularity", 
+                "order": "descending", 
+                "op": "values"
+            }, 
+            "field": "Spatial Analyst Tools(sa)"
+        }
+    }
+}
+
+  var embedSpec = {
+    mode: "vega-lite",  // Instruct Vega-Embed to use the Vega-Lite compiler
+    spec: vlSpec
+  };
+
+  // Embed the visualization in the container with id `vis`
+  vg.embed("#vis", embedSpec, function(error, result) {
+    // Callback receiving the View instance and parsed Vega spec
+    // result.view is the View, which resides under the '#vis' element
+  });
+  </script>
+</body>
+</html>
