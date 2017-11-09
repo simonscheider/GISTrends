@@ -13,20 +13,25 @@ import pytrends
 from pytrends.request import TrendReq
 
 import csv
-import arcpy
+#import arcpy
 import json
 import re
+import urllib
+import rdflib
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import numpy as np
-from matplotlib import rcParams
-rcParams['xtick.direction'] = 'out'
-rcParams['ytick.direction'] = 'out'
+##from matplotlib import rcParams
+##rcParams['xtick.direction'] = 'out'
+##rcParams['ytick.direction'] = 'out'
 import operator
 
 from altair import *
 from IPython.display import display
 import pandas
+
+import requests
+from bs4 import BeautifulSoup
 
 class GatherTools():
     def __init__(self, referencekeyword):
@@ -95,6 +100,63 @@ class GatherTools():
         #suggestions_dict = pytrends.suggestions(keyword='GIS')
         # print(suggestions_dict)
         return time.mean()
+
+
+def getGISSoftwareList():
+    #results = rdflib.Graph()
+    results = {}
+    #from rdflib import Namespace
+    #dbo = Namespace("http://dbpedia.org/ontology/")
+    WIKI_URL = "https://en.wikipedia.org/wiki/Comparison_of_geographic_information_systems_software"
+    req = requests.get(WIKI_URL)
+    soup = BeautifulSoup(req.content, 'lxml')
+    table_classes = {"class": ["sortable", "plainrowheaders"]}
+    wikitables = soup.findAll("table", table_classes)
+    for table in wikitables:
+        for row in table.findAll("tr"):
+            cells = row.findAll(["th", "td"])
+            for url in cells[0].findAll('a', href=True):
+                name = url.getText()
+                dom = url.get('href').split("/")[-1]
+                dbp= urllib.basejoin('http://dbpedia.org/resource/',dom)
+                wkp= urllib.basejoin('https://en.wikipedia.org/wiki/',dom)
+                r = getDBpediaCompany(dbp)
+                comp = []
+                for f in r['results']['bindings']:
+                    comp.append(f['f']['value'])
+                results[dbp]={'website': wkp, 'name':name, 'companies':comp}
+
+    outf = 'GISSoftdict.json'
+
+    with open(outf, 'w') as fp:
+        json.dump(results, fp)
+    fp.close
+    return outf
+                #c= getDBpediaCompany(dbp)
+                #print c
+                #results.add((dbp,dbo.developer, c))
+    #print results.serialize(format='turtle')
+
+
+
+
+
+
+def getDBpediaCompany(url):
+    from SPARQLWrapper import SPARQLWrapper, JSON
+    sparql = SPARQLWrapper("http://dbpedia.org/sparql")
+    sparql.setReturnFormat(JSON)
+
+    query = """
+    Select ?f WHERE {
+    <"""+url+ """> <http://dbpedia.org/ontology/developer> ?f
+    }
+            """
+    sparql.setQuery(query)  # the previous query as a literal string
+
+    return sparql.query().convert()
+
+
 
 
 
@@ -194,10 +256,11 @@ def main():
 
     #td = readToolBoxes('ArcGISTooldict.json', ['Spatial Analyst Tools(sa)','Conversion Tools(conversion)','Analysis Tools(analysis)'])
     #res = getTrends4Tools(td,'ArcGIS')
-    visualize('GTresults_kwArcGIS.json')
+    #visualize('GTresults_kwArcGIS.json')
     #kw_list=['ArcGIS', 'GRASS GIS', 'QGIS', 'R studio', 'Interpolation']#'MapInfo']'ILWIS'
     #kw_list = ['ArcMap','Extract by Mask', 'Set Null', 'IDW', 'Raster calculator']#['zonal', 'areal interpolation', 'raster calculator', 'ArcGIS' ]
 
+    getGISSoftwareList()
 ##    with open('spatialanalysttools.csv', 'rb') as csvfile:
 ##        spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
 ##        i =0
