@@ -16,7 +16,7 @@ import csv
 #import arcpy
 import json
 import re
-import urllib
+import urllib3
 import rdflib
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
@@ -34,11 +34,13 @@ import requests
 from bs4 import BeautifulSoup
 
 class GatherTools():
-    def __init__(self, referencekeyword):
+    def __init__(self, referencekeyword, unsaferun=False):
          self.results = {}
          self.kw = referencekeyword
          self.currenttools= [referencekeyword]
          self.toolboxes =['']
+         self.unsaferun =unsaferun
+
 
     def reset(self):
         self.currenttools= [self.kw]
@@ -58,7 +60,9 @@ class GatherTools():
         for id,t in enumerate(self.currenttools):
             if not t == self.kw:
                 #make sure trends are within plausible limits
-                if res[t] < res[self.kw] and res[t] >0:
+                B = res[t] < res[self.kw] and res[t] >0
+                if self.unsaferun == True: B = True
+                if B:
                     if self.toolboxes[id] not in self.results.keys():
                         self.results[self.toolboxes[id]]={t:str(res[t])}
                     else:
@@ -196,6 +200,23 @@ def getTrends4Tools(tooldict,referencekeyword):
             gt.add(ntool,k)
     gt.dump('GTresults_kw'+referencekeyword+'.json')
 
+
+def readSoft(softdictfile):
+    with open(softdictfile) as softdictf:
+        softdict = json.load(softdictf)
+    softdictf.close
+    return softdict
+
+def getTrends4Soft(softdict,referencekeyword):
+    gt = GatherTools(referencekeyword, True)
+    count = 0
+    for k,v in softdict.items():
+        count+=1
+        gt.add(v['name'])
+    print 'count '+str(count)
+    gt.dump('Softresults_kw'+referencekeyword+'.json')
+
+
 def visualize(resultdump):
     result = []
     with open(resultdump) as res:
@@ -260,7 +281,9 @@ def main():
     #kw_list=['ArcGIS', 'GRASS GIS', 'QGIS', 'R studio', 'Interpolation']#'MapInfo']'ILWIS'
     #kw_list = ['ArcMap','Extract by Mask', 'Set Null', 'IDW', 'Raster calculator']#['zonal', 'areal interpolation', 'raster calculator', 'ArcGIS' ]
 
-    getGISSoftwareList()
+    #getGISSoftwareList()
+    sd = readSoft('GISSoftdict.json')
+    getTrends4Soft(sd, 'ArcGIS')
 ##    with open('spatialanalysttools.csv', 'rb') as csvfile:
 ##        spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
 ##        i =0
