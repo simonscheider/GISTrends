@@ -38,17 +38,17 @@ class GatherTools():
          self.results = {}
          self.kw = referencekeyword
          self.currenttools= [referencekeyword]
-         self.toolboxes =['']
+         self.toolboxes =[]
          self.unsaferun =unsaferun
 
 
     def reset(self):
         self.currenttools= [self.kw]
-        self.toolboxes =['']
+        self.toolboxes =[]
 
     def add(self,tool, toolbox=''):
         self.currenttools.append(tool)
-        self.toolboxes.append(toolbox)
+        if toolbox != '': self.toolboxes.append(toolbox)
         if len(self.currenttools)>=5:
             res = self.queryGTrends(self.currenttools)
             self.store(res)
@@ -58,18 +58,24 @@ class GatherTools():
 
     def store(self,res):
         for id,t in enumerate(self.currenttools):
-            if not t == self.kw:
+            #if not t == self.kw:
                 #make sure trends are within plausible limits
                 B = res[t] < res[self.kw] and res[t] >0
-                if self.unsaferun == True: B = True
+                if self.unsaferun: B = True
                 if B:
-                    if self.toolboxes[id] not in self.results.keys():
-                        self.results[self.toolboxes[id]]={t:str(res[t])}
+                    if self.toolboxes!= []:
+                        if self.toolboxes[id] not in self.results.keys():
+                            self.results[self.toolboxes[id]]={t:str(res[t])}
+                        else:
+                            self.results[self.toolboxes[id]][t]=str(res[t])
                     else:
-                        self.results[self.toolboxes[id]][t]=str(res[t])
+                        self.results[t]=str(res[t])
+
+
 
 
     def dump(self,res = 'GTresults.json'):
+        print "dumped items: "+str(len(self.results))
         with open(res, 'w') as fp:
             json.dump(self.results, fp)
         fp.close
@@ -194,10 +200,13 @@ def readToolBoxes(tooldictfile, listoftoolboxes):
 
 def getTrends4Tools(tooldict,referencekeyword):
     gt = GatherTools(referencekeyword)
+    count = 0
     for k,v in tooldict.items():
         for tool in v:
+            count+=1
             ntool = normalizeArcpyToolString(tool)
             gt.add(ntool,k)
+    print 'Tool count '+str(count)
     gt.dump('GTresults_kw'+referencekeyword+'.json')
 
 
@@ -212,18 +221,25 @@ def getTrends4Soft(softdict,referencekeyword):
     count = 0
     for k,v in softdict.items():
         count+=1
-        gt.add(v['name'])
-    print 'count '+str(count)
+
+        if v['name']!= 'AutoCAD': gt.add(v['name'])
+    print 'software count '+str(count)
     gt.dump('Softresults_kw'+referencekeyword+'.json')
 
-
-def visualize(resultdump):
+import math
+def visualize(resultdump, twolayered =True, index ='ArcGIS Tools'):
     result = []
     with open(resultdump) as res:
         ress = json.load(res)
-    for k,v in ress.items():
-        for kk,vv in v.items():
-            result.append({'ArcGIS Tools':kk, 'Box':k,'GT Popularity':float(vv)})
+    if twolayered:
+        for k,v in ress.items():
+            for kk,vv in v.items():
+                result.append({index:kk, 'Box':k,'GT Popularity':float(vv)})
+    else:
+        for k,v in ress.items():
+                result.append({index:k, 'GT Popularity':(float(v))})
+
+
     #print result
     #toolbox= 'Spatial Analyst Tools(sa)'
     #toolbox='Conversion Tools(conversion)'
@@ -239,16 +255,18 @@ def visualize(resultdump):
     #)
     #c.savechart('plot.html')
     df = pandas.DataFrame.from_dict(result)
-    df =df.sort_values(by='GT Popularity', ascending=[False]).set_index('ArcGIS Tools')
+    df =df.sort_values(by='GT Popularity', ascending=[False]).set_index(index)
     print df
-    colors = {'Spatial Analyst Tools(sa)': 'c', 'Conversion Tools(conversion)': 'b'}
-
-    pl = df['GT Popularity'].plot(kind='bar', width=1, fontsize=9, color=[colors[i] for i in df['Box']], figsize=(12,5.8))
-    red_patch = mpatches.Patch(color='cyan', label='Spatial Analyst')
-    blue_patch= mpatches.Patch(color='blue', label='Conversion Tools')
-    lines = [blue_patch, red_patch]
-    labels = [line.get_label() for line in lines]
-    pl.legend(lines, labels)
+    if twolayered:
+        colors = {'Spatial Analyst Tools(sa)': 'c', 'Conversion Tools(conversion)': 'b'}
+        pl = df['GT Popularity'].plot(kind='bar', width=1, fontsize=12, color=[colors[i] for i in df['Box']], figsize=(12,5.8))
+        red_patch = mpatches.Patch(color='cyan', label='Spatial Analyst')
+        blue_patch= mpatches.Patch(color='blue', label='Conversion Tools')
+        lines = [blue_patch, red_patch]
+        labels = [line.get_label() for line in lines]
+        pl.legend(lines, labels)
+    else:
+        pl = df['GT Popularity'].plot(kind='bar', width=1, fontsize=12, color='c', figsize=(12,5.8))
 
 
     #pl.set_xlabel("Tools", fontsize=9)
@@ -277,13 +295,14 @@ def main():
 
     #td = readToolBoxes('ArcGISTooldict.json', ['Spatial Analyst Tools(sa)','Conversion Tools(conversion)','Analysis Tools(analysis)'])
     #res = getTrends4Tools(td,'ArcGIS')
-    #visualize('GTresults_kwArcGIS.json')
+    visualize('GTresults_kwArcGIS.json')
     #kw_list=['ArcGIS', 'GRASS GIS', 'QGIS', 'R studio', 'Interpolation']#'MapInfo']'ILWIS'
     #kw_list = ['ArcMap','Extract by Mask', 'Set Null', 'IDW', 'Raster calculator']#['zonal', 'areal interpolation', 'raster calculator', 'ArcGIS' ]
 
     #getGISSoftwareList()
-    sd = readSoft('GISSoftdict.json')
-    getTrends4Soft(sd, 'ArcGIS')
+    #sd = readSoft('GISSoftdict.json')
+    #getTrends4Soft(sd, 'ArcGIS')
+    #visualize('Softresults_kwArcGIS.json', twolayered=False, index='GIS Software')
 ##    with open('spatialanalysttools.csv', 'rb') as csvfile:
 ##        spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
 ##        i =0
