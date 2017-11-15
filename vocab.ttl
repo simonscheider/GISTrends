@@ -1,0 +1,17 @@
+@prefix dbo: <http://dbpedia.org/ontology/>.
+@prefix dbp: <http://dbpedia.org/resource/>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix wf: <http://geographicknowledge.de/vocab/Workflow.rdf#>.
+@prefix gis: <http://geographicknowledge.de/vocab/GISConcepts.rdf#>.
+@prefix tools: <http://geographicknowledge.de/vocab/GISTools.rdf#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema>.
+
+#classes: dbo:Software;  wf:Operation ; gis:Toolbox; gis:Tool
+#properties: dbo:operatingSystem; dbo:productionCompany; dbo:publisher;  dbo:license;dc:license; dc:title; dct:hasPart; dct:hasVersion
+
+dbp:ArcGIS a dbo:Software; dbo:productionCompany dbp:Esri; rdfs:label "ArcGIS"; dc:website <https://en.wikipedia.org/wiki/ArcGIS>.
+tools:Spatial_Analyst_Tools_sa a gis:Toolbox; dct:isPartOf dbp:ArcGIS; rdfs:label "Spatial Analyst Tools(sa)".
+tools:Con_sa a gis:Tool; dct:isPartOf tools:Spatial_Analyst_Tools_sa.
+
+
