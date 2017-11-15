@@ -1,0 +1,4033 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbp: <http://dbpedia.org/resource/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gis: <http://geographicknowledge.de/vocab/GISConcepts.rdf#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tools: <http://geographicknowledge.de/vocab/GISTools.rdf#> .
+@prefix wf: <http://geographicknowledge.de/vocab/Workflow.rdf#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dbp:Autodesk a dbo:Software ;
+    foaf:homepage <http://www.autodesk.com> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Autodesk> ;
+    foaf:name "AutoCAD" .
+
+dbp:Cadcorp a dbo:Software ;
+    foaf:homepage <http://www.cadcorp.com/> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Cadcorp> ;
+    foaf:name "Cadcorp" .
+
+dbp:Capaware a dbo:Software ;
+    dbo:developer dbp:University_of_Las_Palmas_de_Gran_Canaria ;
+    foaf:homepage <http://www.capaware.org/> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Capaware> ;
+    foaf:name "CAPAWARE" .
+
+<http://dbpedia.org/resource/Chameleon_(GIS)> a dbo:Software ;
+    foaf:homepage <http://chameleon.maptools.org/> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Chameleon_(GIS)> ;
+    foaf:name "Chameleon GIS" .
+
+dbp:Deegree a dbo:Software ;
+    foaf:homepage <http://www.deegree.org/> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Deegree> ;
+    foaf:name "Deegree" .
+
+dbp:Erdas_Imagine a dbo:Software ;
+    foaf:homepage <http://www.hexagongeospatial.com> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Erdas_Imagine> ;
+    foaf:name "Erdas Imagine" .
+
+dbp:GRASS a dbo:Software ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/GRASS> ;
+    foaf:name "GRASS GIS" .
+
+<http://dbpedia.org/resource/GeoBase_(Telogis_GIS_software)> a dbo:Software ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/GeoBase_(Telogis_GIS_software)> ;
+    foaf:name "GeoBase" .
+
+dbp:GeoNetwork_opensource a dbo:Software ;
+    dbo:developer dbp:UNOCHA ;
+    foaf:homepage <http://geonetwork-opensource.org>,
+        <http://geonetwork-opensource.org/> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/GeoNetwork_opensource> ;
+    foaf:name "GeoNetwork" .
+
+dbp:GeoServer a dbo:Software ;
+    dbo:developer dbp:Boundless_Spatial ;
+    foaf:homepage <http://geoserver.org> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/GeoServer> ;
+    foaf:name "GeoServer" .
+
+dbp:GeoTools a dbo:Software ;
+    dbo:developer dbp:OpenGeo ;
+    foaf:homepage <http://www.geotools.org/> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/GeoTools> ;
+    foaf:name "GeoTools" .
+
+dbp:GvSIG a dbo:Software ;
+    foaf:homepage <http://www.gvsig.org/> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/GvSIG> ;
+    foaf:name "gvSIG" .
+
+dbp:IDRISI a dbo:Software ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/IDRISI> ;
+    foaf:name "IDRISI" .
+
+dbp:ILOG a dbo:Software ;
+    foaf:homepage <http://www-01.ibm.com/software/websphere/ilog-migration/> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/ILOG> ;
+    foaf:name "ILOG" .
+
+dbp:ILWIS a dbo:Software ;
+    foaf:homepage <http://52north.org/downloads/ilwis> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/ILWIS> ;
+    foaf:name "ILWIS" .
+
+dbp:Intergraph a dbo:Software ;
+    foaf:homepage <http://ppm.intergraph.com/> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Intergraph> ;
+    foaf:name "Intergraph" .
+
+dbp:JUMP_GIS a dbo:Software ;
+    foaf:homepage <http://jump-pilot.sourceforge.net/> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/JUMP_GIS> ;
+    foaf:name "JUMP GIS" .
+
+dbp:Kosmo a dbo:Software ;
+    foaf:homepage <http://www.opengis.es/> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Kosmo> ;
+    foaf:name "Kosmo GIS" .
+
+dbp:LandSerf a dbo:Software ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/LandSerf> ;
+    foaf:name "LandSerf" .
+
+dbp:Manifold_System a dbo:Software ;
+    foaf:homepage <http://www.manifold.net> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Manifold_System> ;
+    foaf:name "Manifold System" .
+
+dbp:MapDotNet a dbo:Software ;
+    foaf:homepage <http://www.mapdotnet.com/> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/MapDotNet> ;
+    foaf:name "MapDotNet" .
+
+dbp:MapInfo_Professional a dbo:Software ;
+    dbo:developer dbp:Pitney_Bowes ;
+    foaf:homepage <http://www.mapinfo.com> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/MapInfo_Professional> ;
+    foaf:name "MapInfo" .
+
+dbp:MapServer a dbo:Software ;
+    foaf:homepage <http://www.mapserver.org/> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/MapServer> ;
+    foaf:name "MapServer" .
+
+dbp:MapWindow_GIS a dbo:Software ;
+    foaf:homepage <http://www.mapwindow.org> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/MapWindow_GIS> ;
+    foaf:name "MapWindow GIS" .
+
+dbp:Maptitude a dbo:Software ;
+    dbo:developer dbp:Caliper_Corporation ;
+    foaf:homepage <http://www.caliper.com/> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Maptitude> ;
+    foaf:name "Maptitude" .
+
+dbp:Microsoft_MapPoint a dbo:Software ;
+    dbo:developer dbp:Microsoft ;
+    foaf:homepage <http://www.microsoft.com/mappoint> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Microsoft_MapPoint> ;
+    foaf:name "Microsoft MapPoint" .
+
+dbp:Oracle_Spatial a dbo:Software ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Oracle_Spatial> ;
+    foaf:name "Oracle Spatial" .
+
+<http://dbpedia.org/resource/Panorama_(GIS)> a dbo:Software ;
+    foaf:homepage <http://www.gisinfo.ru/index_en.htm> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Panorama_(GIS)> ;
+    foaf:name "Panorama GIS" .
+
+dbp:PostGIS a dbo:Software ;
+    foaf:homepage <http://postgis.net/> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/PostGIS> ;
+    foaf:name "PostGIS" .
+
+dbp:QGIS a dbo:Software ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/QGIS> ;
+    foaf:name "QGIS" .
+
+dbp:RegioGraph a dbo:Software ;
+    dbo:developer dbp:GfK_GeoMarketing ;
+    foaf:homepage <http://www.gfk-regiograph.com> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/RegioGraph> ;
+    foaf:name "RegioGraph" .
+
+dbp:RemoteView a dbo:Software ;
+    foaf:homepage <http://www.overwatch.com/products/remote_view_pro.php> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/RemoteView> ;
+    foaf:name "RemoteView" .
+
+dbp:SAGA_GIS a dbo:Software ;
+    foaf:homepage <http://www.saga-gis.org/en> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/SAGA_GIS> ;
+    foaf:name "SAGA GIS" .
+
+dbp:SAP_HANA a dbo:Software ;
+    dbo:developer dbp:SAP_SE ;
+    foaf:homepage <http://hana.sap.com> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/SAP_HANA> ;
+    foaf:name "SAP HANA" .
+
+dbp:SPRING a dbo:Software ;
+    foaf:homepage <http://www.dpi.inpe.br/spring> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/SPRING> ;
+    foaf:name "SPRING GIS" .
+
+dbp:Smallworld a dbo:Software ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Smallworld> ;
+    foaf:name "Smallworld" .
+
+dbp:TNTmips a dbo:Software ;
+    dbo:developer <http://dbpedia.org/resource/MicroImages,_Inc.> ;
+    foaf:homepage <http://www.microimages.com/products/> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/TNTmips> ;
+    foaf:name "TNTmips" .
+
+dbp:TerraLib a dbo:Software ;
+    dbo:developer dbp:National_Institute_for_Space_Research ;
+    foaf:homepage <http://www.terralib.org/> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/TerraLib> ;
+    foaf:name "TerraLib" .
+
+dbp:TerraView a dbo:Software ;
+    foaf:homepage <http://www.dpi.inpe.br/terraview> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/TerraView> ;
+    foaf:name "TerraView" .
+
+dbp:TransModeler a dbo:Software ;
+    dbo:developer dbp:Caliper_Corporation ;
+    foaf:homepage <http://www.caliper.com/TransModeler/default.htm> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/TransModeler> ;
+    foaf:name "TransModeler" .
+
+dbp:UDIG a dbo:Software ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/UDIG> ;
+    foaf:name "uDIG" .
+
+tools:ACosH_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "ACos H" .
+
+tools:ACos_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "ACos" .
+
+tools:ASCII3DToFeatureClass_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "ASCII3 DTo Feature Class" .
+
+tools:ASCIIToRaster_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "ASCIITo Raster" .
+
+tools:ASinH_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "ASin H" .
+
+tools:ASin_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "ASin" .
+
+tools:ATan2_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "ATan2" .
+
+tools:ATanH_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "ATan H" .
+
+tools:ATan_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "ATan" .
+
+tools:Abs_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Abs" .
+
+tools:AddAttachments_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Attachments" .
+
+tools:AddCADFields_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Add CADFields" .
+
+tools:AddCodedValueToDomain_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Coded Value To Domain" .
+
+tools:AddColormap_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Colormap" .
+
+tools:AddEdgeEdgeConnectivityRuleToGeometricNetwork_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Edge Edge Connectivity Rule To Geometric Network" .
+
+tools:AddEdgeJunctionConnectivityRuleToGeometricNetwork_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Edge Junction Connectivity Rule To Geometric Network" .
+
+tools:AddFeatureClassToTerrain_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Add Feature Class To Terrain" .
+
+tools:AddFeatureClassToTopology_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Feature Class To Topology" .
+
+tools:AddFieldConflictFilter_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Field Conflict Filter" .
+
+tools:AddFieldToAnalysisLayer_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Add Field To Analysis Layer" .
+
+tools:AddField_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Field" .
+
+tools:AddFilesToLasDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Files To Las Dataset" .
+
+tools:AddGeometryAttributes_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Geometry Attributes" .
+
+tools:AddGlobalIDs_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Global IDs" .
+
+tools:AddIncrementingIDField_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Incrementing IDField" .
+
+tools:AddIndex_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Index" .
+
+tools:AddItem_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Add Item" .
+
+tools:AddJoin_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Join" .
+
+tools:AddLocations_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Add Locations" .
+
+tools:AddRastersToMosaicDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Rasters To Mosaic Dataset" .
+
+tools:AddRepresentation_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Add Representation" .
+
+tools:AddRuleToTopology_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Rule To Topology" .
+
+tools:AddSpatialIndex_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Spatial Index" .
+
+tools:AddSubtype_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add Subtype" .
+
+tools:AddSurfaceInformation_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Add Surface Information" .
+
+tools:AddTerrainPyramidLevel_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Add Terrain Pyramid Level" .
+
+tools:AddXY_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Add XY" .
+
+tools:AddXY_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Add XY" .
+
+tools:AddZInformation_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Add ZInformation" .
+
+tools:Adjust3DZ_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Adjust3 DZ" .
+
+tools:AggregatePoints_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Aggregate Points" .
+
+tools:AggregatePolygons_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Aggregate Polygons" .
+
+tools:AggregatePolygons_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Aggregate Polygons" .
+
+tools:Aggregate_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Aggregate" .
+
+tools:AlignMarkerToStrokeOrFill_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Align Marker To Stroke Or Fill" .
+
+tools:AlterField_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Alter Field" .
+
+tools:AlterMosaicDatasetSchema_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Alter Mosaic Dataset Schema" .
+
+tools:AlterVersion_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Alter Version" .
+
+tools:AnalyzeControlPoints_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Analyze Control Points" .
+
+tools:AnalyzeDatasets_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Analyze Datasets" .
+
+tools:AnalyzeMosaicDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Analyze Mosaic Dataset" .
+
+tools:AnalyzeToolsForPro_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Analyze Tools For Pro" .
+
+tools:Analyze_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Analyze" .
+
+tools:AppendAnnotation_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Append Annotation" .
+
+tools:AppendControlPoints_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Append Control Points" .
+
+tools:AppendParcelFabric_fabric a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Parcel%20Fabric%20Tools%28fabric%29> ;
+    foaf:name "Append Parcel Fabric" .
+
+tools:AppendTerrainPoints_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Append Terrain Points" .
+
+tools:Append_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Append" .
+
+tools:Append_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Append" .
+
+tools:ApplyBlockAdjustment_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Apply Block Adjustment" .
+
+tools:ApplySymbologyFromLayer_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Apply Symbology From Layer" .
+
+tools:ArcDLG_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Arc DLG" .
+
+tools:ArcRoute_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Arc Route" .
+
+tools:ArcS57_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Arc S57" .
+
+tools:AreaSolarRadiation_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Area Solar Radiation" .
+
+tools:ArealInterpolationLayerToPolygons_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "Areal Interpolation Layer To Polygons" .
+
+tools:Aspect_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Aspect" .
+
+tools:Aspect_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Aspect" .
+
+tools:AssignDefaultToField_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Assign Default To Field" .
+
+tools:AssignDomainToField_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Assign Domain To Field" .
+
+tools:AverageNearestNeighbor_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Average Nearest Neighbor" .
+
+tools:BandCollectionStats_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Band Collection Stats" .
+
+tools:Basin_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Basin" .
+
+tools:BatchBuildPyramids_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Batch Build Pyramids" .
+
+tools:BatchCalculateStatistics_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Batch Calculate Statistics" .
+
+tools:BatchProject_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Batch Project" .
+
+tools:BearingDistanceToLine_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Bearing Distance To Line" .
+
+tools:BitwiseAnd_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Bitwise And" .
+
+tools:BitwiseLeftShift_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Bitwise Left Shift" .
+
+tools:BitwiseNot_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Bitwise Not" .
+
+tools:BitwiseOr_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Bitwise Or" .
+
+tools:BitwiseRightShift_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Bitwise Right Shift" .
+
+tools:BitwiseXOr_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Bitwise XOr" .
+
+tools:BlockStatistics_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Block Statistics" .
+
+tools:BooleanAnd_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Boolean And" .
+
+tools:BooleanNot_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Boolean Not" .
+
+tools:BooleanOr_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Boolean Or" .
+
+tools:BooleanXOr_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Boolean XOr" .
+
+tools:BoundaryClean_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Boundary Clean" .
+
+tools:Buffer3D_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Buffer3 D" .
+
+tools:Buffer_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Buffer" .
+
+tools:Buffer_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Buffer" .
+
+tools:BuildBoundary_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Build Boundary" .
+
+tools:BuildFootprints_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Build Footprints" .
+
+tools:BuildMosaicDatasetItemCache_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Build Mosaic Dataset Item Cache" .
+
+tools:BuildNetwork_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Build Network" .
+
+tools:BuildOverviews_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Build Overviews" .
+
+tools:BuildPyramids_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Build Pyramids" .
+
+tools:BuildPyramidsandStatistics_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Build Pyramidsand Statistics" .
+
+tools:BuildRasterAttributeTable_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Build Raster Attribute Table" .
+
+tools:BuildSeamlines_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Build Seamlines" .
+
+tools:BuildTerrain_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Build Terrain" .
+
+tools:Build_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Build" .
+
+tools:CADToGeodatabase_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "CADTo Geodatabase" .
+
+tools:CalculateAdjacentFields_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Calculate Adjacent Fields" .
+
+tools:CalculateAreas_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Calculate Areas" .
+
+tools:CalculateCellSizeRanges_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Calculate Cell Size Ranges" .
+
+tools:CalculateCentralMeridianAndParallels_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Calculate Central Meridian And Parallels" .
+
+tools:CalculateDefaultClusterTolerance_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Calculate Default Cluster Tolerance" .
+
+tools:CalculateDefaultGridIndex_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Calculate Default Grid Index" .
+
+tools:CalculateDistanceBand_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Calculate Distance Band" .
+
+tools:CalculateEndTime_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Calculate End Time" .
+
+tools:CalculateField_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Calculate Field" .
+
+tools:CalculateGridConvergenceAngle_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Calculate Grid Convergence Angle" .
+
+tools:CalculateLineCaps_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Calculate Line Caps" .
+
+tools:CalculateLocations_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Calculate Locations" .
+
+tools:CalculatePolygonMainAngle_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Calculate Polygon Main Angle" .
+
+tools:CalculateRepresentationRule_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Calculate Representation Rule" .
+
+tools:CalculateStatistics_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Calculate Statistics" .
+
+tools:CalculateUTMZone_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Calculate UTMZone" .
+
+tools:CalculateValue_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Calculate Value" .
+
+tools:CalibrateRoutes_lr a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Linear%20Referencing%20Tools%28lr%29> ;
+    foaf:name "Calibrate Routes" .
+
+tools:CellStatistics_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Cell Statistics" .
+
+tools:CentralFeature_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Central Feature" .
+
+tools:ChangeLasClassCodes_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Change Las Class Codes" .
+
+tools:ChangePrivileges_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Change Privileges" .
+
+tools:ChangeTerrainReferenceScale_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Change Terrain Reference Scale" .
+
+tools:ChangeTerrainResolutionBounds_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Change Terrain Resolution Bounds" .
+
+tools:ChangeVersion_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Change Version" .
+
+tools:CheckGeometry_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Check Geometry" .
+
+tools:ClassProbability_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Class Probability" .
+
+tools:ClassifyLasByHeight_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Classify Las By Height" .
+
+tools:ClassifyRaster_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Classify Raster" .
+
+tools:Clean_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Clean" .
+
+tools:ClearWorkspaceCache_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Clear Workspace Cache" .
+
+tools:Clip_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Clip" .
+
+tools:Clip_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Clip" .
+
+tools:Clip_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Clip" .
+
+tools:ClustersOutliersRendered_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Clusters Outliers Rendered" .
+
+tools:ClustersOutliers_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Clusters Outliers" .
+
+tools:CollapseDualLinesToCenterline_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Collapse Dual Lines To Centerline" .
+
+tools:CollapseDualLinesToCenterline_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Collapse Dual Lines To Centerline" .
+
+tools:CollapseRoadDetail_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Collapse Road Detail" .
+
+tools:CollectEventsRendered_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Collect Events Rendered" .
+
+tools:CollectEvents_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Collect Events" .
+
+tools:ColorBalanceMosaicDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Color Balance Mosaic Dataset" .
+
+tools:CombinatorialAnd_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Combinatorial And" .
+
+tools:CombinatorialOr_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Combinatorial Or" .
+
+tools:CombinatorialXOr_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Combinatorial XOr" .
+
+tools:Combine_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Combine" .
+
+tools:Compact_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Compact" .
+
+tools:CompareReplicaSchema_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Compare Replica Schema" .
+
+tools:CompositeBands_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Composite Bands" .
+
+tools:CompressFileGeodatabaseData_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Compress File Geodatabase Data" .
+
+tools:Compress_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Compress" .
+
+tools:ComputeBlockAdjustment_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Compute Block Adjustment" .
+
+tools:ComputeControlPoints_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Compute Control Points" .
+
+tools:ComputeDirtyArea_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Compute Dirty Area" .
+
+tools:ComputePansharpenWeights_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Compute Pansharpen Weights" .
+
+tools:ComputeSegmentAttributes_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Compute Segment Attributes" .
+
+tools:ComputeTiePoints_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Compute Tie Points" .
+
+tools:Con_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Con" .
+
+tools:ConcatenateDateAndTimeFields_ta a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tracking%20Analyst%20Tools%28ta%29> ;
+    foaf:name "Concatenate Date And Time Fields" .
+
+tools:ConfigureGeodatabaseLogFileTables_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Configure Geodatabase Log File Tables" .
+
+tools:ConsolidateLayer_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Consolidate Layer" .
+
+tools:ConsolidateLocator_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Consolidate Locator" .
+
+tools:ConsolidateMap_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Consolidate Map" .
+
+tools:ConsolidateResult_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Consolidate Result" .
+
+tools:ConstructSightLines_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Construct Sight Lines" .
+
+tools:ContourAnnotation_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Contour Annotation" .
+
+tools:ContourList_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Contour List" .
+
+tools:ContourList_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Contour List" .
+
+tools:ContourWithBarriers_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Contour With Barriers" .
+
+tools:ContourWithBarriers_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Contour With Barriers" .
+
+tools:Contour_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Contour" .
+
+tools:Contour_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Contour" .
+
+tools:ConvertCoordinateNotation_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Convert Coordinate Notation" .
+
+tools:ConvertDiagram_schematics a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Schematics%20Tools%28schematics%29> ;
+    foaf:name "Convert Diagram" .
+
+tools:ConvertMapServerCacheStorageFormat_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Convert Map Server Cache Storage Format" .
+
+tools:ConvertSpatialWeightsMatrixtoTable_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Convert Spatial Weights Matrixto Table" .
+
+tools:ConvertTimeField_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Convert Time Field" .
+
+tools:ConvertTimeZone_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Convert Time Zone" .
+
+tools:CopyFeatures_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Copy Features" .
+
+tools:CopyParcelFabric_fabric a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Parcel%20Fabric%20Tools%28fabric%29> ;
+    foaf:name "Copy Parcel Fabric" .
+
+tools:CopyRasterCatalogItems_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Copy Raster Catalog Items" .
+
+tools:CopyRaster_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Copy Raster" .
+
+tools:CopyRows_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Copy Rows" .
+
+tools:CopyRuntimeGdbToFileGdb_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Copy Runtime Gdb To File Gdb" .
+
+tools:CopyTin_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Copy Tin" .
+
+tools:CopyTraversedSourceFeatures_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Copy Traversed Source Features" .
+
+tools:Copy_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Copy" .
+
+tools:Corridor_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Corridor" .
+
+tools:CosH_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Cos H" .
+
+tools:Cos_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Cos" .
+
+tools:CostAllocation_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Cost Allocation" .
+
+tools:CostBackLink_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Cost Back Link" .
+
+tools:CostDistance_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Cost Distance" .
+
+tools:CostPath_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Cost Path" .
+
+tools:CountRenderer_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Count Renderer" .
+
+tools:CreateAddressLocator_geocoding a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geocoding%20Tools%28geocoding%29> ;
+    foaf:name "Create Address Locator" .
+
+tools:CreateArcInfoWorkspace_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Arc Info Workspace" .
+
+tools:CreateArcSDEConnectionFile_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Arc SDEConnection File" .
+
+tools:CreateCartographicPartitions_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Create Cartographic Partitions" .
+
+tools:CreateCompositeAddressLocator_geocoding a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geocoding%20Tools%28geocoding%29> ;
+    foaf:name "Create Composite Address Locator" .
+
+tools:CreateConstantRaster_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Create Constant Raster" .
+
+tools:CreateCustomGeoTransformation_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Custom Geo Transformation" .
+
+tools:CreateDatabaseConnection_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Database Connection" .
+
+tools:CreateDatabaseUser_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Database User" .
+
+tools:CreateDatabaseView_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Database View" .
+
+tools:CreateDiagram_schematics a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Schematics%20Tools%28schematics%29> ;
+    foaf:name "Create Diagram" .
+
+tools:CreateDomain_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Domain" .
+
+tools:CreateEnterpriseGeodatabase_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Enterprise Geodatabase" .
+
+tools:CreateFeatureDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Feature Dataset" .
+
+tools:CreateFeatureclass_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Featureclass" .
+
+tools:CreateFileGDB_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create File GDB" .
+
+tools:CreateFishnet_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Fishnet" .
+
+tools:CreateFolder_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Folder" .
+
+tools:CreateGeometricNetwork_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Geometric Network" .
+
+tools:CreateLabels_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Create Labels" .
+
+tools:CreateLasDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Las Dataset" .
+
+tools:CreateMapServerCache_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Create Map Server Cache" .
+
+tools:CreateMapTilePackage_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Map Tile Package" .
+
+tools:CreateMosaicDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Mosaic Dataset" .
+
+tools:CreateNormalRaster_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Create Normal Raster" .
+
+tools:CreateOrthoCorrectedRasterDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Ortho Corrected Raster Dataset" .
+
+tools:CreateOverpass_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Create Overpass" .
+
+tools:CreatePansharpenedRasterDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Pansharpened Raster Dataset" .
+
+tools:CreatePersonalGDB_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Personal GDB" .
+
+tools:CreateRandomPoints_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Random Points" .
+
+tools:CreateRandomRaster_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Random Raster" .
+
+tools:CreateRandomRaster_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Create Random Raster" .
+
+tools:CreateRasterCatalog_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Raster Catalog" .
+
+tools:CreateRasterDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Raster Dataset" .
+
+tools:CreateRasterType_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Raster Type" .
+
+tools:CreateReferencedMosaicDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Referenced Mosaic Dataset" .
+
+tools:CreateRelationshipClass_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Relationship Class" .
+
+tools:CreateReplicaFootPrints_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Replica Foot Prints" .
+
+tools:CreateReplicaFromServer_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Replica From Server" .
+
+tools:CreateReplica_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Replica" .
+
+tools:CreateRole_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Role" .
+
+tools:CreateRoutes_lr a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Linear%20Referencing%20Tools%28lr%29> ;
+    foaf:name "Create Routes" .
+
+tools:CreateRuntimeContent_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Runtime Content" .
+
+tools:CreateSchematicFolder_schematics a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Schematics%20Tools%28schematics%29> ;
+    foaf:name "Create Schematic Folder" .
+
+tools:CreateSignatures_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Create Signatures" .
+
+tools:CreateSpaceTimeCube_stpm a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Space%20Time%20Pattern%20Mining%20Tools%28stpm%29> ;
+    foaf:name "Create Space Time Cube" .
+
+tools:CreateSpatialReference_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Spatial Reference" .
+
+tools:CreateSpatialType_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Spatial Type" .
+
+tools:CreateSpatiallyBalancedPoints_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "Create Spatially Balanced Points" .
+
+tools:CreateTable_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Table" .
+
+tools:CreateTerrain_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Create Terrain" .
+
+tools:CreateThiessenPolygons_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Create Thiessen Polygons" .
+
+tools:CreateTin_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Create Tin" .
+
+tools:CreateTopology_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Topology" .
+
+tools:CreateTurnFeatureClass_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Create Turn Feature Class" .
+
+tools:CreateUnRegisteredFeatureclass_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Un Registered Featureclass" .
+
+tools:CreateUnRegisteredTable_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Un Registered Table" .
+
+tools:CreateUnderpass_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Create Underpass" .
+
+tools:CreateVersion_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Create Version" .
+
+tools:Create_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Create" .
+
+tools:CrossValidation_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "Cross Validation" .
+
+tools:CulDeSacMasks_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Cul De Sac Masks" .
+
+tools:Curvature_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Curvature" .
+
+tools:Curvature_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Curvature" .
+
+tools:CutFill_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Cut Fill" .
+
+tools:CutFill_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Cut Fill" .
+
+tools:DEMToRaster_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "DEMTo Raster" .
+
+tools:DLGArc_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "DLGArc" .
+
+tools:DarcyFlow_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Darcy Flow" .
+
+tools:DarcyVelocity_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Darcy Velocity" .
+
+tools:DecimateTinNodes_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Decimate Tin Nodes" .
+
+tools:DefineMosaicDatasetNoData_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Define Mosaic Dataset No Data" .
+
+tools:DefineOverviews_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Define Overviews" .
+
+tools:DefineProjection_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Define Projection" .
+
+tools:DefineProjection_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Define Projection" .
+
+tools:DeleteCodedValueFromDomain_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Delete Coded Value From Domain" .
+
+tools:DeleteColormap_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Delete Colormap" .
+
+tools:DeleteDomain_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Delete Domain" .
+
+tools:DeleteFeatures_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Delete Features" .
+
+tools:DeleteField_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Delete Field" .
+
+tools:DeleteGlobeServerCache_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Delete Globe Server Cache" .
+
+tools:DeleteGridsAndGraticules_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Delete Grids And Graticules" .
+
+tools:DeleteIdentical_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Delete Identical" .
+
+tools:DeleteMapServerCache_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Delete Map Server Cache" .
+
+tools:DeleteMosaicDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Delete Mosaic Dataset" .
+
+tools:DeleteRasterAttributeTable_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Delete Raster Attribute Table" .
+
+tools:DeleteRasterCatalogItems_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Delete Raster Catalog Items" .
+
+tools:DeleteRows_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Delete Rows" .
+
+tools:DeleteSchemaGeodatabase_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Delete Schema Geodatabase" .
+
+tools:DeleteTerrainPoints_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Delete Terrain Points" .
+
+tools:DeleteVersion_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Delete Version" .
+
+tools:Delete_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Delete" .
+
+tools:DelineateBuiltUpAreas_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Delineate Built Up Areas" .
+
+tools:DelineateTinDataArea_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Delineate Tin Data Area" .
+
+tools:Dendrogram_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Dendrogram" .
+
+tools:DensifySamplingNetwork_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "Densify Sampling Network" .
+
+tools:Densify_edit a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Editing%20Tools%28edit%29> ;
+    foaf:name "Densify" .
+
+tools:DetectFeatureChanges_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Detect Feature Changes" .
+
+tools:DetectGraphicConflict_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Detect Graphic Conflict" .
+
+tools:DiagnoseVersionMetadata_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Diagnose Version Metadata" .
+
+tools:DiagnoseVersionTables_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Diagnose Version Tables" .
+
+tools:Dice_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Dice" .
+
+tools:Diff_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Diff" .
+
+tools:Difference3D_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Difference3 D" .
+
+tools:DiffusionInterpolationWithBarriers_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "Diffusion Interpolation With Barriers" .
+
+tools:DirectionalDistribution_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Directional Distribution" .
+
+tools:DirectionalMean_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Directional Mean" .
+
+tools:Directions_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Directions" .
+
+tools:DisableArchiving_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Disable Archiving" .
+
+tools:DisableAttachments_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Disable Attachments" .
+
+tools:DisableEditorTracking_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Disable Editor Tracking" .
+
+tools:DisperseMarkers_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Disperse Markers" .
+
+tools:DissolveNetwork_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Dissolve Network" .
+
+tools:DissolveRouteEvents_lr a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Linear%20Referencing%20Tools%28lr%29> ;
+    foaf:name "Dissolve Route Events" .
+
+tools:Dissolve_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Dissolve" .
+
+tools:Dissolve_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Dissolve" .
+
+tools:Divide_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Divide" .
+
+tools:Divide_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Divide" .
+
+tools:DomainToTable_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Domain To Table" .
+
+tools:DownloadRasters_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Download Rasters" .
+
+tools:DropIndex_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Drop Index" .
+
+tools:DropItem_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Drop Item" .
+
+tools:DropRepresentation_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Drop Representation" .
+
+tools:ESRITranslator_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "ESRITranslator" .
+
+tools:EdgematchFeatures_edit a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Editing%20Tools%28edit%29> ;
+    foaf:name "Edgematch Features" .
+
+tools:EditRasterFunction_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Edit Raster Function" .
+
+tools:EditSignatures_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Edit Signatures" .
+
+tools:EditTin_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Edit Tin" .
+
+tools:EliminatePolygonPart_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Eliminate Polygon Part" .
+
+tools:Eliminate_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Eliminate" .
+
+tools:Eliminate_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Eliminate" .
+
+tools:EmergingHotSpotAnalysis_stpm a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Space%20Time%20Pattern%20Mining%20Tools%28stpm%29> ;
+    foaf:name "Emerging Hot Spot Analysis" .
+
+tools:EmpiricalBayesianKriging_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "Empirical Bayesian Kriging" .
+
+tools:EnableArchiving_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Enable Archiving" .
+
+tools:EnableAttachments_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Enable Attachments" .
+
+tools:EnableEditorTracking_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Enable Editor Tracking" .
+
+tools:EnableEnterpriseGeodatabase_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Enable Enterprise Geodatabase" .
+
+tools:EncloseMultiPatch_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Enclose Multi Patch" .
+
+tools:EqualToFrequency_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Equal To Frequency" .
+
+tools:EqualTo_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Equal To" .
+
+tools:ErasePoint_edit a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Editing%20Tools%28edit%29> ;
+    foaf:name "Erase Point" .
+
+tools:Erase_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Erase" .
+
+tools:Erase_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Erase" .
+
+tools:EucAllocation_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Euc Allocation" .
+
+tools:EucDirection_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Euc Direction" .
+
+tools:EucDistance_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Euc Distance" .
+
+tools:ExcelToTable_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Excel To Table" .
+
+tools:Exp10_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Exp10" .
+
+tools:Exp2_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Exp2" .
+
+tools:Exp_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Exp" .
+
+tools:Expand_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Expand" .
+
+tools:ExploratoryRegression_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Exploratory Regression" .
+
+tools:ExportAcknowledgementMessage_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Export Acknowledgement Message" .
+
+tools:ExportCAD_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Export CAD" .
+
+tools:ExportDataChangeMessage_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Export Data Change Message" .
+
+tools:ExportGeodatabaseConfigurationKeywords_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Export Geodatabase Configuration Keywords" .
+
+tools:ExportMapServerCache_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Export Map Server Cache" .
+
+tools:ExportMetadataMultiple_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Export Metadata Multiple" .
+
+tools:ExportMetadata_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Export Metadata" .
+
+tools:ExportMosaicDatasetGeometry_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Export Mosaic Dataset Geometry" .
+
+tools:ExportMosaicDatasetItems_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Export Mosaic Dataset Items" .
+
+tools:ExportMosaicDatasetPaths_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Export Mosaic Dataset Paths" .
+
+tools:ExportRasterCatalogPaths_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Export Raster Catalog Paths" .
+
+tools:ExportRasterWorldFile_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Export Raster World File" .
+
+tools:ExportReplicaSchema_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Export Replica Schema" .
+
+tools:ExportTileCache_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Export Tile Cache" .
+
+tools:ExportTo3DWebScene_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Export To3 DWeb Scene" .
+
+tools:ExportTopologyErrors_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Export Topology Errors" .
+
+tools:ExportWebMap_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Export Web Map" .
+
+tools:ExportXMLWorkspaceDocument_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Export XMLWorkspace Document" .
+
+tools:ExportXYv_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Export XYv" .
+
+tools:Export_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Export" .
+
+tools:ExtendLine_edit a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Editing%20Tools%28edit%29> ;
+    foaf:name "Extend Line" .
+
+tools:ExtractByAttributes_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Extract By Attributes" .
+
+tools:ExtractByCircle_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Extract By Circle" .
+
+tools:ExtractByMask_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Extract By Mask" .
+
+tools:ExtractByPoints_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Extract By Points" .
+
+tools:ExtractByPolygon_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Extract By Polygon" .
+
+tools:ExtractByRectangle_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Extract By Rectangle" .
+
+tools:ExtractDataAndEmailTask_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Extract Data And Email Task" .
+
+tools:ExtractDataTask_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Extract Data Task" .
+
+tools:ExtractData_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Extract Data" .
+
+tools:ExtractMultiValuesToPoints_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Extract Multi Values To Points" .
+
+tools:ExtractPackage_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Extract Package" .
+
+tools:ExtractSubDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Extract Sub Dataset" .
+
+tools:ExtractValuesToPoints_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Extract Values To Points" .
+
+tools:ExtractValuesToTable_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "Extract Values To Table" .
+
+tools:ExtrudeBetween_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Extrude Between" .
+
+tools:FeatureClassToFeatureClass_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Feature Class To Feature Class" .
+
+tools:FeatureClassToGeodatabase_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Feature Class To Geodatabase" .
+
+tools:FeatureClassToShapefile_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Feature Class To Shapefile" .
+
+tools:FeatureClassZToASCII_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Feature Class ZTo ASCII" .
+
+tools:FeatureCompare_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Feature Compare" .
+
+tools:FeatureEnvelopeToPolygon_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Feature Envelope To Polygon" .
+
+tools:FeatureOutlineMasks_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Feature Outline Masks" .
+
+tools:FeatureTo3DByAttribute_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Feature To3 DBy Attribute" .
+
+tools:FeatureToLine_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Feature To Line" .
+
+tools:FeatureToNetCDF_md a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Multidimension%20Tools%28md%29> ;
+    foaf:name "Feature To Net CDF" .
+
+tools:FeatureToPoint_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Feature To Point" .
+
+tools:FeatureToPolygon_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Feature To Polygon" .
+
+tools:FeatureToRaster_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Feature To Raster" .
+
+tools:FeatureVerticesToPoints_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Feature Vertices To Points" .
+
+tools:FeatureclassToCoverage_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Featureclass To Coverage" .
+
+tools:FeaturesFromCityEngineRules_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Features From City Engine Rules" .
+
+tools:FeaturesToJSON_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Features To JSON" .
+
+tools:FileCompare_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "File Compare" .
+
+tools:Fill_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Fill" .
+
+tools:Filter_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Filter" .
+
+tools:FindClosestFacilities_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Find Closest Facilities" .
+
+tools:FindConflicts_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Find Conflicts" .
+
+tools:FindDisconnectedFeaturesInGeometricNetwork_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Find Disconnected Features In Geometric Network" .
+
+tools:FindIdentical_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Find Identical" .
+
+tools:FindRoutes_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Find Routes" .
+
+tools:FlipLine_edit a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Editing%20Tools%28edit%29> ;
+    foaf:name "Flip Line" .
+
+tools:Flip_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Flip" .
+
+tools:FloatToRaster_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Float To Raster" .
+
+tools:Float_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Float" .
+
+tools:Float_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Float" .
+
+tools:FlowAccumulation_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Flow Accumulation" .
+
+tools:FlowDirection_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Flow Direction" .
+
+tools:FlowLength_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Flow Length" .
+
+tools:FocalFlow_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Focal Flow" .
+
+tools:FocalStatistics_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Focal Statistics" .
+
+tools:Frequency_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Frequency" .
+
+tools:FuzzyMembership_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Fuzzy Membership" .
+
+tools:FuzzyOverlay_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Fuzzy Overlay" .
+
+tools:GACalculateZValue_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "GACalculate ZValue" .
+
+tools:GACreateGeostatisticalLayer_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "GACreate Geostatistical Layer" .
+
+tools:GAGetModelParameter_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "GAGet Model Parameter" .
+
+tools:GALayerToContour_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "GALayer To Contour" .
+
+tools:GALayerToGrid_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "GALayer To Grid" .
+
+tools:GALayerToPoints_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "GALayer To Points" .
+
+tools:GAMovingWindowKriging_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "GAMoving Window Kriging" .
+
+tools:GANeighborhoodSelection_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "GANeighborhood Selection" .
+
+tools:GASemivariogramSensitivity_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "GASemivariogram Sensitivity" .
+
+tools:GASetModelParameter_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "GASet Model Parameter" .
+
+tools:GPXtoFeatures_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "GPXto Features" .
+
+tools:GaussianGeostatisticalSimulations_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "Gaussian Geostatistical Simulations" .
+
+tools:Generalize_edit a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Editing%20Tools%28edit%29> ;
+    foaf:name "Generalize" .
+
+tools:GenerateAttachmentMatchTable_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Generate Attachment Match Table" .
+
+tools:GenerateEdgematchLinks_edit a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Editing%20Tools%28edit%29> ;
+    foaf:name "Generate Edgematch Links" .
+
+tools:GenerateExcludeArea_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Generate Exclude Area" .
+
+tools:GenerateFgdbLicense_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Generate Fgdb License" .
+
+tools:GenerateLicensedFgdb_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Generate Licensed Fgdb" .
+
+tools:GenerateMapServerCacheTilingScheme_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Generate Map Server Cache Tiling Scheme" .
+
+tools:GenerateNearTable_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Generate Near Table" .
+
+tools:GenerateNetworkSpatialWeights_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Generate Network Spatial Weights" .
+
+tools:GenerateRubbersheetLinks_edit a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Editing%20Tools%28edit%29> ;
+    foaf:name "Generate Rubbersheet Links" .
+
+tools:GenerateServiceAreas_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Generate Service Areas" .
+
+tools:GenerateSpatialWeightsMatrix_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Generate Spatial Weights Matrix" .
+
+tools:GenerateTileCacheTilingScheme_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Generate Tile Cache Tiling Scheme" .
+
+tools:Generate_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Generate" .
+
+tools:GeoTaggedPhotosToPoints_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Geo Tagged Photos To Points" .
+
+tools:GeocodeAddresses_geocoding a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geocoding%20Tools%28geocoding%29> ;
+    foaf:name "Geocode Addresses" .
+
+tools:GeodeticDensify_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Geodetic Densify" .
+
+tools:GeographicallyWeightedRegression_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Geographically Weighted Regression" .
+
+tools:GetCellValue_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Get Cell Value" .
+
+tools:GetCount_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Get Count" .
+
+tools:GetRasterProperties_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Get Raster Properties" .
+
+tools:GlobalPolynomialInterpolation_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "Global Polynomial Interpolation" .
+
+tools:GreaterThanEqual_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Greater Than Equal" .
+
+tools:GreaterThanFrequency_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Greater Than Frequency" .
+
+tools:GreaterThan_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Greater Than" .
+
+tools:GridIndexFeatures_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Grid Index Features" .
+
+tools:GroupingAnalysis_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Grouping Analysis" .
+
+tools:HighLowClustering_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "High Low Clustering" .
+
+tools:HighestPosition_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Highest Position" .
+
+tools:HillShade_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Hill Shade" .
+
+tools:HillShade_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Hill Shade" .
+
+tools:HotSpotsRendered_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Hot Spots Rendered" .
+
+tools:HotSpots_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Hot Spots" .
+
+tools:IDEdit_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "IDEdit" .
+
+tools:IDW_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "IDW" .
+
+tools:Identity_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Identity" .
+
+tools:Identity_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Identity" .
+
+tools:Idw_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Idw" .
+
+tools:Idw_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Idw" .
+
+tools:Import3DFiles_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Import3 DFiles" .
+
+tools:ImportCADAnnotation_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Import CADAnnotation" .
+
+tools:ImportCoverageAnnotation_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Import Coverage Annotation" .
+
+tools:ImportFromE00_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Import From E00" .
+
+tools:ImportGeodatabaseConfigurationKeywords_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Import Geodatabase Configuration Keywords" .
+
+tools:ImportMapServerCache_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Import Map Server Cache" .
+
+tools:ImportMessage_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Import Message" .
+
+tools:ImportMetadata_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Import Metadata" .
+
+tools:ImportMosaicDatasetGeometry_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Import Mosaic Dataset Geometry" .
+
+tools:ImportReplicaSchema_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Import Replica Schema" .
+
+tools:ImportTileCache_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Import Tile Cache" .
+
+tools:ImportXMLWorkspaceDocument_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Import XMLWorkspace Document" .
+
+tools:Import_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Import" .
+
+tools:InList_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "In List" .
+
+tools:IncreaseMaximumEdges_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Increase Maximum Edges" .
+
+tools:IncrementalSpatialAutocorrelation_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Incremental Spatial Autocorrelation" .
+
+tools:IndexItem_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Index Item" .
+
+tools:Inside3D_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Inside3 D" .
+
+tools:Int_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Int" .
+
+tools:Int_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Int" .
+
+tools:Integrate_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Integrate" .
+
+tools:InterpolatePolyToPatch_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Interpolate Poly To Patch" .
+
+tools:InterpolateShape_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Interpolate Shape" .
+
+tools:Intersect3DLineWithMultiPatch_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Intersect3 DLine With Multi Patch" .
+
+tools:Intersect3DLineWithSurface_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Intersect3 DLine With Surface" .
+
+tools:Intersect3D_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Intersect3 D" .
+
+tools:Intersect_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Intersect" .
+
+tools:Intersect_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Intersect" .
+
+tools:IntersectingLayersMasks_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Intersecting Layers Masks" .
+
+tools:Intervisibility_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Intervisibility" .
+
+tools:IsClosed3D_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Is Closed3 D" .
+
+tools:IsNull_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Is Null" .
+
+tools:IsoClusterUnsupervisedClassification_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Iso Cluster Unsupervised Classification" .
+
+tools:IsoCluster_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Iso Cluster" .
+
+tools:JSONToFeatures_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "JSONTo Features" .
+
+tools:JoinField_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Join Field" .
+
+tools:JoinItem_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Join Item" .
+
+tools:KMLToLayer_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "KMLTo Layer" .
+
+tools:KernelDensity_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Kernel Density" .
+
+tools:KernelInterpolationWithBarriers_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "Kernel Interpolation With Barriers" .
+
+tools:Kriging_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Kriging" .
+
+tools:Kriging_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Kriging" .
+
+tools:LASToMultipoint_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "LASTo Multipoint" .
+
+tools:LandXMLToTin_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Land XMLTo Tin" .
+
+tools:LasDatasetStatistics_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Las Dataset Statistics" .
+
+tools:LasDatasetToRaster_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Las Dataset To Raster" .
+
+tools:LasDatasetToTin_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Las Dataset To Tin" .
+
+tools:LasPointStatsAsRaster_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Las Point Stats As Raster" .
+
+tools:LasPointStatsByArea_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Las Point Stats By Area" .
+
+tools:Layer3DToFeatureClass_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Layer3 DTo Feature Class" .
+
+tools:LayerToKML_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Layer To KML" .
+
+tools:LessThanEqual_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Less Than Equal" .
+
+tools:LessThanFrequency_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Less Than Frequency" .
+
+tools:LessThan_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Less Than" .
+
+tools:LineDensity_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Line Density" .
+
+tools:LineOfSight_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Line Of Sight" .
+
+tools:LineStatistics_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Line Statistics" .
+
+tools:Ln_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Ln" .
+
+tools:LoadTopologyToParcelFabric_fabric a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Parcel%20Fabric%20Tools%28fabric%29> ;
+    foaf:name "Load Topology To Parcel Fabric" .
+
+tools:LocalPolynomialInterpolation_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "Local Polynomial Interpolation" .
+
+tools:LocateFeaturesAlongRoutes_lr a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Linear%20Referencing%20Tools%28lr%29> ;
+    foaf:name "Locate Features Along Routes" .
+
+tools:LocateLasPointsByProximity_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Locate Las Points By Proximity" .
+
+tools:LocateOutliers_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Locate Outliers" .
+
+tools:Log10_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Log10" .
+
+tools:Log2_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Log2" .
+
+tools:Lookup_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Lookup" .
+
+tools:Lookup_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Lookup" .
+
+tools:LowestPosition_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Lowest Position" .
+
+tools:MDPublisher_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "MDPublisher" .
+
+tools:MLClassify_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "MLClassify" .
+
+tools:MXDToWebMap_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "MXDTo Web Map" .
+
+tools:MajorityFilter_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Majority Filter" .
+
+tools:MakeClosestFacilityLayer_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Make Closest Facility Layer" .
+
+tools:MakeFeatureLayer_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Make Feature Layer" .
+
+tools:MakeGraph_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Make Graph" .
+
+tools:MakeGridsAndGraticulesLayer_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Make Grids And Graticules Layer" .
+
+tools:MakeImageServerLayer_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Make Image Server Layer" .
+
+tools:MakeLasDatasetLayer_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Make Las Dataset Layer" .
+
+tools:MakeLocationAllocationLayer_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Make Location Allocation Layer" .
+
+tools:MakeMosaicLayer_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Make Mosaic Layer" .
+
+tools:MakeNetCDFFeatureLayer_md a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Multidimension%20Tools%28md%29> ;
+    foaf:name "Make Net CDFFeature Layer" .
+
+tools:MakeNetCDFRasterLayer_md a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Multidimension%20Tools%28md%29> ;
+    foaf:name "Make Net CDFRaster Layer" .
+
+tools:MakeNetCDFTableView_md a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Multidimension%20Tools%28md%29> ;
+    foaf:name "Make Net CDFTable View" .
+
+tools:MakeODCostMatrixLayer_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Make ODCost Matrix Layer" .
+
+tools:MakeParcelFabricLayer_fabric a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Parcel%20Fabric%20Tools%28fabric%29> ;
+    foaf:name "Make Parcel Fabric Layer" .
+
+tools:MakeParcelFabricTableView_fabric a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Parcel%20Fabric%20Tools%28fabric%29> ;
+    foaf:name "Make Parcel Fabric Table View" .
+
+tools:MakeQueryLayer_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Make Query Layer" .
+
+tools:MakeQueryTable_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Make Query Table" .
+
+tools:MakeRasterCatalogLayer_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Make Raster Catalog Layer" .
+
+tools:MakeRasterLayer_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Make Raster Layer" .
+
+tools:MakeRouteEventLayer_lr a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Linear%20Referencing%20Tools%28lr%29> ;
+    foaf:name "Make Route Event Layer" .
+
+tools:MakeRouteLayer_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Make Route Layer" .
+
+tools:MakeServiceAreaLayer_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Make Service Area Layer" .
+
+tools:MakeTableView_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Make Table View" .
+
+tools:MakeTrackingLayer_ta a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tracking%20Analyst%20Tools%28ta%29> ;
+    foaf:name "Make Tracking Layer" .
+
+tools:MakeVehicleRoutingProblemLayer_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Make Vehicle Routing Problem Layer" .
+
+tools:MakeWCSLayer_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Make WCSLayer" .
+
+tools:MakeXYEventLayer_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Make XYEvent Layer" .
+
+tools:ManageGlobeServerCacheTiles_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Manage Globe Server Cache Tiles" .
+
+tools:ManageMapServerCacheScales_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Manage Map Server Cache Scales" .
+
+tools:ManageMapServerCacheStatus_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Manage Map Server Cache Status" .
+
+tools:ManageMapServerCacheTiles_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Manage Map Server Cache Tiles" .
+
+tools:ManageTileCache_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Manage Tile Cache" .
+
+tools:MapServerCacheTilingSchemeToPolygons_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Map Server Cache Tiling Scheme To Polygons" .
+
+tools:MapToKML_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Map To KML" .
+
+tools:MatchPhotosToRowsByTime_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Match Photos To Rows By Time" .
+
+tools:MeanCenter_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Mean Center" .
+
+tools:MedianCenter_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Median Center" .
+
+tools:MergeBranch_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Merge Branch" .
+
+tools:MergeDividedRoads_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Merge Divided Roads" .
+
+tools:MergeMosaicDatasetItems_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Merge Mosaic Dataset Items" .
+
+tools:Merge_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Merge" .
+
+tools:MetadataImporter_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Metadata Importer" .
+
+tools:MigrateRelationshipClass_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Migrate Relationship Class" .
+
+tools:MigrateStorage_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Migrate Storage" .
+
+tools:MinimumBoundingGeometry_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Minimum Bounding Geometry" .
+
+tools:Minus_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Minus" .
+
+tools:Minus_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Minus" .
+
+tools:Mirror_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Mirror" .
+
+tools:Mod_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Mod" .
+
+tools:MosaicToNewRaster_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Mosaic To New Raster" .
+
+tools:Mosaic_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Mosaic" .
+
+tools:MultiDistanceSpatialClustering_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Multi Distance Spatial Clustering" .
+
+tools:MultiPatchFootprint_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Multi Patch Footprint" .
+
+tools:MultipartToSinglepart_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Multipart To Singlepart" .
+
+tools:MultipatchToCollada_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Multipatch To Collada" .
+
+tools:MultipatchToRaster_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Multipatch To Raster" .
+
+tools:MultipleRingBuffer_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Multiple Ring Buffer" .
+
+tools:NaturalNeighbor_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Natural Neighbor" .
+
+tools:NaturalNeighbor_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Natural Neighbor" .
+
+tools:Near3D_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Near3 D" .
+
+tools:Near_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Near" .
+
+tools:Near_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Near" .
+
+tools:Negate_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Negate" .
+
+tools:Nibble_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Nibble" .
+
+tools:NotEqual_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Not Equal" .
+
+tools:ObserverPoints_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Observer Points" .
+
+tools:ObserverPoints_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Observer Points" .
+
+tools:OptimizedHotSpotAnalysis_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Optimized Hot Spot Analysis" .
+
+tools:OrdinaryLeastSquares_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Ordinary Least Squares" .
+
+tools:Over_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Over" .
+
+tools:OverlayRouteEvents_lr a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Linear%20Referencing%20Tools%28lr%29> ;
+    foaf:name "Overlay Route Events" .
+
+tools:PDFToTIFF_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "PDFTo TIFF" .
+
+tools:PackageLayer_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Package Layer" .
+
+tools:PackageLocator_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Package Locator" .
+
+tools:PackageMap_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Package Map" .
+
+tools:PackageResult_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Package Result" .
+
+tools:ParticleTrack_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Particle Track" .
+
+tools:PathAllocation_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Path Allocation" .
+
+tools:PathBackLink_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Path Back Link" .
+
+tools:PathDistance_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Path Distance" .
+
+tools:Pick_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Pick" .
+
+tools:PivotTable_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Pivot Table" .
+
+tools:Plus_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Plus" .
+
+tools:Plus_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Plus" .
+
+tools:PointDensity_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Point Density" .
+
+tools:PointDistance_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Point Distance" .
+
+tools:PointDistance_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Point Distance" .
+
+tools:PointFileInformation_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Point File Information" .
+
+tools:PointNode_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Point Node" .
+
+tools:PointStatistics_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Point Statistics" .
+
+tools:PointToRaster_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Point To Raster" .
+
+tools:PointsSolarRadiation_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Points Solar Radiation" .
+
+tools:PointsToLine_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Points To Line" .
+
+tools:PolyRegion_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Poly Region" .
+
+tools:PolygonNeighbors_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Polygon Neighbors" .
+
+tools:PolygonToLine_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Polygon To Line" .
+
+tools:PolygonToRaster_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Polygon To Raster" .
+
+tools:PolygonVolume_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Polygon Volume" .
+
+tools:PolylineToRaster_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Polyline To Raster" .
+
+tools:Popularity_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Popularity" .
+
+tools:PopulateAlternateIDFields_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Populate Alternate IDFields" .
+
+tools:PorousPuff_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Porous Puff" .
+
+tools:Power_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Power" .
+
+tools:PrincipalComponents_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Principal Components" .
+
+tools:ProjectRaster_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Project Raster" .
+
+tools:Project_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Project" .
+
+tools:Project_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Project" .
+
+tools:PropagateDisplacement_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Propagate Displacement" .
+
+tools:QuickExport_interop a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Interoperability%20Tools%28interop%29> ;
+    foaf:name "Quick Export" .
+
+tools:QuickImport_interop a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Interoperability%20Tools%28interop%29> ;
+    foaf:name "Quick Import" .
+
+tools:RadialBasisFunctions_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "Radial Basis Functions" .
+
+tools:Rank_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Rank" .
+
+tools:RasterCalculator_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Raster Calculator" .
+
+tools:RasterCatalogToRasterDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Raster Catalog To Raster Dataset" .
+
+tools:RasterCompare_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Raster Compare" .
+
+tools:RasterDomain_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Raster Domain" .
+
+tools:RasterTin_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Raster Tin" .
+
+tools:RasterToASCII_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Raster To ASCII" .
+
+tools:RasterToDTED_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Raster To DTED" .
+
+tools:RasterToFloat_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Raster To Float" .
+
+tools:RasterToGeodatabase_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Raster To Geodatabase" .
+
+tools:RasterToMultipoint_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Raster To Multipoint" .
+
+tools:RasterToNetCDF_md a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Multidimension%20Tools%28md%29> ;
+    foaf:name "Raster To Net CDF" .
+
+tools:RasterToOtherFormat_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Raster To Other Format" .
+
+tools:RasterToPoint_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Raster To Point" .
+
+tools:RasterToPolygon_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Raster To Polygon" .
+
+tools:RasterToPolyline_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Raster To Polyline" .
+
+tools:RasterToVideo_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Raster To Video" .
+
+tools:ReExportUnacknowledgedMessages_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Re Export Unacknowledged Messages" .
+
+tools:RebuildAddressLocator_geocoding a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geocoding%20Tools%28geocoding%29> ;
+    foaf:name "Rebuild Address Locator" .
+
+tools:RebuildGeometricNetwork_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Rebuild Geometric Network" .
+
+tools:RebuildIndexes_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Rebuild Indexes" .
+
+tools:ReclassByASCIIFile_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Reclass By ASCIIFile" .
+
+tools:ReclassByASCIIFile_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Reclass By ASCIIFile" .
+
+tools:ReclassByTable_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Reclass By Table" .
+
+tools:ReclassByTable_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Reclass By Table" .
+
+tools:Reclassify_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Reclassify" .
+
+tools:Reclassify_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Reclassify" .
+
+tools:ReconcileVersions_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Reconcile Versions" .
+
+tools:RecoverFileGDB_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Recover File GDB" .
+
+tools:RegionClass_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Region Class" .
+
+tools:RegionGroup_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Region Group" .
+
+tools:RegionPoly_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Region Poly" .
+
+tools:RegisterAsVersioned_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Register As Versioned" .
+
+tools:RegisterRaster_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Register Raster" .
+
+tools:RegisterWithGeodatabase_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Register With Geodatabase" .
+
+tools:RematchAddresses_geocoding a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geocoding%20Tools%28geocoding%29> ;
+    foaf:name "Rematch Addresses" .
+
+tools:RemoveAttachments_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Remove Attachments" .
+
+tools:RemoveConnectivityRuleFromGeometricNetwork_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Remove Connectivity Rule From Geometric Network" .
+
+tools:RemoveDomainFromField_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Remove Domain From Field" .
+
+tools:RemoveEmptyFeatureClassFromGeometricNetwork_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Remove Empty Feature Class From Geometric Network" .
+
+tools:RemoveFeatureClassFromTerrain_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Remove Feature Class From Terrain" .
+
+tools:RemoveFeatureClassFromTopology_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Remove Feature Class From Topology" .
+
+tools:RemoveFieldConflictFilter_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Remove Field Conflict Filter" .
+
+tools:RemoveFilesFromLasDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Remove Files From Las Dataset" .
+
+tools:RemoveIndex_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Remove Index" .
+
+tools:RemoveJoin_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Remove Join" .
+
+tools:RemoveOverride_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Remove Override" .
+
+tools:RemoveRastersFromMosaicDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Remove Rasters From Mosaic Dataset" .
+
+tools:RemoveRuleFromTopology_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Remove Rule From Topology" .
+
+tools:RemoveSpatialIndex_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Remove Spatial Index" .
+
+tools:RemoveSubtype_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Remove Subtype" .
+
+tools:RemoveTerrainPyramidLevel_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Remove Terrain Pyramid Level" .
+
+tools:Rename_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Rename" .
+
+tools:Renode_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Renode" .
+
+tools:RepairGeometry_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Repair Geometry" .
+
+tools:RepairMosaicDatasetPaths_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Repair Mosaic Dataset Paths" .
+
+tools:RepairRasterCatalogPaths_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Repair Raster Catalog Paths" .
+
+tools:RepairVersionMetadata_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Repair Version Metadata" .
+
+tools:RepairVersionTables_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Repair Version Tables" .
+
+tools:ReplaceTerrainPoints_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Replace Terrain Points" .
+
+tools:Resample_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Resample" .
+
+tools:RescaleByFunction_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Rescale By Function" .
+
+tools:Rescale_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Rescale" .
+
+tools:Reselect_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Reselect" .
+
+tools:ResolveBuildingConflicts_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Resolve Building Conflicts" .
+
+tools:ResolveRoadConflicts_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Resolve Road Conflicts" .
+
+tools:ReverseGeocode_geocoding a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geocoding%20Tools%28geocoding%29> ;
+    foaf:name "Reverse Geocode" .
+
+tools:Rotate_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Rotate" .
+
+tools:RoundDown_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Round Down" .
+
+tools:RoundUp_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Round Up" .
+
+tools:RubbersheetFeatures_edit a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Editing%20Tools%28edit%29> ;
+    foaf:name "Rubbersheet Features" .
+
+tools:S57Arc_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "S57 Arc" .
+
+tools:SDTSExport_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "SDTSExport" .
+
+tools:SDTSImport_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "SDTSImport" .
+
+tools:Sample_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Sample" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Samples%28samples%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Samples(samples)" .
+
+tools:SaveGraph_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Save Graph" .
+
+tools:SaveToLayerFile_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Save To Layer File" .
+
+tools:SegmentMeanShift_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Segment Mean Shift" .
+
+tools:SelectByDimension_md a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Multidimension%20Tools%28md%29> ;
+    foaf:name "Select By Dimension" .
+
+tools:SelectData_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Select Data" .
+
+tools:SelectFeatureByOverride_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Select Feature By Override" .
+
+tools:SelectLayerByAttribute_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Select Layer By Attribute" .
+
+tools:SelectLayerByLocation_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Select Layer By Location" .
+
+tools:Select_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Select" .
+
+tools:SendEmailWithZipFileAttachment_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Send Email With Zip File Attachment" .
+
+tools:SetClusterTolerance_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Set Cluster Tolerance" .
+
+tools:SetDefaultSubtype_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Set Default Subtype" .
+
+tools:SetFlowDirection_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Set Flow Direction" .
+
+tools:SetLasClassCodesUsingFeatures_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Set Las Class Codes Using Features" .
+
+tools:SetLayerRepresentation_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Set Layer Representation" .
+
+tools:SetMosaicDatasetProperties_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Set Mosaic Dataset Properties" .
+
+tools:SetNull_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Set Null" .
+
+tools:SetRasterProperties_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Set Raster Properties" .
+
+tools:SetRepresentationControlPointAtIntersect_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Set Representation Control Point At Intersect" .
+
+tools:SetRepresentationControlPointByAngle_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Set Representation Control Point By Angle" .
+
+tools:SetSubtypeField_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Set Subtype Field" .
+
+tools:SetValueForRangeDomain_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Set Value For Range Domain" .
+
+tools:SharePackage_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Share Package" .
+
+tools:Shift_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Shift" .
+
+tools:Shrink_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Shrink" .
+
+tools:SignInToPortal_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Sign In To Portal" .
+
+tools:SignOutFromPortal_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Sign Out From Portal" .
+
+tools:SimilaritySearch_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Similarity Search" .
+
+tools:SimplifyBuilding_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Simplify Building" .
+
+tools:SimplifyBuilding_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Simplify Building" .
+
+tools:SimplifyLineOrPolygon_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Simplify Line Or Polygon" .
+
+tools:SimplifyLine_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Simplify Line" .
+
+tools:SimplifyPolygon_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Simplify Polygon" .
+
+tools:SinH_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Sin H" .
+
+tools:Sin_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Sin" .
+
+tools:Sink_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Sink" .
+
+tools:SkylineBarrier_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Skyline Barrier" .
+
+tools:SkylineGraph_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Skyline Graph" .
+
+tools:Skyline_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Skyline" .
+
+tools:Slice_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Slice" .
+
+tools:Slice_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Slice" .
+
+tools:Slope_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Slope" .
+
+tools:Slope_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Slope" .
+
+tools:SmoothLine_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Smooth Line" .
+
+tools:SmoothPolygon_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Smooth Polygon" .
+
+tools:SnapPourPoint_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Snap Pour Point" .
+
+tools:Snap_edit a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Editing%20Tools%28edit%29> ;
+    foaf:name "Snap" .
+
+tools:SolarRadiationGraphics_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Solar Radiation Graphics" .
+
+tools:SolveLocationAllocation_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Solve Location Allocation" .
+
+tools:SolveVehicleRoutingProblem_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Solve Vehicle Routing Problem" .
+
+tools:Solve_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Solve" .
+
+tools:SortCodedValueDomain_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Sort Coded Value Domain" .
+
+tools:Sort_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Sort" .
+
+tools:SpatialAutocorrelation_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Spatial Autocorrelation" .
+
+tools:SpatialJoin_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Spatial Join" .
+
+tools:SplineWithBarriers_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Spline With Barriers" .
+
+tools:SplineWithBarriers_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Spline With Barriers" .
+
+tools:Spline_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Spline" .
+
+tools:Spline_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Spline" .
+
+tools:SplitLineAtPoint_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Split Line At Point" .
+
+tools:SplitLine_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Split Line" .
+
+tools:SplitMosaicDatasetItems_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Split Mosaic Dataset Items" .
+
+tools:SplitRaster_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Split Raster" .
+
+tools:Split_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Split" .
+
+tools:Split_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Split" .
+
+tools:SquareRoot_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Square Root" .
+
+tools:Square_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Square" .
+
+tools:StackProfile_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Stack Profile" .
+
+tools:StageService_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Stage Service" .
+
+tools:StandardDistance_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "Standard Distance" .
+
+tools:StandardizeAddresses_geocoding a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geocoding%20Tools%28geocoding%29> ;
+    foaf:name "Standardize Addresses" .
+
+tools:Statistics_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Statistics" .
+
+tools:StreamLink_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Stream Link" .
+
+tools:StreamOrder_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Stream Order" .
+
+tools:StreamToFeature_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Stream To Feature" .
+
+tools:StripMapIndexFeatures_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Strip Map Index Features" .
+
+tools:SubsetFeatures_ga a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> ;
+    foaf:name "Subset Features" .
+
+tools:SunShadowVolume_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Sun Shadow Volume" .
+
+tools:SurfaceAspect_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Surface Aspect" .
+
+tools:SurfaceContour_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Surface Contour" .
+
+tools:SurfaceDifference_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Surface Difference" .
+
+tools:SurfaceSlope_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Surface Slope" .
+
+tools:SurfaceVolume_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Surface Volume" .
+
+tools:SymDiff_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Sym Diff" .
+
+tools:SynchronizeChanges_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Synchronize Changes" .
+
+tools:SynchronizeMetadata_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Synchronize Metadata" .
+
+tools:SynchronizeMosaicDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Synchronize Mosaic Dataset" .
+
+tools:TINCompare_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "TINCompare" .
+
+tools:TableCompare_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Table Compare" .
+
+tools:TableSelect_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Table Select" .
+
+tools:TableToDBASE_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Table To DBASE" .
+
+tools:TableToDomain_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Table To Domain" .
+
+tools:TableToEllipse_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Table To Ellipse" .
+
+tools:TableToExcel_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Table To Excel" .
+
+tools:TableToGeodatabase_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Table To Geodatabase" .
+
+tools:TableToNetCDF_md a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Multidimension%20Tools%28md%29> ;
+    foaf:name "Table To Net CDF" .
+
+tools:TableToRelationshipClass_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Table To Relationship Class" .
+
+tools:TableToTable_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Table To Table" .
+
+tools:TabulateArea_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Tabulate Area" .
+
+tools:TabulateIntersection_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Tabulate Intersection" .
+
+tools:TanH_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Tan H" .
+
+tools:Tan_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Tan" .
+
+tools:TerrainToPoints_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Terrain To Points" .
+
+tools:TerrainToRaster_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Terrain To Raster" .
+
+tools:TerrainToTin_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Terrain To Tin" .
+
+tools:Test_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Test" .
+
+tools:Thiessen_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Thiessen" .
+
+tools:ThinRoadNetwork_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Thin Road Network" .
+
+tools:Thin_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Thin" .
+
+tools:TigerArc_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Tiger Arc" .
+
+tools:TigerTool_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Tiger Tool" .
+
+tools:TiledLabelsToAnnotation_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Tiled Labels To Annotation" .
+
+tools:Times_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Times" .
+
+tools:Times_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Times" .
+
+tools:TinDomain_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Tin Domain" .
+
+tools:TinEdge_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Tin Edge" .
+
+tools:TinLine_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Tin Line" .
+
+tools:TinNode_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Tin Node" .
+
+tools:TinPolygonTag_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Tin Polygon Tag" .
+
+tools:TinRaster_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Tin Raster" .
+
+tools:TinTriangle_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Tin Triangle" .
+
+tools:Tolerance_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Tolerance" .
+
+tools:TopoToRasterByFile_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Topo To Raster By File" .
+
+tools:TopoToRasterByFile_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Topo To Raster By File" .
+
+tools:TopoToRaster_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Topo To Raster" .
+
+tools:TopoToRaster_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Topo To Raster" .
+
+tools:TraceGeometricNetwork_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Trace Geometric Network" .
+
+tools:TrackIntervalsToFeature_ta a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tracking%20Analyst%20Tools%28ta%29> ;
+    foaf:name "Track Intervals To Feature" .
+
+tools:TrackIntervalsToLine_ta a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Tracking%20Analyst%20Tools%28ta%29> ;
+    foaf:name "Track Intervals To Line" .
+
+tools:TrainIsoClusterClassifier_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Train Iso Cluster Classifier" .
+
+tools:TrainMaximumLikelihoodClassifier_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Train Maximum Likelihood Classifier" .
+
+tools:TrainSupportVectorMachineClassifier_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Train Support Vector Machine Classifier" .
+
+tools:TransferAttributes_edit a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Editing%20Tools%28edit%29> ;
+    foaf:name "Transfer Attributes" .
+
+tools:TransformRouteEvents_lr a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Linear%20Referencing%20Tools%28lr%29> ;
+    foaf:name "Transform Route Events" .
+
+tools:Transform_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Transform" .
+
+tools:TransposeFields_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Transpose Fields" .
+
+tools:Trend_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Trend" .
+
+tools:Trend_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Trend" .
+
+tools:TrimLine_edit a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Editing%20Tools%28edit%29> ;
+    foaf:name "Trim Line" .
+
+tools:TruncateTable_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Truncate Table" .
+
+tools:TurnTableToTurnFeatureClass_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Turn Table To Turn Feature Class" .
+
+tools:USGSMPTranslator_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "USGSMPTranslator" .
+
+tools:UncompressFileGeodatabaseData_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Uncompress File Geodatabase Data" .
+
+tools:Ungenerate_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Ungenerate" .
+
+tools:Union3D_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Union3 D" .
+
+tools:Union_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Union" .
+
+tools:Union_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Union" .
+
+tools:UnregisterAsVersioned_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Unregister As Versioned" .
+
+tools:UnsplitLine_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Unsplit Line" .
+
+tools:UpdateAnalysisLayerAttributeParameter_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Update Analysis Layer Attribute Parameter" .
+
+tools:UpdateAnnotation_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Update Annotation" .
+
+tools:UpdateByAlternateIDFields_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Update By Alternate IDFields" .
+
+tools:UpdateByGeometry_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Update By Geometry" .
+
+tools:UpdateDiagram_schematics a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Schematics%20Tools%28schematics%29> ;
+    foaf:name "Update Diagram" .
+
+tools:UpdateDiagrams_schematics a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Schematics%20Tools%28schematics%29> ;
+    foaf:name "Update Diagrams" .
+
+tools:UpdateOverride_cartography a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> ;
+    foaf:name "Update Override" .
+
+tools:UpdateTrafficData_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Update Traffic Data" .
+
+tools:UpdateTrafficIncidents_na a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:name "Update Traffic Incidents" .
+
+tools:Update_analysis a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:name "Update" .
+
+tools:Update_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "Update" .
+
+tools:UpgradeDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Upgrade Dataset" .
+
+tools:UpgradeGDB_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Upgrade GDB" .
+
+tools:UpgradeMapServerCacheStorageFormat_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Upgrade Map Server Cache Storage Format" .
+
+tools:UpgradeMetadata_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Upgrade Metadata" .
+
+tools:UpgradeSpatialReference_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Upgrade Spatial Reference" .
+
+tools:UploadServiceDefinition_server a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:name "Upload Service Definition" .
+
+tools:VPFExport_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "VPFExport" .
+
+tools:VPFImport_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "VPFImport" .
+
+tools:VPFTile_arc a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> ;
+    foaf:name "VPFTile" .
+
+tools:ValidateMetadataMultiple_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Validate Metadata Multiple" .
+
+tools:ValidateMetadata_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "Validate Metadata" .
+
+tools:ValidateTopology_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Validate Topology" .
+
+tools:VerifyAndRepairGeometricNetworkConnectivity_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Verify And Repair Geometric Network Connectivity" .
+
+tools:Viewshed2_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Viewshed2" .
+
+tools:Viewshed2_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Viewshed2" .
+
+tools:Viewshed_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Viewshed" .
+
+tools:Viewshed_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Viewshed" .
+
+tools:Visibility_3d a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:name "Visibility" .
+
+tools:Visibility_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Visibility" .
+
+tools:WFSToFeatureClass_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "WFSTo Feature Class" .
+
+tools:WarpFromFile_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Warp From File" .
+
+tools:Warp_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Warp" .
+
+tools:Watershed_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Watershed" .
+
+tools:WeightedOverlay_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Weighted Overlay" .
+
+tools:WeightedSum_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Weighted Sum" .
+
+tools:WorkspaceToRasterCatalog_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Workspace To Raster Catalog" .
+
+tools:WorkspaceToRasterDataset_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "Workspace To Raster Dataset" .
+
+tools:XMLSchemaValidator_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "XMLSchema Validator" .
+
+tools:XSLTransform_conversion a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:name "XSLTransform" .
+
+tools:XYToLine_management a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:name "XYTo Line" .
+
+tools:ZRenderer_stats a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> ;
+    foaf:name "ZRenderer" .
+
+tools:ZonalFill_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Zonal Fill" .
+
+tools:ZonalGeometryAsTable_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Zonal Geometry As Table" .
+
+tools:ZonalGeometry_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Zonal Geometry" .
+
+tools:ZonalHistogram_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Zonal Histogram" .
+
+tools:ZonalStatisticsAsTable_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Zonal Statistics As Table" .
+
+tools:ZonalStatistics_sa a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:name "Zonal Statistics" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Interoperability%20Tools%28interop%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Data Interoperability Tools(interop)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Space%20Time%20Pattern%20Mining%20Tools%28stpm%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Space Time Pattern Mining Tools(stpm)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Tracking%20Analyst%20Tools%28ta%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Tracking Analyst Tools(ta)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Parcel%20Fabric%20Tools%28fabric%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Parcel Fabric Tools(fabric)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Schematics%20Tools%28schematics%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Schematics Tools(schematics)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Geocoding%20Tools%28geocoding%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Geocoding Tools(geocoding)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Linear%20Referencing%20Tools%28lr%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Linear Referencing Tools(lr)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Multidimension%20Tools%28md%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Multidimension Tools(md)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Editing%20Tools%28edit%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Editing Tools(edit)" .
+
+dbp:ArcGIS a dbo:Software ;
+    dbo:developer dbp:Esri ;
+    foaf:homepage <http://www.esri.com/software/arcgis> ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/ArcGIS> ;
+    foaf:name "ArcGIS" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Analysis Tools(analysis)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Server Tools(server)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Geostatistical Analyst Tools(ga)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Network Analyst Tools(na)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Statistics%20Tools%28stats%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Spatial Statistics Tools(stats)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Cartography Tools(cartography)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Conversion Tools(conversion)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Coverage_Tools%28arc%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Coverage_Tools(arc)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "3D Analyst Tools(3d)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Spatial Analyst Tools(sa)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> a gis:Toolbox ;
+    dct:isPartOf dbp:ArcGIS ;
+    foaf:name "Data Management Tools(management)" .
+
