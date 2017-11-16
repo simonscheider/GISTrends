@@ -421,7 +421,7 @@ def readtoolpages(toolpf):
                         mytool = (t.split('_')[0].strip())
                         if mytool == tooln.strip():
                             print mytool +' : '+tooln
-                            output[t]={'website':website,'toolbox':k}
+                            output[t]={'website':website,'toolbox':k, 'pagename':pagename}
                             break
                     break
 
