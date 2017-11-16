@@ -114,45 +114,6 @@ class GatherTools():
         return time.mean()
 
 
-def getGISSoftwareList():
-    #results = rdflib.Graph()
-    results = {}
-    #from rdflib import Namespace
-    #dbo = Namespace("http://dbpedia.org/ontology/")
-    WIKI_URL = "https://en.wikipedia.org/wiki/Comparison_of_geographic_information_systems_software"
-    req = requests.get(WIKI_URL)
-    soup = BeautifulSoup(req.content, 'lxml')
-    table_classes = {"class": ["sortable", "plainrowheaders"]}
-    wikitables = soup.findAll("table", table_classes)
-    for table in wikitables:
-        for row in table.findAll("tr"):
-            cells = row.findAll(["th", "td"])
-            for url in cells[0].findAll('a', href=True):
-                name = url.getText()
-                dom = url.get('href').split("/")[-1]
-                dbp= urllib.basejoin('http://dbpedia.org/resource/',dom)
-                wkp= urllib.basejoin('https://en.wikipedia.org/wiki/',dom)
-                r = getDBpediaCompany(dbp)
-                comp = []
-                for f in r['results']['bindings']:
-                    comp.append(f['f']['value'])
-                results[dbp]={'website': wkp, 'name':name, 'companies':comp}
-
-    outf = 'GISSoftdict.json'
-
-    with open(outf, 'w') as fp:
-        json.dump(results, fp)
-    fp.close
-    return outf
-                #c= getDBpediaCompany(dbp)
-                #print c
-                #results.add((dbp,dbo.developer, c))
-    #print results.serialize(format='turtle')
-
-
-
-
-
 
 def getDBpediaCompany(url):
     sparql = SPARQLWrapper("http://dbpedia.org/sparql")
@@ -263,6 +224,42 @@ def visualize(resultdump, twolayered =True, index ='ArcGIS Tools'):
 
 ################gather tools and software
 
+def getGISSoftwareList():
+    #results = rdflib.Graph()
+    results = {}
+    #from rdflib import Namespace
+    #dbo = Namespace("http://dbpedia.org/ontology/")
+    WIKI_URL = "https://en.wikipedia.org/wiki/Comparison_of_geographic_information_systems_software"
+    req = requests.get(WIKI_URL)
+    soup = BeautifulSoup(req.content, 'lxml')
+    table_classes = {"class": ["sortable", "plainrowheaders"]}
+    wikitables = soup.findAll("table", table_classes)
+    for table in wikitables:
+        for row in table.findAll("tr"):
+            cells = row.findAll(["th", "td"])
+            for url in cells[0].findAll('a', href=True):
+                name = url.getText()
+                dom = url.get('href').split("/")[-1]
+                dbp= urllib.basejoin('http://dbpedia.org/resource/',dom)
+                wkp= urllib.basejoin('https://en.wikipedia.org/wiki/',dom)
+                r = getDBpediaCompany(dbp)
+                comp = []
+                for f in r['results']['bindings']:
+                    comp.append(f['f']['value'])
+                results[dbp]={'website': wkp, 'name':name, 'companies':comp}
+
+    outf = 'GISSoftdict.json'
+
+    with open(outf, 'w') as fp:
+        json.dump(results, fp)
+    fp.close
+    return outf
+                #c= getDBpediaCompany(dbp)
+                #print c
+                #results.add((dbp,dbo.developer, c))
+    #print results.serialize(format='turtle')
+
+
 def buildArcToolList():
     print ('Number of Tools '+str(len(arcpy.ListTools())))
     toolboxes = arcpy.ListToolboxes()
@@ -281,6 +278,27 @@ def buildArcToolList():
     return outf
 
 
+def buildGRASSToolList(outf):
+    results = {}
+    WIKI_URL = "https://grass.osgeo.org/grass72/manuals/keywords.html"
+    req = requests.get(WIKI_URL)
+    soup = BeautifulSoup(req.content, 'lxml')
+    wikitables = soup.findAll("dl")
+    #print wikitables
+    for table in wikitables:
+        for cat in table.findAll("dt"):
+            catname = cat.find('a').get('name') #This is a toolbox
+            tools = []
+            for url in cat.find_next_sibling('dd').findAll('a', href=True):
+                tool = 'https://grass.osgeo.org/grass72/manuals/'+url.getText()
+                tools.append(tool)
+            results[catname]=tools
+    with open(outf, 'w') as fp:
+        json.dump(results, fp)
+    fp.close
+    return outf
+
+
 
 
 def normalizeArcpyToolString(tool):
@@ -289,9 +307,12 @@ def normalizeArcpyToolString(tool):
         return ' '.join(re.findall('[A-Z][A-Z]*[a-z]*[0-9]*', tool.partition('_')[0]))
 
 
+def normalizeGRASSToolString(tool):
+    return tool.split("/")[-1]
 
 
-def generateRDF(outf, softuri, tooldictf, softdictf=None):
+
+def generateRDF(outf, softuri, tooldictf, softdictf=None, tooluris = True, normalize=normalizeArcpyToolString):
     from rdflib import URIRef, BNode, Literal, Namespace, Graph
     from rdflib.namespace import RDF, FOAF, RDFS
 
@@ -317,13 +338,14 @@ def generateRDF(outf, softuri, tooldictf, softdictf=None):
             if 'name' in v.keys():      g.add((URIRef(software), FOAF['name'], Literal(v['name'])))
             if 'website' in v.keys():   g.add((URIRef(software),FOAF['isPrimaryTopicOf'], URIRef(v['website'])))
             if v['companies']!= []:     g.add((URIRef(software), dbo.developer, URIRef(v['companies'][0])))
+        w = getWebsite(softwarelist)
+        if w != []:
+            for ww in w:
+                g.add((URIRef(ww[1]),FOAF['homepage'],URIRef(ww[0])))
     else: #there is already some software tools, then load them
         g.parse(outf, format='turtle')
 
-    w = getWebsite(softwarelist)
-    if w != []:
-        for ww in w:
-            g.add((URIRef(ww[1]),FOAF['homepage'],URIRef(ww[0])))
+
 
     #Now add the tools of some software softuri
     if URIRef(softuri) in g.all_nodes():
@@ -333,9 +355,10 @@ def generateRDF(outf, softuri, tooldictf, softdictf=None):
             g.add((tools[tb], dct.isPartOf, URIRef(softuri)))
             g.add((tools[tb], FOAF.name, Literal(toolbox)))
             for t in toollist:
-                g.add((tools[t], RDF.type, gis.Tool))
-                g.add((tools[t], dct.isPartOf, tools[tb]))
-                g.add((tools[t], FOAF.name, Literal(normalizeArcpyToolString(t))))
+                toolst = (URIRef(t) if tooluris else tools[t])
+                g.add((toolst, RDF.type, gis.Tool))
+                g.add((toolst, dct.isPartOf, tools[tb]))
+                g.add((toolst, FOAF.name, Literal(normalize(t))))
 
     g.bind('dbo', URIRef("http://dbpedia.org/ontology/"))
     g.bind('dbp', URIRef("http://dbpedia.org/resource/"))
@@ -386,23 +409,16 @@ def main():
     #td = readToolBoxes('ArcGISTooldict.json', ['Spatial Analyst Tools(sa)','Conversion Tools(conversion)','Analysis Tools(analysis)'])
     #res = getTrends4Tools(td,'ArcGIS')
     #visualize('GTresults_kwArcGIS.json')
-    #kw_list=['ArcGIS', 'GRASS GIS', 'QGIS', 'R studio', 'Interpolation']#'MapInfo']'ILWIS'
-    #kw_list = ['ArcMap','Extract by Mask', 'Set Null', 'IDW', 'Raster calculator']#['zonal', 'areal interpolation', 'raster calculator', 'ArcGIS' ]
+
 
     #getGISSoftwareList()
     #sd = readSoft('GISSoftdict.json')
     #getTrends4Soft(sd, 'ArcGIS')
     #visualize('Softresults_kwArcGIS.json', twolayered=False, index='GIS Software')
-##    with open('spatialanalysttools.csv', 'rb') as csvfile:
-##        spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
-##        i =0
-##        for row in spamreader:
-##            #print row[0]
-##            #kw_list.append(row[1])
-##            i+=1
-##            if i ==4: break
+    generateRDF('GISTools.ttl','http://dbpedia.org/resource/ArcGIS','ArcGISTooldict.json','GISSoftdict.json', tooluris=False) #a gis:Toolbox
 
-    generateRDF('GISTools.ttl','http://dbpedia.org/resource/ArcGIS','ArcGISTooldict.json','GISSoftdict.json') #a gis:Toolbox
+    #buildGRASSToolList('GRASSTooldict.json')
+    generateRDF('GISTools.ttl','http://dbpedia.org/resource/GRASS','GRASSTooldict.json',tooluris=True, normalize=normalizeGRASSToolString)
 
 
 

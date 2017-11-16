@@ -42,10 +42,6 @@ dbp:Erdas_Imagine a dbo:Software ;
     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Erdas_Imagine> ;
     foaf:name "Erdas Imagine" .
 
-dbp:GRASS a dbo:Software ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/GRASS> ;
-    foaf:name "GRASS GIS" .
-
 <http://dbpedia.org/resource/GeoBase_(Telogis_GIS_software)> a dbo:Software ;
     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/GeoBase_(Telogis_GIS_software)> ;
     foaf:name "GeoBase" .
@@ -3945,25 +3941,3889 @@ tools:ZonalStatistics_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
     foaf:name "Zonal Statistics" .
 
+<https://grass.osgeo.org/grass72/manuals/d.barscale> a gis:Tool ;
+    dct:isPartOf tools:cartography ;
+    foaf:name "d.barscale" .
+
+<https://grass.osgeo.org/grass72/manuals/d.colorlist> a gis:Tool ;
+    dct:isPartOf tools:colors,
+        tools:settings ;
+    foaf:name "d.colorlist" .
+
+<https://grass.osgeo.org/grass72/manuals/d.colortable> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#color%20table> ;
+    foaf:name "d.colortable" .
+
+<https://grass.osgeo.org/grass72/manuals/d.correlate> a gis:Tool ;
+    dct:isPartOf tools:correlation,
+        tools:diagram,
+        tools:statistics ;
+    foaf:name "d.correlate" .
+
+<https://grass.osgeo.org/grass72/manuals/d.erase> a gis:Tool ;
+    dct:isPartOf tools:graphics,
+        tools:monitors ;
+    foaf:name "d.erase" .
+
+<https://grass.osgeo.org/grass72/manuals/d.font> a gis:Tool ;
+    dct:isPartOf tools:settings ;
+    foaf:name "d.font" .
+
+<https://grass.osgeo.org/grass72/manuals/d.fontlist> a gis:Tool ;
+    dct:isPartOf tools:settings ;
+    foaf:name "d.fontlist" .
+
+<https://grass.osgeo.org/grass72/manuals/d.frame> a gis:Tool ;
+    dct:isPartOf tools:frame,
+        tools:graphics,
+        tools:monitors ;
+    foaf:name "d.frame" .
+
+<https://grass.osgeo.org/grass72/manuals/d.geodesic> a gis:Tool ;
+    dct:isPartOf tools:distance,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#great%20circle>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#shortest%20path> ;
+    foaf:name "d.geodesic" .
+
+<https://grass.osgeo.org/grass72/manuals/d.graph> a gis:Tool ;
+    dct:isPartOf tools:cartography ;
+    foaf:name "d.graph" .
+
+<https://grass.osgeo.org/grass72/manuals/d.grid> a gis:Tool ;
+    dct:isPartOf tools:cartography,
+        tools:graticule,
+        tools:grid ;
+    foaf:name "d.grid" .
+
+<https://grass.osgeo.org/grass72/manuals/d.his> a gis:Tool ;
+    dct:isPartOf tools:HIS,
+        tools:IHS,
+        tools:RGB,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#color%20transformation>,
+        tools:graphics ;
+    foaf:name "d.his" .
+
+<https://grass.osgeo.org/grass72/manuals/d.histogram> a gis:Tool ;
+    dct:isPartOf tools:histogram,
+        tools:statistics ;
+    foaf:name "d.histogram" .
+
+<https://grass.osgeo.org/grass72/manuals/d.info> a gis:Tool ;
+    dct:isPartOf tools:graphics,
+        tools:monitors ;
+    foaf:name "d.info" .
+
+<https://grass.osgeo.org/grass72/manuals/d.labels> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#paint%20labels> ;
+    foaf:name "d.labels" .
+
+<https://grass.osgeo.org/grass72/manuals/d.legend> a gis:Tool ;
+    dct:isPartOf tools:cartography,
+        tools:legend ;
+    foaf:name "d.legend" .
+
+<https://grass.osgeo.org/grass72/manuals/d.legend.vect> a gis:Tool ;
+    dct:isPartOf tools:cartography,
+        tools:legend ;
+    foaf:name "d.legend.vect" .
+
+<https://grass.osgeo.org/grass72/manuals/d.linegraph> a gis:Tool ;
+    dct:isPartOf tools:cartography ;
+    foaf:name "d.linegraph" .
+
+<https://grass.osgeo.org/grass72/manuals/d.mon> a gis:Tool ;
+    dct:isPartOf tools:graphics,
+        tools:monitors ;
+    foaf:name "d.mon" .
+
+<https://grass.osgeo.org/grass72/manuals/d.northarrow> a gis:Tool ;
+    dct:isPartOf tools:cartography ;
+    foaf:name "d.northarrow" .
+
+<https://grass.osgeo.org/grass72/manuals/d.out.file> a gis:Tool ;
+    dct:isPartOf tools:export ;
+    foaf:name "d.out.file" .
+
+<https://grass.osgeo.org/grass72/manuals/d.path> a gis:Tool ;
+    dct:isPartOf tools:network,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#shortest%20path> ;
+    foaf:name "d.path" .
+
+<https://grass.osgeo.org/grass72/manuals/d.polar> a gis:Tool ;
+    dct:isPartOf tools:diagram ;
+    foaf:name "d.polar" .
+
+<https://grass.osgeo.org/grass72/manuals/d.profile> a gis:Tool ;
+    dct:isPartOf tools:profile ;
+    foaf:name "d.profile" .
+
+<https://grass.osgeo.org/grass72/manuals/d.rast> a gis:Tool ;
+    dct:isPartOf tools:graphics ;
+    foaf:name "d.rast" .
+
+<https://grass.osgeo.org/grass72/manuals/d.rast.arrow> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#map%20annotations> ;
+    foaf:name "d.rast.arrow" .
+
+<https://grass.osgeo.org/grass72/manuals/d.rast.edit> a gis:Tool ;
+    dct:isPartOf tools:editing ;
+    foaf:name "d.rast.edit" .
+
+<https://grass.osgeo.org/grass72/manuals/d.rast.leg> a gis:Tool ;
+    dct:isPartOf tools:cartography,
+        tools:legend ;
+    foaf:name "d.rast.leg" .
+
+<https://grass.osgeo.org/grass72/manuals/d.rast.num> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#map%20annotations> ;
+    foaf:name "d.rast.num" .
+
+<https://grass.osgeo.org/grass72/manuals/d.redraw> a gis:Tool ;
+    dct:isPartOf tools:graphics,
+        tools:monitors ;
+    foaf:name "d.redraw" .
+
+<https://grass.osgeo.org/grass72/manuals/d.rgb> a gis:Tool ;
+    dct:isPartOf tools:RGB,
+        tools:graphics ;
+    foaf:name "d.rgb" .
+
+<https://grass.osgeo.org/grass72/manuals/d.rhumbline> a gis:Tool ;
+    dct:isPartOf tools:distance,
+        tools:rhumbline ;
+    foaf:name "d.rhumbline" .
+
+<https://grass.osgeo.org/grass72/manuals/d.shade> a gis:Tool ;
+    dct:isPartOf tools:elevation,
+        tools:hillshade,
+        tools:relief,
+        tools:visualization ;
+    foaf:name "d.shade" .
+
+<https://grass.osgeo.org/grass72/manuals/d.text> a gis:Tool ;
+    dct:isPartOf tools:cartography ;
+    foaf:name "d.text" .
+
+<https://grass.osgeo.org/grass72/manuals/d.title> a gis:Tool ;
+    dct:isPartOf tools:cartography ;
+    foaf:name "d.title" .
+
+<https://grass.osgeo.org/grass72/manuals/d.to.rast> a gis:Tool ;
+    dct:isPartOf tools:export ;
+    foaf:name "d.to.rast" .
+
+<https://grass.osgeo.org/grass72/manuals/d.vect> a gis:Tool ;
+    dct:isPartOf tools:graphics,
+        tools:level1 ;
+    foaf:name "d.vect" .
+
+<https://grass.osgeo.org/grass72/manuals/d.vect.chart> a gis:Tool ;
+    dct:isPartOf tools:cartography,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#chart%20maps> ;
+    foaf:name "d.vect.chart" .
+
+<https://grass.osgeo.org/grass72/manuals/d.vect.thematic> a gis:Tool ;
+    dct:isPartOf tools:cartography,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#choropleth%20map>,
+        tools:legend ;
+    foaf:name "d.vect.thematic" .
+
+<https://grass.osgeo.org/grass72/manuals/d.where> a gis:Tool ;
+    dct:isPartOf tools:position,
+        tools:querying,
+        tools:sampling ;
+    foaf:name "d.where" .
+
+<https://grass.osgeo.org/grass72/manuals/db.columns> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "db.columns" .
+
+<https://grass.osgeo.org/grass72/manuals/db.connect> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#connection%20settings> ;
+    foaf:name "db.connect" .
+
+<https://grass.osgeo.org/grass72/manuals/db.copy> a gis:Tool ;
+    dct:isPartOf tools:SQL,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "db.copy" .
+
+<https://grass.osgeo.org/grass72/manuals/db.createdb> a gis:Tool ;
+    dct:isPartOf tools:SQL,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "db.createdb" .
+
+<https://grass.osgeo.org/grass72/manuals/db.databases> a gis:Tool ;
+    dct:isPartOf tools:SQL,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "db.databases" .
+
+<https://grass.osgeo.org/grass72/manuals/db.describe> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "db.describe" .
+
+<https://grass.osgeo.org/grass72/manuals/db.drivers> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#connection%20settings> ;
+    foaf:name "db.drivers" .
+
+<https://grass.osgeo.org/grass72/manuals/db.dropcolumn> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "db.dropcolumn" .
+
+<https://grass.osgeo.org/grass72/manuals/db.dropdb> a gis:Tool ;
+    dct:isPartOf tools:SQL,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "db.dropdb" .
+
+<https://grass.osgeo.org/grass72/manuals/db.droptable> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "db.droptable" .
+
+<https://grass.osgeo.org/grass72/manuals/db.execute> a gis:Tool ;
+    dct:isPartOf tools:SQL,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "db.execute" .
+
+<https://grass.osgeo.org/grass72/manuals/db.in.ogr> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table>,
+        tools:import ;
+    foaf:name "db.in.ogr" .
+
+<https://grass.osgeo.org/grass72/manuals/db.login> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#connection%20settings> ;
+    foaf:name "db.login" .
+
+<https://grass.osgeo.org/grass72/manuals/db.out.ogr> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table>,
+        tools:export ;
+    foaf:name "db.out.ogr" .
+
+<https://grass.osgeo.org/grass72/manuals/db.select> a gis:Tool ;
+    dct:isPartOf tools:SQL,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "db.select" .
+
+<https://grass.osgeo.org/grass72/manuals/db.tables> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "db.tables" .
+
+<https://grass.osgeo.org/grass72/manuals/db.test> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "db.test" .
+
+<https://grass.osgeo.org/grass72/manuals/db.univar> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table>,
+        tools:statistics ;
+    foaf:name "db.univar" .
+
+<https://grass.osgeo.org/grass72/manuals/g.access> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management>,
+        tools:permission ;
+    foaf:name "g.access" .
+
+<https://grass.osgeo.org/grass72/manuals/g.copy> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management> ;
+    foaf:name "g.copy" .
+
+<https://grass.osgeo.org/grass72/manuals/g.dirseps> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management>,
+        tools:scripts ;
+    foaf:name "g.dirseps" .
+
+<https://grass.osgeo.org/grass72/manuals/g.extension> a gis:Tool ;
+    dct:isPartOf tools:addons,
+        tools:download,
+        tools:extensions,
+        tools:installation ;
+    foaf:name "g.extension" .
+
+<https://grass.osgeo.org/grass72/manuals/g.extension.all> a gis:Tool ;
+    dct:isPartOf tools:extensions,
+        tools:installation ;
+    foaf:name "g.extension.all" .
+
+<https://grass.osgeo.org/grass72/manuals/g.filename> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management>,
+        tools:scripts ;
+    foaf:name "g.filename" .
+
+<https://grass.osgeo.org/grass72/manuals/g.findetc> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management>,
+        tools:scripts ;
+    foaf:name "g.findetc" .
+
+<https://grass.osgeo.org/grass72/manuals/g.findfile> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management>,
+        tools:scripts ;
+    foaf:name "g.findfile" .
+
+<https://grass.osgeo.org/grass72/manuals/g.gisenv> a gis:Tool ;
+    dct:isPartOf tools:scripts,
+        tools:settings,
+        tools:variables ;
+    foaf:name "g.gisenv" .
+
+<https://grass.osgeo.org/grass72/manuals/g.gui> a gis:Tool ;
+    dct:isPartOf tools:GUI,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#user%20interface> ;
+    foaf:name "g.gui" .
+
+<https://grass.osgeo.org/grass72/manuals/g.gui.animation> a gis:Tool ;
+    dct:isPartOf tools:GUI,
+        tools:animation ;
+    foaf:name "g.gui.animation" .
+
+<https://grass.osgeo.org/grass72/manuals/g.gui.datacatalog> a gis:Tool ;
+    dct:isPartOf tools:GUI,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management> ;
+    foaf:name "g.gui.datacatalog" .
+
+<https://grass.osgeo.org/grass72/manuals/g.gui.dbmgr> a gis:Tool ;
+    dct:isPartOf tools:GUI,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "g.gui.dbmgr" .
+
+<https://grass.osgeo.org/grass72/manuals/g.gui.gcp> a gis:Tool ;
+    dct:isPartOf tools:GCP,
+        tools:GUI,
+        tools:georectification ;
+    foaf:name "g.gui.gcp" .
+
+<https://grass.osgeo.org/grass72/manuals/g.gui.gmodeler> a gis:Tool ;
+    dct:isPartOf tools:GUI,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#graphical%20modeler>,
+        tools:workflow ;
+    foaf:name "g.gui.gmodeler" .
+
+<https://grass.osgeo.org/grass72/manuals/g.gui.iclass> a gis:Tool ;
+    dct:isPartOf tools:GUI,
+        tools:classification,
+        tools:signatures,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#supervised%20classification> ;
+    foaf:name "g.gui.iclass" .
+
+<https://grass.osgeo.org/grass72/manuals/g.gui.mapswipe> a gis:Tool ;
+    dct:isPartOf tools:GUI ;
+    foaf:name "g.gui.mapswipe" .
+
+<https://grass.osgeo.org/grass72/manuals/g.gui.psmap> a gis:Tool ;
+    dct:isPartOf tools:GUI,
+        tools:printing ;
+    foaf:name "g.gui.psmap" .
+
+<https://grass.osgeo.org/grass72/manuals/g.gui.rlisetup> a gis:Tool ;
+    dct:isPartOf tools:GUI,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis> ;
+    foaf:name "g.gui.rlisetup" .
+
+<https://grass.osgeo.org/grass72/manuals/g.gui.timeline> a gis:Tool ;
+    dct:isPartOf tools:GUI ;
+    foaf:name "g.gui.timeline" .
+
+<https://grass.osgeo.org/grass72/manuals/g.gui.tplot> a gis:Tool ;
+    dct:isPartOf tools:GUI ;
+    foaf:name "g.gui.tplot" .
+
+<https://grass.osgeo.org/grass72/manuals/g.gui.vdigit> a gis:Tool ;
+    dct:isPartOf tools:GUI,
+        tools:digitizer,
+        tools:editing ;
+    foaf:name "g.gui.vdigit" .
+
+<https://grass.osgeo.org/grass72/manuals/g.list> a gis:Tool ;
+    dct:isPartOf tools:list,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management> ;
+    foaf:name "g.list" .
+
+<https://grass.osgeo.org/grass72/manuals/g.manual> a gis:Tool ;
+    dct:isPartOf tools:help,
+        tools:manual ;
+    foaf:name "g.manual" .
+
+<https://grass.osgeo.org/grass72/manuals/g.mapset> a gis:Tool ;
+    dct:isPartOf tools:settings ;
+    foaf:name "g.mapset" .
+
+<https://grass.osgeo.org/grass72/manuals/g.mapsets> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#search%20path>,
+        tools:settings ;
+    foaf:name "g.mapsets" .
+
+<https://grass.osgeo.org/grass72/manuals/g.message> a gis:Tool ;
+    dct:isPartOf tools:scripts,
+        tools:support ;
+    foaf:name "g.message" .
+
+<https://grass.osgeo.org/grass72/manuals/g.proj> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#create%20location>,
+        tools:projection ;
+    foaf:name "g.proj" .
+
+<https://grass.osgeo.org/grass72/manuals/g.region> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#computational%20region>,
+        tools:extent,
+        tools:level1,
+        tools:resolution,
+        tools:settings ;
+    foaf:name "g.region" .
+
+<https://grass.osgeo.org/grass72/manuals/g.remove> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management>,
+        tools:remove ;
+    foaf:name "g.remove" .
+
+<https://grass.osgeo.org/grass72/manuals/g.rename> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management>,
+        tools:rename ;
+    foaf:name "g.rename" .
+
+<https://grass.osgeo.org/grass72/manuals/g.search.modules> a gis:Tool ;
+    dct:isPartOf tools:modules,
+        tools:search ;
+    foaf:name "g.search.modules" .
+
+<https://grass.osgeo.org/grass72/manuals/g.tempfile> a gis:Tool ;
+    dct:isPartOf tools:scripts,
+        tools:support ;
+    foaf:name "g.tempfile" .
+
+<https://grass.osgeo.org/grass72/manuals/g.version> a gis:Tool ;
+    dct:isPartOf tools:citing,
+        tools:copyright,
+        tools:license,
+        tools:support,
+        tools:version ;
+    foaf:name "g.version" .
+
+<https://grass.osgeo.org/grass72/manuals/i.albedo> a gis:Tool ;
+    dct:isPartOf tools:ASTER,
+        tools:AVHRR,
+        tools:Landsat,
+        tools:MODIS,
+        tools:albedo,
+        tools:reflectance,
+        tools:satellite ;
+    foaf:name "i.albedo" .
+
+<https://grass.osgeo.org/grass72/manuals/i.aster.toar> a gis:Tool ;
+    dct:isPartOf tools:ASTER,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#brightness%20temperature>,
+        tools:radiance,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#radiometric%20conversion>,
+        tools:reflectance,
+        tools:satellite ;
+    foaf:name "i.aster.toar" .
+
+<https://grass.osgeo.org/grass72/manuals/i.atcorr> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#atmospheric%20correction>,
+        tools:radiance,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#radiometric%20conversion>,
+        tools:reflectance,
+        tools:satellite ;
+    foaf:name "i.atcorr" .
+
+<https://grass.osgeo.org/grass72/manuals/i.biomass> a gis:Tool ;
+    dct:isPartOf tools:FPAR,
+        tools:biomass,
+        tools:yield ;
+    foaf:name "i.biomass" .
+
+<https://grass.osgeo.org/grass72/manuals/i.cca> a gis:Tool ;
+    dct:isPartOf tools:CCA,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#canonical%20components%20analysis>,
+        tools:statistics ;
+    foaf:name "i.cca" .
+
+<https://grass.osgeo.org/grass72/manuals/i.cluster> a gis:Tool ;
+    dct:isPartOf tools:classification,
+        tools:signatures ;
+    foaf:name "i.cluster" .
+
+<https://grass.osgeo.org/grass72/manuals/i.colors.enhance> a gis:Tool ;
+    dct:isPartOf tools:RGB,
+        tools:colors,
+        tools:satellite ;
+    foaf:name "i.colors.enhance" .
+
+<https://grass.osgeo.org/grass72/manuals/i.eb.eta> a gis:Tool ;
+    dct:isPartOf tools:SEBAL,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#actual%20evapotranspiration>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#energy%20balance> ;
+    foaf:name "i.eb.eta" .
+
+<https://grass.osgeo.org/grass72/manuals/i.eb.evapfr> a gis:Tool ;
+    dct:isPartOf tools:SEBAL,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#energy%20balance>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#evaporative%20fraction>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#soil%20moisture> ;
+    foaf:name "i.eb.evapfr" .
+
+<https://grass.osgeo.org/grass72/manuals/i.eb.hsebal01> a gis:Tool ;
+    dct:isPartOf tools:SEBAL,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#energy%20balance>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#evaporative%20fraction>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#soil%20moisture> ;
+    foaf:name "i.eb.hsebal01" .
+
+<https://grass.osgeo.org/grass72/manuals/i.eb.netrad> a gis:Tool ;
+    dct:isPartOf tools:SEBAL,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#energy%20balance>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#net%20radiation> ;
+    foaf:name "i.eb.netrad" .
+
+<https://grass.osgeo.org/grass72/manuals/i.eb.soilheatflux> a gis:Tool ;
+    dct:isPartOf tools:SEBAL,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#energy%20balance>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#soil%20heat%20flux> ;
+    foaf:name "i.eb.soilheatflux" .
+
+<https://grass.osgeo.org/grass72/manuals/i.emissivity> a gis:Tool ;
+    dct:isPartOf tools:emissivity,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#energy%20balance>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#land%20flux> ;
+    foaf:name "i.emissivity" .
+
+<https://grass.osgeo.org/grass72/manuals/i.evapo.mh> a gis:Tool ;
+    dct:isPartOf tools:evapotranspiration ;
+    foaf:name "i.evapo.mh" .
+
+<https://grass.osgeo.org/grass72/manuals/i.evapo.pm> a gis:Tool ;
+    dct:isPartOf tools:evapotranspiration ;
+    foaf:name "i.evapo.pm" .
+
+<https://grass.osgeo.org/grass72/manuals/i.evapo.pt> a gis:Tool ;
+    dct:isPartOf tools:evapotranspiration ;
+    foaf:name "i.evapo.pt" .
+
+<https://grass.osgeo.org/grass72/manuals/i.evapo.time> a gis:Tool ;
+    dct:isPartOf tools:evapotranspiration ;
+    foaf:name "i.evapo.time" .
+
+<https://grass.osgeo.org/grass72/manuals/i.fft> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Fast%20Fourier%20Transform>,
+        tools:transformation ;
+    foaf:name "i.fft" .
+
+<https://grass.osgeo.org/grass72/manuals/i.gensig> a gis:Tool ;
+    dct:isPartOf tools:MLC,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#Maximum%20Likelihood%20Classification>,
+        tools:classification,
+        tools:signatures,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#supervised%20classification> ;
+    foaf:name "i.gensig" .
+
+<https://grass.osgeo.org/grass72/manuals/i.gensigset> a gis:Tool ;
+    dct:isPartOf tools:SMAP,
+        tools:classification,
+        tools:signatures,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#supervised%20classification> ;
+    foaf:name "i.gensigset" .
+
+<https://grass.osgeo.org/grass72/manuals/i.group> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management> ;
+    foaf:name "i.group" .
+
+<https://grass.osgeo.org/grass72/manuals/i.his.rgb> a gis:Tool ;
+    dct:isPartOf tools:HIS,
+        tools:IHS,
+        tools:RGB,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#color%20transformation> ;
+    foaf:name "i.his.rgb" .
+
+<https://grass.osgeo.org/grass72/manuals/i.ifft> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Fast%20Fourier%20Transform>,
+        tools:transformation ;
+    foaf:name "i.ifft" .
+
+<https://grass.osgeo.org/grass72/manuals/i.image.mosaic> a gis:Tool ;
+    dct:isPartOf tools:geometry,
+        tools:mosaicking ;
+    foaf:name "i.image.mosaic" .
+
+<https://grass.osgeo.org/grass72/manuals/i.in.spotvgt> a gis:Tool ;
+    dct:isPartOf tools:NDVI,
+        tools:SPOT,
+        tools:import ;
+    foaf:name "i.in.spotvgt" .
+
+<https://grass.osgeo.org/grass72/manuals/i.landsat.acca> a gis:Tool ;
+    dct:isPartOf tools:ACCA,
+        tools:Landsat,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#cloud%20detection>,
+        tools:satellite ;
+    foaf:name "i.landsat.acca" .
+
+<https://grass.osgeo.org/grass72/manuals/i.landsat.toar> a gis:Tool ;
+    dct:isPartOf tools:Landsat,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#atmospheric%20correction>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#brightness%20temperature>,
+        tools:radiance,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#radiometric%20conversion>,
+        tools:reflectance,
+        tools:satellite ;
+    foaf:name "i.landsat.toar" .
+
+<https://grass.osgeo.org/grass72/manuals/i.maxlik> a gis:Tool ;
+    dct:isPartOf tools:MLC,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#Maximum%20Likelihood%20Classification>,
+        tools:classification ;
+    foaf:name "i.maxlik" .
+
+<https://grass.osgeo.org/grass72/manuals/i.modis.qc> a gis:Tool ;
+    dct:isPartOf tools:MODIS,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#imagery%20quality%20assessment>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#land%20surface%20temperature>,
+        tools:reflectance,
+        tools:satellite,
+        tools:vegetation ;
+    foaf:name "i.modis.qc" .
+
+<https://grass.osgeo.org/grass72/manuals/i.oif> a gis:Tool ;
+    dct:isPartOf tools:multispectral,
+        tools:statistics ;
+    foaf:name "i.oif" .
+
+<https://grass.osgeo.org/grass72/manuals/i.ortho.camera> a gis:Tool ;
+    dct:isPartOf tools:orthorectify ;
+    foaf:name "i.ortho.camera" .
+
+<https://grass.osgeo.org/grass72/manuals/i.ortho.elev> a gis:Tool ;
+    dct:isPartOf tools:orthorectify ;
+    foaf:name "i.ortho.elev" .
+
+<https://grass.osgeo.org/grass72/manuals/i.ortho.rectify> a gis:Tool ;
+    dct:isPartOf tools:orthorectify ;
+    foaf:name "i.ortho.rectify" .
+
+<https://grass.osgeo.org/grass72/manuals/i.pansharpen> a gis:Tool ;
+    dct:isPartOf tools:Brovey,
+        tools:HIS,
+        tools:IHS,
+        tools:PCA,
+        tools:fusion,
+        tools:sharpen ;
+    foaf:name "i.pansharpen" .
+
+<https://grass.osgeo.org/grass72/manuals/i.pca> a gis:Tool ;
+    dct:isPartOf tools:PCA,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#principal%20components%20analysis>,
+        tools:transformation ;
+    foaf:name "i.pca" .
+
+<https://grass.osgeo.org/grass72/manuals/i.rectify> a gis:Tool ;
+    dct:isPartOf tools:rectify ;
+    foaf:name "i.rectify" .
+
+<https://grass.osgeo.org/grass72/manuals/i.rgb.his> a gis:Tool ;
+    dct:isPartOf tools:HIS,
+        tools:IHS,
+        tools:RGB,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#color%20transformation> ;
+    foaf:name "i.rgb.his" .
+
+<https://grass.osgeo.org/grass72/manuals/i.segment> a gis:Tool ;
+    dct:isPartOf tools:classification,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#object%20recognition>,
+        tools:segmentation ;
+    foaf:name "i.segment" .
+
+<https://grass.osgeo.org/grass72/manuals/i.smap> a gis:Tool ;
+    dct:isPartOf tools:SMAP,
+        tools:classification,
+        tools:segmentation,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#supervised%20classification> ;
+    foaf:name "i.smap" .
+
+<https://grass.osgeo.org/grass72/manuals/i.spectral> a gis:Tool ;
+    dct:isPartOf tools:multispectral,
+        tools:querying ;
+    foaf:name "i.spectral" .
+
+<https://grass.osgeo.org/grass72/manuals/i.target> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management> ;
+    foaf:name "i.target" .
+
+<https://grass.osgeo.org/grass72/manuals/i.tasscap> a gis:Tool ;
+    dct:isPartOf tools:Landsat,
+        tools:MODIS,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#Tasseled%20Cap%20transformation>,
+        tools:transformation ;
+    foaf:name "i.tasscap" .
+
+<https://grass.osgeo.org/grass72/manuals/i.topo.corr> a gis:Tool ;
+    dct:isPartOf tools:terrain,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#topographic%20correction> ;
+    foaf:name "i.topo.corr" .
+
+<https://grass.osgeo.org/grass72/manuals/i.vi> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#biophysical%20parameters>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#vegetation%20index> ;
+    foaf:name "i.vi" .
+
+<https://grass.osgeo.org/grass72/manuals/i.zc> a gis:Tool ;
+    dct:isPartOf tools:edges ;
+    foaf:name "i.zc" .
+
+<https://grass.osgeo.org/grass72/manuals/m.cogo> a gis:Tool ;
+    dct:isPartOf tools:distance,
+        tools:miscellaneous,
+        tools:polar ;
+    foaf:name "m.cogo" .
+
+<https://grass.osgeo.org/grass72/manuals/m.measure> a gis:Tool ;
+    dct:isPartOf tools:area,
+        tools:distance,
+        tools:measurement,
+        tools:miscellaneous ;
+    foaf:name "m.measure" .
+
+<https://grass.osgeo.org/grass72/manuals/m.nviz.image> a gis:Tool ;
+    dct:isPartOf tools:graphics,
+        tools:miscellaneous,
+        tools:visualization ;
+    foaf:name "m.nviz.image" .
+
+<https://grass.osgeo.org/grass72/manuals/m.nviz.script> a gis:Tool ;
+    dct:isPartOf tools:graphics,
+        tools:miscellaneous,
+        tools:visualization ;
+    foaf:name "m.nviz.script" .
+
+<https://grass.osgeo.org/grass72/manuals/m.proj> a gis:Tool ;
+    dct:isPartOf tools:miscellaneous,
+        tools:projection,
+        tools:transformation ;
+    foaf:name "m.proj" .
+
+<https://grass.osgeo.org/grass72/manuals/m.transform> a gis:Tool ;
+    dct:isPartOf tools:GCP,
+        tools:miscellaneous,
+        tools:transformation ;
+    foaf:name "m.transform" .
+
+<https://grass.osgeo.org/grass72/manuals/ps.map> a gis:Tool ;
+    dct:isPartOf tools:printing ;
+    foaf:name "ps.map" .
+
+<https://grass.osgeo.org/grass72/manuals/r.basins.fill> a gis:Tool ;
+    dct:isPartOf tools:hydrology,
+        tools:watershed ;
+    foaf:name "r.basins.fill" .
+
+<https://grass.osgeo.org/grass72/manuals/r.blend> a gis:Tool ;
+    dct:isPartOf tools:composite ;
+    foaf:name "r.blend" .
+
+<https://grass.osgeo.org/grass72/manuals/r.buffer> a gis:Tool ;
+    dct:isPartOf tools:buffer ;
+    foaf:name "r.buffer" .
+
+<https://grass.osgeo.org/grass72/manuals/r.buffer.lowmem> a gis:Tool ;
+    dct:isPartOf tools:buffer ;
+    foaf:name "r.buffer.lowmem" .
+
+<https://grass.osgeo.org/grass72/manuals/r.carve> a gis:Tool ;
+    dct:isPartOf tools:hydrology ;
+    foaf:name "r.carve" .
+
+<https://grass.osgeo.org/grass72/manuals/r.category> a gis:Tool ;
+    dct:isPartOf tools:category ;
+    foaf:name "r.category" .
+
+<https://grass.osgeo.org/grass72/manuals/r.circle> a gis:Tool ;
+    dct:isPartOf tools:buffer,
+        tools:circle,
+        tools:geometry ;
+    foaf:name "r.circle" .
+
+<https://grass.osgeo.org/grass72/manuals/r.clump> a gis:Tool ;
+    dct:isPartOf tools:clumps,
+        tools:reclass,
+        tools:statistics ;
+    foaf:name "r.clump" .
+
+<https://grass.osgeo.org/grass72/manuals/r.coin> a gis:Tool ;
+    dct:isPartOf tools:statistics ;
+    foaf:name "r.coin" .
+
+<https://grass.osgeo.org/grass72/manuals/r.colors> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#color%20table> ;
+    foaf:name "r.colors" .
+
+<https://grass.osgeo.org/grass72/manuals/r.colors.out> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#color%20table>,
+        tools:export ;
+    foaf:name "r.colors.out" .
+
+<https://grass.osgeo.org/grass72/manuals/r.colors.stddev> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#color%20table> ;
+    foaf:name "r.colors.stddev" .
+
+<https://grass.osgeo.org/grass72/manuals/r.composite> a gis:Tool ;
+    dct:isPartOf tools:RGB,
+        tools:composite ;
+    foaf:name "r.composite" .
+
+<https://grass.osgeo.org/grass72/manuals/r.compress> a gis:Tool ;
+    dct:isPartOf tools:compression,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management> ;
+    foaf:name "r.compress" .
+
+<https://grass.osgeo.org/grass72/manuals/r.contour> a gis:Tool ;
+    dct:isPartOf tools:contours,
+        tools:surface ;
+    foaf:name "r.contour" .
+
+<https://grass.osgeo.org/grass72/manuals/r.cost> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#cost%20allocation>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#cost%20surface>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#cumulative%20costs> ;
+    foaf:name "r.cost" .
+
+<https://grass.osgeo.org/grass72/manuals/r.covar> a gis:Tool ;
+    dct:isPartOf tools:statistics ;
+    foaf:name "r.covar" .
+
+<https://grass.osgeo.org/grass72/manuals/r.cross> a gis:Tool ;
+    dct:isPartOf tools:statistics ;
+    foaf:name "r.cross" .
+
+<https://grass.osgeo.org/grass72/manuals/r.describe> a gis:Tool ;
+    dct:isPartOf tools:metadata ;
+    foaf:name "r.describe" .
+
+<https://grass.osgeo.org/grass72/manuals/r.distance> a gis:Tool ;
+    dct:isPartOf tools:distance ;
+    foaf:name "r.distance" .
+
+<https://grass.osgeo.org/grass72/manuals/r.drain> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#cost%20surface>,
+        tools:hydrology ;
+    foaf:name "r.drain" .
+
+<https://grass.osgeo.org/grass72/manuals/r.external> a gis:Tool ;
+    dct:isPartOf tools:external,
+        tools:import ;
+    foaf:name "r.external" .
+
+<https://grass.osgeo.org/grass72/manuals/r.external.out> a gis:Tool ;
+    dct:isPartOf tools:export,
+        tools:external,
+        tools:output ;
+    foaf:name "r.external.out" .
+
+<https://grass.osgeo.org/grass72/manuals/r.fill.dir> a gis:Tool ;
+    dct:isPartOf tools:depressions,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#fill%20sinks>,
+        tools:hydrology,
+        tools:sink ;
+    foaf:name "r.fill.dir" .
+
+<https://grass.osgeo.org/grass72/manuals/r.fillnulls> a gis:Tool ;
+    dct:isPartOf tools:elevation,
+        tools:interpolation ;
+    foaf:name "r.fillnulls" .
+
+<https://grass.osgeo.org/grass72/manuals/r.flow> a gis:Tool ;
+    dct:isPartOf tools:hydrology ;
+    foaf:name "r.flow" .
+
+<https://grass.osgeo.org/grass72/manuals/r.grow> a gis:Tool ;
+    dct:isPartOf tools:distance,
+        tools:proximity ;
+    foaf:name "r.grow" .
+
+<https://grass.osgeo.org/grass72/manuals/r.grow.distance> a gis:Tool ;
+    dct:isPartOf tools:distance,
+        tools:proximity ;
+    foaf:name "r.grow.distance" .
+
+<https://grass.osgeo.org/grass72/manuals/r.gwflow> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#groundwater%20flow>,
+        tools:hydrology ;
+    foaf:name "r.gwflow" .
+
+<https://grass.osgeo.org/grass72/manuals/r.his> a gis:Tool ;
+    dct:isPartOf tools:HIS,
+        tools:IHS,
+        tools:RGB,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#color%20transformation> ;
+    foaf:name "r.his" .
+
+<https://grass.osgeo.org/grass72/manuals/r.horizon> a gis:Tool ;
+    dct:isPartOf tools:solar,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#sun%20position> ;
+    foaf:name "r.horizon" .
+
+<https://grass.osgeo.org/grass72/manuals/r.import> a gis:Tool ;
+    dct:isPartOf tools:import,
+        tools:projection ;
+    foaf:name "r.import" .
+
+<https://grass.osgeo.org/grass72/manuals/r.in.ascii> a gis:Tool ;
+    dct:isPartOf tools:ASCII,
+        tools:conversion,
+        tools:import ;
+    foaf:name "r.in.ascii" .
+
+<https://grass.osgeo.org/grass72/manuals/r.in.aster> a gis:Tool ;
+    dct:isPartOf tools:ASTER,
+        tools:elevation,
+        tools:import ;
+    foaf:name "r.in.aster" .
+
+<https://grass.osgeo.org/grass72/manuals/r.in.bin> a gis:Tool ;
+    dct:isPartOf tools:import ;
+    foaf:name "r.in.bin" .
+
+<https://grass.osgeo.org/grass72/manuals/r.in.gdal> a gis:Tool ;
+    dct:isPartOf tools:import ;
+    foaf:name "r.in.gdal" .
+
+<https://grass.osgeo.org/grass72/manuals/r.in.gridatb> a gis:Tool ;
+    dct:isPartOf tools:import ;
+    foaf:name "r.in.gridatb" .
+
+<https://grass.osgeo.org/grass72/manuals/r.in.lidar> a gis:Tool ;
+    dct:isPartOf tools:LIDAR,
+        tools:aggregation,
+        tools:binning,
+        tools:conversion,
+        tools:import,
+        tools:statistics ;
+    foaf:name "r.in.lidar" .
+
+<https://grass.osgeo.org/grass72/manuals/r.in.mat> a gis:Tool ;
+    dct:isPartOf tools:import ;
+    foaf:name "r.in.mat" .
+
+<https://grass.osgeo.org/grass72/manuals/r.in.png> a gis:Tool ;
+    dct:isPartOf tools:PNG,
+        tools:import ;
+    foaf:name "r.in.png" .
+
+<https://grass.osgeo.org/grass72/manuals/r.in.poly> a gis:Tool ;
+    dct:isPartOf tools:import ;
+    foaf:name "r.in.poly" .
+
+<https://grass.osgeo.org/grass72/manuals/r.in.srtm> a gis:Tool ;
+    dct:isPartOf tools:import ;
+    foaf:name "r.in.srtm" .
+
+<https://grass.osgeo.org/grass72/manuals/r.in.wms> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#OGC%20web%20services>,
+        tools:import ;
+    foaf:name "r.in.wms" .
+
+<https://grass.osgeo.org/grass72/manuals/r.in.xyz> a gis:Tool ;
+    dct:isPartOf tools:ASCII,
+        tools:LIDAR,
+        tools:aggregation,
+        tools:binning,
+        tools:conversion,
+        tools:import,
+        tools:statistics ;
+    foaf:name "r.in.xyz" .
+
+<https://grass.osgeo.org/grass72/manuals/r.info> a gis:Tool ;
+    dct:isPartOf tools:extent,
+        tools:history,
+        tools:metadata ;
+    foaf:name "r.info" .
+
+<https://grass.osgeo.org/grass72/manuals/r.kappa> a gis:Tool ;
+    dct:isPartOf tools:classification,
+        tools:statistics ;
+    foaf:name "r.kappa" .
+
+<https://grass.osgeo.org/grass72/manuals/r.lake> a gis:Tool ;
+    dct:isPartOf tools:flood,
+        tools:hazard,
+        tools:hydrology ;
+    foaf:name "r.lake" .
+
+<https://grass.osgeo.org/grass72/manuals/r.latlong> a gis:Tool ;
+    dct:isPartOf tools:latitude,
+        tools:longitude,
+        tools:projection ;
+    foaf:name "r.latlong" .
+
+<https://grass.osgeo.org/grass72/manuals/r.li.cwed> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#patch%20index> ;
+    foaf:name "r.li.cwed" .
+
+<https://grass.osgeo.org/grass72/manuals/r.li.dominance> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#diversity%20index>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis> ;
+    foaf:name "r.li.dominance" .
+
+<https://grass.osgeo.org/grass72/manuals/r.li.edgedensity> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#patch%20index> ;
+    foaf:name "r.li.edgedensity" .
+
+<https://grass.osgeo.org/grass72/manuals/r.li.mpa> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#patch%20index> ;
+    foaf:name "r.li.mpa" .
+
+<https://grass.osgeo.org/grass72/manuals/r.li.mps> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#patch%20index> ;
+    foaf:name "r.li.mps" .
+
+<https://grass.osgeo.org/grass72/manuals/r.li.padcv> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#patch%20index> ;
+    foaf:name "r.li.padcv" .
+
+<https://grass.osgeo.org/grass72/manuals/r.li.padrange> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#patch%20index> ;
+    foaf:name "r.li.padrange" .
+
+<https://grass.osgeo.org/grass72/manuals/r.li.padsd> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#patch%20index> ;
+    foaf:name "r.li.padsd" .
+
+<https://grass.osgeo.org/grass72/manuals/r.li.patchdensity> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#patch%20index> ;
+    foaf:name "r.li.patchdensity" .
+
+<https://grass.osgeo.org/grass72/manuals/r.li.patchnum> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#patch%20index> ;
+    foaf:name "r.li.patchnum" .
+
+<https://grass.osgeo.org/grass72/manuals/r.li.pielou> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#diversity%20index>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis> ;
+    foaf:name "r.li.pielou" .
+
+<https://grass.osgeo.org/grass72/manuals/r.li.renyi> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#diversity%20index>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis> ;
+    foaf:name "r.li.renyi" .
+
+<https://grass.osgeo.org/grass72/manuals/r.li.richness> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#diversity%20index>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis> ;
+    foaf:name "r.li.richness" .
+
+<https://grass.osgeo.org/grass72/manuals/r.li.shannon> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#diversity%20index>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis> ;
+    foaf:name "r.li.shannon" .
+
+<https://grass.osgeo.org/grass72/manuals/r.li.shape> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#patch%20index> ;
+    foaf:name "r.li.shape" .
+
+<https://grass.osgeo.org/grass72/manuals/r.li.simpson> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#diversity%20index>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis> ;
+    foaf:name "r.li.simpson" .
+
+<https://grass.osgeo.org/grass72/manuals/r.mapcalc> a gis:Tool ;
+    dct:isPartOf tools:algebra ;
+    foaf:name "r.mapcalc" .
+
+<https://grass.osgeo.org/grass72/manuals/r.mask> a gis:Tool ;
+    dct:isPartOf tools:mask ;
+    foaf:name "r.mask" .
+
+<https://grass.osgeo.org/grass72/manuals/r.mfilter> a gis:Tool ;
+    dct:isPartOf tools:algebra,
+        tools:filter,
+        tools:statistics ;
+    foaf:name "r.mfilter" .
+
+<https://grass.osgeo.org/grass72/manuals/r.mode> a gis:Tool ;
+    dct:isPartOf tools:algebra,
+        tools:statistics ;
+    foaf:name "r.mode" .
+
+<https://grass.osgeo.org/grass72/manuals/r.neighbors> a gis:Tool ;
+    dct:isPartOf tools:aggregation,
+        tools:algebra,
+        tools:filter,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#focal%20statistics>,
+        tools:neighbor,
+        tools:statistics ;
+    foaf:name "r.neighbors" .
+
+<https://grass.osgeo.org/grass72/manuals/r.null> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#null%20data> ;
+    foaf:name "r.null" .
+
+<https://grass.osgeo.org/grass72/manuals/r.out.ascii> a gis:Tool ;
+    dct:isPartOf tools:ASCII,
+        tools:export ;
+    foaf:name "r.out.ascii" .
+
+<https://grass.osgeo.org/grass72/manuals/r.out.bin> a gis:Tool ;
+    dct:isPartOf tools:export ;
+    foaf:name "r.out.bin" .
+
+<https://grass.osgeo.org/grass72/manuals/r.out.gdal> a gis:Tool ;
+    dct:isPartOf tools:export ;
+    foaf:name "r.out.gdal" .
+
+<https://grass.osgeo.org/grass72/manuals/r.out.gridatb> a gis:Tool ;
+    dct:isPartOf tools:export ;
+    foaf:name "r.out.gridatb" .
+
+<https://grass.osgeo.org/grass72/manuals/r.out.mat> a gis:Tool ;
+    dct:isPartOf tools:export ;
+    foaf:name "r.out.mat" .
+
+<https://grass.osgeo.org/grass72/manuals/r.out.mpeg> a gis:Tool ;
+    dct:isPartOf tools:animation,
+        tools:export ;
+    foaf:name "r.out.mpeg" .
+
+<https://grass.osgeo.org/grass72/manuals/r.out.png> a gis:Tool ;
+    dct:isPartOf tools:PNG,
+        tools:export ;
+    foaf:name "r.out.png" .
+
+<https://grass.osgeo.org/grass72/manuals/r.out.pov> a gis:Tool ;
+    dct:isPartOf tools:export ;
+    foaf:name "r.out.pov" .
+
+<https://grass.osgeo.org/grass72/manuals/r.out.ppm> a gis:Tool ;
+    dct:isPartOf tools:export ;
+    foaf:name "r.out.ppm" .
+
+<https://grass.osgeo.org/grass72/manuals/r.out.ppm3> a gis:Tool ;
+    dct:isPartOf tools:export ;
+    foaf:name "r.out.ppm3" .
+
+<https://grass.osgeo.org/grass72/manuals/r.out.vrml> a gis:Tool ;
+    dct:isPartOf tools:VRML,
+        tools:export ;
+    foaf:name "r.out.vrml" .
+
+<https://grass.osgeo.org/grass72/manuals/r.out.vtk> a gis:Tool ;
+    dct:isPartOf tools:VTK,
+        tools:export ;
+    foaf:name "r.out.vtk" .
+
+<https://grass.osgeo.org/grass72/manuals/r.out.xyz> a gis:Tool ;
+    dct:isPartOf tools:ASCII,
+        tools:conversion,
+        tools:export ;
+    foaf:name "r.out.xyz" .
+
+<https://grass.osgeo.org/grass72/manuals/r.pack> a gis:Tool ;
+    dct:isPartOf tools:copying,
+        tools:export ;
+    foaf:name "r.pack" .
+
+<https://grass.osgeo.org/grass72/manuals/r.param.scale> a gis:Tool ;
+    dct:isPartOf tools:elevation,
+        tools:geomorphology,
+        tools:landform,
+        tools:terrain ;
+    foaf:name "r.param.scale" .
+
+<https://grass.osgeo.org/grass72/manuals/r.patch> a gis:Tool ;
+    dct:isPartOf tools:aggregation,
+        tools:geometry,
+        tools:merge,
+        tools:mosaicking,
+        tools:patching,
+        tools:series ;
+    foaf:name "r.patch" .
+
+<https://grass.osgeo.org/grass72/manuals/r.plane> a gis:Tool ;
+    dct:isPartOf tools:elevation ;
+    foaf:name "r.plane" .
+
+<https://grass.osgeo.org/grass72/manuals/r.profile> a gis:Tool ;
+    dct:isPartOf tools:profile,
+        tools:transect ;
+    foaf:name "r.profile" .
+
+<https://grass.osgeo.org/grass72/manuals/r.proj> a gis:Tool ;
+    dct:isPartOf tools:import,
+        tools:projection,
+        tools:transformation ;
+    foaf:name "r.proj" .
+
+<https://grass.osgeo.org/grass72/manuals/r.quant> a gis:Tool ;
+    dct:isPartOf tools:quantization,
+        tools:statistics ;
+    foaf:name "r.quant" .
+
+<https://grass.osgeo.org/grass72/manuals/r.quantile> a gis:Tool ;
+    dct:isPartOf tools:algebra,
+        tools:percentile,
+        tools:quantile,
+        tools:statistics ;
+    foaf:name "r.quantile" .
+
+<https://grass.osgeo.org/grass72/manuals/r.random> a gis:Tool ;
+    dct:isPartOf tools:level1,
+        tools:random,
+        tools:sampling ;
+    foaf:name "r.random" .
+
+<https://grass.osgeo.org/grass72/manuals/r.random.cells> a gis:Tool ;
+    dct:isPartOf tools:autocorrelation,
+        tools:random,
+        tools:sampling ;
+    foaf:name "r.random.cells" .
+
+<https://grass.osgeo.org/grass72/manuals/r.random.surface> a gis:Tool ;
+    dct:isPartOf tools:random,
+        tools:surface ;
+    foaf:name "r.random.surface" .
+
+<https://grass.osgeo.org/grass72/manuals/r.reclass> a gis:Tool ;
+    dct:isPartOf tools:reclassification ;
+    foaf:name "r.reclass" .
+
+<https://grass.osgeo.org/grass72/manuals/r.reclass.area> a gis:Tool ;
+    dct:isPartOf tools:aggregation,
+        tools:statistics ;
+    foaf:name "r.reclass.area" .
+
+<https://grass.osgeo.org/grass72/manuals/r.recode> a gis:Tool ;
+    dct:isPartOf tools:reclassification,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#recode%20categories> ;
+    foaf:name "r.recode" .
+
+<https://grass.osgeo.org/grass72/manuals/r.region> a gis:Tool ;
+    dct:isPartOf tools:metadata ;
+    foaf:name "r.region" .
+
+<https://grass.osgeo.org/grass72/manuals/r.regression.line> a gis:Tool ;
+    dct:isPartOf tools:regression,
+        tools:statistics ;
+    foaf:name "r.regression.line" .
+
+<https://grass.osgeo.org/grass72/manuals/r.regression.multi> a gis:Tool ;
+    dct:isPartOf tools:regression,
+        tools:statistics ;
+    foaf:name "r.regression.multi" .
+
+<https://grass.osgeo.org/grass72/manuals/r.relief> a gis:Tool ;
+    dct:isPartOf tools:elevation,
+        tools:hillshade,
+        tools:relief,
+        tools:terrain ;
+    foaf:name "r.relief" .
+
+<https://grass.osgeo.org/grass72/manuals/r.report> a gis:Tool ;
+    dct:isPartOf tools:statistics ;
+    foaf:name "r.report" .
+
+<https://grass.osgeo.org/grass72/manuals/r.resamp.bspline> a gis:Tool ;
+    dct:isPartOf tools:interpolation,
+        tools:resample,
+        tools:surface ;
+    foaf:name "r.resamp.bspline" .
+
+<https://grass.osgeo.org/grass72/manuals/r.resamp.filter> a gis:Tool ;
+    dct:isPartOf tools:filter,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#kernel%20filter>,
+        tools:resample ;
+    foaf:name "r.resamp.filter" .
+
+<https://grass.osgeo.org/grass72/manuals/r.resamp.interp> a gis:Tool ;
+    dct:isPartOf tools:interpolation,
+        tools:resample ;
+    foaf:name "r.resamp.interp" .
+
+<https://grass.osgeo.org/grass72/manuals/r.resamp.rst> a gis:Tool ;
+    dct:isPartOf tools:resample ;
+    foaf:name "r.resamp.rst" .
+
+<https://grass.osgeo.org/grass72/manuals/r.resamp.stats> a gis:Tool ;
+    dct:isPartOf tools:resample ;
+    foaf:name "r.resamp.stats" .
+
+<https://grass.osgeo.org/grass72/manuals/r.resample> a gis:Tool ;
+    dct:isPartOf tools:resample ;
+    foaf:name "r.resample" .
+
+<https://grass.osgeo.org/grass72/manuals/r.rescale> a gis:Tool ;
+    dct:isPartOf tools:rescale ;
+    foaf:name "r.rescale" .
+
+<https://grass.osgeo.org/grass72/manuals/r.rescale.eq> a gis:Tool ;
+    dct:isPartOf tools:rescale ;
+    foaf:name "r.rescale.eq" .
+
+<https://grass.osgeo.org/grass72/manuals/r.rgb> a gis:Tool ;
+    dct:isPartOf tools:RGB,
+        tools:separate,
+        tools:split ;
+    foaf:name "r.rgb" .
+
+<https://grass.osgeo.org/grass72/manuals/r.ros> a gis:Tool ;
+    dct:isPartOf tools:fire,
+        tools:hazard,
+        tools:model,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#rate%20of%20spread>,
+        tools:spread ;
+    foaf:name "r.ros" .
+
+<https://grass.osgeo.org/grass72/manuals/r.series> a gis:Tool ;
+    dct:isPartOf tools:aggregation,
+        tools:series ;
+    foaf:name "r.series" .
+
+<https://grass.osgeo.org/grass72/manuals/r.series.accumulate> a gis:Tool ;
+    dct:isPartOf tools:accumulation,
+        tools:series ;
+    foaf:name "r.series.accumulate" .
+
+<https://grass.osgeo.org/grass72/manuals/r.series.interp> a gis:Tool ;
+    dct:isPartOf tools:interpolation,
+        tools:series ;
+    foaf:name "r.series.interp" .
+
+<https://grass.osgeo.org/grass72/manuals/r.shade> a gis:Tool ;
+    dct:isPartOf tools:elevation,
+        tools:hillshade,
+        tools:relief,
+        tools:visualization ;
+    foaf:name "r.shade" .
+
+<https://grass.osgeo.org/grass72/manuals/r.sim.sediment> a gis:Tool ;
+    dct:isPartOf tools:deposition,
+        tools:erosion,
+        tools:hydrology,
+        tools:model,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#sediment%20flow>,
+        tools:soil ;
+    foaf:name "r.sim.sediment" .
+
+<https://grass.osgeo.org/grass72/manuals/r.sim.water> a gis:Tool ;
+    dct:isPartOf tools:flow,
+        tools:hydrology,
+        tools:model,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#overland%20flow>,
+        tools:soil ;
+    foaf:name "r.sim.water" .
+
+<https://grass.osgeo.org/grass72/manuals/r.slope.aspect> a gis:Tool ;
+    dct:isPartOf tools:aspect,
+        tools:curvature,
+        tools:slope,
+        tools:terrain ;
+    foaf:name "r.slope.aspect" .
+
+<https://grass.osgeo.org/grass72/manuals/r.solute.transport> a gis:Tool ;
+    dct:isPartOf tools:hydrology,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#solute%20transport> ;
+    foaf:name "r.solute.transport" .
+
+<https://grass.osgeo.org/grass72/manuals/r.spread> a gis:Tool ;
+    dct:isPartOf tools:fire,
+        tools:hazard,
+        tools:model,
+        tools:spread ;
+    foaf:name "r.spread" .
+
+<https://grass.osgeo.org/grass72/manuals/r.spreadpath> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#cumulative%20costs>,
+        tools:fire ;
+    foaf:name "r.spreadpath" .
+
+<https://grass.osgeo.org/grass72/manuals/r.statistics> a gis:Tool ;
+    dct:isPartOf tools:statistics,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#zonal%20statistics> ;
+    foaf:name "r.statistics" .
+
+<https://grass.osgeo.org/grass72/manuals/r.stats> a gis:Tool ;
+    dct:isPartOf tools:statistics ;
+    foaf:name "r.stats" .
+
+<https://grass.osgeo.org/grass72/manuals/r.stats.quantile> a gis:Tool ;
+    dct:isPartOf tools:percentile,
+        tools:quantile,
+        tools:statistics ;
+    foaf:name "r.stats.quantile" .
+
+<https://grass.osgeo.org/grass72/manuals/r.stats.zonal> a gis:Tool ;
+    dct:isPartOf tools:statistics,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#zonal%20statistics> ;
+    foaf:name "r.stats.zonal" .
+
+<https://grass.osgeo.org/grass72/manuals/r.stream.extract> a gis:Tool ;
+    dct:isPartOf tools:hydrology,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#stream%20network> ;
+    foaf:name "r.stream.extract" .
+
+<https://grass.osgeo.org/grass72/manuals/r.sun> a gis:Tool ;
+    dct:isPartOf tools:shadow,
+        tools:solar,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#sun%20energy> ;
+    foaf:name "r.sun" .
+
+<https://grass.osgeo.org/grass72/manuals/r.sunhours> a gis:Tool ;
+    dct:isPartOf tools:solar,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#sun%20energy>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#sun%20position> ;
+    foaf:name "r.sunhours" .
+
+<https://grass.osgeo.org/grass72/manuals/r.sunmask> a gis:Tool ;
+    dct:isPartOf tools:shadow,
+        tools:solar,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#sun%20position> ;
+    foaf:name "r.sunmask" .
+
+<https://grass.osgeo.org/grass72/manuals/r.support> a gis:Tool ;
+    dct:isPartOf tools:metadata ;
+    foaf:name "r.support" .
+
+<https://grass.osgeo.org/grass72/manuals/r.support.stats> a gis:Tool ;
+    dct:isPartOf tools:statistics ;
+    foaf:name "r.support.stats" .
+
+<https://grass.osgeo.org/grass72/manuals/r.surf.area> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#area%20estimation>,
+        tools:statistics,
+        tools:surface ;
+    foaf:name "r.surf.area" .
+
+<https://grass.osgeo.org/grass72/manuals/r.surf.contour> a gis:Tool ;
+    dct:isPartOf tools:interpolation,
+        tools:surface ;
+    foaf:name "r.surf.contour" .
+
+<https://grass.osgeo.org/grass72/manuals/r.surf.fractal> a gis:Tool ;
+    dct:isPartOf tools:fractal,
+        tools:surface ;
+    foaf:name "r.surf.fractal" .
+
+<https://grass.osgeo.org/grass72/manuals/r.surf.gauss> a gis:Tool ;
+    dct:isPartOf tools:random,
+        tools:surface ;
+    foaf:name "r.surf.gauss" .
+
+<https://grass.osgeo.org/grass72/manuals/r.surf.idw> a gis:Tool ;
+    dct:isPartOf tools:IDW,
+        tools:interpolation,
+        tools:surface ;
+    foaf:name "r.surf.idw" .
+
+<https://grass.osgeo.org/grass72/manuals/r.surf.random> a gis:Tool ;
+    dct:isPartOf tools:random,
+        tools:surface ;
+    foaf:name "r.surf.random" .
+
+<https://grass.osgeo.org/grass72/manuals/r.terraflow> a gis:Tool ;
+    dct:isPartOf tools:accumulation,
+        tools:flow,
+        tools:hydrology,
+        tools:sink ;
+    foaf:name "r.terraflow" .
+
+<https://grass.osgeo.org/grass72/manuals/r.texture> a gis:Tool ;
+    dct:isPartOf tools:algebra,
+        tools:statistics,
+        tools:texture ;
+    foaf:name "r.texture" .
+
+<https://grass.osgeo.org/grass72/manuals/r.thin> a gis:Tool ;
+    dct:isPartOf tools:geometry ;
+    foaf:name "r.thin" .
+
+<https://grass.osgeo.org/grass72/manuals/r.tile> a gis:Tool ;
+    dct:isPartOf tools:tiling ;
+    foaf:name "r.tile" .
+
+<https://grass.osgeo.org/grass72/manuals/r.tileset> a gis:Tool ;
+    dct:isPartOf tools:tiling ;
+    foaf:name "r.tileset" .
+
+<https://grass.osgeo.org/grass72/manuals/r.timestamp> a gis:Tool ;
+    dct:isPartOf tools:metadata,
+        tools:time,
+        tools:timestamp ;
+    foaf:name "r.timestamp" .
+
+<https://grass.osgeo.org/grass72/manuals/r.to.rast3> a gis:Tool ;
+    dct:isPartOf tools:conversion,
+        tools:voxel ;
+    foaf:name "r.to.rast3" .
+
+<https://grass.osgeo.org/grass72/manuals/r.to.rast3elev> a gis:Tool ;
+    dct:isPartOf tools:conversion,
+        tools:voxel ;
+    foaf:name "r.to.rast3elev" .
+
+<https://grass.osgeo.org/grass72/manuals/r.to.vect> a gis:Tool ;
+    dct:isPartOf tools:conversion,
+        tools:geometry,
+        tools:vectorization ;
+    foaf:name "r.to.vect" .
+
+<https://grass.osgeo.org/grass72/manuals/r.topidx> a gis:Tool ;
+    dct:isPartOf tools:hydrology,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#topographic%20index>,
+        tools:wetness ;
+    foaf:name "r.topidx" .
+
+<https://grass.osgeo.org/grass72/manuals/r.topmodel> a gis:Tool ;
+    dct:isPartOf tools:hydrology,
+        tools:model ;
+    foaf:name "r.topmodel" .
+
+<https://grass.osgeo.org/grass72/manuals/r.transect> a gis:Tool ;
+    dct:isPartOf tools:profile,
+        tools:transect ;
+    foaf:name "r.transect" .
+
+<https://grass.osgeo.org/grass72/manuals/r.univar> a gis:Tool ;
+    dct:isPartOf tools:statistics,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#univariate%20statistics>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#zonal%20statistics> ;
+    foaf:name "r.univar" .
+
+<https://grass.osgeo.org/grass72/manuals/r.unpack> a gis:Tool ;
+    dct:isPartOf tools:copying,
+        tools:import ;
+    foaf:name "r.unpack" .
+
+<https://grass.osgeo.org/grass72/manuals/r.uslek> a gis:Tool ;
+    dct:isPartOf tools:erosion,
+        tools:hydrology,
+        tools:soil ;
+    foaf:name "r.uslek" .
+
+<https://grass.osgeo.org/grass72/manuals/r.usler> a gis:Tool ;
+    dct:isPartOf tools:erosion,
+        tools:hydrology,
+        tools:rainfall,
+        tools:soil ;
+    foaf:name "r.usler" .
+
+<https://grass.osgeo.org/grass72/manuals/r.viewshed> a gis:Tool ;
+    dct:isPartOf tools:LOS,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#line%20of%20sight>,
+        tools:viewshed ;
+    foaf:name "r.viewshed" .
+
+<https://grass.osgeo.org/grass72/manuals/r.volume> a gis:Tool ;
+    dct:isPartOf tools:clumps,
+        tools:volume ;
+    foaf:name "r.volume" .
+
+<https://grass.osgeo.org/grass72/manuals/r.walk> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#cost%20allocation>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#cost%20surface>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#cumulative%20costs> ;
+    foaf:name "r.walk" .
+
+<https://grass.osgeo.org/grass72/manuals/r.water.outlet> a gis:Tool ;
+    dct:isPartOf tools:hydrology,
+        tools:watershed ;
+    foaf:name "r.water.outlet" .
+
+<https://grass.osgeo.org/grass72/manuals/r.watershed> a gis:Tool ;
+    dct:isPartOf tools:accumulation,
+        tools:drainage,
+        tools:hydrology,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#stream%20network>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#stream%20power%20index>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#topographic%20index>,
+        tools:watershed ;
+    foaf:name "r.watershed" .
+
+<https://grass.osgeo.org/grass72/manuals/r.what> a gis:Tool ;
+    dct:isPartOf tools:position,
+        tools:querying ;
+    foaf:name "r.what" .
+
+<https://grass.osgeo.org/grass72/manuals/r.what.color> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#color%20table>,
+        tools:querying ;
+    foaf:name "r.what.color" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.colors> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#color%20table> ;
+    foaf:name "r3.colors" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.colors.out> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#color%20table>,
+        tools:export ;
+    foaf:name "r3.colors.out" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.cross.rast> a gis:Tool ;
+    dct:isPartOf tools:profile,
+        tools:voxel ;
+    foaf:name "r3.cross.rast" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.flow> a gis:Tool ;
+    dct:isPartOf tools:hydrology,
+        tools:voxel ;
+    foaf:name "r3.flow" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.gradient> a gis:Tool ;
+    dct:isPartOf tools:gradient,
+        tools:voxel ;
+    foaf:name "r3.gradient" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.gwflow> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#groundwater%20flow>,
+        tools:hydrology,
+        tools:voxel ;
+    foaf:name "r3.gwflow" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.in.ascii> a gis:Tool ;
+    dct:isPartOf tools:ASCII,
+        tools:conversion,
+        tools:import,
+        tools:voxel ;
+    foaf:name "r3.in.ascii" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.in.bin> a gis:Tool ;
+    dct:isPartOf tools:import,
+        tools:voxel ;
+    foaf:name "r3.in.bin" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.in.lidar> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20raster>,
+        tools:LIDAR,
+        tools:import ;
+    foaf:name "r3.in.lidar" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.in.v5d> a gis:Tool ;
+    dct:isPartOf tools:import,
+        tools:voxel ;
+    foaf:name "r3.in.v5d" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.in.xyz> a gis:Tool ;
+    dct:isPartOf tools:LIDAR,
+        tools:import,
+        tools:voxel ;
+    foaf:name "r3.in.xyz" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.info> a gis:Tool ;
+    dct:isPartOf tools:extent,
+        tools:metadata,
+        tools:voxel ;
+    foaf:name "r3.info" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.mapcalc> a gis:Tool ;
+    dct:isPartOf tools:algebra ;
+    foaf:name "r3.mapcalc" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.mask> a gis:Tool ;
+    dct:isPartOf tools:mask,
+        tools:voxel ;
+    foaf:name "r3.mask" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.mkdspf> a gis:Tool ;
+    dct:isPartOf tools:voxel ;
+    foaf:name "r3.mkdspf" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.neighbors> a gis:Tool ;
+    dct:isPartOf tools:aggregation,
+        tools:algebra,
+        tools:filter,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#focal%20statistics>,
+        tools:neighbor,
+        tools:statistics,
+        tools:voxel ;
+    foaf:name "r3.neighbors" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.null> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#null%20data>,
+        tools:voxel ;
+    foaf:name "r3.null" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.out.ascii> a gis:Tool ;
+    dct:isPartOf tools:ASCII,
+        tools:conversion,
+        tools:export,
+        tools:voxel ;
+    foaf:name "r3.out.ascii" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.out.bin> a gis:Tool ;
+    dct:isPartOf tools:export,
+        tools:voxel ;
+    foaf:name "r3.out.bin" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.out.netcdf> a gis:Tool ;
+    dct:isPartOf tools:export,
+        tools:netCDF,
+        tools:voxel ;
+    foaf:name "r3.out.netcdf" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.out.v5d> a gis:Tool ;
+    dct:isPartOf tools:export,
+        tools:voxel ;
+    foaf:name "r3.out.v5d" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.out.vtk> a gis:Tool ;
+    dct:isPartOf tools:VTK,
+        tools:export,
+        tools:voxel ;
+    foaf:name "r3.out.vtk" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.retile> a gis:Tool ;
+    dct:isPartOf tools:tiling,
+        tools:voxel ;
+    foaf:name "r3.retile" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.stats> a gis:Tool ;
+    dct:isPartOf tools:statistics,
+        tools:volume,
+        tools:voxel ;
+    foaf:name "r3.stats" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.support> a gis:Tool ;
+    dct:isPartOf tools:metadata,
+        tools:voxel ;
+    foaf:name "r3.support" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.timestamp> a gis:Tool ;
+    dct:isPartOf tools:metadata,
+        tools:time,
+        tools:timestamp,
+        tools:voxel ;
+    foaf:name "r3.timestamp" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.to.rast> a gis:Tool ;
+    dct:isPartOf tools:conversion,
+        tools:voxel ;
+    foaf:name "r3.to.rast" .
+
+<https://grass.osgeo.org/grass72/manuals/r3.univar> a gis:Tool ;
+    dct:isPartOf tools:statistics,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#univariate%20statistics> ;
+    foaf:name "r3.univar" .
+
+<https://grass.osgeo.org/grass72/manuals/t.connect> a gis:Tool ;
+    dct:isPartOf tools:metadata,
+        tools:settings ;
+    foaf:name "t.connect" .
+
+<https://grass.osgeo.org/grass72/manuals/t.create> a gis:Tool ;
+    dct:isPartOf tools:create,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management>,
+        tools:time ;
+    foaf:name "t.create" .
+
+<https://grass.osgeo.org/grass72/manuals/t.info> a gis:Tool ;
+    dct:isPartOf tools:extent,
+        tools:metadata,
+        tools:time ;
+    foaf:name "t.info" .
+
+<https://grass.osgeo.org/grass72/manuals/t.list> a gis:Tool ;
+    dct:isPartOf tools:list,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management>,
+        tools:time ;
+    foaf:name "t.list" .
+
+<https://grass.osgeo.org/grass72/manuals/t.merge> a gis:Tool ;
+    dct:isPartOf tools:merge,
+        tools:time,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#time%20management> ;
+    foaf:name "t.merge" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.accdetect> a gis:Tool ;
+    dct:isPartOf tools:accumulation,
+        tools:time ;
+    foaf:name "t.rast.accdetect" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.accumulate> a gis:Tool ;
+    dct:isPartOf tools:accumulation,
+        tools:time ;
+    foaf:name "t.rast.accumulate" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.aggregate> a gis:Tool ;
+    dct:isPartOf tools:aggregation,
+        tools:time ;
+    foaf:name "t.rast.aggregate" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.aggregate.ds> a gis:Tool ;
+    dct:isPartOf tools:aggregation,
+        tools:time ;
+    foaf:name "t.rast.aggregate.ds" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.algebra> a gis:Tool ;
+    dct:isPartOf tools:algebra,
+        tools:time ;
+    foaf:name "t.rast.algebra" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.colors> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#color%20table>,
+        tools:time ;
+    foaf:name "t.rast.colors" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.contour> a gis:Tool ;
+    dct:isPartOf tools:contour,
+        tools:time ;
+    foaf:name "t.rast.contour" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.export> a gis:Tool ;
+    dct:isPartOf tools:export,
+        tools:time ;
+    foaf:name "t.rast.export" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.extract> a gis:Tool ;
+    dct:isPartOf tools:extract,
+        tools:time ;
+    foaf:name "t.rast.extract" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.gapfill> a gis:Tool ;
+    dct:isPartOf tools:interpolation,
+        tools:time ;
+    foaf:name "t.rast.gapfill" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.import> a gis:Tool ;
+    dct:isPartOf tools:import,
+        tools:time ;
+    foaf:name "t.rast.import" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.list> a gis:Tool ;
+    dct:isPartOf tools:list,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management>,
+        tools:time ;
+    foaf:name "t.rast.list" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.mapcalc> a gis:Tool ;
+    dct:isPartOf tools:algebra,
+        tools:time ;
+    foaf:name "t.rast.mapcalc" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.neighbors> a gis:Tool ;
+    dct:isPartOf tools:aggregation,
+        tools:time ;
+    foaf:name "t.rast.neighbors" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.out.vtk> a gis:Tool ;
+    dct:isPartOf tools:VTK,
+        tools:export,
+        tools:time ;
+    foaf:name "t.rast.out.vtk" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.series> a gis:Tool ;
+    dct:isPartOf tools:aggregation,
+        tools:series,
+        tools:time ;
+    foaf:name "t.rast.series" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.to.rast3> a gis:Tool ;
+    dct:isPartOf tools:conversion,
+        tools:time,
+        tools:voxel ;
+    foaf:name "t.rast.to.rast3" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.to.vect> a gis:Tool ;
+    dct:isPartOf tools:conversion,
+        tools:time ;
+    foaf:name "t.rast.to.vect" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.univar> a gis:Tool ;
+    dct:isPartOf tools:statistics,
+        tools:time ;
+    foaf:name "t.rast.univar" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast.what> a gis:Tool ;
+    dct:isPartOf tools:sampling,
+        tools:time ;
+    foaf:name "t.rast.what" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast3d.algebra> a gis:Tool ;
+    dct:isPartOf tools:algebra,
+        tools:time,
+        tools:voxel ;
+    foaf:name "t.rast3d.algebra" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast3d.extract> a gis:Tool ;
+    dct:isPartOf tools:extract,
+        tools:time,
+        tools:voxel ;
+    foaf:name "t.rast3d.extract" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast3d.list> a gis:Tool ;
+    dct:isPartOf tools:list,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management>,
+        tools:time,
+        tools:voxel ;
+    foaf:name "t.rast3d.list" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast3d.mapcalc> a gis:Tool ;
+    dct:isPartOf tools:algebra,
+        tools:time,
+        tools:voxel ;
+    foaf:name "t.rast3d.mapcalc" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rast3d.univar> a gis:Tool ;
+    dct:isPartOf tools:statistics,
+        tools:time,
+        tools:voxel ;
+    foaf:name "t.rast3d.univar" .
+
+<https://grass.osgeo.org/grass72/manuals/t.register> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management>,
+        tools:register,
+        tools:time ;
+    foaf:name "t.register" .
+
+<https://grass.osgeo.org/grass72/manuals/t.remove> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management>,
+        tools:remove,
+        tools:time ;
+    foaf:name "t.remove" .
+
+<https://grass.osgeo.org/grass72/manuals/t.rename> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management>,
+        tools:rename,
+        tools:time ;
+    foaf:name "t.rename" .
+
+<https://grass.osgeo.org/grass72/manuals/t.sample> a gis:Tool ;
+    dct:isPartOf tools:sampling,
+        tools:time ;
+    foaf:name "t.sample" .
+
+<https://grass.osgeo.org/grass72/manuals/t.select> a gis:Tool ;
+    dct:isPartOf tools:metadata,
+        tools:time ;
+    foaf:name "t.select" .
+
+<https://grass.osgeo.org/grass72/manuals/t.shift> a gis:Tool ;
+    dct:isPartOf tools:shift,
+        tools:time,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#time%20management> ;
+    foaf:name "t.shift" .
+
+<https://grass.osgeo.org/grass72/manuals/t.snap> a gis:Tool ;
+    dct:isPartOf tools:snapping,
+        tools:time,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#time%20management> ;
+    foaf:name "t.snap" .
+
+<https://grass.osgeo.org/grass72/manuals/t.support> a gis:Tool ;
+    dct:isPartOf tools:metadata,
+        tools:time ;
+    foaf:name "t.support" .
+
+<https://grass.osgeo.org/grass72/manuals/t.topology> a gis:Tool ;
+    dct:isPartOf tools:time,
+        tools:topology ;
+    foaf:name "t.topology" .
+
+<https://grass.osgeo.org/grass72/manuals/t.unregister> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management>,
+        tools:time,
+        tools:unregister ;
+    foaf:name "t.unregister" .
+
+<https://grass.osgeo.org/grass72/manuals/t.vect.algebra> a gis:Tool ;
+    dct:isPartOf tools:algebra,
+        tools:time ;
+    foaf:name "t.vect.algebra" .
+
+<https://grass.osgeo.org/grass72/manuals/t.vect.db.select> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table>,
+        tools:select,
+        tools:time ;
+    foaf:name "t.vect.db.select" .
+
+<https://grass.osgeo.org/grass72/manuals/t.vect.export> a gis:Tool ;
+    dct:isPartOf tools:export,
+        tools:time ;
+    foaf:name "t.vect.export" .
+
+<https://grass.osgeo.org/grass72/manuals/t.vect.extract> a gis:Tool ;
+    dct:isPartOf tools:extract,
+        tools:time ;
+    foaf:name "t.vect.extract" .
+
+<https://grass.osgeo.org/grass72/manuals/t.vect.import> a gis:Tool ;
+    dct:isPartOf tools:import,
+        tools:time ;
+    foaf:name "t.vect.import" .
+
+<https://grass.osgeo.org/grass72/manuals/t.vect.list> a gis:Tool ;
+    dct:isPartOf tools:list,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#map%20management>,
+        tools:time ;
+    foaf:name "t.vect.list" .
+
+<https://grass.osgeo.org/grass72/manuals/t.vect.observe.strds> a gis:Tool ;
+    dct:isPartOf tools:sampling,
+        tools:time ;
+    foaf:name "t.vect.observe.strds" .
+
+<https://grass.osgeo.org/grass72/manuals/t.vect.univar> a gis:Tool ;
+    dct:isPartOf tools:statistics,
+        tools:time ;
+    foaf:name "t.vect.univar" .
+
+<https://grass.osgeo.org/grass72/manuals/t.vect.what.strds> a gis:Tool ;
+    dct:isPartOf tools:sampling,
+        tools:time ;
+    foaf:name "t.vect.what.strds" .
+
+<https://grass.osgeo.org/grass72/manuals/test.r3flow> a gis:Tool ;
+    dct:isPartOf tools:hydrology,
+        tools:voxel ;
+    foaf:name "test.r3flow" .
+
+<https://grass.osgeo.org/grass72/manuals/test.raster3d.lib> a gis:Tool ;
+    dct:isPartOf tools:test ;
+    foaf:name "test.raster3d.lib" .
+
+<https://grass.osgeo.org/grass72/manuals/v.buffer> a gis:Tool ;
+    dct:isPartOf tools:area,
+        tools:buffer,
+        tools:circle,
+        tools:geometry,
+        tools:grow,
+        tools:line,
+        tools:shrink ;
+    foaf:name "v.buffer" .
+
+<https://grass.osgeo.org/grass72/manuals/v.build> a gis:Tool ;
+    dct:isPartOf tools:geometry,
+        tools:topology ;
+    foaf:name "v.build" .
+
+<https://grass.osgeo.org/grass72/manuals/v.build.all> a gis:Tool ;
+    dct:isPartOf tools:topology ;
+    foaf:name "v.build.all" .
+
+<https://grass.osgeo.org/grass72/manuals/v.build.polylines> a gis:Tool ;
+    dct:isPartOf tools:geometry,
+        tools:line,
+        tools:node,
+        tools:topology,
+        tools:vertex ;
+    foaf:name "v.build.polylines" .
+
+<https://grass.osgeo.org/grass72/manuals/v.category> a gis:Tool ;
+    dct:isPartOf tools:category,
+        tools:layer ;
+    foaf:name "v.category" .
+
+<https://grass.osgeo.org/grass72/manuals/v.centroids> a gis:Tool ;
+    dct:isPartOf tools:area,
+        tools:centroid ;
+    foaf:name "v.centroids" .
+
+<https://grass.osgeo.org/grass72/manuals/v.class> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table>,
+        tools:classification,
+        tools:statistics ;
+    foaf:name "v.class" .
+
+<https://grass.osgeo.org/grass72/manuals/v.clean> a gis:Tool ;
+    dct:isPartOf tools:geometry,
+        tools:snapping,
+        tools:topology ;
+    foaf:name "v.clean" .
+
+<https://grass.osgeo.org/grass72/manuals/v.cluster> a gis:Tool ;
+    dct:isPartOf tools:clump,
+        tools:cluster,
+        tools:level1,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#point%20cloud> ;
+    foaf:name "v.cluster" .
+
+<https://grass.osgeo.org/grass72/manuals/v.colors> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#color%20table> ;
+    foaf:name "v.colors" .
+
+<https://grass.osgeo.org/grass72/manuals/v.colors.out> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#color%20table>,
+        tools:export ;
+    foaf:name "v.colors.out" .
+
+<https://grass.osgeo.org/grass72/manuals/v.db.addcolumn> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "v.db.addcolumn" .
+
+<https://grass.osgeo.org/grass72/manuals/v.db.addtable> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "v.db.addtable" .
+
+<https://grass.osgeo.org/grass72/manuals/v.db.connect> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table>,
+        tools:layer ;
+    foaf:name "v.db.connect" .
+
+<https://grass.osgeo.org/grass72/manuals/v.db.dropcolumn> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "v.db.dropcolumn" .
+
+<https://grass.osgeo.org/grass72/manuals/v.db.droprow> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "v.db.droprow" .
+
+<https://grass.osgeo.org/grass72/manuals/v.db.droptable> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "v.db.droptable" .
+
+<https://grass.osgeo.org/grass72/manuals/v.db.join> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "v.db.join" .
+
+<https://grass.osgeo.org/grass72/manuals/v.db.reconnect.all> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "v.db.reconnect.all" .
+
+<https://grass.osgeo.org/grass72/manuals/v.db.renamecolumn> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "v.db.renamecolumn" .
+
+<https://grass.osgeo.org/grass72/manuals/v.db.select> a gis:Tool ;
+    dct:isPartOf tools:SQL,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "v.db.select" .
+
+<https://grass.osgeo.org/grass72/manuals/v.db.univar> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table>,
+        tools:statistics ;
+    foaf:name "v.db.univar" .
+
+<https://grass.osgeo.org/grass72/manuals/v.db.update> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "v.db.update" .
+
+<https://grass.osgeo.org/grass72/manuals/v.decimate> a gis:Tool ;
+    dct:isPartOf tools:LIDAR,
+        tools:decimation,
+        tools:extract,
+        tools:generalization,
+        tools:level1,
+        tools:points,
+        tools:select ;
+    foaf:name "v.decimate" .
+
+<https://grass.osgeo.org/grass72/manuals/v.delaunay> a gis:Tool ;
+    dct:isPartOf tools:geometry,
+        tools:triangulation ;
+    foaf:name "v.delaunay" .
+
+<https://grass.osgeo.org/grass72/manuals/v.dissolve> a gis:Tool ;
+    dct:isPartOf tools:area,
+        tools:dissolve,
+        tools:line ;
+    foaf:name "v.dissolve" .
+
+<https://grass.osgeo.org/grass72/manuals/v.distance> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table>,
+        tools:distance ;
+    foaf:name "v.distance" .
+
+<https://grass.osgeo.org/grass72/manuals/v.drape> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D>,
+        tools:geometry,
+        tools:sampling,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#surface%20information> ;
+    foaf:name "v.drape" .
+
+<https://grass.osgeo.org/grass72/manuals/v.edit> a gis:Tool ;
+    dct:isPartOf tools:editing,
+        tools:geometry,
+        tools:level1,
+        tools:line,
+        tools:node,
+        tools:point,
+        tools:vertex ;
+    foaf:name "v.edit" .
+
+<https://grass.osgeo.org/grass72/manuals/v.external> a gis:Tool ;
+    dct:isPartOf tools:OGR,
+        tools:PostGIS,
+        tools:external,
+        tools:import,
+        tools:level1 ;
+    foaf:name "v.external" .
+
+<https://grass.osgeo.org/grass72/manuals/v.external.out> a gis:Tool ;
+    dct:isPartOf tools:OGR,
+        tools:PostGIS,
+        tools:export,
+        tools:external,
+        tools:output ;
+    foaf:name "v.external.out" .
+
+<https://grass.osgeo.org/grass72/manuals/v.extract> a gis:Tool ;
+    dct:isPartOf tools:dissolve,
+        tools:extract,
+        tools:random,
+        tools:select ;
+    foaf:name "v.extract" .
+
+<https://grass.osgeo.org/grass72/manuals/v.extrude> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D>,
+        tools:geometry,
+        tools:sampling ;
+    foaf:name "v.extrude" .
+
+<https://grass.osgeo.org/grass72/manuals/v.generalize> a gis:Tool ;
+    dct:isPartOf tools:displacement,
+        tools:generalization,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#network%20generalization>,
+        tools:simplification,
+        tools:smoothing ;
+    foaf:name "v.generalize" .
+
+<https://grass.osgeo.org/grass72/manuals/v.hull> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D>,
+        tools:geometry ;
+    foaf:name "v.hull" .
+
+<https://grass.osgeo.org/grass72/manuals/v.import> a gis:Tool ;
+    dct:isPartOf tools:import,
+        tools:projection ;
+    foaf:name "v.import" .
+
+<https://grass.osgeo.org/grass72/manuals/v.in.ascii> a gis:Tool ;
+    dct:isPartOf tools:ASCII,
+        tools:import,
+        tools:level1 ;
+    foaf:name "v.in.ascii" .
+
+<https://grass.osgeo.org/grass72/manuals/v.in.db> a gis:Tool ;
+    dct:isPartOf tools:import,
+        tools:points ;
+    foaf:name "v.in.db" .
+
+<https://grass.osgeo.org/grass72/manuals/v.in.dxf> a gis:Tool ;
+    dct:isPartOf tools:DXF,
+        tools:import,
+        tools:level1 ;
+    foaf:name "v.in.dxf" .
+
+<https://grass.osgeo.org/grass72/manuals/v.in.e00> a gis:Tool ;
+    dct:isPartOf tools:E00,
+        tools:import ;
+    foaf:name "v.in.e00" .
+
+<https://grass.osgeo.org/grass72/manuals/v.in.geonames> a gis:Tool ;
+    dct:isPartOf tools:gazetteer,
+        tools:import ;
+    foaf:name "v.in.geonames" .
+
+<https://grass.osgeo.org/grass72/manuals/v.in.lidar> a gis:Tool ;
+    dct:isPartOf tools:LIDAR,
+        tools:import,
+        tools:level1 ;
+    foaf:name "v.in.lidar" .
+
+<https://grass.osgeo.org/grass72/manuals/v.in.lines> a gis:Tool ;
+    dct:isPartOf tools:import,
+        tools:line,
+        tools:point ;
+    foaf:name "v.in.lines" .
+
+<https://grass.osgeo.org/grass72/manuals/v.in.mapgen> a gis:Tool ;
+    dct:isPartOf tools:import ;
+    foaf:name "v.in.mapgen" .
+
+<https://grass.osgeo.org/grass72/manuals/v.in.ogr> a gis:Tool ;
+    dct:isPartOf tools:OGR,
+        tools:import ;
+    foaf:name "v.in.ogr" .
+
+<https://grass.osgeo.org/grass72/manuals/v.in.region> a gis:Tool ;
+    dct:isPartOf tools:geometry ;
+    foaf:name "v.in.region" .
+
+<https://grass.osgeo.org/grass72/manuals/v.in.wfs> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#OGC%20web%20services>,
+        tools:import ;
+    foaf:name "v.in.wfs" .
+
+<https://grass.osgeo.org/grass72/manuals/v.info> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20columns>,
+        tools:extent,
+        tools:history,
+        tools:level1,
+        tools:metadata,
+        tools:topology ;
+    foaf:name "v.info" .
+
+<https://grass.osgeo.org/grass72/manuals/v.kcv> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#point%20pattern>,
+        tools:points,
+        tools:statistics ;
+    foaf:name "v.kcv" .
+
+<https://grass.osgeo.org/grass72/manuals/v.kernel> a gis:Tool ;
+    dct:isPartOf tools:heatmap,
+        tools:hotspot,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#kernel%20density>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#point%20density> ;
+    foaf:name "v.kernel" .
+
+<https://grass.osgeo.org/grass72/manuals/v.label> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#paint%20labels> ;
+    foaf:name "v.label" .
+
+<https://grass.osgeo.org/grass72/manuals/v.lidar.correction> a gis:Tool ;
+    dct:isPartOf tools:LIDAR ;
+    foaf:name "v.lidar.correction" .
+
+<https://grass.osgeo.org/grass72/manuals/v.lidar.edgedetection> a gis:Tool ;
+    dct:isPartOf tools:LIDAR,
+        tools:edges ;
+    foaf:name "v.lidar.edgedetection" .
+
+<https://grass.osgeo.org/grass72/manuals/v.lidar.growing> a gis:Tool ;
+    dct:isPartOf tools:LIDAR ;
+    foaf:name "v.lidar.growing" .
+
+<https://grass.osgeo.org/grass72/manuals/v.lrs.create> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#linear%20reference%20system>,
+        tools:network ;
+    foaf:name "v.lrs.create" .
+
+<https://grass.osgeo.org/grass72/manuals/v.lrs.label> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#linear%20reference%20system>,
+        tools:network ;
+    foaf:name "v.lrs.label" .
+
+<https://grass.osgeo.org/grass72/manuals/v.lrs.segment> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#linear%20reference%20system>,
+        tools:network ;
+    foaf:name "v.lrs.segment" .
+
+<https://grass.osgeo.org/grass72/manuals/v.lrs.where> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#linear%20reference%20system>,
+        tools:network ;
+    foaf:name "v.lrs.where" .
+
+<https://grass.osgeo.org/grass72/manuals/v.mkgrid> a gis:Tool ;
+    dct:isPartOf tools:geometry,
+        tools:grid,
+        tools:hexagon,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#point%20pattern> ;
+    foaf:name "v.mkgrid" .
+
+<https://grass.osgeo.org/grass72/manuals/v.neighbors> a gis:Tool ;
+    dct:isPartOf tools:aggregation,
+        tools:algebra,
+        tools:statistics ;
+    foaf:name "v.neighbors" .
+
+<https://grass.osgeo.org/grass72/manuals/v.net> a gis:Tool ;
+    dct:isPartOf tools:network,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#network%20maintenance> ;
+    foaf:name "v.net" .
+
+<https://grass.osgeo.org/grass72/manuals/v.net.alloc> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#cost%20allocation>,
+        tools:network ;
+    foaf:name "v.net.alloc" .
+
+<https://grass.osgeo.org/grass72/manuals/v.net.allpairs> a gis:Tool ;
+    dct:isPartOf tools:network,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#shortest%20path> ;
+    foaf:name "v.net.allpairs" .
+
+<https://grass.osgeo.org/grass72/manuals/v.net.bridge> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#articulation%20points>,
+        tools:network ;
+    foaf:name "v.net.bridge" .
+
+<https://grass.osgeo.org/grass72/manuals/v.net.centrality> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#centrality%20measures>,
+        tools:network ;
+    foaf:name "v.net.centrality" .
+
+<https://grass.osgeo.org/grass72/manuals/v.net.components> a gis:Tool ;
+    dct:isPartOf tools:components,
+        tools:network ;
+    foaf:name "v.net.components" .
+
+<https://grass.osgeo.org/grass72/manuals/v.net.connectivity> a gis:Tool ;
+    dct:isPartOf tools:connectivity,
+        tools:network ;
+    foaf:name "v.net.connectivity" .
+
+<https://grass.osgeo.org/grass72/manuals/v.net.distance> a gis:Tool ;
+    dct:isPartOf tools:network,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#shortest%20path> ;
+    foaf:name "v.net.distance" .
+
+<https://grass.osgeo.org/grass72/manuals/v.net.flow> a gis:Tool ;
+    dct:isPartOf tools:flow,
+        tools:network ;
+    foaf:name "v.net.flow" .
+
+<https://grass.osgeo.org/grass72/manuals/v.net.iso> a gis:Tool ;
+    dct:isPartOf tools:isolines,
+        tools:network ;
+    foaf:name "v.net.iso" .
+
+<https://grass.osgeo.org/grass72/manuals/v.net.path> a gis:Tool ;
+    dct:isPartOf tools:network,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#shortest%20path> ;
+    foaf:name "v.net.path" .
+
+<https://grass.osgeo.org/grass72/manuals/v.net.salesman> a gis:Tool ;
+    dct:isPartOf tools:network,
+        tools:salesman ;
+    foaf:name "v.net.salesman" .
+
+<https://grass.osgeo.org/grass72/manuals/v.net.spanningtree> a gis:Tool ;
+    dct:isPartOf tools:network,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#spanning%20tree> ;
+    foaf:name "v.net.spanningtree" .
+
+<https://grass.osgeo.org/grass72/manuals/v.net.steiner> a gis:Tool ;
+    dct:isPartOf tools:network,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#steiner%20tree> ;
+    foaf:name "v.net.steiner" .
+
+<https://grass.osgeo.org/grass72/manuals/v.net.timetable> a gis:Tool ;
+    dct:isPartOf tools:network,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#shortest%20path> ;
+    foaf:name "v.net.timetable" .
+
+<https://grass.osgeo.org/grass72/manuals/v.net.visibility> a gis:Tool ;
+    dct:isPartOf tools:network,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#shortest%20path>,
+        tools:visibility ;
+    foaf:name "v.net.visibility" .
+
+<https://grass.osgeo.org/grass72/manuals/v.normal> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#point%20pattern>,
+        tools:points,
+        tools:statistics ;
+    foaf:name "v.normal" .
+
+<https://grass.osgeo.org/grass72/manuals/v.out.ascii> a gis:Tool ;
+    dct:isPartOf tools:ASCII,
+        tools:export ;
+    foaf:name "v.out.ascii" .
+
+<https://grass.osgeo.org/grass72/manuals/v.out.dxf> a gis:Tool ;
+    dct:isPartOf tools:DXF,
+        tools:export ;
+    foaf:name "v.out.dxf" .
+
+<https://grass.osgeo.org/grass72/manuals/v.out.lidar> a gis:Tool ;
+    dct:isPartOf tools:LIDAR,
+        tools:export,
+        tools:points ;
+    foaf:name "v.out.lidar" .
+
+<https://grass.osgeo.org/grass72/manuals/v.out.ogr> a gis:Tool ;
+    dct:isPartOf tools:OGR,
+        tools:export ;
+    foaf:name "v.out.ogr" .
+
+<https://grass.osgeo.org/grass72/manuals/v.out.postgis> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D>,
+        tools:PostGIS,
+        tools:export,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#simple%20features>,
+        tools:topology ;
+    foaf:name "v.out.postgis" .
+
+<https://grass.osgeo.org/grass72/manuals/v.out.pov> a gis:Tool ;
+    dct:isPartOf tools:export ;
+    foaf:name "v.out.pov" .
+
+<https://grass.osgeo.org/grass72/manuals/v.out.svg> a gis:Tool ;
+    dct:isPartOf tools:export ;
+    foaf:name "v.out.svg" .
+
+<https://grass.osgeo.org/grass72/manuals/v.out.vtk> a gis:Tool ;
+    dct:isPartOf tools:VTK,
+        tools:export ;
+    foaf:name "v.out.vtk" .
+
+<https://grass.osgeo.org/grass72/manuals/v.outlier> a gis:Tool ;
+    dct:isPartOf tools:LIDAR,
+        tools:extract,
+        tools:filter,
+        tools:select,
+        tools:statistics ;
+    foaf:name "v.outlier" .
+
+<https://grass.osgeo.org/grass72/manuals/v.overlay> a gis:Tool ;
+    dct:isPartOf tools:clip,
+        tools:difference,
+        tools:geometry,
+        tools:intersection,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#spatial%20query>,
+        tools:union ;
+    foaf:name "v.overlay" .
+
+<https://grass.osgeo.org/grass72/manuals/v.pack> a gis:Tool ;
+    dct:isPartOf tools:copying,
+        tools:export ;
+    foaf:name "v.pack" .
+
+<https://grass.osgeo.org/grass72/manuals/v.parallel> a gis:Tool ;
+    dct:isPartOf tools:buffer,
+        tools:geometry,
+        tools:line ;
+    foaf:name "v.parallel" .
+
+<https://grass.osgeo.org/grass72/manuals/v.patch> a gis:Tool ;
+    dct:isPartOf tools:geometry,
+        tools:level1 ;
+    foaf:name "v.patch" .
+
+<https://grass.osgeo.org/grass72/manuals/v.perturb> a gis:Tool ;
+    dct:isPartOf tools:geometry,
+        tools:level1,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#point%20pattern>,
+        tools:random,
+        tools:statistics ;
+    foaf:name "v.perturb" .
+
+<https://grass.osgeo.org/grass72/manuals/v.proj> a gis:Tool ;
+    dct:isPartOf tools:import,
+        tools:projection,
+        tools:transformation ;
+    foaf:name "v.proj" .
+
+<https://grass.osgeo.org/grass72/manuals/v.qcount> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#point%20pattern>,
+        tools:statistics ;
+    foaf:name "v.qcount" .
+
+<https://grass.osgeo.org/grass72/manuals/v.random> a gis:Tool ;
+    dct:isPartOf tools:level1,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#point%20pattern>,
+        tools:random,
+        tools:sampling,
+        tools:statistics,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#stratified%20random%20sampling> ;
+    foaf:name "v.random" .
+
+<https://grass.osgeo.org/grass72/manuals/v.rast.stats> a gis:Tool ;
+    dct:isPartOf tools:querying,
+        tools:sampling,
+        tools:statistics,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#univariate%20statistics>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#zonal%20statistics> ;
+    foaf:name "v.rast.stats" .
+
+<https://grass.osgeo.org/grass72/manuals/v.reclass> a gis:Tool ;
+    dct:isPartOf tools:attributes,
+        tools:reclassification ;
+    foaf:name "v.reclass" .
+
+<https://grass.osgeo.org/grass72/manuals/v.rectify> a gis:Tool ;
+    dct:isPartOf tools:level1,
+        tools:rectify ;
+    foaf:name "v.rectify" .
+
+<https://grass.osgeo.org/grass72/manuals/v.report> a gis:Tool ;
+    dct:isPartOf tools:geometry,
+        tools:statistics ;
+    foaf:name "v.report" .
+
+<https://grass.osgeo.org/grass72/manuals/v.sample> a gis:Tool ;
+    dct:isPartOf tools:sampling ;
+    foaf:name "v.sample" .
+
+<https://grass.osgeo.org/grass72/manuals/v.segment> a gis:Tool ;
+    dct:isPartOf tools:geometry,
+        tools:node,
+        tools:point,
+        tools:segment,
+        tools:vertex ;
+    foaf:name "v.segment" .
+
+<https://grass.osgeo.org/grass72/manuals/v.select> a gis:Tool ;
+    dct:isPartOf tools:geometry,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#spatial%20query> ;
+    foaf:name "v.select" .
+
+<https://grass.osgeo.org/grass72/manuals/v.split> a gis:Tool ;
+    dct:isPartOf tools:densification,
+        tools:geometry,
+        tools:node,
+        tools:segment,
+        tools:vertex ;
+    foaf:name "v.split" .
+
+<https://grass.osgeo.org/grass72/manuals/v.support> a gis:Tool ;
+    dct:isPartOf tools:metadata ;
+    foaf:name "v.support" .
+
+<https://grass.osgeo.org/grass72/manuals/v.surf.bspline> a gis:Tool ;
+    dct:isPartOf tools:LIDAR,
+        tools:interpolation,
+        tools:surface ;
+    foaf:name "v.surf.bspline" .
+
+<https://grass.osgeo.org/grass72/manuals/v.surf.idw> a gis:Tool ;
+    dct:isPartOf tools:IDW,
+        tools:interpolation,
+        tools:surface ;
+    foaf:name "v.surf.idw" .
+
+<https://grass.osgeo.org/grass72/manuals/v.surf.rst> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D>,
+        tools:interpolation,
+        tools:surface ;
+    foaf:name "v.surf.rst" .
+
+<https://grass.osgeo.org/grass72/manuals/v.timestamp> a gis:Tool ;
+    dct:isPartOf tools:metadata,
+        tools:time,
+        tools:timestamp ;
+    foaf:name "v.timestamp" .
+
+<https://grass.osgeo.org/grass72/manuals/v.to.3d> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D>,
+        tools:geometry ;
+    foaf:name "v.to.3d" .
+
+<https://grass.osgeo.org/grass72/manuals/v.to.db> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> ;
+    foaf:name "v.to.db" .
+
+<https://grass.osgeo.org/grass72/manuals/v.to.lines> a gis:Tool ;
+    dct:isPartOf tools:area,
+        tools:geometry,
+        tools:line,
+        tools:point ;
+    foaf:name "v.to.lines" .
+
+<https://grass.osgeo.org/grass72/manuals/v.to.points> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D>,
+        tools:geometry,
+        tools:line,
+        tools:node,
+        tools:point,
+        tools:vertex ;
+    foaf:name "v.to.points" .
+
+<https://grass.osgeo.org/grass72/manuals/v.to.rast> a gis:Tool ;
+    dct:isPartOf tools:conversion,
+        tools:rasterization ;
+    foaf:name "v.to.rast" .
+
+<https://grass.osgeo.org/grass72/manuals/v.to.rast3> a gis:Tool ;
+    dct:isPartOf tools:conversion,
+        tools:voxel ;
+    foaf:name "v.to.rast3" .
+
+<https://grass.osgeo.org/grass72/manuals/v.transform> a gis:Tool ;
+    dct:isPartOf tools:GCP,
+        tools:geometry,
+        tools:transformation ;
+    foaf:name "v.transform" .
+
+<https://grass.osgeo.org/grass72/manuals/v.type> a gis:Tool ;
+    dct:isPartOf tools:area,
+        tools:editing,
+        tools:geometry,
+        tools:line,
+        tools:point ;
+    foaf:name "v.type" .
+
+<https://grass.osgeo.org/grass72/manuals/v.univar> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table>,
+        tools:geometry,
+        tools:statistics,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#univariate%20statistics> ;
+    foaf:name "v.univar" .
+
+<https://grass.osgeo.org/grass72/manuals/v.unpack> a gis:Tool ;
+    dct:isPartOf tools:copying,
+        tools:import ;
+    foaf:name "v.unpack" .
+
+<https://grass.osgeo.org/grass72/manuals/v.vect.stats> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#univariate%20statistics>,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#zonal%20statistics> ;
+    foaf:name "v.vect.stats" .
+
+<https://grass.osgeo.org/grass72/manuals/v.vol.rst> a gis:Tool ;
+    dct:isPartOf tools:RST,
+        tools:interpolation,
+        tools:surface,
+        tools:voxel ;
+    foaf:name "v.vol.rst" .
+
+<https://grass.osgeo.org/grass72/manuals/v.voronoi> a gis:Tool ;
+    dct:isPartOf tools:geometry,
+        tools:skeleton,
+        tools:triangulation ;
+    foaf:name "v.voronoi" .
+
+<https://grass.osgeo.org/grass72/manuals/v.what> a gis:Tool ;
+    dct:isPartOf tools:position,
+        tools:querying ;
+    foaf:name "v.what" .
+
+<https://grass.osgeo.org/grass72/manuals/v.what.rast> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table>,
+        tools:position,
+        tools:querying,
+        tools:sampling,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#surface%20information> ;
+    foaf:name "v.what.rast" .
+
+<https://grass.osgeo.org/grass72/manuals/v.what.rast3> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table>,
+        tools:position,
+        tools:querying,
+        tools:sampling,
+        <http://geographicknowledge.de/vocab/GISTools.rdf#surface%20information> ;
+    foaf:name "v.what.rast3" .
+
+<https://grass.osgeo.org/grass72/manuals/v.what.strds> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table>,
+        tools:position,
+        tools:querying,
+        tools:sampling,
+        tools:time ;
+    foaf:name "v.what.strds" .
+
+<https://grass.osgeo.org/grass72/manuals/v.what.vect> a gis:Tool ;
+    dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table>,
+        tools:position,
+        tools:querying,
+        tools:sampling ;
+    foaf:name "v.what.vect" .
+
+<https://grass.osgeo.org/grass72/manuals/wxpyimgview> a gis:Tool ;
+    dct:isPartOf tools:graphics ;
+    foaf:name "wxpyimgview" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#3D%20raster> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "3D raster" .
+
+tools:ACCA a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "ACCA" .
+
+tools:AVHRR a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "AVHRR" .
+
+tools:Brovey a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "Brovey" .
+
+tools:CCA a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "CCA" .
+
+tools:E00 a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "E00" .
+
+tools:FPAR a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "FPAR" .
+
+tools:LOS a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "LOS" .
+
+tools:NDVI a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "NDVI" .
+
+tools:RST a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "RST" .
+
+tools:SPOT a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "SPOT" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Tasseled%20Cap%20transformation> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "Tasseled Cap transformation" .
+
+tools:VRML a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "VRML" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#actual%20evapotranspiration> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "actual evapotranspiration" .
+
+tools:addons a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "addons" .
+
+tools:albedo a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "albedo" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#area%20estimation> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "area estimation" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#articulation%20points> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "articulation points" .
+
+tools:aspect a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "aspect" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20columns> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "attribute columns" .
+
+tools:attributes a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "attributes" .
+
+tools:autocorrelation a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "autocorrelation" .
+
+tools:biomass a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "biomass" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#biophysical%20parameters> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "biophysical parameters" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#canonical%20components%20analysis> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "canonical components analysis" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#centrality%20measures> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "centrality measures" .
+
+tools:centroid a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "centroid" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#chart%20maps> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "chart maps" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#choropleth%20map> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "choropleth map" .
+
+tools:citing a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "citing" .
+
+tools:clip a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "clip" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#cloud%20detection> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "cloud detection" .
+
+tools:clump a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "clump" .
+
+tools:cluster a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "cluster" .
+
+tools:components a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "components" .
+
+tools:compression a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "compression" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#computational%20region> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "computational region" .
+
+tools:connectivity a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "connectivity" .
+
+tools:contour a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "contour" .
+
+tools:contours a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "contours" .
+
+tools:copyright a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "copyright" .
+
+tools:correlation a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "correlation" .
+
+tools:create a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "create" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#create%20location> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "create location" .
+
+tools:curvature a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "curvature" .
+
+tools:decimation a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "decimation" .
+
+tools:densification a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "densification" .
+
+tools:deposition a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "deposition" .
+
+tools:depressions a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "depressions" .
+
+tools:difference a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "difference" .
+
+tools:digitizer a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "digitizer" .
+
+tools:displacement a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "displacement" .
+
+tools:download a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "download" .
+
+tools:drainage a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "drainage" .
+
+tools:emissivity a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "emissivity" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#fill%20sinks> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "fill sinks" .
+
+tools:flood a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "flood" .
+
+tools:fractal a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "fractal" .
+
+tools:frame a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "frame" .
+
+tools:fusion a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "fusion" .
+
+tools:gazetteer a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "gazetteer" .
+
+tools:geomorphology a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "geomorphology" .
+
+tools:georectification a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "georectification" .
+
+tools:gradient a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "gradient" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#graphical%20modeler> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "graphical modeler" .
+
+tools:graticule a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "graticule" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#great%20circle> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "great circle" .
+
+tools:grow a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "grow" .
+
+tools:heatmap a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "heatmap" .
+
+tools:help a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "help" .
+
+tools:hexagon a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "hexagon" .
+
+tools:histogram a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "histogram" .
+
+tools:hotspot a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "hotspot" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#imagery%20quality%20assessment> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "imagery quality assessment" .
+
+tools:intersection a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "intersection" .
+
+tools:isolines a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "isolines" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#kernel%20density> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "kernel density" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#kernel%20filter> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "kernel filter" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#land%20flux> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "land flux" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#land%20surface%20temperature> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "land surface temperature" .
+
+tools:landform a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "landform" .
+
+tools:latitude a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "latitude" .
+
+tools:license a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "license" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#line%20of%20sight> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "line of sight" .
+
+tools:longitude a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "longitude" .
+
+tools:manual a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "manual" .
+
+tools:measurement a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "measurement" .
+
+tools:modules a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "modules" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#net%20radiation> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "net radiation" .
+
+tools:netCDF a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "netCDF" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#network%20generalization> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "network generalization" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#network%20maintenance> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "network maintenance" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#object%20recognition> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "object recognition" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#overland%20flow> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "overland flow" .
+
+tools:patching a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "patching" .
+
+tools:permission a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "permission" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#point%20cloud> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "point cloud" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#point%20density> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "point density" .
+
+tools:polar a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "polar" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#principal%20components%20analysis> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "principal components analysis" .
+
+tools:quantization a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "quantization" .
+
+tools:rainfall a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "rainfall" .
+
+tools:rasterization a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "rasterization" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#rate%20of%20spread> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "rate of spread" .
+
+tools:reclass a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "reclass" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#recode%20categories> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "recode categories" .
+
+tools:register a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "register" .
+
+tools:resolution a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "resolution" .
+
+tools:rhumbline a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "rhumbline" .
+
+tools:salesman a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "salesman" .
+
+tools:search a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "search" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#search%20path> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "search path" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#sediment%20flow> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "sediment flow" .
+
+tools:separate a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "separate" .
+
+tools:sharpen a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "sharpen" .
+
+tools:shift a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "shift" .
+
+tools:shrink a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "shrink" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#simple%20features> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "simple features" .
+
+tools:simplification a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "simplification" .
+
+tools:skeleton a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "skeleton" .
+
+tools:slope a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "slope" .
+
+tools:smoothing a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "smoothing" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#soil%20heat%20flux> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "soil heat flux" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#solute%20transport> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "solute transport" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#spanning%20tree> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "spanning tree" .
+
+tools:split a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "split" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#steiner%20tree> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "steiner tree" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#stratified%20random%20sampling> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "stratified random sampling" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#stream%20power%20index> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "stream power index" .
+
+tools:test a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "test" .
+
+tools:texture a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "texture" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#topographic%20correction> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "topographic correction" .
+
+tools:union a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "union" .
+
+tools:unregister a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "unregister" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#user%20interface> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "user interface" .
+
+tools:variables a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "variables" .
+
+tools:vectorization a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "vectorization" .
+
+tools:vegetation a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "vegetation" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#vegetation%20index> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "vegetation index" .
+
+tools:version a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "version" .
+
+tools:viewshed a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "viewshed" .
+
+tools:visibility a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "visibility" .
+
+tools:wetness a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "wetness" .
+
+tools:workflow a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "workflow" .
+
+tools:yield a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "yield" .
+
+tools:DXF a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "DXF" .
+
 <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Interoperability%20Tools%28interop%29> a gis:Toolbox ;
     dct:isPartOf dbp:ArcGIS ;
     foaf:name "Data Interoperability Tools(interop)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Fast%20Fourier%20Transform> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "Fast Fourier Transform" .
+
+tools:IDW a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "IDW" .
+
+tools:MLC a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "MLC" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#Maximum%20Likelihood%20Classification> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "Maximum Likelihood Classification" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#OGC%20web%20services> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "OGC web services" .
+
+tools:PCA a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "PCA" .
+
+tools:PNG a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "PNG" .
+
+tools:SMAP a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "SMAP" .
 
 <http://geographicknowledge.de/vocab/GISTools.rdf#Space%20Time%20Pattern%20Mining%20Tools%28stpm%29> a gis:Toolbox ;
     dct:isPartOf dbp:ArcGIS ;
     foaf:name "Space Time Pattern Mining Tools(stpm)" .
 
+tools:animation a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "animation" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#atmospheric%20correction> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "atmospheric correction" .
+
+tools:binning a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "binning" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#brightness%20temperature> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "brightness temperature" .
+
+tools:category a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "category" .
+
+tools:circle a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "circle" .
+
+tools:clumps a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "clumps" .
+
+tools:colors a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "colors" .
+
+tools:composite a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "composite" .
+
+tools:diagram a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "diagram" .
+
+tools:dissolve a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "dissolve" .
+
+tools:edges a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "edges" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#evaporative%20fraction> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "evaporative fraction" .
+
+tools:extensions a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "extensions" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#focal%20statistics> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "focal statistics" .
+
+tools:generalization a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "generalization" .
+
+tools:grid a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "grid" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#groundwater%20flow> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "groundwater flow" .
+
+tools:history a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "history" .
+
+tools:installation a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "installation" .
+
+tools:layer a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "layer" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#map%20annotations> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "map annotations" .
+
+tools:mask a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "mask" .
+
+tools:merge a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "merge" .
+
+tools:mosaicking a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "mosaicking" .
+
+tools:multispectral a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "multispectral" .
+
+tools:neighbor a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "neighbor" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#null%20data> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "null data" .
+
+tools:output a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "output" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#paint%20labels> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "paint labels" .
+
+tools:percentile a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "percentile" .
+
+tools:printing a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "printing" .
+
+tools:proximity a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "proximity" .
+
+tools:quantile a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "quantile" .
+
+tools:rectify a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "rectify" .
+
+tools:regression a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "regression" .
+
+tools:remove a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "remove" .
+
+tools:rename a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "rename" .
+
+tools:rescale a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "rescale" .
+
+tools:segment a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "segment" .
+
+tools:segmentation a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "segmentation" .
+
+tools:shadow a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "shadow" .
+
+tools:sink a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "sink" .
+
+tools:snapping a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "snapping" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#soil%20moisture> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "soil moisture" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#spatial%20query> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "spatial query" .
+
+tools:spread a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "spread" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#stream%20network> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "stream network" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#sun%20energy> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "sun energy" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#topographic%20index> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "topographic index" .
+
+tools:transect a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "transect" .
+
+tools:triangulation a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "triangulation" .
+
+tools:volume a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "volume" .
+
+tools:ASTER a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "ASTER" .
+
+tools:GCP a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "GCP" .
+
+tools:MODIS a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "MODIS" .
+
+tools:PostGIS a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "PostGIS" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#connection%20settings> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "connection settings" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#cost%20allocation> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "cost allocation" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#cost%20surface> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "cost surface" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#cumulative%20costs> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "cumulative costs" .
+
+tools:erosion a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "erosion" .
+
+tools:fire a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "fire" .
+
+tools:flow a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "flow" .
+
+tools:hazard a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "hazard" .
+
+tools:hillshade a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "hillshade" .
+
+tools:orthorectify a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "orthorectify" .
+
+tools:radiance a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "radiance" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#radiometric%20conversion> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "radiometric conversion" .
+
+tools:reclassification a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "reclassification" .
+
+tools:relief a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "relief" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#sun%20position> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "sun position" .
+
+tools:support a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "support" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#surface%20information> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "surface information" .
+
+tools:tiling a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "tiling" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#time%20management> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "time management" .
+
+tools:timestamp a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "timestamp" .
+
+tools:watershed a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "watershed" .
+
+tools:Landsat a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "Landsat" .
+
+tools:OGR a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "OGR" .
+
 <http://geographicknowledge.de/vocab/GISTools.rdf#Tracking%20Analyst%20Tools%28ta%29> a gis:Toolbox ;
     dct:isPartOf dbp:ArcGIS ;
     foaf:name "Tracking Analyst Tools(ta)" .
+
+tools:VTK a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "VTK" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#color%20transformation> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "color transformation" .
+
+tools:copying a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "copying" .
+
+tools:editing a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "editing" .
+
+tools:evapotranspiration a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "evapotranspiration" .
+
+tools:external a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "external" .
+
+tools:legend a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "legend" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#linear%20reference%20system> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "linear reference system" .
+
+tools:profile a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "profile" .
+
+tools:select a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "select" .
+
+tools:signatures a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "signatures" .
+
+tools:soil a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "soil" .
+
+tools:solar a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "solar" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#supervised%20classification> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "supervised classification" .
+
+tools:terrain a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "terrain" .
+
+tools:visualization a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "visualization" .
+
+tools:HIS a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "HIS" .
+
+tools:IHS a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "IHS" .
 
 <http://geographicknowledge.de/vocab/GISTools.rdf#Parcel%20Fabric%20Tools%28fabric%29> a gis:Toolbox ;
     dct:isPartOf dbp:ArcGIS ;
     foaf:name "Parcel Fabric Tools(fabric)" .
 
+tools:SEBAL a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "SEBAL" .
+
 <http://geographicknowledge.de/vocab/GISTools.rdf#Schematics%20Tools%28schematics%29> a gis:Toolbox ;
     dct:isPartOf dbp:ArcGIS ;
     foaf:name "Schematics Tools(schematics)" .
+
+tools:accumulation a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "accumulation" .
+
+tools:buffer a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "buffer" .
+
+tools:extent a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "extent" .
+
+tools:filter a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "filter" .
+
+tools:list a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "list" .
+
+tools:model a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "model" .
+
+tools:monitors a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "monitors" .
+
+tools:node a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "node" .
+
+tools:points a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "points" .
+
+tools:reflectance a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "reflectance" .
+
+tools:series a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "series" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#univariate%20statistics> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "univariate statistics" .
+
+tools:vertex a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "vertex" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#zonal%20statistics> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "zonal statistics" .
+
+tools:area a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "area" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#diversity%20index> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "diversity index" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#energy%20balance> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "energy balance" .
+
+tools:extract a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "extract" .
+
+tools:miscellaneous a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "miscellaneous" .
+
+tools:point a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "point" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#point%20pattern> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "point pattern" .
+
+tools:resample a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "resample" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#3D> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "3D" .
 
 <http://geographicknowledge.de/vocab/GISTools.rdf#Geocoding%20Tools%28geocoding%29> a gis:Toolbox ;
     dct:isPartOf dbp:ArcGIS ;
@@ -3977,9 +7837,137 @@ tools:ZonalStatistics_sa a gis:Tool ;
     dct:isPartOf dbp:ArcGIS ;
     foaf:name "Multidimension Tools(md)" .
 
+tools:SQL a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "SQL" .
+
+tools:elevation a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "elevation" .
+
+tools:position a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "position" .
+
+tools:projection a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "projection" .
+
+tools:satellite a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "satellite" .
+
+tools:scripts a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "scripts" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#shortest%20path> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "shortest path" .
+
+tools:topology a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "topology" .
+
+tools:ASCII a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "ASCII" .
+
+tools:RGB a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "RGB" .
+
+tools:distance a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "distance" .
+
+tools:random a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "random" .
+
+tools:settings a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "settings" .
+
+tools:classification a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "classification" .
+
+tools:line a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "line" .
+
+tools:transformation a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "transformation" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#color%20table> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "color table" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#patch%20index> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "patch index" .
+
+tools:querying a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "querying" .
+
+tools:interpolation a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "interpolation" .
+
 <http://geographicknowledge.de/vocab/GISTools.rdf#Editing%20Tools%28edit%29> a gis:Toolbox ;
     dct:isPartOf dbp:ArcGIS ;
     foaf:name "Editing Tools(edit)" .
+
+tools:LIDAR a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "LIDAR" .
+
+tools:aggregation a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "aggregation" .
+
+tools:cartography a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "cartography" .
+
+tools:graphics a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "graphics" .
+
+tools:GUI a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "GUI" .
+
+tools:surface a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "surface" .
+
+tools:algebra a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "algebra" .
+
+tools:conversion a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "conversion" .
+
+tools:level1 a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "level1" .
+
+tools:metadata a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "metadata" .
+
+tools:sampling a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "sampling" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#landscape%20structure%20analysis> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "landscape structure analysis" .
 
 dbp:ArcGIS a dbo:Software ;
     dbo:developer dbp:Esri ;
@@ -3991,9 +7979,21 @@ dbp:ArcGIS a dbo:Software ;
     dct:isPartOf dbp:ArcGIS ;
     foaf:name "Analysis Tools(analysis)" .
 
+tools:hydrology a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "hydrology" .
+
+tools:network a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "network" .
+
 <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> a gis:Toolbox ;
     dct:isPartOf dbp:ArcGIS ;
     foaf:name "Server Tools(server)" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#map%20management> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "map management" .
 
 <http://geographicknowledge.de/vocab/GISTools.rdf#Geostatistical%20Analyst%20Tools%28ga%29> a gis:Toolbox ;
     dct:isPartOf dbp:ArcGIS ;
@@ -4007,9 +8007,37 @@ dbp:ArcGIS a dbo:Software ;
     dct:isPartOf dbp:ArcGIS ;
     foaf:name "Spatial Statistics Tools(stats)" .
 
+tools:geometry a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "geometry" .
+
+tools:voxel a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "voxel" .
+
+<http://geographicknowledge.de/vocab/GISTools.rdf#attribute%20table> a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "attribute table" .
+
+tools:export a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "export" .
+
+tools:import a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "import" .
+
 <http://geographicknowledge.de/vocab/GISTools.rdf#Cartography%20Tools%28cartography%29> a gis:Toolbox ;
     dct:isPartOf dbp:ArcGIS ;
     foaf:name "Cartography Tools(cartography)" .
+
+tools:statistics a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "statistics" .
+
+tools:time a gis:Toolbox ;
+    dct:isPartOf dbp:GRASS ;
+    foaf:name "time" .
 
 <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> a gis:Toolbox ;
     dct:isPartOf dbp:ArcGIS ;
@@ -4030,4 +8058,8 @@ dbp:ArcGIS a dbo:Software ;
 <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> a gis:Toolbox ;
     dct:isPartOf dbp:ArcGIS ;
     foaf:name "Data Management Tools(management)" .
+
+dbp:GRASS a dbo:Software ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/GRASS> ;
+    foaf:name "GRASS GIS" .
 
