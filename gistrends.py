@@ -60,7 +60,7 @@ class GatherTools():
 
     def store(self,res):
         for id,t in enumerate(self.currenttools):
-            #if not t == self.kw:
+            if not t == self.kw:
                 #make sure trends are within plausible limits
                 B = res[t] < res[self.kw] and res[t] >0
                 if self.unsaferun: B = True
@@ -113,7 +113,14 @@ class GatherTools():
         # print(suggestions_dict)
         return time.mean()
 
+def normalizeArcpyToolString(tool):
+        #ex = 'CreateSchematicFolder_schematics'
+        #Get the actual toolname (without toolbox and splitting at upper case letters)
+        return ' '.join(re.findall('[A-Z][A-Z]*[a-z]*[0-9]*', tool.partition('_')[0]))
 
+
+def normalizeGRASSToolString(tool):
+    return tool.split("/")[-1]
 
 def getDBpediaCompany(url):
     sparql = SPARQLWrapper("http://dbpedia.org/sparql")
@@ -145,13 +152,13 @@ def readToolBoxes(tooldictfile, listoftoolboxes=[]):
 
 
 
-def getTrends4Tools(tooldict,referencekeyword):
+def getTrends4Tools(tooldict,referencekeyword, normalize=normalizeArcpyToolString):
     gt = GatherTools(referencekeyword)
     count = 0
     for k,v in tooldict.items():
         for tool in v:
             count+=1
-            ntool = normalizeArcpyToolString(tool)
+            ntool = normalize(tool)
             gt.add(ntool,k)
     print 'Tool count '+str(count)
     gt.dump('GTresults_kw'+referencekeyword+'.json')
@@ -301,14 +308,7 @@ def buildGRASSToolList(outf):
 
 
 
-def normalizeArcpyToolString(tool):
-        #ex = 'CreateSchematicFolder_schematics'
-        #Get the actual toolname (without toolbox and splitting at upper case letters)
-        return ' '.join(re.findall('[A-Z][A-Z]*[a-z]*[0-9]*', tool.partition('_')[0]))
 
-
-def normalizeGRASSToolString(tool):
-    return tool.split("/")[-1]
 
 
 
@@ -415,10 +415,13 @@ def main():
     #sd = readSoft('GISSoftdict.json')
     #getTrends4Soft(sd, 'ArcGIS')
     #visualize('Softresults_kwArcGIS.json', twolayered=False, index='GIS Software')
-    generateRDF('GISTools.ttl','http://dbpedia.org/resource/ArcGIS','ArcGISTooldict.json','GISSoftdict.json', tooluris=False) #a gis:Toolbox
+    #generateRDF('GISTools.ttl','http://dbpedia.org/resource/ArcGIS','ArcGISTooldict.json','GISSoftdict.json', tooluris=False) #a gis:Toolbox
 
     #buildGRASSToolList('GRASSTooldict.json')
-    generateRDF('GISTools.ttl','http://dbpedia.org/resource/GRASS','GRASSTooldict.json',tooluris=True, normalize=normalizeGRASSToolString)
+    td = readToolBoxes('GRASSTooldict.json', ['NDVI','terrain','landscape structure analysis', 'diversity index'])
+    res = getTrends4Tools(td,'GRASS GIS', normalize=normalizeGRASSToolString)
+    #visualize('GTresults_kwArcGIS.json')
+    #generateRDF('GISTools.ttl','http://dbpedia.org/resource/GRASS','GRASSTooldict.json',tooluris=True, normalize=normalizeGRASSToolString)
 
 
 

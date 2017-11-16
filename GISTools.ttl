@@ -46,6 +46,12 @@ dbp:Erdas_Imagine a dbo:Software ;
     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/GeoBase_(Telogis_GIS_software)> ;
     foaf:name "GeoBase" .
 
+dbp:GeoMedia a dbo:Software ;
+    dbo:developer <http://dbpedia.org/page/Intergraph> ;
+    foaf:homepage <http://geospatial.intergraph.com/products/GeoMedia/Details.aspx> ;
+    foaf:isPrimaryTopicOf <http://www.hexagongeospatial.com/products/power-portfolio/geomedia> ;
+    foaf:name "GeoMedia" .
+
 dbp:GeoNetwork_opensource a dbo:Software ;
     dbo:developer dbp:UNOCHA ;
     foaf:homepage <http://geonetwork-opensource.org>,
@@ -83,11 +89,6 @@ dbp:ILWIS a dbo:Software ;
     foaf:homepage <http://52north.org/downloads/ilwis> ;
     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/ILWIS> ;
     foaf:name "ILWIS" .
-
-dbp:Intergraph a dbo:Software ;
-    foaf:homepage <http://ppm.intergraph.com/> ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Intergraph> ;
-    foaf:name "Intergraph" .
 
 dbp:JUMP_GIS a dbo:Software ;
     foaf:homepage <http://jump-pilot.sourceforge.net/> ;
@@ -188,7 +189,7 @@ dbp:SPRING a dbo:Software ;
 
 dbp:Smallworld a dbo:Software ;
     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Smallworld> ;
-    foaf:name "Smallworld" .
+    foaf:name "Smallworld GIS" .
 
 dbp:TNTmips a dbo:Software ;
     dbo:developer <http://dbpedia.org/resource/MicroImages,_Inc.> ;
