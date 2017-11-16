@@ -396,6 +396,44 @@ def getWebsite(urllist):
 
 
 
+def readtoolpages(toolpf):
+    output = {}
+    with open('ArcGIStooldict.json', 'rb') as fp:
+        tooldict = json.load(fp)
+    fp.close
+    with open(toolpf) as toolf:
+     reader = csv.reader(toolf, delimiter=',')
+     next(reader) #skip the first line
+     for row in reader:
+            pagename= row[0]
+            p = pagename.split('/')
+            toolb = ' '.join([word.title() for word in (p[1].split('-')) if word.lower() != 'toolbox'])
+            #print toolb
+            tooln = ''.join([word.title() for word in(p[2].split('-'))])
+            #print tooln
+            website = row[2]
+            res = {}
+            for k,v in tooldict.items():
+                mytoolb = k.split('Tools')[0].split('(')[0].split('_')[0].strip()
+                #print mytoolb + ' : '+toolb.strip()
+                if (mytoolb).lower() == toolb.strip().lower():
+                    for t in v:
+                        mytool = (t.split('_')[0].strip())
+                        if mytool == tooln.strip():
+                            print mytool +' : '+tooln
+                            output[t]={'website':website,'toolbox':k}
+                            break
+                    break
+
+     with open('ArcGIStoolwebsites.json', 'w') as fp:
+        json.dump(output, fp)
+     fp.close
+
+
+
+
+    toolf.close
+
 
 
 
@@ -418,10 +456,12 @@ def main():
     #generateRDF('GISTools.ttl','http://dbpedia.org/resource/ArcGIS','ArcGISTooldict.json','GISSoftdict.json', tooluris=False) #a gis:Toolbox
 
     #buildGRASSToolList('GRASSTooldict.json')
-    td = readToolBoxes('GRASSTooldict.json', ['NDVI','terrain','landscape structure analysis', 'diversity index'])
-    res = getTrends4Tools(td,'GRASS GIS', normalize=normalizeGRASSToolString)
+    #td = readToolBoxes('GRASSTooldict.json', ['NDVI','terrain','landscape structure analysis', 'diversity index'])
+    #res = getTrends4Tools(td,'GRASS GIS', normalize=normalizeGRASSToolString)
     #visualize('GTresults_kwArcGIS.json')
     #generateRDF('GISTools.ttl','http://dbpedia.org/resource/GRASS','GRASSTooldict.json',tooluris=True, normalize=normalizeGRASSToolString)
+
+    readtoolpages("arcgis10_network\\arcgis_tool_pages.csv")
 
 
 
