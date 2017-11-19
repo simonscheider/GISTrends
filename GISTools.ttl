@@ -256,6 +256,7 @@ tools:ATan_sa a gis:Tool ;
 
 tools:Abs_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/abs.htm> ;
     foaf:name "Abs" .
 
 tools:AddAttachments_management a gis:Tool ;
@@ -288,6 +289,7 @@ tools:AddFeatureClassToTerrain_3d a gis:Tool ;
 
 tools:AddFeatureClassToTopology_management a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/add-feature-class-to-topology.htm> ;
     foaf:name "Add Feature Class To Topology" .
 
 tools:AddFieldConflictFilter_management a gis:Tool ;
@@ -296,10 +298,12 @@ tools:AddFieldConflictFilter_management a gis:Tool ;
 
 tools:AddFieldToAnalysisLayer_na a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/network-analyst-toolbox/add-field-to-analysis-layer.htm> ;
     foaf:name "Add Field To Analysis Layer" .
 
 tools:AddField_management a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/add-field.htm> ;
     foaf:name "Add Field" .
 
 tools:AddFilesToLasDataset_management a gis:Tool ;
@@ -332,6 +336,7 @@ tools:AddJoin_management a gis:Tool ;
 
 tools:AddLocations_na a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/network-analyst-toolbox/add-locations.htm> ;
     foaf:name "Add Locations" .
 
 tools:AddRastersToMosaicDataset_management a gis:Tool ;
@@ -344,6 +349,7 @@ tools:AddRepresentation_cartography a gis:Tool ;
 
 tools:AddRuleToTopology_management a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/add-rule-to-topology.htm> ;
     foaf:name "Add Rule To Topology" .
 
 tools:AddSpatialIndex_management a gis:Tool ;
@@ -356,6 +362,7 @@ tools:AddSubtype_management a gis:Tool ;
 
 tools:AddSurfaceInformation_3d a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#3D%20Analyst%20Tools%283d%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/3d-analyst-toolbox/add-surface-information.htm> ;
     foaf:name "Add Surface Information" .
 
 tools:AddTerrainPyramidLevel_3d a gis:Tool ;
@@ -392,6 +399,7 @@ tools:AggregatePolygons_cartography a gis:Tool ;
 
 tools:Aggregate_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/aggregate.htm> ;
     foaf:name "Aggregate" .
 
 tools:AlignMarkerToStrokeOrFill_cartography a gis:Tool ;
@@ -476,6 +484,7 @@ tools:ArcS57_arc a gis:Tool ;
 
 tools:AreaSolarRadiation_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/area-solar-radiation.htm> ;
     foaf:name "Area Solar Radiation" .
 
 tools:ArealInterpolationLayerToPolygons_ga a gis:Tool ;
@@ -488,6 +497,7 @@ tools:Aspect_3d a gis:Tool ;
 
 tools:Aspect_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/aspect.htm> ;
     foaf:name "Aspect" .
 
 tools:AssignDefaultToField_management a gis:Tool ;
@@ -508,6 +518,7 @@ tools:BandCollectionStats_sa a gis:Tool ;
 
 tools:Basin_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/basin.htm> ;
     foaf:name "Basin" .
 
 tools:BatchBuildPyramids_management a gis:Tool ;
@@ -528,22 +539,27 @@ tools:BearingDistanceToLine_management a gis:Tool ;
 
 tools:BitwiseAnd_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/bitwise-and.htm> ;
     foaf:name "Bitwise And" .
 
 tools:BitwiseLeftShift_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/bitwise-left-shift.htm> ;
     foaf:name "Bitwise Left Shift" .
 
 tools:BitwiseNot_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/bitwise-not.htm> ;
     foaf:name "Bitwise Not" .
 
 tools:BitwiseOr_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/bitwise-or.htm> ;
     foaf:name "Bitwise Or" .
 
 tools:BitwiseRightShift_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/bitwise-right-shift.htm> ;
     foaf:name "Bitwise Right Shift" .
 
 tools:BitwiseXOr_sa a gis:Tool ;
@@ -552,18 +568,22 @@ tools:BitwiseXOr_sa a gis:Tool ;
 
 tools:BlockStatistics_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/block-statistics.htm> ;
     foaf:name "Block Statistics" .
 
 tools:BooleanAnd_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/boolean-and.htm> ;
     foaf:name "Boolean And" .
 
 tools:BooleanNot_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/boolean-not.htm> ;
     foaf:name "Boolean Not" .
 
 tools:BooleanOr_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/boolean-or.htm> ;
     foaf:name "Boolean Or" .
 
 tools:BooleanXOr_sa a gis:Tool ;
@@ -572,6 +592,7 @@ tools:BooleanXOr_sa a gis:Tool ;
 
 tools:BoundaryClean_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/boundary-clean.htm> ;
     foaf:name "Boundary Clean" .
 
 tools:Buffer3D_3d a gis:Tool ;
@@ -580,6 +601,7 @@ tools:Buffer3D_3d a gis:Tool ;
 
 tools:Buffer_analysis a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/buffer.htm> ;
     foaf:name "Buffer" .
 
 tools:Buffer_arc a gis:Tool ;
@@ -668,6 +690,7 @@ tools:CalculateEndTime_management a gis:Tool ;
 
 tools:CalculateField_management a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/calculate-field.htm> ;
     foaf:name "Calculate Field" .
 
 tools:CalculateGridConvergenceAngle_cartography a gis:Tool ;
@@ -680,6 +703,7 @@ tools:CalculateLineCaps_cartography a gis:Tool ;
 
 tools:CalculateLocations_na a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/network-analyst-toolbox/calculate-locations.htm> ;
     foaf:name "Calculate Locations" .
 
 tools:CalculatePolygonMainAngle_cartography a gis:Tool ;
@@ -700,6 +724,7 @@ tools:CalculateUTMZone_cartography a gis:Tool ;
 
 tools:CalculateValue_management a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/calculate-value.htm> ;
     foaf:name "Calculate Value" .
 
 tools:CalibrateRoutes_lr a gis:Tool ;
@@ -708,6 +733,7 @@ tools:CalibrateRoutes_lr a gis:Tool ;
 
 tools:CellStatistics_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/cell-statistics.htm> ;
     foaf:name "Cell Statistics" .
 
 tools:CentralFeature_stats a gis:Tool ;
@@ -740,6 +766,7 @@ tools:CheckGeometry_management a gis:Tool ;
 
 tools:ClassProbability_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/class-probability.htm> ;
     foaf:name "Class Probability" .
 
 tools:ClassifyLasByHeight_3d a gis:Tool ;
@@ -748,6 +775,7 @@ tools:ClassifyLasByHeight_3d a gis:Tool ;
 
 tools:ClassifyRaster_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/classify-raster.htm> ;
     foaf:name "Classify Raster" .
 
 tools:Clean_arc a gis:Tool ;
@@ -760,6 +788,7 @@ tools:ClearWorkspaceCache_management a gis:Tool ;
 
 tools:Clip_analysis a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/clip.htm> ;
     foaf:name "Clip" .
 
 tools:Clip_arc a gis:Tool ;
@@ -804,10 +833,12 @@ tools:ColorBalanceMosaicDataset_management a gis:Tool ;
 
 tools:CombinatorialAnd_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/combinatorial-and.htm> ;
     foaf:name "Combinatorial And" .
 
 tools:CombinatorialOr_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/combinatorial-or.htm> ;
     foaf:name "Combinatorial Or" .
 
 tools:CombinatorialXOr_sa a gis:Tool ;
@@ -816,6 +847,7 @@ tools:CombinatorialXOr_sa a gis:Tool ;
 
 tools:Combine_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/combine.htm> ;
     foaf:name "Combine" .
 
 tools:Compact_management a gis:Tool ;
@@ -856,6 +888,7 @@ tools:ComputePansharpenWeights_management a gis:Tool ;
 
 tools:ComputeSegmentAttributes_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/compute-segment-attributes.htm> ;
     foaf:name "Compute Segment Attributes" .
 
 tools:ComputeTiePoints_management a gis:Tool ;
@@ -864,6 +897,7 @@ tools:ComputeTiePoints_management a gis:Tool ;
 
 tools:Con_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/con-.htm> ;
     foaf:name "Con" .
 
 tools:ConcatenateDateAndTimeFields_ta a gis:Tool ;
@@ -904,6 +938,7 @@ tools:ContourList_3d a gis:Tool ;
 
 tools:ContourList_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/contour-list.htm> ;
     foaf:name "Contour List" .
 
 tools:ContourWithBarriers_3d a gis:Tool ;
@@ -912,6 +947,7 @@ tools:ContourWithBarriers_3d a gis:Tool ;
 
 tools:ContourWithBarriers_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/contour-with-barriers.htm> ;
     foaf:name "Contour With Barriers" .
 
 tools:Contour_3d a gis:Tool ;
@@ -920,6 +956,7 @@ tools:Contour_3d a gis:Tool ;
 
 tools:Contour_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/contour.htm> ;
     foaf:name "Contour" .
 
 tools:ConvertCoordinateNotation_management a gis:Tool ;
@@ -948,6 +985,7 @@ tools:ConvertTimeZone_management a gis:Tool ;
 
 tools:CopyFeatures_management a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/copy-features.htm> ;
     foaf:name "Copy Features" .
 
 tools:CopyParcelFabric_fabric a gis:Tool ;
@@ -984,6 +1022,7 @@ tools:Copy_management a gis:Tool ;
 
 tools:Corridor_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/corridor.htm> ;
     foaf:name "Corridor" .
 
 tools:CosH_sa a gis:Tool ;
@@ -992,22 +1031,27 @@ tools:CosH_sa a gis:Tool ;
 
 tools:Cos_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/cos.htm> ;
     foaf:name "Cos" .
 
 tools:CostAllocation_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/cost-allocation.htm> ;
     foaf:name "Cost Allocation" .
 
 tools:CostBackLink_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/cost-back-link.htm> ;
     foaf:name "Cost Back Link" .
 
 tools:CostDistance_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/cost-distance.htm> ;
     foaf:name "Cost Distance" .
 
 tools:CostPath_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/cost-path.htm> ;
     foaf:name "Cost Path" .
 
 tools:CountRenderer_stats a gis:Tool ;
@@ -1016,6 +1060,7 @@ tools:CountRenderer_stats a gis:Tool ;
 
 tools:CreateAddressLocator_geocoding a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geocoding%20Tools%28geocoding%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/geocoding-toolbox/create-address-locator.htm> ;
     foaf:name "Create Address Locator" .
 
 tools:CreateArcInfoWorkspace_management a gis:Tool ;
@@ -1032,10 +1077,12 @@ tools:CreateCartographicPartitions_cartography a gis:Tool ;
 
 tools:CreateCompositeAddressLocator_geocoding a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geocoding%20Tools%28geocoding%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/geocoding-toolbox/create-composite-address-locator.htm> ;
     foaf:name "Create Composite Address Locator" .
 
 tools:CreateConstantRaster_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/create-constant-raster.htm> ;
     foaf:name "Create Constant Raster" .
 
 tools:CreateCustomGeoTransformation_management a gis:Tool ;
@@ -1112,6 +1159,7 @@ tools:CreateMosaicDataset_management a gis:Tool ;
 
 tools:CreateNormalRaster_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/create-normal-raster.htm> ;
     foaf:name "Create Normal Raster" .
 
 tools:CreateOrthoCorrectedRasterDataset_management a gis:Tool ;
@@ -1132,6 +1180,7 @@ tools:CreatePersonalGDB_management a gis:Tool ;
 
 tools:CreateRandomPoints_management a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/create-random-points.htm> ;
     foaf:name "Create Random Points" .
 
 tools:CreateRandomRaster_management a gis:Tool ;
@@ -1140,6 +1189,7 @@ tools:CreateRandomRaster_management a gis:Tool ;
 
 tools:CreateRandomRaster_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/create-random-raster.htm> ;
     foaf:name "Create Random Raster" .
 
 tools:CreateRasterCatalog_management a gis:Tool ;
@@ -1192,6 +1242,7 @@ tools:CreateSchematicFolder_schematics a gis:Tool ;
 
 tools:CreateSignatures_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/create-signatures.htm> ;
     foaf:name "Create Signatures" .
 
 tools:CreateSpaceTimeCube_stpm a gis:Tool ;
@@ -1228,6 +1279,7 @@ tools:CreateTin_3d a gis:Tool ;
 
 tools:CreateTopology_management a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/create-topology.htm> ;
     foaf:name "Create Topology" .
 
 tools:CreateTurnFeatureClass_na a gis:Tool ;
@@ -1268,6 +1320,7 @@ tools:Curvature_3d a gis:Tool ;
 
 tools:Curvature_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/curvature.htm> ;
     foaf:name "Curvature" .
 
 tools:CutFill_3d a gis:Tool ;
@@ -1276,6 +1329,7 @@ tools:CutFill_3d a gis:Tool ;
 
 tools:CutFill_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/cut-fill.htm> ;
     foaf:name "Cut Fill" .
 
 tools:DEMToRaster_conversion a gis:Tool ;
@@ -1288,10 +1342,12 @@ tools:DLGArc_arc a gis:Tool ;
 
 tools:DarcyFlow_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/darcy-flow.htm> ;
     foaf:name "Darcy Flow" .
 
 tools:DarcyVelocity_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/darcy-velocity.htm> ;
     foaf:name "Darcy Velocity" .
 
 tools:DecimateTinNodes_3d a gis:Tool ;
@@ -1392,6 +1448,7 @@ tools:DelineateTinDataArea_3d a gis:Tool ;
 
 tools:Dendrogram_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/dendrogram.htm> ;
     foaf:name "Dendrogram" .
 
 tools:DensifySamplingNetwork_ga a gis:Tool ;
@@ -1400,6 +1457,7 @@ tools:DensifySamplingNetwork_ga a gis:Tool ;
 
 tools:Densify_edit a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Editing%20Tools%28edit%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/editing-toolbox/densify.htm> ;
     foaf:name "Densify" .
 
 tools:DetectFeatureChanges_management a gis:Tool ;
@@ -1420,10 +1478,12 @@ tools:DiagnoseVersionTables_management a gis:Tool ;
 
 tools:Dice_management a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/dice.htm> ;
     foaf:name "Dice" .
 
 tools:Diff_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/diff.htm> ;
     foaf:name "Diff" .
 
 tools:Difference3D_3d a gis:Tool ;
@@ -1484,6 +1544,7 @@ tools:Divide_3d a gis:Tool ;
 
 tools:Divide_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/divide.htm> ;
     foaf:name "Divide" .
 
 tools:DomainToTable_management a gis:Tool ;
@@ -1520,6 +1581,7 @@ tools:EditRasterFunction_management a gis:Tool ;
 
 tools:EditSignatures_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/edit-signatures.htm> ;
     foaf:name "Edit Signatures" .
 
 tools:EditTin_3d a gis:Tool ;
@@ -1568,10 +1630,12 @@ tools:EncloseMultiPatch_3d a gis:Tool ;
 
 tools:EqualToFrequency_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/equal-to-frequency.htm> ;
     foaf:name "Equal To Frequency" .
 
 tools:EqualTo_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/equal-to.htm> ;
     foaf:name "Equal To" .
 
 tools:ErasePoint_edit a gis:Tool ;
@@ -1580,6 +1644,7 @@ tools:ErasePoint_edit a gis:Tool ;
 
 tools:Erase_analysis a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/erase.htm> ;
     foaf:name "Erase" .
 
 tools:Erase_arc a gis:Tool ;
@@ -1604,18 +1669,22 @@ tools:ExcelToTable_conversion a gis:Tool ;
 
 tools:Exp10_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/exp10.htm> ;
     foaf:name "Exp10" .
 
 tools:Exp2_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/exp2.htm> ;
     foaf:name "Exp2" .
 
 tools:Exp_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/exp.htm> ;
     foaf:name "Exp" .
 
 tools:Expand_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/expand.htm> ;
     foaf:name "Expand" .
 
 tools:ExploratoryRegression_stats a gis:Tool ;
@@ -1684,6 +1753,7 @@ tools:ExportTo3DWebScene_3d a gis:Tool ;
 
 tools:ExportTopologyErrors_management a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/export-topology-errors.htm> ;
     foaf:name "Export Topology Errors" .
 
 tools:ExportWebMap_server a gis:Tool ;
@@ -1840,14 +1910,17 @@ tools:FileCompare_management a gis:Tool ;
 
 tools:Fill_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/fill.htm> ;
     foaf:name "Fill" .
 
 tools:Filter_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/filter.htm> ;
     foaf:name "Filter" .
 
 tools:FindClosestFacilities_na a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/network-analyst-toolbox/find-closest-facilities.htm> ;
     foaf:name "Find Closest Facilities" .
 
 tools:FindConflicts_arc a gis:Tool ;
@@ -1884,26 +1957,32 @@ tools:Float_3d a gis:Tool ;
 
 tools:Float_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/float.htm> ;
     foaf:name "Float" .
 
 tools:FlowAccumulation_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/flow-accumulation.htm> ;
     foaf:name "Flow Accumulation" .
 
 tools:FlowDirection_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/flow-direction.htm> ;
     foaf:name "Flow Direction" .
 
 tools:FlowLength_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/flow-length.htm> ;
     foaf:name "Flow Length" .
 
 tools:FocalFlow_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/focal-flow.htm> ;
     foaf:name "Focal Flow" .
 
 tools:FocalStatistics_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/focal-statistics.htm> ;
     foaf:name "Focal Statistics" .
 
 tools:Frequency_analysis a gis:Tool ;
@@ -1912,10 +1991,12 @@ tools:Frequency_analysis a gis:Tool ;
 
 tools:FuzzyMembership_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/fuzzy-membership.htm> ;
     foaf:name "Fuzzy Membership" .
 
 tools:FuzzyOverlay_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/fuzzy-overlay.htm> ;
     foaf:name "Fuzzy Overlay" .
 
 tools:GACalculateZValue_ga a gis:Tool ;
@@ -1996,6 +2077,7 @@ tools:GenerateMapServerCacheTilingScheme_server a gis:Tool ;
 
 tools:GenerateNearTable_analysis a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/generate-near-table.htm> ;
     foaf:name "Generate Near Table" .
 
 tools:GenerateNetworkSpatialWeights_stats a gis:Tool ;
@@ -2008,6 +2090,7 @@ tools:GenerateRubbersheetLinks_edit a gis:Tool ;
 
 tools:GenerateServiceAreas_na a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/network-analyst-toolbox/generate-service-areas.htm> ;
     foaf:name "Generate Service Areas" .
 
 tools:GenerateSpatialWeightsMatrix_stats a gis:Tool ;
@@ -2028,6 +2111,7 @@ tools:GeoTaggedPhotosToPoints_management a gis:Tool ;
 
 tools:GeocodeAddresses_geocoding a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geocoding%20Tools%28geocoding%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/geocoding-toolbox/geocode-addresses.htm> ;
     foaf:name "Geocode Addresses" .
 
 tools:GeodeticDensify_management a gis:Tool ;
@@ -2044,6 +2128,7 @@ tools:GetCellValue_management a gis:Tool ;
 
 tools:GetCount_management a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/get-count.htm> ;
     foaf:name "Get Count" .
 
 tools:GetRasterProperties_management a gis:Tool ;
@@ -2056,14 +2141,17 @@ tools:GlobalPolynomialInterpolation_ga a gis:Tool ;
 
 tools:GreaterThanEqual_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/greater-than-equal.htm> ;
     foaf:name "Greater Than Equal" .
 
 tools:GreaterThanFrequency_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/greater-than-frequency.htm> ;
     foaf:name "Greater Than Frequency" .
 
 tools:GreaterThan_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/greater-than.htm> ;
     foaf:name "Greater Than" .
 
 tools:GridIndexFeatures_cartography a gis:Tool ;
@@ -2080,6 +2168,7 @@ tools:HighLowClustering_stats a gis:Tool ;
 
 tools:HighestPosition_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/highest-position.htm> ;
     foaf:name "Highest Position" .
 
 tools:HillShade_3d a gis:Tool ;
@@ -2108,6 +2197,7 @@ tools:IDW_ga a gis:Tool ;
 
 tools:Identity_analysis a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/identity.htm> ;
     foaf:name "Identity" .
 
 tools:Identity_arc a gis:Tool ;
@@ -2120,6 +2210,7 @@ tools:Idw_3d a gis:Tool ;
 
 tools:Idw_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/idw.htm> ;
     foaf:name "Idw" .
 
 tools:Import3DFiles_3d a gis:Tool ;
@@ -2200,6 +2291,7 @@ tools:Int_3d a gis:Tool ;
 
 tools:Int_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/int.htm> ;
     foaf:name "Int" .
 
 tools:Integrate_management a gis:Tool ;
@@ -2228,6 +2320,7 @@ tools:Intersect3D_3d a gis:Tool ;
 
 tools:Intersect_analysis a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/intersect.htm> ;
     foaf:name "Intersect" .
 
 tools:Intersect_arc a gis:Tool ;
@@ -2248,14 +2341,17 @@ tools:IsClosed3D_3d a gis:Tool ;
 
 tools:IsNull_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/is-null.htm> ;
     foaf:name "Is Null" .
 
 tools:IsoClusterUnsupervisedClassification_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/iso-cluster-unsupervised-classification.htm> ;
     foaf:name "Iso Cluster Unsupervised Classification" .
 
 tools:IsoCluster_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/iso-cluster.htm> ;
     foaf:name "Iso Cluster" .
 
 tools:JSONToFeatures_conversion a gis:Tool ;
@@ -2276,6 +2372,7 @@ tools:KMLToLayer_conversion a gis:Tool ;
 
 tools:KernelDensity_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/kernel-density.htm> ;
     foaf:name "Kernel Density" .
 
 tools:KernelInterpolationWithBarriers_ga a gis:Tool ;
@@ -2288,6 +2385,7 @@ tools:Kriging_3d a gis:Tool ;
 
 tools:Kriging_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/kriging.htm> ;
     foaf:name "Kriging" .
 
 tools:LASToMultipoint_3d a gis:Tool ;
@@ -2328,18 +2426,22 @@ tools:LayerToKML_conversion a gis:Tool ;
 
 tools:LessThanEqual_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/less-than-equal.htm> ;
     foaf:name "Less Than Equal" .
 
 tools:LessThanFrequency_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/less-than-frequency.htm> ;
     foaf:name "Less Than Frequency" .
 
 tools:LessThan_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/less-than.htm> ;
     foaf:name "Less Than" .
 
 tools:LineDensity_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/line-density.htm> ;
     foaf:name "Line Density" .
 
 tools:LineOfSight_3d a gis:Tool ;
@@ -2348,10 +2450,12 @@ tools:LineOfSight_3d a gis:Tool ;
 
 tools:LineStatistics_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/line-statistics.htm> ;
     foaf:name "Line Statistics" .
 
 tools:Ln_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/ln.htm> ;
     foaf:name "Ln" .
 
 tools:LoadTopologyToParcelFabric_fabric a gis:Tool ;
@@ -2376,10 +2480,12 @@ tools:LocateOutliers_3d a gis:Tool ;
 
 tools:Log10_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/log10.htm> ;
     foaf:name "Log10" .
 
 tools:Log2_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/log2.htm> ;
     foaf:name "Log2" .
 
 tools:Lookup_3d a gis:Tool ;
@@ -2388,10 +2494,12 @@ tools:Lookup_3d a gis:Tool ;
 
 tools:Lookup_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/lookup.htm> ;
     foaf:name "Lookup" .
 
 tools:LowestPosition_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/lowest-position.htm> ;
     foaf:name "Lowest Position" .
 
 tools:MDPublisher_conversion a gis:Tool ;
@@ -2408,14 +2516,17 @@ tools:MXDToWebMap_server a gis:Tool ;
 
 tools:MajorityFilter_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/majority-filter.htm> ;
     foaf:name "Majority Filter" .
 
 tools:MakeClosestFacilityLayer_na a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/network-analyst-toolbox/make-closest-facility-layer.htm> ;
     foaf:name "Make Closest Facility Layer" .
 
 tools:MakeFeatureLayer_management a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/make-feature-layer.htm> ;
     foaf:name "Make Feature Layer" .
 
 tools:MakeGraph_management a gis:Tool ;
@@ -2436,6 +2547,7 @@ tools:MakeLasDatasetLayer_management a gis:Tool ;
 
 tools:MakeLocationAllocationLayer_na a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/network-analyst-toolbox/make-location-allocation-layer.htm> ;
     foaf:name "Make Location Allocation Layer" .
 
 tools:MakeMosaicLayer_management a gis:Tool ;
@@ -2488,10 +2600,12 @@ tools:MakeRouteEventLayer_lr a gis:Tool ;
 
 tools:MakeRouteLayer_na a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/network-analyst-toolbox/make-route-layer.htm> ;
     foaf:name "Make Route Layer" .
 
 tools:MakeServiceAreaLayer_na a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/network-analyst-toolbox/make-service-area-layer.htm> ;
     foaf:name "Make Service Area Layer" .
 
 tools:MakeTableView_management a gis:Tool ;
@@ -2504,6 +2618,7 @@ tools:MakeTrackingLayer_ta a gis:Tool ;
 
 tools:MakeVehicleRoutingProblemLayer_na a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/network-analyst-toolbox/make-vehicle-routing-problem-layer.htm> ;
     foaf:name "Make Vehicle Routing Problem Layer" .
 
 tools:MakeWCSLayer_management a gis:Tool ;
@@ -2592,6 +2707,7 @@ tools:Minus_3d a gis:Tool ;
 
 tools:Minus_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/minus.htm> ;
     foaf:name "Minus" .
 
 tools:Mirror_management a gis:Tool ;
@@ -2600,6 +2716,7 @@ tools:Mirror_management a gis:Tool ;
 
 tools:Mod_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/mod.htm> ;
     foaf:name "Mod" .
 
 tools:MosaicToNewRaster_management a gis:Tool ;
@@ -2632,6 +2749,7 @@ tools:MultipatchToRaster_conversion a gis:Tool ;
 
 tools:MultipleRingBuffer_analysis a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/multiple-ring-buffer.htm> ;
     foaf:name "Multiple Ring Buffer" .
 
 tools:NaturalNeighbor_3d a gis:Tool ;
@@ -2640,6 +2758,7 @@ tools:NaturalNeighbor_3d a gis:Tool ;
 
 tools:NaturalNeighbor_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/natural-neighbor.htm> ;
     foaf:name "Natural Neighbor" .
 
 tools:Near3D_3d a gis:Tool ;
@@ -2648,6 +2767,7 @@ tools:Near3D_3d a gis:Tool ;
 
 tools:Near_analysis a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/near.htm> ;
     foaf:name "Near" .
 
 tools:Near_arc a gis:Tool ;
@@ -2656,14 +2776,17 @@ tools:Near_arc a gis:Tool ;
 
 tools:Negate_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/negate.htm> ;
     foaf:name "Negate" .
 
 tools:Nibble_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/nibble.htm> ;
     foaf:name "Nibble" .
 
 tools:NotEqual_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/not-equal.htm> ;
     foaf:name "Not Equal" .
 
 tools:ObserverPoints_3d a gis:Tool ;
@@ -2672,6 +2795,7 @@ tools:ObserverPoints_3d a gis:Tool ;
 
 tools:ObserverPoints_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/observer-points.htm> ;
     foaf:name "Observer Points" .
 
 tools:OptimizedHotSpotAnalysis_stats a gis:Tool ;
@@ -2684,6 +2808,7 @@ tools:OrdinaryLeastSquares_stats a gis:Tool ;
 
 tools:Over_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/over.htm> ;
     foaf:name "Over" .
 
 tools:OverlayRouteEvents_lr a gis:Tool ;
@@ -2712,6 +2837,7 @@ tools:PackageResult_management a gis:Tool ;
 
 tools:ParticleTrack_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/particle-track.htm> ;
     foaf:name "Particle Track" .
 
 tools:PathAllocation_sa a gis:Tool ;
@@ -2724,10 +2850,12 @@ tools:PathBackLink_sa a gis:Tool ;
 
 tools:PathDistance_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/path-distance.htm> ;
     foaf:name "Path Distance" .
 
 tools:Pick_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/pick.htm> ;
     foaf:name "Pick" .
 
 tools:PivotTable_management a gis:Tool ;
@@ -2740,14 +2868,17 @@ tools:Plus_3d a gis:Tool ;
 
 tools:Plus_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/plus.htm> ;
     foaf:name "Plus" .
 
 tools:PointDensity_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/point-density.htm> ;
     foaf:name "Point Density" .
 
 tools:PointDistance_analysis a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/point-distance.htm> ;
     foaf:name "Point Distance" .
 
 tools:PointDistance_arc a gis:Tool ;
@@ -2764,6 +2895,7 @@ tools:PointNode_arc a gis:Tool ;
 
 tools:PointStatistics_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/point-statistics.htm> ;
     foaf:name "Point Statistics" .
 
 tools:PointToRaster_conversion a gis:Tool ;
@@ -2772,6 +2904,7 @@ tools:PointToRaster_conversion a gis:Tool ;
 
 tools:PointsSolarRadiation_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/points-solar-radiation.htm> ;
     foaf:name "Points Solar Radiation" .
 
 tools:PointsToLine_management a gis:Tool ;
@@ -2792,6 +2925,7 @@ tools:PolygonToLine_management a gis:Tool ;
 
 tools:PolygonToRaster_conversion a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Conversion%20Tools%28conversion%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/conversion-toolbox/polygon-to-raster.htm> ;
     foaf:name "Polygon To Raster" .
 
 tools:PolygonVolume_3d a gis:Tool ;
@@ -2804,6 +2938,7 @@ tools:PolylineToRaster_conversion a gis:Tool ;
 
 tools:Popularity_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/popularity.htm> ;
     foaf:name "Popularity" .
 
 tools:PopulateAlternateIDFields_na a gis:Tool ;
@@ -2812,14 +2947,17 @@ tools:PopulateAlternateIDFields_na a gis:Tool ;
 
 tools:PorousPuff_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/porous-puff.htm> ;
     foaf:name "Porous Puff" .
 
 tools:Power_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/power.htm> ;
     foaf:name "Power" .
 
 tools:PrincipalComponents_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/principal-components.htm> ;
     foaf:name "Principal Components" .
 
 tools:ProjectRaster_management a gis:Tool ;
@@ -2832,6 +2970,7 @@ tools:Project_arc a gis:Tool ;
 
 tools:Project_management a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/project.htm> ;
     foaf:name "Project" .
 
 tools:PropagateDisplacement_cartography a gis:Tool ;
@@ -2852,10 +2991,12 @@ tools:RadialBasisFunctions_ga a gis:Tool ;
 
 tools:Rank_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/rank.htm> ;
     foaf:name "Rank" .
 
 tools:RasterCalculator_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/raster-calculator.htm> ;
     foaf:name "Raster Calculator" .
 
 tools:RasterCatalogToRasterDataset_management a gis:Tool ;
@@ -2924,6 +3065,7 @@ tools:ReExportUnacknowledgedMessages_management a gis:Tool ;
 
 tools:RebuildAddressLocator_geocoding a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geocoding%20Tools%28geocoding%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/geocoding-toolbox/rebuild-address-locator.htm> ;
     foaf:name "Rebuild Address Locator" .
 
 tools:RebuildGeometricNetwork_management a gis:Tool ;
@@ -2948,6 +3090,7 @@ tools:ReclassByTable_3d a gis:Tool ;
 
 tools:ReclassByTable_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/reclass-by-table.htm> ;
     foaf:name "Reclass By Table" .
 
 tools:Reclassify_3d a gis:Tool ;
@@ -2956,6 +3099,7 @@ tools:Reclassify_3d a gis:Tool ;
 
 tools:Reclassify_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/reclassify.htm> ;
     foaf:name "Reclassify" .
 
 tools:ReconcileVersions_management a gis:Tool ;
@@ -2972,6 +3116,7 @@ tools:RegionClass_arc a gis:Tool ;
 
 tools:RegionGroup_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/region-group.htm> ;
     foaf:name "Region Group" .
 
 tools:RegionPoly_arc a gis:Tool ;
@@ -2992,6 +3137,7 @@ tools:RegisterWithGeodatabase_management a gis:Tool ;
 
 tools:RematchAddresses_geocoding a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Geocoding%20Tools%28geocoding%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/geocoding-toolbox/rematch-addresses.htm> ;
     foaf:name "Rematch Addresses" .
 
 tools:RemoveAttachments_management a gis:Tool ;
@@ -3016,6 +3162,7 @@ tools:RemoveFeatureClassFromTerrain_3d a gis:Tool ;
 
 tools:RemoveFeatureClassFromTopology_management a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/remove-feature-class-from-topology.htm> ;
     foaf:name "Remove Feature Class From Topology" .
 
 tools:RemoveFieldConflictFilter_management a gis:Tool ;
@@ -3044,6 +3191,7 @@ tools:RemoveRastersFromMosaicDataset_management a gis:Tool ;
 
 tools:RemoveRuleFromTopology_management a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/remove-rule-from-topology.htm> ;
     foaf:name "Remove Rule From Topology" .
 
 tools:RemoveSpatialIndex_management a gis:Tool ;
@@ -3096,6 +3244,7 @@ tools:Resample_management a gis:Tool ;
 
 tools:RescaleByFunction_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/rescale-by-function.htm> ;
     foaf:name "Rescale By Function" .
 
 tools:Rescale_management a gis:Tool ;
@@ -3124,10 +3273,12 @@ tools:Rotate_management a gis:Tool ;
 
 tools:RoundDown_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/round-down.htm> ;
     foaf:name "Round Down" .
 
 tools:RoundUp_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/round-up.htm> ;
     foaf:name "Round Up" .
 
 tools:RubbersheetFeatures_edit a gis:Tool ;
@@ -3160,10 +3311,12 @@ tools:SaveGraph_management a gis:Tool ;
 
 tools:SaveToLayerFile_management a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/save-to-layer-file.htm> ;
     foaf:name "Save To Layer File" .
 
 tools:SegmentMeanShift_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/segment-mean-shift.htm> ;
     foaf:name "Segment Mean Shift" .
 
 tools:SelectByDimension_md a gis:Tool ;
@@ -3184,10 +3337,12 @@ tools:SelectLayerByAttribute_management a gis:Tool ;
 
 tools:SelectLayerByLocation_management a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Data%20Management%20Tools%28management%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/select-layer-by-location.htm> ;
     foaf:name "Select Layer By Location" .
 
 tools:Select_analysis a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/select.htm> ;
     foaf:name "Select" .
 
 tools:SendEmailWithZipFileAttachment_server a gis:Tool ;
@@ -3220,6 +3375,7 @@ tools:SetMosaicDatasetProperties_management a gis:Tool ;
 
 tools:SetNull_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/set-null.htm> ;
     foaf:name "Set Null" .
 
 tools:SetRasterProperties_management a gis:Tool ;
@@ -3252,6 +3408,7 @@ tools:Shift_management a gis:Tool ;
 
 tools:Shrink_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/shrink.htm> ;
     foaf:name "Shrink" .
 
 tools:SignInToPortal_server a gis:Tool ;
@@ -3292,10 +3449,12 @@ tools:SinH_sa a gis:Tool ;
 
 tools:Sin_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/sin.htm> ;
     foaf:name "Sin" .
 
 tools:Sink_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/sink.htm> ;
     foaf:name "Sink" .
 
 tools:SkylineBarrier_3d a gis:Tool ;
@@ -3316,6 +3475,7 @@ tools:Slice_3d a gis:Tool ;
 
 tools:Slice_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/slice.htm> ;
     foaf:name "Slice" .
 
 tools:Slope_3d a gis:Tool ;
@@ -3324,6 +3484,7 @@ tools:Slope_3d a gis:Tool ;
 
 tools:Slope_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/slope.htm> ;
     foaf:name "Slope" .
 
 tools:SmoothLine_cartography a gis:Tool ;
@@ -3336,6 +3497,7 @@ tools:SmoothPolygon_cartography a gis:Tool ;
 
 tools:SnapPourPoint_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/snap-pour-point.htm> ;
     foaf:name "Snap Pour Point" .
 
 tools:Snap_edit a gis:Tool ;
@@ -3344,6 +3506,7 @@ tools:Snap_edit a gis:Tool ;
 
 tools:SolarRadiationGraphics_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/solar-radiation-graphics.htm> ;
     foaf:name "Solar Radiation Graphics" .
 
 tools:SolveLocationAllocation_na a gis:Tool ;
@@ -3356,6 +3519,7 @@ tools:SolveVehicleRoutingProblem_na a gis:Tool ;
 
 tools:Solve_na a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Network%20Analyst%20Tools%28na%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/network-analyst-toolbox/solve.htm> ;
     foaf:name "Solve" .
 
 tools:SortCodedValueDomain_management a gis:Tool ;
@@ -3372,6 +3536,7 @@ tools:SpatialAutocorrelation_stats a gis:Tool ;
 
 tools:SpatialJoin_analysis a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/spatial-join.htm> ;
     foaf:name "Spatial Join" .
 
 tools:SplineWithBarriers_3d a gis:Tool ;
@@ -3380,6 +3545,7 @@ tools:SplineWithBarriers_3d a gis:Tool ;
 
 tools:SplineWithBarriers_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/spline-with-barriers.htm> ;
     foaf:name "Spline With Barriers" .
 
 tools:Spline_3d a gis:Tool ;
@@ -3388,6 +3554,7 @@ tools:Spline_3d a gis:Tool ;
 
 tools:Spline_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/spline.htm> ;
     foaf:name "Spline" .
 
 tools:SplitLineAtPoint_management a gis:Tool ;
@@ -3408,6 +3575,7 @@ tools:SplitRaster_management a gis:Tool ;
 
 tools:Split_analysis a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/split.htm> ;
     foaf:name "Split" .
 
 tools:Split_arc a gis:Tool ;
@@ -3416,10 +3584,12 @@ tools:Split_arc a gis:Tool ;
 
 tools:SquareRoot_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/square-root.htm> ;
     foaf:name "Square Root" .
 
 tools:Square_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/square.htm> ;
     foaf:name "Square" .
 
 tools:StackProfile_3d a gis:Tool ;
@@ -3428,6 +3598,7 @@ tools:StackProfile_3d a gis:Tool ;
 
 tools:StageService_server a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/server-toolbox/stage-service.htm> ;
     foaf:name "Stage Service" .
 
 tools:StandardDistance_stats a gis:Tool ;
@@ -3444,14 +3615,17 @@ tools:Statistics_analysis a gis:Tool ;
 
 tools:StreamLink_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/stream-link.htm> ;
     foaf:name "Stream Link" .
 
 tools:StreamOrder_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/stream-order.htm> ;
     foaf:name "Stream Order" .
 
 tools:StreamToFeature_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/stream-to-feature.htm> ;
     foaf:name "Stream To Feature" .
 
 tools:StripMapIndexFeatures_cartography a gis:Tool ;
@@ -3548,6 +3722,7 @@ tools:TableToTable_conversion a gis:Tool ;
 
 tools:TabulateArea_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/tabulate-area.htm> ;
     foaf:name "Tabulate Area" .
 
 tools:TabulateIntersection_analysis a gis:Tool ;
@@ -3560,6 +3735,7 @@ tools:TanH_sa a gis:Tool ;
 
 tools:Tan_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/tan.htm> ;
     foaf:name "Tan" .
 
 tools:TerrainToPoints_3d a gis:Tool ;
@@ -3576,6 +3752,7 @@ tools:TerrainToTin_3d a gis:Tool ;
 
 tools:Test_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/test.htm> ;
     foaf:name "Test" .
 
 tools:Thiessen_arc a gis:Tool ;
@@ -3588,6 +3765,7 @@ tools:ThinRoadNetwork_cartography a gis:Tool ;
 
 tools:Thin_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/thin.htm> ;
     foaf:name "Thin" .
 
 tools:TigerArc_arc a gis:Tool ;
@@ -3608,6 +3786,7 @@ tools:Times_3d a gis:Tool ;
 
 tools:Times_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/times.htm> ;
     foaf:name "Times" .
 
 tools:TinDomain_3d a gis:Tool ;
@@ -3648,6 +3827,7 @@ tools:TopoToRasterByFile_3d a gis:Tool ;
 
 tools:TopoToRasterByFile_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/topo-to-raster-by-file.htm> ;
     foaf:name "Topo To Raster By File" .
 
 tools:TopoToRaster_3d a gis:Tool ;
@@ -3656,6 +3836,7 @@ tools:TopoToRaster_3d a gis:Tool ;
 
 tools:TopoToRaster_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/topo-to-raster.htm> ;
     foaf:name "Topo To Raster" .
 
 tools:TraceGeometricNetwork_management a gis:Tool ;
@@ -3676,6 +3857,7 @@ tools:TrainIsoClusterClassifier_sa a gis:Tool ;
 
 tools:TrainMaximumLikelihoodClassifier_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/train-maximum-likelihood-classifier.htm> ;
     foaf:name "Train Maximum Likelihood Classifier" .
 
 tools:TrainSupportVectorMachineClassifier_sa a gis:Tool ;
@@ -3704,6 +3886,7 @@ tools:Trend_3d a gis:Tool ;
 
 tools:Trend_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/trend.htm> ;
     foaf:name "Trend" .
 
 tools:TrimLine_edit a gis:Tool ;
@@ -3736,6 +3919,7 @@ tools:Union3D_3d a gis:Tool ;
 
 tools:Union_analysis a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/union.htm> ;
     foaf:name "Union" .
 
 tools:Union_arc a gis:Tool ;
@@ -3788,6 +3972,7 @@ tools:UpdateTrafficIncidents_na a gis:Tool ;
 
 tools:Update_analysis a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Analysis%20Tools%28analysis%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/update.htm> ;
     foaf:name "Update" .
 
 tools:Update_arc a gis:Tool ;
@@ -3816,6 +4001,7 @@ tools:UpgradeSpatialReference_management a gis:Tool ;
 
 tools:UploadServiceDefinition_server a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Server%20Tools%28server%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/server-toolbox/upload-service-definition.htm> ;
     foaf:name "Upload Service Definition" .
 
 tools:VPFExport_arc a gis:Tool ;
@@ -3852,6 +4038,7 @@ tools:Viewshed2_3d a gis:Tool ;
 
 tools:Viewshed2_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/viewshed-2.htm> ;
     foaf:name "Viewshed2" .
 
 tools:Viewshed_3d a gis:Tool ;
@@ -3860,6 +4047,7 @@ tools:Viewshed_3d a gis:Tool ;
 
 tools:Viewshed_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/viewshed.htm> ;
     foaf:name "Viewshed" .
 
 tools:Visibility_3d a gis:Tool ;
@@ -3868,6 +4056,7 @@ tools:Visibility_3d a gis:Tool ;
 
 tools:Visibility_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/visibility.htm> ;
     foaf:name "Visibility" .
 
 tools:WFSToFeatureClass_conversion a gis:Tool ;
@@ -3884,14 +4073,17 @@ tools:Warp_management a gis:Tool ;
 
 tools:Watershed_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/watershed.htm> ;
     foaf:name "Watershed" .
 
 tools:WeightedOverlay_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/weighted-overlay.htm> ;
     foaf:name "Weighted Overlay" .
 
 tools:WeightedSum_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/weighted-sum.htm> ;
     foaf:name "Weighted Sum" .
 
 tools:WorkspaceToRasterCatalog_management a gis:Tool ;
@@ -3920,26 +4112,32 @@ tools:ZRenderer_stats a gis:Tool ;
 
 tools:ZonalFill_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/zonal-fill.htm> ;
     foaf:name "Zonal Fill" .
 
 tools:ZonalGeometryAsTable_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/zonal-geometry-as-table.htm> ;
     foaf:name "Zonal Geometry As Table" .
 
 tools:ZonalGeometry_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/zonal-geometry.htm> ;
     foaf:name "Zonal Geometry" .
 
 tools:ZonalHistogram_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/zonal-histogram.htm> ;
     foaf:name "Zonal Histogram" .
 
 tools:ZonalStatisticsAsTable_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/zonal-statistics-as-table.htm> ;
     foaf:name "Zonal Statistics As Table" .
 
 tools:ZonalStatistics_sa a gis:Tool ;
     dct:isPartOf <http://geographicknowledge.de/vocab/GISTools.rdf#Spatial%20Analyst%20Tools%28sa%29> ;
+    foaf:homepage <http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/zonal-statistics.htm> ;
     foaf:name "Zonal Statistics" .
 
 <https://grass.osgeo.org/grass72/manuals/d.barscale> a gis:Tool ;

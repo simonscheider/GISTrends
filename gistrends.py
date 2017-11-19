@@ -312,7 +312,7 @@ def buildGRASSToolList(outf):
 
 
 
-def generateRDF(outf, softuri, tooldictf, softdictf=None, tooluris = True, normalize=normalizeArcpyToolString):
+def generateRDF(outf, softuri, tooldictf, softdictf=None, tooluris = True, normalize=normalizeArcpyToolString, toolwebsites='ArcGIStoolwebsites.json'):
     from rdflib import URIRef, BNode, Literal, Namespace, Graph
     from rdflib.namespace import RDF, FOAF, RDFS
 
@@ -345,7 +345,7 @@ def generateRDF(outf, softuri, tooldictf, softdictf=None, tooluris = True, norma
     else: #there is already some software tools, then load them
         g.parse(outf, format='turtle')
 
-
+    toolws = readSoft(toolwebsites)
 
     #Now add the tools of some software softuri
     if URIRef(softuri) in g.all_nodes():
@@ -356,6 +356,7 @@ def generateRDF(outf, softuri, tooldictf, softdictf=None, tooluris = True, norma
             g.add((tools[tb], FOAF.name, Literal(toolbox)))
             for t in toollist:
                 toolst = (URIRef(t) if tooluris else tools[t])
+                if t in toolws: g.add((toolst, FOAF['homepage'], URIRef(toolws[t]['website'])))
                 g.add((toolst, RDF.type, gis.Tool))
                 g.add((toolst, dct.isPartOf, tools[tb]))
                 g.add((toolst, FOAF.name, Literal(normalize(t))))
@@ -436,6 +437,33 @@ def readtoolpages(toolpf):
 
 
 
+def filterToolLinks(linklist, toolnodes='ArcGIStoolwebsites.json'):
+    outf = 'linklist.csv'
+    with open(outf, 'wb') as csvfile:
+        spamwriter = csv.writer(csvfile, delimiter=',',
+                                quotechar='|', quoting=csv.QUOTE_MINIMAL)
+        with open(toolnodes, 'rb') as fp:
+            toolnodes = json.load(fp)
+            tooln = []
+            for k, v in toolnodes.items():
+                tooln.append(v['pagename'])
+
+
+
+            with open(linklist) as linkf:
+                reader = csv.reader(linkf, delimiter=',')
+
+                header = reader.next() #skip the first line
+                spamwriter.writerow(header)
+                for row in reader:
+                    if row[0] in tooln and row[1] in tooln:
+                        spamwriter.writerow(row)
+
+            linkf.close
+        fp.close
+    csvfile.close
+
+
 
 
 
@@ -453,7 +481,7 @@ def main():
     #sd = readSoft('GISSoftdict.json')
     #getTrends4Soft(sd, 'ArcGIS')
     #visualize('Softresults_kwArcGIS.json', twolayered=False, index='GIS Software')
-    #generateRDF('GISTools.ttl','http://dbpedia.org/resource/ArcGIS','ArcGISTooldict.json','GISSoftdict.json', tooluris=False) #a gis:Toolbox
+    #generateRDF('GISTools.ttl','http://dbpedia.org/resource/ArcGIS','ArcGISTooldict.json','GISSoftdict.json', tooluris=False, toolwebsites='ArcGIStoolwebsites.json') #a gis:Toolbox
 
     #buildGRASSToolList('GRASSTooldict.json')
     #td = readToolBoxes('GRASSTooldict.json', ['NDVI','terrain','landscape structure analysis', 'diversity index'])
@@ -461,7 +489,8 @@ def main():
     #visualize('GTresults_kwArcGIS.json')
     #generateRDF('GISTools.ttl','http://dbpedia.org/resource/GRASS','GRASSTooldict.json',tooluris=True, normalize=normalizeGRASSToolString)
 
-    readtoolpages("arcgis10_network\\arcgis_tool_pages.csv")
+    #readtoolpages("arcgis10_network\\arcgis_tool_pages.csv")
+    filterToolLinks('arcgis10_network\\arcgis_tool_links_orders.csv',toolnodes='ArcGIStoolwebsites.json')
 
 
 
