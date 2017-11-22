@@ -220,11 +220,15 @@ def visualize(resultdump, twolayered =True, index ='ArcGIS Tools'):
         labels = [line.get_label() for line in lines]
         pl.legend(lines, labels)
     else:
-        pl = df['GT Popularity'].plot(kind='bar', width=1, fontsize=12, color='c', figsize=(12,5.8))
+        pl = df.plot(kind='bar', width=1, fontsize=15, colormap='Paired',rot=80,
+        figsize=(14,5.8), legend=False)
+
 
 
     #pl.set_xlabel("Tools", fontsize=9)
     plt.tight_layout()
+    plt.ylabel('GT Popularity index', fontsize=15)
+    plt.xlabel('GIS Software', fontsize=15)
     plt.show()
 
 
@@ -480,7 +484,7 @@ def main():
     #getGISSoftwareList()
     #sd = readSoft('GISSoftdict.json')
     #getTrends4Soft(sd, 'ArcGIS')
-    #visualize('Softresults_kwArcGIS.json', twolayered=False, index='GIS Software')
+    visualize('Softresults_kwArcGIS.json', twolayered=False, index='GIS Software')
     #generateRDF('GISTools.ttl','http://dbpedia.org/resource/ArcGIS','ArcGISTooldict.json','GISSoftdict.json', tooluris=False, toolwebsites='ArcGIStoolwebsites.json') #a gis:Toolbox
 
     #buildGRASSToolList('GRASSTooldict.json')
@@ -490,7 +494,7 @@ def main():
     #generateRDF('GISTools.ttl','http://dbpedia.org/resource/GRASS','GRASSTooldict.json',tooluris=True, normalize=normalizeGRASSToolString)
 
     #readtoolpages("arcgis10_network\\arcgis_tool_pages.csv")
-    filterToolLinks('arcgis10_network\\arcgis_tool_links_orders.csv',toolnodes='ArcGIStoolwebsites.json')
+    #filterToolLinks('arcgis10_network\\arcgis_tool_links_orders.csv',toolnodes='ArcGIStoolwebsites.json')
 
 
 
