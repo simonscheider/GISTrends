@@ -380,6 +380,9 @@ def generateRDF(outf, softuri, tooldictf, softdictf=None, tooluris = True, norma
 
 
 
+def addWeblinks():
+
+
 def getWebsite(urllist):
     sparql = SPARQLWrapper("http://dbpedia.org/sparql")
     sparql.setReturnFormat(JSON)
@@ -492,6 +495,8 @@ def main():
     #res = getTrends4Tools(td,'GRASS GIS', normalize=normalizeGRASSToolString)
     #visualize('GTresults_kwArcGIS.json')
     #generateRDF('GISTools.ttl','http://dbpedia.org/resource/GRASS','GRASSTooldict.json',tooluris=True, normalize=normalizeGRASSToolString)
+
+
 
     #readtoolpages("arcgis10_network\\arcgis_tool_pages.csv")
     #filterToolLinks('arcgis10_network\\arcgis_tool_links_orders.csv',toolnodes='ArcGIStoolwebsites.json')
