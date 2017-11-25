@@ -1,19 +1,21 @@
 #-------------------------------------------------------------------------------
-# Name:        module1
-# Purpose:
+# Name:        Generate GIS Software and tool catalogue, and Google Trend analysis
+# Purpose:     This script can be used to generate and publish an RDF based catalogue of GIS software, tools and websites together wit their hyperlinks.
+#              Furthermore, it contains methods to query Google Trends for keywords based on this catalogue.
 #
-# Author:      simon
+# Author:      Simon Scheider
 #
-# Created:     26/10/2017
+# Created:     25/11/2017
 # Copyright:   (c) simon 2017
-# Licence:     <your licence>
+# Licence:
 #-------------------------------------------------------------------------------
+
 import pytrends
 
 from pytrends.request import TrendReq
 
 import csv
-#import arcpy
+
 import json
 import re
 import urllib
@@ -21,10 +23,9 @@ import rdflib
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import numpy as np
-##from matplotlib import rcParams
-##rcParams['xtick.direction'] = 'out'
-##rcParams['ytick.direction'] = 'out'
-import operator
+import math
+
+
 
 from altair import *
 from IPython.display import display
@@ -35,6 +36,10 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 import requests
 from bs4 import BeautifulSoup
 
+
+######## Methods to gather Google trend data and visualize it
+
+"""This class is used to gather Googe Trends for an arbitrary list of keywords (about tools). It is inititalized with a reference keyword to compare relative popularity against"""
 class GatherTools():
     def __init__(self, referencekeyword, unsaferun=False):
          self.results = {}
@@ -74,9 +79,7 @@ class GatherTools():
                         self.results[t]=str(res[t])
 
 
-
-
-    def dump(self,res = 'GTresults.json'):
+    def dump(self,res = 'GoogleTrends\\GTresults.json'):
         print "dumped items: "+str(len(self.results))
         with open(res, 'w') as fp:
             json.dump(self.results, fp)
@@ -113,6 +116,7 @@ class GatherTools():
         # print(suggestions_dict)
         return time.mean()
 
+
 def normalizeArcpyToolString(tool):
         #ex = 'CreateSchematicFolder_schematics'
         #Get the actual toolname (without toolbox and splitting at upper case letters)
@@ -121,21 +125,6 @@ def normalizeArcpyToolString(tool):
 
 def normalizeGRASSToolString(tool):
     return tool.split("/")[-1]
-
-def getDBpediaCompany(url):
-    sparql = SPARQLWrapper("http://dbpedia.org/sparql")
-    sparql.setReturnFormat(JSON)
-
-    query = """
-    Select ?f WHERE {
-    <"""+url+ """> <http://dbpedia.org/ontology/developer> ?f
-    }
-            """
-    sparql.setQuery(query)  # the previous query as a literal string
-
-    return sparql.query().convert()
-
-
 
 
 def readToolBoxes(tooldictfile, listoftoolboxes=[]):
@@ -150,8 +139,7 @@ def readToolBoxes(tooldictfile, listoftoolboxes=[]):
     tooldictf.close
     return tdict
 
-
-
+"""Trends for tools"""
 def getTrends4Tools(tooldict,referencekeyword, normalize=normalizeArcpyToolString):
     gt = GatherTools(referencekeyword)
     count = 0
@@ -161,7 +149,7 @@ def getTrends4Tools(tooldict,referencekeyword, normalize=normalizeArcpyToolStrin
             ntool = normalize(tool)
             gt.add(ntool,k)
     print 'Tool count '+str(count)
-    gt.dump('GTresults_kw'+referencekeyword+'.json')
+    gt.dump('GoogleTrends\\GTresults_kw'+referencekeyword+'.json')
 
 
 def readSoft(softdictfile):
@@ -170,6 +158,7 @@ def readSoft(softdictfile):
     softdictf.close
     return softdict
 
+"""Trends for Software"""
 def getTrends4Soft(softdict,referencekeyword):
     gt = GatherTools(referencekeyword, True)
     count = 0
@@ -178,11 +167,13 @@ def getTrends4Soft(softdict,referencekeyword):
 
         if v['name']!= 'AutoCAD': gt.add(v['name'])
     print 'software count '+str(count)
-    gt.dump('Softresults_kw'+referencekeyword+'.json')
+    gt.dump('GoogleTrends\\Softresults_kw'+referencekeyword+'.json')
 
-import math
+"""Bar chart visualization"""
 def visualize(resultdump, twolayered =True, index ='ArcGIS Tools'):
     result = []
+    fig, ax = plt.subplots(figsize=(15,8))
+
     with open(resultdump) as res:
         ress = json.load(res)
     if twolayered:
@@ -190,56 +181,54 @@ def visualize(resultdump, twolayered =True, index ='ArcGIS Tools'):
             for kk,vv in v.items():
                 result.append({index:kk, 'Box':k,'GT Popularity':float(vv)})
     else:
-        for k,v in ress.items():
-                result.append({index:k, 'GT Popularity':(float(v))})
+        for k,v in ress.items(): #(math.log(float(v)+1) if float(v) != 0 else 0)
+            value =(math.log(float(v)+1) if float(v) != 0 else 0)
+            result.append({index:' '+k+' ', 'GT Popularity':value})
 
-
-    #print result
-    #toolbox= 'Spatial Analyst Tools(sa)'
-    #toolbox='Conversion Tools(conversion)'
-##    c = Chart(Data(
-##    values=result,
-##    ),
-##    description='A simple bar chart with embedded data.',
-##    ).mark_bar().encode(
-##    x=X(toolbox, sort=SortField(field='GT Popularity', op='values', order='descending')),
-##    y=Y('GT Popularity')
-    #x=toolbox+':O',
-    #y='GT Popularity:Q'
-    #)
-    #c.savechart('plot.html')
     df = pandas.DataFrame.from_dict(result)
     df =df.sort_values(by='GT Popularity', ascending=[False]).set_index(index)
     print df
     if twolayered:
         colors = {'Spatial Analyst Tools(sa)': 'c', 'Conversion Tools(conversion)': 'b'}
-        pl = df['GT Popularity'].plot(kind='bar', width=1, fontsize=12, color=[colors[i] for i in df['Box']], figsize=(12,5.8))
+        pl = df['GT Popularity'].plot(kind='bar', width=1, fontsize=12, color=[colors[i] for i in df['Box']], figsize=(12,8))
         red_patch = mpatches.Patch(color='cyan', label='Spatial Analyst')
         blue_patch= mpatches.Patch(color='blue', label='Conversion Tools')
         lines = [blue_patch, red_patch]
         labels = [line.get_label() for line in lines]
         pl.legend(lines, labels)
     else:
-        pl = df.plot(kind='bar', width=1, fontsize=15, colormap='Paired',rot=80,
-        figsize=(14,5.8), legend=False)
+        pl = df.plot(kind='bar', width=1, fontsize=17, colormap='Paired',zorder=3,#logy = True,#rot=80,
+         legend=False, ax=ax)
 
 
-
-    #pl.set_xlabel("Tools", fontsize=9)
     plt.tight_layout()
-    plt.ylabel('GT Popularity index', fontsize=15)
-    plt.xlabel('GIS Software', fontsize=15)
+
+    ax.yaxis.grid(zorder=0, linestyle='dashed', color ='gray')
+    ax.tick_params(axis='x', pad=8)
+    #ax.bar(log=True)
+    plt.ylabel('log (Google Trends Popularity index)', fontsize=18)
+    plt.xlabel('GIS Software', fontsize=18)
     plt.show()
 
 
 
-################gather tools and software
+################ Methods to gather tools and software information from the web and integrate it
+
+def getDBpediaCompany(url):
+    sparql = SPARQLWrapper("http://dbpedia.org/sparql")
+    sparql.setReturnFormat(JSON)
+
+    query = """
+    Select ?f WHERE {
+    <"""+url+ """> <http://dbpedia.org/ontology/developer> ?f
+    }
+            """
+    sparql.setQuery(query)  # the previous query as a literal string
+
+    return sparql.query().convert()
 
 def getGISSoftwareList():
-    #results = rdflib.Graph()
     results = {}
-    #from rdflib import Namespace
-    #dbo = Namespace("http://dbpedia.org/ontology/")
     WIKI_URL = "https://en.wikipedia.org/wiki/Comparison_of_geographic_information_systems_software"
     req = requests.get(WIKI_URL)
     soup = BeautifulSoup(req.content, 'lxml')
@@ -259,23 +248,19 @@ def getGISSoftwareList():
                     comp.append(f['f']['value'])
                 results[dbp]={'website': wkp, 'name':name, 'companies':comp}
 
-    outf = 'GISSoftdict.json'
+    outf = 'ResourceCatalogue\\GISSoftdict.json'
 
     with open(outf, 'w') as fp:
         json.dump(results, fp)
     fp.close
     return outf
-                #c= getDBpediaCompany(dbp)
-                #print c
-                #results.add((dbp,dbo.developer, c))
-    #print results.serialize(format='turtle')
 
 
 def buildArcToolList():
     print ('Number of Tools '+str(len(arcpy.ListTools())))
     toolboxes = arcpy.ListToolboxes()
     out = {}
-    outf = 'ArcGIStooldict.json'
+    outf = 'ResourceCatalogue\\ArcGIStooldict.json'
     for toolbox in toolboxes:
         print toolbox
         out[toolbox]=[]
@@ -313,10 +298,65 @@ def buildGRASSToolList(outf):
 
 
 
+###### Methods to generate RDF data from tools, software and the crawled network information
+
+"""Given a csv file of tool webpages, links them to the tools in the tool dictionary"""
+def readtoolpages(toolpf):
+    output = {}
+    with open('ResourceCatalogue\\ArcGIStooldict.json', 'rb') as fp:
+        tooldict = json.load(fp)
+    fp.close
+    with open(toolpf) as toolf:
+     reader = csv.reader(toolf, delimiter=',')
+     next(reader) #skip the first line
+     for row in reader:
+            pagename= row[0]
+            p = pagename.split('/')
+            toolb = ' '.join([word.title() for word in (p[1].split('-')) if word.lower() != 'toolbox'])
+            #print toolb
+            tooln = ''.join([word.title() for word in(p[2].split('-'))])
+            #print tooln
+            website = row[2]
+            res = {}
+            for k,v in tooldict.items():
+                mytoolb = k.split('Tools')[0].split('(')[0].split('_')[0].strip()
+                #print mytoolb + ' : '+toolb.strip()
+                if (mytoolb).lower() == toolb.strip().lower():
+                    for t in v:
+                        mytool = (t.split('_')[0].strip())
+                        if mytool == tooln.strip():
+                            print mytool +' : '+tooln
+                            output[t]={'website':website,'toolbox':k, 'pagename':pagename}
+                            break
+                    break
+
+     with open('ResourceCatalogue\\ArcGIStoolwebsites.json', 'w') as fp:
+        json.dump(output, fp)
+     fp.close
+    toolf.close
+
+"""Gets the homepages of a list of dbpedia entities"""
+def getWebsite(urllist):
+    sparql = SPARQLWrapper("http://dbpedia.org/sparql")
+    sparql.setReturnFormat(JSON)
+    tl ='<'+'>, <'.join(urllist)+'>'
+    query = """
+    Select ?f ?tool WHERE {
+    ?tool <http://xmlns.com/foaf/0.1/homepage> ?f.
+    FILTER(?tool in ("""+tl+"""))
+    }
+            """
+    sparql.setQuery(query)  # the previous query as a literal string
+
+    r = sparql.query().convert()
+    com = []
+    for f in r['results']['bindings']:
+                    com.append((f['f']['value'],f['tool']['value']))
+    return com
 
 
-
-def generateRDF(outf, softuri, tooldictf, softdictf=None, tooluris = True, normalize=normalizeArcpyToolString, toolwebsites='ArcGIStoolwebsites.json'):
+"""Method to integrate tool list, software list and websites into a single RDF file"""
+def generateRDF(outf, softuri, tooldictf, softdictf=None, tooluris = True, normalize=normalizeArcpyToolString, toolwebsites='ResourceCatalogue\\ArcGIStoolwebsites.json'):
     from rdflib import URIRef, BNode, Literal, Namespace, Graph
     from rdflib.namespace import RDF, FOAF, RDFS
 
@@ -379,73 +419,9 @@ def generateRDF(outf, softuri, tooldictf, softdictf=None, tooluris = True, norma
     g.serialize(destination=outf, format='turtle')
 
 
-
-def addWeblinks():
-
-
-def getWebsite(urllist):
-    sparql = SPARQLWrapper("http://dbpedia.org/sparql")
-    sparql.setReturnFormat(JSON)
-    tl ='<'+'>, <'.join(urllist)+'>'
-    query = """
-    Select ?f ?tool WHERE {
-    ?tool <http://xmlns.com/foaf/0.1/homepage> ?f.
-    FILTER(?tool in ("""+tl+"""))
-    }
-            """
-    sparql.setQuery(query)  # the previous query as a literal string
-
-    r = sparql.query().convert()
-    com = []
-    for f in r['results']['bindings']:
-                    com.append((f['f']['value'],f['tool']['value']))
-    return com
-
-
-
-
-def readtoolpages(toolpf):
-    output = {}
-    with open('ArcGIStooldict.json', 'rb') as fp:
-        tooldict = json.load(fp)
-    fp.close
-    with open(toolpf) as toolf:
-     reader = csv.reader(toolf, delimiter=',')
-     next(reader) #skip the first line
-     for row in reader:
-            pagename= row[0]
-            p = pagename.split('/')
-            toolb = ' '.join([word.title() for word in (p[1].split('-')) if word.lower() != 'toolbox'])
-            #print toolb
-            tooln = ''.join([word.title() for word in(p[2].split('-'))])
-            #print tooln
-            website = row[2]
-            res = {}
-            for k,v in tooldict.items():
-                mytoolb = k.split('Tools')[0].split('(')[0].split('_')[0].strip()
-                #print mytoolb + ' : '+toolb.strip()
-                if (mytoolb).lower() == toolb.strip().lower():
-                    for t in v:
-                        mytool = (t.split('_')[0].strip())
-                        if mytool == tooln.strip():
-                            print mytool +' : '+tooln
-                            output[t]={'website':website,'toolbox':k, 'pagename':pagename}
-                            break
-                    break
-
-     with open('ArcGIStoolwebsites.json', 'w') as fp:
-        json.dump(output, fp)
-     fp.close
-
-
-
-
-    toolf.close
-
-
-
-def filterToolLinks(linklist, toolnodes='ArcGIStoolwebsites.json'):
-    outf = 'linklist.csv'
+"""Given a list of edges for weblinks between webpages, filters out those that are between the webpages of a given list of ArcGIS tools"""
+def filterToolLinks(linklist, toolnodes='ResourceCatalogue\\ArcGIStoolwebsites.json'):
+    outf = 'Arcgis10_network\\linklist.csv'
     with open(outf, 'wb') as csvfile:
         spamwriter = csv.writer(csvfile, delimiter=',',
                                 quotechar='|', quoting=csv.QUOTE_MINIMAL)
@@ -455,8 +431,6 @@ def filterToolLinks(linklist, toolnodes='ArcGIStoolwebsites.json'):
             for k, v in toolnodes.items():
                 tooln.append(v['pagename'])
 
-
-
             with open(linklist) as linkf:
                 reader = csv.reader(linkf, delimiter=',')
 
@@ -465,10 +439,51 @@ def filterToolLinks(linklist, toolnodes='ArcGIStoolwebsites.json'):
                 for row in reader:
                     if row[0] in tooln and row[1] in tooln:
                         spamwriter.writerow(row)
-
             linkf.close
         fp.close
     csvfile.close
+
+
+"""Adding hyperlink network between tools to RDF file, based on a list of edges for hyperlinks between tools"""
+def addWeblinks(outf, linklist = 'Arcgis10_network\\linklist2.csv',toolnodes='ResourceCatalogue\\ArcGIStoolwebsites.json'):
+     from rdflib import URIRef, BNode, Literal, Namespace, Graph
+     from rdflib.namespace import RDF, FOAF, RDFS
+     tools = Namespace("http://geographicknowledge.de/vocab/GISTools.rdf#")
+     sioc = Namespace("http://rdfs.org/sioc/ns#")
+     g = Graph()
+     g.parse(outf, format='turtle')
+     with open(toolnodes, 'rb') as fp:
+        tooldict = json.load(fp)
+     fp.close
+
+     with open(linklist) as llist:
+         reader = csv.reader(llist, delimiter=',')
+         next(reader) #skip the first line
+         for row in reader:
+             toolfrom = ''
+             toolto = ''
+             for k,v in tooldict.items():
+                if v['pagename'] == row[0]:
+                    toolfrom = tools[k]
+                if v['pagename'] == row[1]:
+                    toolto = tools[k]
+             if toolfrom != '' and toolto != '':
+                    g.add((toolfrom, sioc.links_to, toolto))
+     llist.close
+
+     g.bind('dbo', URIRef("http://dbpedia.org/ontology/"))
+     g.bind('dbp', URIRef("http://dbpedia.org/resource/"))
+     g.bind('dc', URIRef("http://purl.org/dc/elements/1.1/"))
+     g.bind('dct', URIRef("http://purl.org/dc/terms/"))
+     g.bind('wf', URIRef("http://geographicknowledge.de/vocab/Workflow.rdf#"))
+     g.bind('gis', URIRef("http://geographicknowledge.de/vocab/GISConcepts.rdf#"))
+     g.bind('tools', URIRef("http://geographicknowledge.de/vocab/GISTools.rdf#"))
+     g.bind('sioc', URIRef("http://rdfs.org/sioc/ns#"))
+     g.bind('foaf',FOAF)
+     g.bind('rdf',RDF)
+     g.bind('rdfs', RDFS)
+     print 'number of triples generated: '+str(len(g))
+     g.serialize(destination=outf, format='turtle')
 
 
 
@@ -476,31 +491,43 @@ def filterToolLinks(linklist, toolnodes='ArcGIStoolwebsites.json'):
 
 def main():
 
+    ##Building list of ArcGIS tools
     #outf = buildArcToolList()
-    #toolboxlist =['3D Analyst Tools(3d)','Analysis Tools(analysis)','Cartography Tools(cartography)','Conversion Tools(conversion)','Coverage_Tools(arc)', 'Data Interoperability Tools(interop)', 'Data Management Tools(management)', 'Editing Tools(edit)', 'Geocoding Tools(geocoding)', 'Geostatistical Analyst Tools(ga)', 'Linear Referencing Tools(lr)', 'Multidimension Tools(md)', 'Network Analyst Tools(na)', 'Parcel Fabric Tools(fabric)','Samples(samples)', 'Schematics Tools(schematics)','Server Tools(server)','Spatial Analyst Tools(sa)','Spatial Statistics Tools(stats)','Tracking Analyst Tools(ta)','Space Time Pattern Mining Tools(stpm)']
 
-    #td = readToolBoxes('ArcGISTooldict.json', ['Spatial Analyst Tools(sa)','Conversion Tools(conversion)','Analysis Tools(analysis)'])
+    ##Getting  Google Trends for ArcGIS toollist and visualize them with bar chart
+    #td = readToolBoxes('ResourceCatalogue\\ArcGISTooldict.json', ['Spatial Analyst Tools(sa)','Conversion Tools(conversion)','Analysis Tools(analysis)'])
     #res = getTrends4Tools(td,'ArcGIS')
-    #visualize('GTresults_kwArcGIS.json')
+    #visualize('GoogleTrends\\GTresults_kwArcGIS.json')
 
-
+    ##Building list of GIS software tools
     #getGISSoftwareList()
-    #sd = readSoft('GISSoftdict.json')
+
+    ##Getting Google Trends for software list and visualize them as bar chart
+    #sd = readSoft('ResourceCatalogue\\GISSoftdict.json')
     #getTrends4Soft(sd, 'ArcGIS')
-    visualize('Softresults_kwArcGIS.json', twolayered=False, index='GIS Software')
-    #generateRDF('GISTools.ttl','http://dbpedia.org/resource/ArcGIS','ArcGISTooldict.json','GISSoftdict.json', tooluris=False, toolwebsites='ArcGIStoolwebsites.json') #a gis:Toolbox
+    visualize('GoogleTrends\\Softresults_kwArcGIS.json', twolayered=False, index='GIS Software')
 
-    #buildGRASSToolList('GRASSTooldict.json')
-    #td = readToolBoxes('GRASSTooldict.json', ['NDVI','terrain','landscape structure analysis', 'diversity index'])
+    ##Getting tool websites for ArcGIS toollist and filter those that correspond to a tool, writing everything into a json file
+    #readtoolpages("Arcgis10_network\\arcgis_tool_pages.csv")
+    #filterToolLinks('Arcgis10_network\\arcgis_tool_links_orders.csv',toolnodes='ResourceCatalogue\\ArcGIStoolwebsites.json')
+
+    ##Generate RDF from softwarelist, the ArcGIS toollist, and the tool websites
+    #generateRDF('ResourceCatalogue\\GISTools.ttl','http://dbpedia.org/resource/ArcGIS','ResourceCatalogue\\ArcGISTooldict.json','ResourceCatalogue\\GISSoftdict.json', tooluris=False, toolwebsites='ResourceCatalogue\\ArcGIStoolwebsites.json')
+
+    ##Building GRASS GIS toollist
+    #buildGRASSToolList('ResourceCatalogue\\GRASSTooldict.json')
+
+    ##Getting  Google Trends for GRASS list
+    #td = readToolBoxes('ResourceCatalogue\\GRASSTooldict.json', ['NDVI','terrain','landscape structure analysis', 'diversity index'])
     #res = getTrends4Tools(td,'GRASS GIS', normalize=normalizeGRASSToolString)
-    #visualize('GTresults_kwArcGIS.json')
-    #generateRDF('GISTools.ttl','http://dbpedia.org/resource/GRASS','GRASSTooldict.json',tooluris=True, normalize=normalizeGRASSToolString)
+    #visualize('ResourceCatalogue\\GTresults_kwArcGIS.json')
+
+    ##Adding Grass tools to the RDF file
+    #generateRDF('ResourceCatalogue\\GISTools.ttl','http://dbpedia.org/resource/GRASS','ResourceCatalogue\\GRASSTooldict.json',tooluris=True, normalize=normalizeGRASSToolString)
 
 
-
-    #readtoolpages("arcgis10_network\\arcgis_tool_pages.csv")
-    #filterToolLinks('arcgis10_network\\arcgis_tool_links_orders.csv',toolnodes='ArcGIStoolwebsites.json')
-
+    ##Adding network (hyper-) links to ArcGIS tools in the RDF file
+    #addWeblinks('ResourceCatalogue\\GISTools.ttl')
 
 
 
