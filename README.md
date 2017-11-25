@@ -26,4 +26,4 @@ Data and code resources (corresponding to sections in this article):
 * [/ResourceCatalogue](/ResourceCatalogue) (section 7): Contains resources for integrating and publishing all information as a linked data file
 
 
-License: [http://opendefinition.org/licenses/cc-by-sa/ Creative Commons Attribution Share-Alike 4.0 (CC-BY-SA-4.0)]
+License: [Creative Commons Attribution Share-Alike 4.0 (CC-BY-SA-4.0)](http://opendefinition.org/licenses/cc-by-sa/)
