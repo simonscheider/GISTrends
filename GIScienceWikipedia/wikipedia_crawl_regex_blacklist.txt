@@ -1,0 +1,12 @@
+.+/wiki/User:
+.+/wiki/Talk:
+.+/wiki/Template:
+.+/wiki/Template_talk:
+.+/wiki/Wikipedia:
+.+/wiki/HelpCategory:
+.+/wiki/Wikipedia_talk:
+.+/wiki/Special:
+.+/wiki/User_talk:
+.+/wiki/Help:
+.+/wiki/Portal:
+https://en.wikipedia.org/wiki/Main_Page
