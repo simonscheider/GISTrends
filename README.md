@@ -2,6 +2,7 @@
 GIS software, tools and methods on the web
 
 This repository contains code and data used to collect, integrate and analyse Web resources about GIS software, tools and related topics on the Web.
+
 =================================
 
 *Abstract:* Every day, practitioners, researchers, and students consult the Web to meet their information needs about GIS concepts and tools. How do we improve GIS in terms of conceptual organisation, findability, interoperability, relevance for user needs? So far, efforts have been mainly top-down, overlooking the actual usage of software and tools.
