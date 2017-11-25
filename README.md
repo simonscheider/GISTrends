@@ -9,9 +9,9 @@ Second, we analyse the visits to GIScience-related websites, highlighting the co
 
 *Keywords:* GIS; Geographic information science; GIScience; GIS operations; Web science; Google Trends; Wikipedia; ArcGIS; Linked data
 Members & contributors:
-* Dr. **Andrea Ballatore** ([home](http://sites.google.com/site/andreaballatore))
-* Dr. **Simon Scheider** ([home](http://geographicknowledge.de))
-* Dr. **Rob Lemmens** ([home](http://www.itc.nl/resumes/lemmens))
+* **Andrea Ballatore** ([home](http://sites.google.com/site/andreaballatore))
+* **Simon Scheider** ([home](http://geographicknowledge.de))
+* **Rob Lemmens** ([home](http://www.itc.nl/resumes/lemmens))
 
 
 Compare the article (under review): https://www.overleaf.com/read/cqbfdckkxcvc
