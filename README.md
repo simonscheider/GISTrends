@@ -14,7 +14,7 @@ Members & contributors:
 * **Rob Lemmens** ([home](http://www.itc.nl/resumes/lemmens))
 
 
-Compare the article (under review): https://www.overleaf.com/read/cqbfdckkxcvc
+Compare the article: [A. Ballatore, S. Scheider, & R. Lemmens (2018) Patterns of consumption and connectedness in GIS Web sources, AGILE Conference on Geographical Information Science: Geospatial Technologies for All, Lund, Sweden.](https://www.researchgate.net/publication/323114024_Patterns_of_consumption_and_connectedness_in_GIS_Web_sources)
 
 Data and code resources (corresponding to sections in this article):
 
@@ -28,4 +28,4 @@ Data and code resources (corresponding to sections in this article):
 
 License: [Creative Commons Attribution Share-Alike 4.0 (CC-BY-SA-4.0)](http://opendefinition.org/licenses/cc-by-sa/)
 
-Last update: 25 Nov 2017
+Last update: 08 March 2018
