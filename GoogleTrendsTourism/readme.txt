@@ -1,1 +1,2 @@
-Notes here
+
+Run project with RStudio.
