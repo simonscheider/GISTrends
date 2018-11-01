@@ -58,6 +58,9 @@ write_text_file <- function( contents, fn ){
 
 # load datasets here
 
+# Amsterdam data
+
+
 # Scraper ---------------------------------
 get_url = function( url ){
   library(httr)
