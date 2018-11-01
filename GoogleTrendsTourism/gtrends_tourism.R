@@ -1,6 +1,6 @@
 # Andrea Ballatore
 # 2018
-
+library(pacman)
 rm(list = ls())
 
 pacman::p_load(readr,rvest,urltools,uuid,RSQLite,gtrendsR)
