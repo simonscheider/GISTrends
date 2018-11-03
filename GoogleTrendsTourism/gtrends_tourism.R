@@ -1,12 +1,16 @@
 # Andrea Ballatore
 # 2018
-library(pacman)
 rm(list = ls())
 
-pacman::p_load(readr,rvest,urltools,uuid,RSQLite,gtrendsR)
+library(pacman)
 
-RANDOM_PAUSE_MIN_S = 5
-RANDOM_PAUSE_MAX_S = 30
+#devtools::install_github("PMassicotte/gtrendsR") # not working
+#devtools::install_github('diplodata/gtrendsR') # fix that also doesn't work
+pacman::p_load(readr,rvest,urltools,uuid,RSQLite,rjson,rgdal,curl,gtrendsR)
+
+RANDOM_PAUSE_MIN_S = 1
+RANDOM_PAUSE_MAX_S = 5
+CUR_DATE = substr(as.character(Sys.time()),0,10)
 
 # Utils ---------------------------------
 
@@ -57,8 +61,6 @@ write_text_file <- function( contents, fn ){
 # Datasets ---------------------------------
 
 # load datasets here
-
-# Amsterdam data
 
 
 # Scraper ---------------------------------
@@ -266,11 +268,64 @@ nrow(categories)
 summary(categories)
 
 get_gtrends_results <- function( base_term, terms ){
-  random_pause(1,5)
+  print(paste("get_gtrends_results", base_term, terms))
   all_terms = c( base_term, terms )
-  res = gtrends(all_terms)
-  #names(res)
+  #print(all_terms)
+  trial_i = 0
+  found = F
+  while(!found){
+    tryCatch( {
+      # call Google Trends API through gtrendsr
+      # set proxy
+      #   pia_socks5 = 'socks5h://x1936726:RYWxEUiy6N@proxy-nl.privateinternetaccess.com:1080'
+      #setHandleParameters(user = 'x1936726', password = 'RYWxEUiy6N', domain = NULL,
+      #                    proxyhost = 'proxy-nl.privateinternetaccess.com', proxyport = 1080 ) #, proxyauth = 15
+      #pia_socks5 = 'socks5h://x1936726:RYWxEUiy6N@proxy-nl.privateinternetaccess.com:1080'
+      #pia_socks5 = 'socks5://x1936726:RYWxEUiy6N@proxy-nl.privateinternetaccess.com:1080'
+      #options(RCurlOptions = list(proxy = pia_socks5,
+                                  #useragent = "Mozilla",
+      #                            followlocation = TRUE,
+       #                           verbose = F,
+        #                          referer = "",
+         #                         cookiejar = "tmp/_piavpn.cookies.txt"
+      #))
+      res = gtrends(all_terms)
+      found = T
+      print('> Gtrends data found <')
+    },
+    error = function(e) {
+      trial_i=trial_i+1
+      print(e)
+      traceback(e)
+      #stop("Problem detected") # DEBUG
+      #found=T # debug
+      print(paste("Problem detected. Trying again, i =", trial_i));
+      found = F
+      random_pause(RANDOM_PAUSE_MIN_S,RANDOM_PAUSE_MAX_S)
+    },
+    finally = {})
+  }
+  random_pause(RANDOM_PAUSE_MIN_S,RANDOM_PAUSE_MAX_S)
   return(res)
+}
+
+tag_results <- function(df, query_str, query_uid, geounit_code, geounit_name, geo_type ){
+  df$GTREND_QUERY = query_str
+  df$GEOUNIT_TYPE = geo_type
+  df$GEOUNIT_CODE = geounit_code
+  df$QUERY_UID = query_uid
+  df$QUERY_BASETERM = df$keyword != geounit_name
+  return(df)
+}
+
+save_results <- function( df, filename ){
+  fdir = paste0('tmp/amsterdam_gtrends_',CUR_DATE,'/')
+  dir.create(fdir, showWarnings = FALSE)
+  fn = paste0(fdir,filename,'.tsv')
+  fnbin = paste0(fdir,filename,'.rds')
+  saveRDS( df, file = fnbin, compress=T )
+  print(paste('save_results',fn))
+  write_tsv( df, fn, append = F, na = '')
 }
 
 # Main ---------------------------------
@@ -282,11 +337,75 @@ dir.create('tmp',showWarnings = F)
 
 # Run GTrends queries
 
-res = get_gtrends_results('Amsterdam', c('Leiden','Rotterdam'))
-# unpack results
-res$interest_over_time
-res$interest_by_country
-res$interest_by_city
-res$related_queries
+#res = get_gtrends_results('Amsterdam', c('Leiden','Rotterdam'))
+
+#res$interest_by_city
+#res$related_queries
+
+# Get Amsterdam data ---------------------------------
+
+get_gtrends_amsterdam <- function( base_term, shpdf, geo_type ){
+  print(paste('>> get_gtrends_amsterdam N=',nrow(shpdf),'geo_type=',geo_type))
+  shpdf$NAME = as.character(shpdf$NAME)
+  for( i in seq(nrow(shpdf)) ) {
+    print(paste('i =',i))
+    code = as.character(shpdf@data[i,c("CODE")])
+    name = as.character(shpdf@data[i,c("NAME")])
+    uid = UUIDgenerate()
+    print(paste("get_gtrends_amsterdam",uid,code,name))
+    query_str = paste(base_term, name, sep = ';')
+    #stopifnot(nchar(name)>2)
+    gres = get_gtrends_results(base_term, name)
+    
+    # "interest_over_time"  "interest_by_country" "interest_by_region"  
+    # "interest_by_dma"     "interest_by_city"    "related_topics"     
+    # "related_queries"
+    # --- interest_over_time ---
+    df = gres$interest_over_time
+    df = tag_results(df, query_str, uid, code, name, geo_type)
+    interest_over_time_df <<- rbind( interest_over_time_df, df )
+    #View(interest_over_time_df)
+    
+    # --- interest_by_country ---
+    df = gres$interest_by_country
+    df = tag_results(df, query_str, uid, code, name, geo_type)
+    interest_by_country_df <<- rbind( interest_by_country_df, df )
+    #View(interest_by_country_df)
+    
+    # --- interest_by_country ---
+    df = gres$interest_by_city
+    df = tag_results(df, query_str, uid, code, name, geo_type)
+    interest_by_city_df <<- rbind( interest_by_city_df, df )
+    #View(interest_by_city_df)
+    
+    rm(df)
+  }
+}
+
+# municipalities (gm)
+# wijken (wk) (="quarters")
+# buurten (bu) (="neighborhoods') (highest resolution level)
+muni = readOGR(dsn="geodata/MetropolregionA.shp")
+cols = c("CODE","NAME")
+names(muni)[1:2]=cols
+qua = readOGR(dsn="geodata/MetrAWijk.shp")
+names(qua)[1:2]=cols
+nei = readOGR(dsn="geodata/MetrABuurt.shp")
+names(nei)[1:2]=cols
+
+# init data
+interest_over_time_df = data.frame()
+interest_by_country_df = data.frame()
+interest_by_city_df = data.frame()
+
+base_term = "Amsterdam"
+get_gtrends_amsterdam(base_term, muni, 'municipality')
+get_gtrends_amsterdam(base_term, qua, 'quarter')
+#get_gtrends_amsterdam(base_term, nei, 'neighbourhood')
+
+# save datasets
+save_results(interest_over_time_df,'interest_over_time_df')
+save_results(interest_by_country_df,'interest_by_country_df')
+save_results(interest_by_city_df,'interest_by_city_df')
 
 print("OK")
