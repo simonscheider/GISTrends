@@ -60,8 +60,28 @@ write_text_file <- function( contents, fn ){
 
 # Datasets ---------------------------------
 
-# load datasets here
+# load and prep NL datasets
 
+# L1 (gm) (municipalities)  = 33
+# L2 wijken (wk) (quarters) = 352
+# L3 buurten (bu) (neighborhoods) = 1517, with other level codes for joins
+
+# Fields:
+# AANT_INW = tot pop
+# BEV = density
+
+cols = c("CODE","NAME")
+gm_sdf = readOGR(dsn="geodata/MetropolregionA.shp") # level 1
+names(gm_sdf)[1:2]=cols
+wk_sdf = readOGR(dsn="geodata/MetrAWijk.shp") # level 2
+names(wk_sdf)[1:2]=cols
+bu_sdf = readOGR(dsn="geodata/MetrABuurt.shp") # level 3
+names(bu_sdf)[1:2]=cols
+
+# save geodata as R data
+saveRDS( gm_sdf, file = 'geodata/netherlands_L1_gm_sdf.rds', compress=T )
+saveRDS( wk_sdf, file = 'geodata/netherlands_L2_wk_sdf.rds', compress=T )
+saveRDS( bu_sdf, file = 'geodata/netherlands_L3_bu_sdf.rds', compress=T )
 
 # Scraper ---------------------------------
 get_url = function( url ){
@@ -168,7 +188,7 @@ tag_results <- function(df, query_str, query_uid, geounit_code, geounit_name, ge
 }
 
 save_results <- function( df, filename ){
-  fdir = paste0('tmp/amsterdam_gtrends_',CUR_DATE,'/')
+  fdir = paste0('tmp/NL_gtrends_',CUR_DATE,'/')
   dir.create(fdir, showWarnings = FALSE)
   fn = paste0(fdir,filename,'.tsv')
   fnbin = paste0(fdir,filename,'.rds')
@@ -191,17 +211,17 @@ dir.create('tmp',showWarnings = F)
 #res$interest_by_city
 #res$related_queries
 
-# Get Amsterdam data ---------------------------------
+# Get NL data ---------------------------------
 
-get_gtrends_amsterdam <- function( base_term, shpdf, geo_type ){
-  print(paste('>> get_gtrends_amsterdam N=',nrow(shpdf),'geo_type=',geo_type))
+get_gtrends_NL <- function( base_term, shpdf, geo_type ){
+  print(paste('>> get_gtrends_NL N=',nrow(shpdf),'geo_type=',geo_type))
   shpdf$NAME = as.character(shpdf$NAME)
   for( i in seq(nrow(shpdf)) ) {
     print(paste('i =',i))
     code = as.character(shpdf@data[i,c("CODE")])
     name = as.character(shpdf@data[i,c("NAME")])
     uid = UUIDgenerate()
-    print(paste("get_gtrends_amsterdam",uid,code,name))
+    print(paste("get_gtrends_NL",uid,code,name))
     query_str = paste(base_term, name, sep = ';')
     #stopifnot(nchar(name)>2)
     gres = get_gtrends_results(base_term, name)
@@ -231,21 +251,51 @@ get_gtrends_amsterdam <- function( base_term, shpdf, geo_type ){
   }
 }
 
-# municipalities (gm)
-# wijken (wk) (="quarters")
-# buurten (bu) (="neighborhoods') (highest resolution level)
-muni = readOGR(dsn="geodata/MetropolregionA.shp")
-cols = c("CODE","NAME")
-names(muni)[1:2]=cols
-qua = readOGR(dsn="geodata/MetrAWijk.shp")
-names(qua)[1:2]=cols
-nei = readOGR(dsn="geodata/MetrABuurt.shp")
-names(nei)[1:2]=cols
 
-# save geodata as R data
-saveRDS( muni, file = 'geodata/netherlands_municipalities_sdf.rds', compress=T )
-saveRDS( qua, file = 'geodata/netherlands_quarters_sdf.rds', compress=T )
-saveRDS( nei, file = 'geodata/netherlands_neighbourhoods_sdf.rds', compress=T )
+# TODO
+# check how to retrieve concepts
+# gtrends data from 2004
+# new adventurism - off the beaten track
+
+# 1) go for the "city", "town" or "capital", "municipality", "village", "neighborhood" search instead of pure text search
+# 2)  Use term + containing municipality term,
+
+# if municipality, the  always  option 1
+# if not, then:
+#    if not in list of difficult cases (Zuid, Noord, :
+#                                         first 1), the  2)
+
+# Get NL flows ---------------------------------
+
+interest_by_country_df = data.frame()
+
+kws = c('Amsterdam','Netherlands')
+for (keyword in kws){
+for (year in seq(2007,2017)){
+  print(paste("  Scraping",year))
+  for (low_search_volume in c(T,F)){
+    time_span = paste0(year,"-01-01 ",year,"-12-31")
+    #print(time_span)
+    res = gtrends(keyword = keyword, geo = "", time = time_span,
+            #gprop = c("web", "news", "images", "froogle", "youtube"),
+            category = 0, hl = "en-US",
+            low_search_volume = low_search_volume )
+            #cookie_url = "http://trends.google.com/Cookies/NID")
+    df = res$interest_by_country
+    df$low_search_volume = low_search_volume
+    df$year = year
+    interest_by_country_df <- rbind( interest_by_country_df, df )
+    rm(res,df,time_span)
+  }
+}}
+
+save_results(interest_by_country_df,'nl_amsterdam_countries_over_time_df')
+View(interest_by_country_df)
+rm(interest_by_country_df)
+
+TODO
+
+# Get NL municip data ---------------------------------
 
 # init data
 interest_over_time_df = data.frame()
@@ -253,8 +303,8 @@ interest_by_country_df = data.frame()
 interest_by_city_df = data.frame()
 
 base_term = "Amsterdam"
-get_gtrends_amsterdam(base_term, muni, 'municipality')
-get_gtrends_amsterdam(base_term, qua, 'quarter')
+#get_gtrends_amsterdam(base_term, gm_sdf, 'gm')
+#get_gtrends_amsterdam(base_term, wk_sdf, 'wk')
 #get_gtrends_amsterdam(base_term, nei, 'neighbourhood')
 
 # save datasets
