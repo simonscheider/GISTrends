@@ -1,5 +1,5 @@
 ---
-  title: "Regressions London"
+  title: "Gtrends Tourism Analysis"
   output: 
   html_document:
   self_contained: false

@@ -1,7 +1,20 @@
-# Andrea Ballatore
-# 2018
+---
+  title: "Gtrends Tourism"
+output: 
+  html_document:
+  self_contained: false
+---
+  
+<style>
+  pre:not([class]) {
+    color: white;
+    background-color: #272822;
+  }
+</style>
+
 rm(list = ls())
 
+```{r, echo=FALSE, message=FALSE}
 library(pacman)
 
 #devtools::install_github("PMassicotte/gtrendsR") # not working
@@ -11,8 +24,10 @@ pacman::p_load(readr,rvest,urltools,uuid,RSQLite,rjson,rgdal,curl,gtrendsR)
 RANDOM_PAUSE_MIN_S = 1
 RANDOM_PAUSE_MAX_S = 5
 CUR_DATE = substr(as.character(Sys.time()),0,10)
+```
+# Utils
 
-# Utils ---------------------------------
+```{r}
 
 load_res_table <- function( fn, quot="" ){
   df <- read.table(file=fn, header=TRUE, sep="\t", stringsAsFactors=T, #fileEncoding="UTF-8",
@@ -57,9 +72,11 @@ write_text_file <- function( contents, fn ){
   write(contents,file = fn)
   #sink()
 }
+```
 
-# Datasets ---------------------------------
+## Datasets
 
+```{r}
 # load and prep NL datasets
 
 # L1 (gm) (municipalities)  = 33
@@ -108,8 +125,11 @@ get_url_piavpn = function( url ){
   html <- RCurl::getURL(url=url, curl=RCurl::getCurlHandle())
   return(html)
 }
+```
 
-# Google Search utils ---------------------------------
+## Google Search utils
+
+```{r}
 load_google_domains <- function(){
   google_domains = scan('data/google/google_supported_domains.txt',sep = '\n',what = "character")
   stopifnot(length(google_domains)==193)
@@ -127,7 +147,11 @@ get_google_languages_for_country <- function(country_code){
   return(langs)
 }
 
-# Google Trends ---------------------------------
+```
+
+## Google Trends
+
+```{r}
 
 # Based on https://cran.r-project.org/web/packages/gtrendsR/gtrendsR.pdf
 
@@ -144,13 +168,7 @@ get_gtrends_results <- function( base_term, terms ){
   found = F
   while(!found){
     tryCatch( {
-      # call Google Trends API through gtrendsr
-      # set proxy
-      #   pia_socks5 = 'socks5h://x1936726:RYWxEUiy6N@proxy-nl.privateinternetaccess.com:1080'
-      #setHandleParameters(user = 'x1936726', password = 'RYWxEUiy6N', domain = NULL,
-      #                    proxyhost = 'proxy-nl.privateinternetaccess.com', proxyport = 1080 ) #, proxyauth = 15
-      #pia_socks5 = 'socks5h://x1936726:RYWxEUiy6N@proxy-nl.privateinternetaccess.com:1080'
-      #pia_socks5 = 'socks5://x1936726:RYWxEUiy6N@proxy-nl.privateinternetaccess.com:1080'
+      
       #options(RCurlOptions = list(proxy = pia_socks5,
                                   #useragent = "Mozilla",
       #                            followlocation = TRUE,
@@ -174,7 +192,7 @@ get_gtrends_results <- function( base_term, terms ){
     },
     finally = {})
   }
-  random_pause(RANDOM_PAUSE_MIN_S,RANDOM_PAUSE_MAX_S)
+  
   return(res)
 }
 
@@ -196,8 +214,11 @@ save_results <- function( df, filename ){
   print(paste('save_results',fn))
   write_tsv( df, fn, append = F, na = '')
 }
+```
 
-# Main ---------------------------------
+# Main
+
+```{r}
 #get_url_piavpn('https://github.com/curl/curl/issues/944')
 
 # create outfolders
@@ -210,46 +231,6 @@ dir.create('tmp',showWarnings = F)
 
 #res$interest_by_city
 #res$related_queries
-
-# Get NL data ---------------------------------
-
-get_gtrends_NL <- function( base_term, shpdf, geo_type ){
-  print(paste('>> get_gtrends_NL N=',nrow(shpdf),'geo_type=',geo_type))
-  shpdf$NAME = as.character(shpdf$NAME)
-  for( i in seq(nrow(shpdf)) ) {
-    print(paste('i =',i))
-    code = as.character(shpdf@data[i,c("CODE")])
-    name = as.character(shpdf@data[i,c("NAME")])
-    uid = UUIDgenerate()
-    print(paste("get_gtrends_NL",uid,code,name))
-    query_str = paste(base_term, name, sep = ';')
-    #stopifnot(nchar(name)>2)
-    gres = get_gtrends_results(base_term, name)
-    
-    # "interest_over_time"  "interest_by_country" "interest_by_region"  
-    # "interest_by_dma"     "interest_by_city"    "related_topics"     
-    # "related_queries"
-    # --- interest_over_time ---
-    df = gres$interest_over_time
-    df = tag_results(df, query_str, uid, code, name, geo_type)
-    interest_over_time_df <<- rbind( interest_over_time_df, df )
-    #View(interest_over_time_df)
-    
-    # --- interest_by_country ---
-    df = gres$interest_by_country
-    df = tag_results(df, query_str, uid, code, name, geo_type)
-    interest_by_country_df <<- rbind( interest_by_country_df, df )
-    #View(interest_by_country_df)
-    
-    # --- interest_by_country ---
-    df = gres$interest_by_city
-    df = tag_results(df, query_str, uid, code, name, geo_type)
-    interest_by_city_df <<- rbind( interest_by_city_df, df )
-    #View(interest_by_city_df)
-    
-    rm(df)
-  }
-}
 
 
 # TODO
@@ -264,8 +245,9 @@ get_gtrends_NL <- function( base_term, shpdf, geo_type ){
 # if not, then:
 #    if not in list of difficult cases (Zuid, Noord, :
 #                                         first 1), the  2)
-
-# Get NL flows ---------------------------------
+```
+## Get NL flows
+```{r}
 
 interest_by_country_df = data.frame()
 
@@ -293,9 +275,88 @@ save_results(interest_by_country_df,'nl_amsterdam_countries_over_time_df')
 View(interest_by_country_df)
 rm(interest_by_country_df)
 
-TODO
+```
+## Get NL municip data
 
-# Get NL municip data ---------------------------------
+```{r}
+
+nl_gm_search_terms_df = read_csv("geodata/GMsearchterms.csv")
+nl_gm_search_terms_df = nl_gm_search_terms_df[nl_gm_search_terms_df$QUERY_BASETERM==F &
+   nl_gm_search_terms_df$GEOUNIT_TYPE=='municipality', ]
+nl_gm_search_terms_df$X7=NULL
+nl_gm_search_terms_df$X8=NULL
+nl_gm_search_terms_df$X9=NULL
+nl_gm_search_terms_df$QUERY_BASETERM=NULL
+nrow(nl_gm_search_terms_df)
+#View(nl_gm_search_terms_df)
+stopifnot(nrow(nl_gm_search_terms_df)==33)
+
+gm_interest_time_df = data.frame()
+
+# get data for all municipalities
+for(mode in c('string','concept')){
+for(i in seq(3)){ #nrow(nl_gm_search_terms_df))){
+  code = nl_gm_search_terms_df[i,]$GEOUNIT_CODE
+  kw = nl_gm_search_terms_df[i,]$safe_keyword
+  concept = nl_gm_search_terms_df[i,]$GT_concept
+  uid = UUIDgenerate()
+  print(paste(code,kw,concept))
+  
+  if (mode == 'concept') inkw = concept
+  else inkw = kw
+  
+  res = gtrends(inkw, time = paste0(2007,"-01-01 ",2017,"-12-31") )
+  df = res$interest_over_time
+  df$UID = uid
+  df$GEOUNIT_CODE = code
+  df$GEOUNIT_NAME = kw
+  df$GTRENDS_CONCEPT = concept
+  df$GTRENDS_MODE = mode
+  gm_interest_time_df = rbind(gm_interest_time_df,df)
+  random_pause(RANDOM_PAUSE_MIN_S,RANDOM_PAUSE_MAX_S)
+  rm(res)
+}}
+View(gm_interest_time_df)
+
+TODO
+TODO MAKE THIS WORK
+
+
+print(paste('>> get_gtrends_NL N=',nrow(shpdf),'geo_type=',geo_type))
+shpdf$NAME = as.character(shpdf$NAME)
+for( i in seq(nrow(shpdf)) ){
+  print(paste('i =',i))
+  code = as.character(shpdf@data[i,c("CODE")])
+  name = as.character(shpdf@data[i,c("NAME")])
+  
+  print(paste("get_gtrends_NL",uid,code,name))
+  query_str = paste(base_term, name, sep = ';')
+  #stopifnot(nchar(name)>2)
+  gres = get_gtrends_results(base_term, name)
+  
+  # "interest_over_time"  "interest_by_country" "interest_by_region"  
+  # "interest_by_dma"     "interest_by_city"    "related_topics"     
+  # "related_queries"
+  # --- interest_over_time ---
+  df = gres$interest_over_time
+  df = tag_results(df, query_str, uid, code, name, geo_type)
+  interest_over_time_df <<- rbind( interest_over_time_df, df )
+  #View(interest_over_time_df)
+  
+  # --- interest_by_country ---
+  #df = gres$interest_by_country
+  #df = tag_results(df, query_str, uid, code, name, geo_type)
+  #interest_by_country_df <<- rbind( interest_by_country_df, df )
+  #View(interest_by_country_df)
+  
+  # --- interest_by_country ---
+  #df = gres$interest_by_city
+  #df = tag_results(df, query_str, uid, code, name, geo_type)
+  #interest_by_city_df <<- rbind( interest_by_city_df, df )
+  #View(interest_by_city_df)
+  
+  rm(df)
+}
 
 # init data
 interest_over_time_df = data.frame()
@@ -303,6 +364,7 @@ interest_by_country_df = data.frame()
 interest_by_city_df = data.frame()
 
 base_term = "Amsterdam"
+
 #get_gtrends_amsterdam(base_term, gm_sdf, 'gm')
 #get_gtrends_amsterdam(base_term, wk_sdf, 'wk')
 #get_gtrends_amsterdam(base_term, nei, 'neighbourhood')
@@ -312,4 +374,4 @@ save_results(interest_over_time_df,'interest_over_time_df')
 save_results(interest_by_country_df,'interest_by_country_df')
 save_results(interest_by_city_df,'interest_by_city_df')
 
-print("OK")
+```
