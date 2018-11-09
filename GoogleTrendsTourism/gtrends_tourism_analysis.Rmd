@@ -1,8 +1,8 @@
 ---
-  title: "Gtrends Tourism Analysis"
-  output: 
-  html_document:
-  self_contained: false
+title: "Gtrends Tourism Analysis"
+output: 
+html_document:
+self_contained: false
 ---
   
 <style>
@@ -12,17 +12,20 @@
   }
 </style>
   
+# setup 
 
-```{r, echo=FALSE, message=FALSE}
+```{r setup, echo=FALSE, message=FALSE}
 library(pacman)
 
 #devtools::install_github("PMassicotte/gtrendsR") # not working
 #devtools::install_github('diplodata/gtrendsR') # fix that also doesn't work
-pacman::p_load(readr,rvest,urltools,uuid,RSQLite,rjson,rgdal,curl,gtrendsR,dplyr,tmap,rmapshaper)
+pacman::p_load(readr,rvest,urltools,uuid,RSQLite,rjson,rgdal,curl,gtrendsR,
+               dplyr,tmap,rmapshaper,ggplot2)
 
 CUR_DATE = substr(as.character(Sys.time()),0,10)
+OUT_DIR = paste0('tmp/NL_gtrends_',CUR_DATE,'/')
+dir.create(OUT_DIR, showWarnings = FALSE)
 
-# Utils ---------------------------------
 
 parse_gt_hits <- function( hits ){
   hits = replace(hits, hits=='<1', .5) # <1 ----> 0.5
@@ -31,11 +34,9 @@ parse_gt_hits <- function( hits ){
   return(h)
 }
 
-```
-
-# Datasets
-
-```{r}
+FUN_col_exists <- function(df, colnames){
+  return(all(colnames %in% colnames(df)))
+}
 
 sort_df <- function( df, col, asc=T ){
   sdf = df[ with(df, order(df[,c(col)], decreasing = !asc)), ]
@@ -47,11 +48,19 @@ countries_sdf_simpl = rmapshaper::ms_simplify(countries_sdf, keep = .5, keep_sha
 countries_sdf_simpl = spTransform(countries_sdf_simpl, CRS('+proj=robin'))
 # +proj=robin +proj=wintri
 
+# get countries generic data
+names(countries_sdf_simpl)
+countries_data = countries_sdf_simpl@data[,c('ISO_A2','NAME','POP_EST',
+                                             'GDP_MD_EST','ECONOMY','INCOME_GRP','CONTINENT',
+                                             'REGION_UN','SUBREGION','REGION_WB')]
+countries_data = subset(countries_data, countries_data$ISO_A2 != '-99')
+summary(countries_data)
+
 save_results <- function( df, filename ){
-  fdir = paste0('tmp/amsterdam_gtrends_',CUR_DATE,'/')
-  dir.create(fdir, showWarnings = FALSE)
-  fn = paste0(fdir,filename,'.tsv')
-  fnbin = paste0(fdir,filename,'.rds')
+  
+  dir.create(OUT_DIR, showWarnings = FALSE)
+  fn = paste0(OUT_DIR,filename,'.tsv')
+  fnbin = paste0(OUT_DIR,filename,'.rds')
   saveRDS( df, file = fnbin, compress=T )
   print(paste('save_results',fn))
   write_tsv( df, fn, append = F, na = '')
@@ -117,7 +126,7 @@ rm(m,countries_df,google_countries_df)
 
 # Analyse Amsterdam data
 
-```{r}
+```{r eval=F}
 names(gt_time_df)
 #
 gt_time_df_summary = gt_time_df %>%
@@ -135,6 +144,7 @@ View(gt_time_df_summary)
 write_tsv( gt_time_df_summary, 'tmp/gt_time_summary.tsv', append = F, na = '')
 
 ```
+
 # Analyse NL global flow data
 
 ```{r}
@@ -157,16 +167,142 @@ m$ISO_A2 = NULL
 stopifnot(nrow(m)==nrow(gt_countries))
 gt_countries = m
 rm(m)
+# asinh is similar to log but works with 0 values
+gt_countries$hits_asinh = round(asinh(gt_countries$hits),3)
+
+#summary(gt_countries$hits_log)
+
 summary(gt_countries)
 
-gt_countries = subset(gt_countries, gt_countries$hits > 0)
-gt_countries$hits_log = round(log(gt_countries$hits+1),3)
-summary(gt_countries$hits_log)
+# create output folder
 outdir = 'tmp/NL_global_gtrends_flows/'
 unlink(paste0(outdir,'*'))
 dir.create(outdir, showWarnings = FALSE)
 
+# summary stats
+
+# add country data
+m = merge(gt_countries,countries_data, by.x='origin_country_iso2', by.y='ISO_A2',all.x=T )
+
+gen_barchart = function( df, targetvar ){
+  fn = paste0( OUT_DIR, 'nl_global_sum_barchart_',targetvar,'.pdf' )
+  print(fn)
+  #print(names(df))
+  
+  df$VAL = as.factor(as.character(df$VAL))
+  p<-ggplot(data=df, aes(x=VAL, y=hits_sum, fill=keyword)) +
+    ggtitle(paste('Google Trends (global) by',targetvar),
+      subtitle = "All years. F/T refers to low_search_volume option")+
+              
+    geom_bar(stat = 'identity', position=position_dodge())+
+    #theme_minimal() +
+    theme_light()+
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+    facet_grid(. ~ low_search_volume)
+    
+  ggsave(fn,p,width = 10, height = 6)
+  #View(df)
+}
+
+# summary by continent
+summarise_gt_countries = function( mdf, target_var, target_year ){
+  print(paste(target_var,target_year))
+  stopifnot(FUN_col_exists(mdf,'year'))
+  stopifnot(!FUN_col_exists(mdf,'YEAR'))
+  cols = c("keyword", "low_search_volume", target_var)
+  if (target_year!='all'){
+    n = nrow(mdf)
+    #print(unique(mdf$year))
+    mdf = subset(mdf, mdf$year == target_year)
+    stopifnot(n>nrow(mdf), nrow(mdf)>0)
+  }
+  sum_df = mdf %>%
+    group_by( .dots = cols ) %>%
+    summarise(
+      n = n(),
+      hits_min = min(hits, na.rm = T),
+      hits_mean = round(mean(hits, na.rm = T),3),
+      hits_median = median(hits, na.rm = T),
+      hits_max = max(hits, na.rm = T),
+      hits_sum = sum(hits, na.rm = T)
+    )
+  names(sum_df)[3] = 'VAL'
+  sum_df$VAR = target_var
+  sum_df$YEAR = target_year
+  sum_df$UID = UUIDgenerate()
+  stopifnot(nrow(sum_df)>0,ncol(sum_df)==12)
+  rm(cols)
+  #View(sum_df)
+  #print(typeof(sum_df))
+  sum_df = sum_df[,c("keyword","low_search_volume","YEAR","VAR","VAL",
+                     "n","hits_min","hits_mean","hits_median",
+                     "hits_max","hits_sum",'UID')]
+  df = as.data.frame(sum_df)
+  return( df )
+}
+
+countries_gt_summary_df = data.frame()
+names(m)
+
+group_vars = c('CONTINENT','REGION_WB','INCOME_GRP','REGION_UN',"SUBREGION")
+#for(v in c('CONTINENT')){
+for(v in group_vars){
+for(y in c('all',seq(2007,2017))){
+  print(paste(v,y))
+  df = summarise_gt_countries(m,v,y)
+  
+  # generate plots
+  if (y=='all') gen_barchart(df, v)
+  
+  #print(names(df))
+  #View(df)
+  countries_gt_summary_df = rbind(countries_gt_summary_df, df)
+  rm(df)
+}}
+
+gen_linechart = function( df, targetvar ){
+  fn = paste0( OUT_DIR, 'nl_global_time_linechart_',targetvar,'.pdf' )
+  df$YEAR = as.factor(as.numeric(df$YEAR))
+  print(fn)
+  print(summary(df))
+  #View(df)
+  df$VAL = as.factor(as.character(df$VAL))
+  #View(df)
+  p<-ggplot(data=df, aes(x=YEAR, y=hits_sum, group=VAL, color=VAL, linetype=VAL)) +
+    ggtitle(paste('Google Trends (yearly interest) by',targetvar),
+      subtitle = "Yearly summary. F/T refers to low_search_volume option")+
+    geom_line()+
+    #theme_minimal() +
+    theme_light()+
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+    facet_grid(keyword ~ low_search_volume)
+    
+  ggsave(fn,p,width = 10, height = 6)
+}
+
+# generate time charts
+for(v in group_vars){
+#for(v in c('CONTINENT')){
+  df = subset(countries_gt_summary_df,
+              countries_gt_summary_df$VAR==v &
+              countries_gt_summary_df$YEAR!='all')
+  gen_linechart(df, v)
+}
+
+summary(countries_gt_summary_df)
+View( countries_gt_summary_df )
+
+save_results(countries_gt_summary_df,'nl_gt_global_groups')
+
+rm(group_vars)
+```
+
+## Maps by year
+
+```{r}
 # Maps by year
+gt_countries = subset(gt_countries, gt_countries$hits > 0)
+
 for( y in unique(gt_countries$year)){
   for( kw in unique(gt_countries$keyword)){
     df = subset(gt_countries, gt_countries$low_search_volume==T & 
@@ -175,7 +311,7 @@ for( y in unique(gt_countries$year)){
                 by.x='ISO_A2', by.y='origin_country_iso2' )
     
     gtrends_map <- tm_shape(mdf) +
-      tm_fill(col="hits_log", style="equal", palette="Blues") + #quantile , 
+      tm_fill(col="hits_asinh", style="equal", palette="Blues") + #quantile , 
       #tm_scale_bar(width=0.15,position=c("left","bottom")) +   
       #tm_credits("\n\n\n\n\nContains data from Office for National Statistics\nand Ordnance Survey. Crown copyright & database right 2016.",size=0.6,position=c("left","bottom")) + 
       tm_layout(frame=FALSE) + tm_legend(scale=0.75) +

@@ -16,8 +16,8 @@ all:
 	@echo "\n";
 
 scrape:
-	Rscript gtrends_tourism.R > tmp/rscript_log_$(DATE).txt 2>&1
-
+	Rscript gtrends_tourism_scraper.R  > tmp/rscript_log_$(DATE).txt 2>&1
+	
 running:
 	-@ps auxw | grep '[s]crape';
 	#-@ps auxw | grep '[t]or';
