@@ -26,6 +26,10 @@ CUR_DATE = substr(as.character(Sys.time()),0,10)
 OUT_DIR = paste0('tmp/NL_gtrends_',CUR_DATE,'/')
 dir.create(OUT_DIR, showWarnings = FALSE)
 
+EU_COUNTRIES = c(
+ 'AT', 'BE', 'HR', 'BG', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE',
+ 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'GB'
+)
 
 parse_gt_hits <- function( hits ){
   hits = replace(hits, hits=='<1', .5) # <1 ----> 0.5
@@ -70,22 +74,6 @@ save_results <- function( df, filename ){
 dir.create('tmp',showWarnings = F)
 #dir.create('tmp/pages',showWarnings = F)
 
-# Load Amsterdam data ---------------------------------
-muni_sdf = readRDS( file = 'geodata/netherlands_municipalities_sdf.rds' )
-quar_sdf = readRDS( file = 'geodata/netherlands_quarters_sdf.rds' )
-neig_sdf = readRDS( file = 'geodata/netherlands_neighbourhoods_sdf.rds' )
-
-# gtrends data
-GT_DATA_FOLDER = 'data/amsterdam_gtrends/amsterdam_gtrends_2018-11-03/'
-
-gt_time_df = readRDS( file = file.path(GT_DATA_FOLDER,'interest_over_time_df.rds') )
-nrow(gt_time_df)
-summary(gt_time_df)
-gt_time_df$hits = parse_gt_hits(gt_time_df$hits)
-gt_time_df$keyword = as.factor(gt_time_df$keyword)
-gt_time_df$GEOUNIT_CODE = as.factor(gt_time_df$GEOUNIT_CODE)
-gt_time_df$GEOUNIT_TYPE = as.factor(gt_time_df$GEOUNIT_TYPE)
-summary(gt_time_df)
 ```
 
 
@@ -127,6 +115,23 @@ rm(m,countries_df,google_countries_df)
 # Analyse Amsterdam data
 
 ```{r eval=F}
+# Load Amsterdam data ---------------------------------
+#muni_sdf = readRDS( file = 'geodata/netherlands_municipalities_sdf.rds' )
+#quar_sdf = readRDS( file = 'geodata/netherlands_quarters_sdf.rds' )
+#neig_sdf = readRDS( file = 'geodata/netherlands_neighbourhoods_sdf.rds' )
+
+# gtrends data
+GT_DATA_FOLDER = 'data/amsterdam_gtrends/amsterdam_gtrends_2018-11-03/'
+
+gt_time_df = readRDS( file = file.path(GT_DATA_FOLDER,'interest_over_time_df.rds') )
+nrow(gt_time_df)
+summary(gt_time_df)
+gt_time_df$hits = parse_gt_hits(gt_time_df$hits)
+gt_time_df$keyword = as.factor(gt_time_df$keyword)
+gt_time_df$GEOUNIT_CODE = as.factor(gt_time_df$GEOUNIT_CODE)
+gt_time_df$GEOUNIT_TYPE = as.factor(gt_time_df$GEOUNIT_TYPE)
+summary(gt_time_df)
+
 names(gt_time_df)
 #
 gt_time_df_summary = gt_time_df %>%
@@ -184,29 +189,28 @@ dir.create(outdir, showWarnings = FALSE)
 # add country data
 m = merge(gt_countries,countries_data, by.x='origin_country_iso2', by.y='ISO_A2',all.x=T )
 
-gen_barchart = function( df, targetvar ){
-  fn = paste0( OUT_DIR, 'nl_global_sum_barchart_',targetvar,'.pdf' )
+gen_barchart = function( df, targetvar, measure ){
+  fn = paste0( OUT_DIR, 'nl_global_sum_barchart_',targetvar,'-',measure,'.pdf' )
   print(fn)
   #print(names(df))
   
   df$VAL = as.factor(as.character(df$VAL))
-  p<-ggplot(data=df, aes(x=VAL, y=hits_sum, fill=keyword)) +
-    ggtitle(paste('Google Trends (global) by',targetvar),
+  p<-ggplot(data=df, aes_string(x='VAL', y=measure, fill='keyword')) +
+    ggtitle(paste('Google Trends (global) by',targetvar,'-',measure),
       subtitle = "All years. F/T refers to low_search_volume option")+
-              
     geom_bar(stat = 'identity', position=position_dodge())+
     #theme_minimal() +
     theme_light()+
     theme(axis.text.x = element_text(angle = 45, hjust = 1))+
     facet_grid(. ~ low_search_volume)
-    
+  
   ggsave(fn,p,width = 10, height = 6)
   #View(df)
 }
 
 # summary by continent
 summarise_gt_countries = function( mdf, target_var, target_year ){
-  print(paste(target_var,target_year))
+  #print(paste(target_var,target_year))
   stopifnot(FUN_col_exists(mdf,'year'))
   stopifnot(!FUN_col_exists(mdf,'YEAR'))
   cols = c("keyword", "low_search_volume", target_var)
@@ -216,6 +220,11 @@ summarise_gt_countries = function( mdf, target_var, target_year ){
     mdf = subset(mdf, mdf$year == target_year)
     stopifnot(n>nrow(mdf), nrow(mdf)>0)
   }
+  
+  if (target_var == 'EU_COUNTRY'){
+    mdf = subset(mdf, !is.na(mdf$EU_COUNTRY))
+  }
+  
   sum_df = mdf %>%
     group_by( .dots = cols ) %>%
     summarise(
@@ -224,52 +233,63 @@ summarise_gt_countries = function( mdf, target_var, target_year ){
       hits_mean = round(mean(hits, na.rm = T),3),
       hits_median = median(hits, na.rm = T),
       hits_max = max(hits, na.rm = T),
-      hits_sum = sum(hits, na.rm = T)
+      hits_sum = sum(hits, na.rm = T),
+      hits_asinh_mean = round(mean(hits_asinh, na.rm = T),3),
+      hits_asinh_sum = sum(hits_asinh, na.rm = T)
     )
   names(sum_df)[3] = 'VAL'
   sum_df$VAR = target_var
   sum_df$YEAR = target_year
   sum_df$UID = UUIDgenerate()
-  stopifnot(nrow(sum_df)>0,ncol(sum_df)==12)
+  stopifnot(nrow(sum_df)>0,ncol(sum_df)==14)
   rm(cols)
   #View(sum_df)
   #print(typeof(sum_df))
   sum_df = sum_df[,c("keyword","low_search_volume","YEAR","VAR","VAL",
                      "n","hits_min","hits_mean","hits_median",
-                     "hits_max","hits_sum",'UID')]
+                     "hits_max","hits_sum",'hits_asinh_mean','hits_asinh_sum',
+                     'UID')]
   df = as.data.frame(sum_df)
   return( df )
 }
 
+# add EU country as a group
+m$EU_COUNTRY = NA
+m$EU_COUNTRY = m$origin_country_iso2 %in% EU_COUNTRIES
+m$EU_COUNTRY = ifelse(m$EU_COUNTRY, as.character(m$origin_country_iso2), NA)
+m$EU_COUNTRY = as.factor(m$EU_COUNTRY)
+
 countries_gt_summary_df = data.frame()
 names(m)
 
-group_vars = c('CONTINENT','REGION_WB','INCOME_GRP','REGION_UN',"SUBREGION")
+group_vars = c('CONTINENT','REGION_WB','INCOME_GRP','REGION_UN',"SUBREGION",'EU_COUNTRY')
+measures = c('hits_sum','hits_mean','hits_asinh_sum','hits_asinh_mean')
 #for(v in c('CONTINENT')){
 for(v in group_vars){
+for(meas in measures){
 for(y in c('all',seq(2007,2017))){
-  print(paste(v,y))
+  #print(paste(v,y))
   df = summarise_gt_countries(m,v,y)
   
   # generate plots
-  if (y=='all') gen_barchart(df, v)
+  if (y=='all') gen_barchart(df, v, meas)
   
   #print(names(df))
   #View(df)
   countries_gt_summary_df = rbind(countries_gt_summary_df, df)
   rm(df)
-}}
+}}}
 
-gen_linechart = function( df, targetvar ){
-  fn = paste0( OUT_DIR, 'nl_global_time_linechart_',targetvar,'.pdf' )
+gen_linechart = function( df, targetvar, measure ){
+  fn = paste0( OUT_DIR, 'nl_global_time_linechart_',targetvar,'-',measure,'.pdf' )
   df$YEAR = as.factor(as.numeric(df$YEAR))
   print(fn)
-  print(summary(df))
+  #print(summary(df))
   #View(df)
   df$VAL = as.factor(as.character(df$VAL))
   #View(df)
-  p<-ggplot(data=df, aes(x=YEAR, y=hits_sum, group=VAL, color=VAL, linetype=VAL)) +
-    ggtitle(paste('Google Trends (yearly interest) by',targetvar),
+  p<-ggplot(data=df, aes_string(x='YEAR', y=measure, group='VAL', color='VAL', linetype='VAL')) +
+    ggtitle(paste('Google Trends (yearly interest) by',targetvar,' - ',measure),
       subtitle = "Yearly summary. F/T refers to low_search_volume option")+
     geom_line()+
     #theme_minimal() +
@@ -281,13 +301,14 @@ gen_linechart = function( df, targetvar ){
 }
 
 # generate time charts
+for(meas in measures){
 for(v in group_vars){
 #for(v in c('CONTINENT')){
   df = subset(countries_gt_summary_df,
               countries_gt_summary_df$VAR==v &
               countries_gt_summary_df$YEAR!='all')
-  gen_linechart(df, v)
-}
+  gen_linechart(df, v, meas)
+}}
 
 summary(countries_gt_summary_df)
 View( countries_gt_summary_df )
