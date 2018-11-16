@@ -122,7 +122,7 @@ saveRDS(google_countries_df, 'data/google/google_country_names_ISO.rds')
 rm(m,countries_df,google_countries_df)
 ```
 
-# Analyse Amsterdam data
+# Analyse Amsterdam GM municip
 
 ```{r eval=F}
 # Load Amsterdam data ---------------------------------
@@ -158,10 +158,15 @@ View(gt_time_df_summary)
 
 write_tsv( gt_time_df_summary, 'tmp/gt_time_summary.tsv', append = F, na = '')
 
+# TODO: 
+# - map of increase/decrease of interest for each GM every 5 years (within municip)
+# - relative importance of areas: for each year a target (between municip)
+
 ```
 
 # Analyse NL global flow data
 
+## GTrends bar charts
 ```{r}
 
 google_countries_df = readRDS('data/google/google_country_names_ISO.rds')
@@ -360,7 +365,7 @@ for( y in unique(gt_countries$year)){
 
 ```
 
-## NL tourism data
+## NL hotel global data
 ```{r}
 # load data
 nl_hotels = read_delim('data/NL_tourism/Hotels__guests_regi_071118233537.csv',delim = ';')
@@ -460,7 +465,6 @@ writexl::write_xlsx(corrdf,paste0(OUT_DIR,'gt_global_nl_correl.xlsx'))
 # Find global correlations per year
 # -----
 corryear_df <- FUN_subgroups(nl_hotels_gt, c("low_search_volume",'destination','year'), function(block){
-  
   # correlation
   c = cor.test(x=block$hits, y=block$visitor_n, method='kendall')
   #gt_ties = length(x=block$hits) - length(unique(block$hits)) 
@@ -489,7 +493,6 @@ corryear_df <- FUN_subgroups(nl_hotels_gt, c("low_search_volume",'destination','
   return(row)
 })
 writexl::write_xlsx(corryear_df,paste0(OUT_DIR,'gt_global_nl_correl_by_year.xlsx'))
-
 
 # -----
 # Find correlations per country
@@ -526,9 +529,108 @@ corrcountry_df <- FUN_subgroups(nl_hotels_gt, c("low_search_volume",'destination
 #View(corrcountry_df)
 writexl::write_xlsx(corrcountry_df,paste0(OUT_DIR,'gt_global_nl_correl_by_country.xlsx'))
 
-# TODO: 
-# - map of increase/decrease of interest for each GM every 5 years (within municip)
-# - relative importance of areas: for each year a target (between municip)
+rm(corrcountry_df,corrcountrysumm_df,corryear_df,corrdf)
 
-# - 
+# ----
+# Show global aggregations over time: hotel vs gtrends
+# ----
+
+# hotels by continents
+unique(nl_hotels$source_country_iso2)
+sort(unique(nl_hotels$source_country))
+continents = c('Africa','Europe','Oceania','Asia', 'America') #
+nl_hotels_cont = subset( nl_hotels, nl_hotels$source_country_iso2 %in% continents)
+#View(nl_hotels_cont)
+
+gen_hotel_linechart = function( df ){
+  fn = paste0( OUT_DIR, 'nl_hotel_visits_linechart_by_continent','','.pdf' )
+  df$year = as.factor(df$year)
+  print(fn)
+  #print(summary(df))
+  #View(df)
+  #df$VAL = as.factor(as.character(df$VAL))
+  #View(df)
+  p<-ggplot(data=df, aes_string(x='year', y='visitor_n', group='source_country_iso2', 
+                                color='source_country_iso2', linetype='source_country_iso2')) +
+    ggtitle(paste('Hotel stays (x1000) by continent'),subtitle = "")+
+    geom_line()+
+    #theme_minimal() +
+    theme_light()+
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+    facet_grid(. ~ destination)
+    
+  ggsave(fn,p,width = 10, height = 6)
+}
+
+gen_hotel_linechart(nl_hotels_cont)
+
+# find GTrends comparable with the hotel data
+
+# gtrends by continents
+stopifnot(nrow(countries_gt_summary_df)>0)
+gt_continents = c('Africa','Europe','Oceania','Asia', 'North America','South America') #
+
+gt_cont = subset(countries_gt_summary_df,countries_gt_summary_df$VAR=='CONTINENT' & 
+                   countries_gt_summary_df$VAL %in% gt_continents)
+gt_cont$hits_min = NULL
+gt_cont$hits_mean = NULL
+gt_cont$hits_max = NULL
+gt_cont$hits_asinh_mean = NULL
+gt_cont$hits_median = NULL
+
+gt_cont_m = FUN_subgroups(gt_cont, c('keyword','low_search_volume','YEAR','UID'), function(block){
+  # merge south and north america into 'America'
+  block = unique(block)
+  b = subset(block, block$VAL %in% c('North America','South America'))
+  #print(block)
+  stopifnot(nrow(b)==2)
+  b$VAL = as.character(b$VAL)
+  stopifnot(nrow(b)>0)
+  bb = b[1,]
+  bb$hits_sum = sum(b$hits_sum)
+  bb$hits_asinh_sum = sum(b$hits_asinh_sum)
+  bb$n = sum(b$n)
+  bb$VAL = 'America'
+  bnot = subset(block, !(block$VAL %in% c('North America','South America')))
+  stopifnot(nrow(bnot)>0)
+  bb = rbind(bnot, bb)
+  rm(b,bnot,block)
+  return(bb)
+})
+summary(gt_cont_m)
+gt_cont_m$continent = gt_cont_m$VAL
+gt_cont_m$VAL = NULL
+unique(gt_cont_m$continent)
+#View(gt_cont_m)
+
+# merge hotel with gc_cont_m
+names(nl_hotels_cont); names(gt_cont_m)
+gt_cont_m$UID = NULL
+m = unique(merge(nl_hotels_cont, gt_cont_m, by.x=c('source_country_iso2','year','destination'),
+          by.y=c('continent','YEAR','keyword'), all=F))
+summary(m)
+hotels_gtrends_by_continent = m
+rm(m)
+writexl::write_xlsx(hotels_gtrends_by_continent, paste0(OUT_DIR,'hotels_gtrends_by_continent.xlsx'))
+
+# plot hotels vs gtrends by continent
+
+gen_hotel_gtrends_continent_linechart = function( df ){
+  fn = paste0( OUT_DIR, 'nl_hotel_gtrends_linechart_by_continent','','.pdf' )
+  df$year = as.factor(df$year)
+  print(fn)
+  p<-ggplot(data=df, aes_string(x='year', y='hits_asinh_sum', group='source_country_iso2', 
+                                color='source_country_iso2', linetype='source_country_iso2')) +
+    ggtitle(paste('Google Trends index (between continents)'),subtitle = "")+
+    geom_line()+
+    #theme_minimal() +
+    theme_light()+
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+    facet_grid(destination ~ low_search_volume)
+    
+  ggsave(fn,p,width = 10, height = 6)
+}
+
+gen_hotel_gtrends_continent_linechart( hotels_gtrends_by_continent )
+
 ```
