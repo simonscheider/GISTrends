@@ -1,11 +1,11 @@
 # title: "Gtrends Tourism"
 # output: 
-#html_document:
+# html_document:
 # self_contained: false
 
 rm(list = ls())
 
-# setup --------
+# setup ----
 
 library(pacman)
 

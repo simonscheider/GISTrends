@@ -20,7 +20,7 @@ library(pacman)
 #devtools::install_github("PMassicotte/gtrendsR") # not working
 #devtools::install_github('diplodata/gtrendsR') # fix that also doesn't work
 pacman::p_load(readr,rvest,urltools,uuid,RSQLite,rjson,rgdal,curl,gtrendsR,
-               dplyr,tmap,rmapshaper,ggplot2)
+               dplyr,tmap,rmapshaper,ggplot2,reshape2,foreach,gtools)
 
 CUR_DATE = substr(as.character(Sys.time()),0,10)
 OUT_DIR = paste0('tmp/NL_gtrends_',CUR_DATE,'/')
@@ -68,6 +68,16 @@ save_results <- function( df, filename ){
   saveRDS( df, file = fnbin, compress=T )
   print(paste('save_results',fn))
   write_tsv( df, fn, append = F, na = '')
+}
+
+FUN_subgroups <- function( df, splitcols, funct ){
+  stopifnot(nrow(df)>0)
+  resdf <- foreach(block=split(df, df[,splitcols]), 
+    .combine='rbind', .errorhandling="stop") %do% {
+    if (nrow(block) == 0) return(NULL)
+    return( funct(block) )
+  }
+  return(resdf)
 }
 
 # create outfolders
@@ -348,4 +358,177 @@ for( y in unique(gt_countries$year)){
 }
 
 
+```
+
+## NL tourism data
+```{r}
+# load data
+nl_hotels = read_delim('data/NL_tourism/Hotels__guests_regi_071118233537.csv',delim = ';')
+nl_hotels$Periods = NULL
+nl_hotels$X1 = NULL
+#View(nl_hotels)
+names(nl_hotels)[1]='source_country'
+names(nl_hotels)
+vals = nl_hotels[c(1), ]
+nl_hotels = nl_hotels[-c(1), ]
+nl_hotels_m = melt(nl_hotels,id.vars = 'source_country')
+nl_hotels_m$value = as.numeric(nl_hotels_m$value)
+nl_hotels_m$am = grepl('_1',nl_hotels_m$variable)
+nl_hotels_m$year = as.factor(gsub('_1','',nl_hotels_m$variable))
+nl_hotels_m$variable = NULL
+nl_hotels_m$destination = ifelse(nl_hotels_m$am,'Amsterdam','Netherlands')
+nl_hotels_m$am = NULL
+nl_hotels_m$visitor_n = nl_hotels_m$value
+nl_hotels_m$value = NULL
+nl_hotels = nl_hotels_m
+rm(nl_hotels_m)
+#View(nl_hotels)
+
+# match countries
+if (F){
+  google_countries_df = readRDS('data/google/google_country_names_ISO.rds')
+  m = merge(nl_hotels,google_countries_df,by.x='source_country',by.y='GOOGLE_NAME',all.x=T)
+  View(m)
+  write_csv( subset(m,m$year == 2015 & m$destination == 'NL')[,c('source_country','ISO_A2')], 'tmp/nl_hotels_names_to_complete.csv', na = '' )
+  rm(m)
+}
+nl_hotels_country_codes = read_csv('data/NL_tourism/nl_hotels_country_codes.csv')
+names(nl_hotels); names(nl_hotels_country_codes)
+nl_hotels = merge( nl_hotels, nl_hotels_country_codes,
+                   by.x='source_country','source_country',all.x=T )
+names(nl_hotels)[5]='source_country_iso2'
+# ====
+# match hotel data vs gtrends
+# ====
+gtdf = gt_countries
+stopifnot(nrow(gtdf)>0)
+names(nl_hotels); names(gtdf)
+summary(nl_hotels); summary(gtdf)
+print(length(unique(nl_hotels$source_country))) # n countries
+
+m = merge(nl_hotels, gtdf, by.x=c('source_country_iso2','year','destination'),
+          by.y=c('origin_country_iso2','year','keyword'),all=F)
+
+m$source_country_iso2 = as.factor(m$source_country_iso2)
+m$destination = as.factor(m$destination)
+m$year = as.factor(m$year)
+m$visitor_n_z = round(scale(m$visitor_n),4)
+m$hits_z = round(scale(m$hits),4)
+m = subset(m, !is.na(m$source_country_iso2))
+print(length(unique(m$source_country_iso2)))
+
+nl_hotels_gt = m
+rm(m)
+
+summary(nl_hotels_gt)
+
+# -----
+# Find global correlations 
+# -----
+corrdf <- FUN_subgroups(nl_hotels_gt, c("low_search_volume",'destination'), function(block){
+  
+  # correlation
+  c = cor.test(x=block$hits, y=block$visitor_n, method='kendall')
+  #gt_ties = length(x=block$hits) - length(unique(block$hits)) 
+  print(summary(block$hits))
+  row = data.frame(
+    search_origin = 'world',
+    years = paste(unique(block$year), collapse = ' '),
+    low_search_volume = unique(block$low_search_volume)[1],
+    destination = unique(block$destination)[1],
+    N = nrow(block),
+    #gt_ties = gt_ties,
+    corr_tau = round(c$estimate[[1]],2),
+    pvalue = round(c$p.value,5),
+    pvalue_signif = stars.pval(c$p.value)
+    #CI_low = NA,
+    #CI_high = NA
+  )
+  # plot
+  tit = paste('source country = all',row$source_country, 
+                  '; low volume =',row$low_search_volume,
+                  '; target =',row$destination,'; tau =',row$corr_tau)
+  p = ggplot(block, aes(x=hits_asinh, y=visitor_n)) + geom_point(alpha=.2) +
+    ggtitle('GTrends vs Hotel', subtitle = tit) + theme_light()
+  ggsave(paste0(OUT_DIR,'gt_global_nl_correl-scatterplot-',row$destination,'-',row$low_search_volume,'-all_years.pdf'), p)
+  return(row)
+})
+#View(corrdf)
+writexl::write_xlsx(corrdf,paste0(OUT_DIR,'gt_global_nl_correl.xlsx'))
+
+# -----
+# Find global correlations per year
+# -----
+corryear_df <- FUN_subgroups(nl_hotels_gt, c("low_search_volume",'destination','year'), function(block){
+  
+  # correlation
+  c = cor.test(x=block$hits, y=block$visitor_n, method='kendall')
+  #gt_ties = length(x=block$hits) - length(unique(block$hits)) 
+  print(summary(block$hits))
+  row = data.frame(
+    search_origin = 'world',
+    year = unique(block$year),
+    low_search_volume = unique(block$low_search_volume)[1],
+    destination = unique(block$destination)[1],
+    N = nrow(block),
+    #gt_ties = gt_ties,
+    corr_tau = round(c$estimate[[1]],2),
+    pvalue = round(c$p.value,5),
+    pvalue_signif = stars.pval(c$p.value)
+    #CI_low = NA,
+    #CI_high = NA
+  )
+  # plot
+  tit = paste('source country = all',row$source_country, 
+                  '; low volume =',row$low_search_volume,
+                  '; target =',row$destination,'; tau =',row$corr_tau)
+  p = ggplot(block, aes(x=hits_asinh, y=visitor_n)) + geom_point(alpha=.2) +
+    ggtitle('GTrends vs Hotel', subtitle = tit) + theme_light()
+  ggsave(paste0(OUT_DIR,'gt_global_nl_correl-scatterplot-',
+                row$destination,'-',row$low_search_volume,'-',row$year,'.pdf'), p)
+  return(row)
+})
+writexl::write_xlsx(corryear_df,paste0(OUT_DIR,'gt_global_nl_correl_by_year.xlsx'))
+
+
+# -----
+# Find correlations per country
+# -----
+corrcountry_df <- FUN_subgroups(nl_hotels_gt, c("low_search_volume",'destination','source_country'), function(block){
+  
+  # correlation
+  c = cor.test(x=block$hits, y=block$visitor_n, method='kendall')
+  gt_ties = length(x=block$hits) - length(unique(block$hits)) 
+  #print(summary(block$hits))
+  row = data.frame(
+    source_country = unique(block$source_country),
+    source_country_iso2 = unique(block$source_country_iso2),
+    years = paste(unique(block$year), collapse = ' '),
+    low_search_volume = unique(block$low_search_volume)[1],
+    destination = unique(block$destination)[1],
+    N = nrow(block),
+    gt_ties = gt_ties,
+    corr_tau = round(c$estimate[[1]],2),
+    pvalue = round(c$p.value,5),
+    pvalue_signif = stars.pval(c$p.value)
+    #CI_low = NA,
+    #CI_high = NA
+  )
+  # plot
+  #tit = paste('source country = all',row$source_country, 
+  #                '; low volume =',row$low_search_volume,
+  #                '; target =',row$destination,'; tau =',row$corr_tau)
+  #p = ggplot(block, aes(x=hits_asinh, y=visitor_n)) + geom_point(alpha=.2) +
+  #  ggtitle('GTrends vs Hotel', subtitle = tit) + theme_light()
+  #ggsave(paste0(OUT_DIR,'gt_global_nl_correl-scatterplot-country-',row$source_country_iso2,'-',row$destination,'-',row$low_search_volume,'.pdf'), p)
+  return(row)
+})
+#View(corrcountry_df)
+writexl::write_xlsx(corrcountry_df,paste0(OUT_DIR,'gt_global_nl_correl_by_country.xlsx'))
+
+# TODO: 
+# - map of increase/decrease of interest for each GM every 5 years (within municip)
+# - relative importance of areas: for each year a target (between municip)
+
+# - 
 ```
