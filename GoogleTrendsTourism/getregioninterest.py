@@ -22,28 +22,31 @@ import re
 
 """This class is used to gather Googe Trends for an arbitrary list of keywords (about tools). It is inititalized with a reference keyword to compare relative popularity against"""
 class GatherInterest():
-    def __init__(self, referencekeyword, unsaferun=False):
+    def __init__(self, referencekeyword, referenceid, unsaferun=False):
          self.results = {}
          self.kw = referencekeyword
+         self.referenceid = referenceid
          self.kwvalues = {}
          self.results['reference']=referencekeyword
          self.currentkw= [referencekeyword]
+         self.currentregionids = [referenceid]
          self.unsaferun =unsaferun
 
 
     def reset(self):
         self.currentkw= [self.kw]
-        #self.kw = sortedkw[3]
+        self.currentregionids = [self.referenceid]
 
     def add(self,kw, region):
         if kw not in self.currentkw and kw != 'NaN' and kw != None and type(kw) is str:
             print str(kw) +':'+ str(type(kw))
             self.currentkw.append(kw)
+            self.currentregionids.append(region)
         if len(self.currentkw)>=5:
             print 'querying for 5 keywords!'
             res = self.queryGTrends(self.currentkw)[self.currentkw]
             #print list(res)
-            self.kwvalues = res['Amsterdam'].to_json()
+            self.kwvalues = res[self.kw]
             sortedvalues = res.max().sort_values()
             sortedkw = sortedvalues.keys().tolist()
             print sortedkw
@@ -65,31 +68,32 @@ class GatherInterest():
                     res = res[sortedkw[last:]].join(newvalues)
                     break
             #print res
-            self.store(res,region)
+            self.store(res)
             self.reset()
 
-    def store(self,res, region):
+    def store(self,res):
         for id,t in enumerate(self.currentkw):
             if not t == self.kw:
                 #make sure trends are within plausible limits
                 #B = res[t] < res[self.kw] and res[t] >0
                 #if self.unsaferun: B = True
-                self.results[t]=[region,res[t]]
+                self.results[t]=[self.currentregionids[id],res[t]]
 
 
 
-    def dump(self,referenceid, res = 'data\\targetqueries\\GTresults.json'):
-        self.results[self.kw]=[referenceid,self.kwvalues]
-        dumres = {}
-        for k,v in self.results.items():
-            if type(v) is list:
-                dumres[k]=[v[0],v[1].to_json()]
-            else:
-                dumres[k]=v
+    def dump(self, res = 'data\\targetqueries\\GTresults.csv'):
+        self.results[self.kw]=[self.referenceid,self.kwvalues]
+        with open(res, 'wb') as out:
+            writer = csv.writer(out, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+            writer.writerow(['id', 'name', 'datetime', 'GTvalue', 'reference'])
+            for k,v in self.results.items():
+                if type(v) is list:
+                    for index, row in v[1].iteritems():
+                        #print ' '.join([v[0], k, str(index), str(row), self.kw])
+                        writer.writerow([v[0], k, str(index), str(row), self.kw])
+
         print "dumped items: "+str(len(self.results))
-        with open(res, 'w') as fp:
-            json.dump(dumres, fp)
-        fp.close
+        out.close
 
     def queryGTrends(self,kw_list):
         google_username = "simonscheider@web.de"
@@ -123,12 +127,12 @@ class GatherInterest():
         return time#.mean()
 
 """Trends for regions"""
-def getTrends4Regions(regioncsv, referencekeyword):
+def getTrends4Regions(regioncsv, referencekeyword, referenceid):
     count = 0
     keywordid = ''
     pd = pandas.read_csv(regioncsv)
     pd = pd[pd['QUERY_BASETERM'] == False & pandas.notnull(pd['safe_keyword'])]
-    gt = GatherInterest(referencekeyword)
+    gt = GatherInterest(referencekeyword,referenceid)
     print "ready to query over "+str(len(pd.index)) + ' regions!'
     print list(pd)
     #print pd
@@ -146,7 +150,7 @@ def getTrends4Regions(regioncsv, referencekeyword):
             #break
 
     print 'Regions queried '+str(count)
-    #gt.dump(keywordid,'data\\targetqueries\\GT.json')
+    gt.dump('data\\targetqueries\\GT.csv')
     return gt.results
 
 def analyse(results):
@@ -165,9 +169,9 @@ def analyse(results):
 
 
 def main():
-    results = getTrends4Regions('geodata\\GMsearchterms.csv', 'Amsterdam')
+    results = getTrends4Regions('geodata\\GMsearchterms.csv', 'Amsterdam', 'GM0363')
     #orderregions(['Amsterdam',  'Almere','Aalsmeer','Amstelveen'])
-    analyse(results)
+    #analyse(results)
 
 
 if __name__ == '__main__':
