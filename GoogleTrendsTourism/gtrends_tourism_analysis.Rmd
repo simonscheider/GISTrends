@@ -19,8 +19,8 @@ library(pacman)
 
 #devtools::install_github("PMassicotte/gtrendsR") # not working
 #devtools::install_github('diplodata/gtrendsR') # fix that also doesn't work
-pacman::p_load(readr,rvest,urltools,uuid,RSQLite,rjson,rgdal,curl,gtrendsR,jsonlite,
-               dplyr,tmap,rmapshaper,ggplot2,reshape2,foreach,gtools,tmaptools)
+pacman::p_load(readr,rvest,urltools,uuid,RSQLite,rjson,rgdal,curl,gtrendsR,jsonlite,classInt,grid,
+               dplyr,tmap,rmapshaper,ggplot2,reshape2,foreach,gtools,tmaptools,lattice)
 
 CUR_DATE = substr(as.character(Sys.time()),0,10)
 OUT_DIR = paste0('tmp/NL_gtrends_',CUR_DATE,'/')
@@ -80,6 +80,39 @@ FUN_subgroups <- function( df, splitcols, funct ){
     return( funct(block) )
   }
   return(resdf)
+}
+
+bivariate.choropleth <- function(fnout, bivmap.dataset, bivmap.vars, bivmap.labels, bivmap.style='quantile'){
+  pdf(fnout)
+  bivmap.sdf <- bivmap.dataset[
+    !is.na(bivmap.dataset@data[,bivmap.vars[1]]) &
+    !is.na(bivmap.dataset@data[,bivmap.vars[2]]) &
+    !is.infinite(bivmap.dataset@data[,bivmap.vars[1]]) &
+    !is.infinite(bivmap.dataset@data[,bivmap.vars[2]])
+    ,bivmap.vars]
+  colnames(bivmap.sdf@data) <- c("xvar","yvar")
+  bivmap.sdf@data$xcat <- findCols(classIntervals( bivmap.sdf@data$xvar, n=3, bivmap.style))
+  bivmap.sdf@data$ycat <- findCols(classIntervals( bivmap.sdf@data$yvar, n=3, bivmap.style))
+  bivmap.sdf@data$bicat <- bivmap.sdf@data$xcat + (3 * (bivmap.sdf@data$ycat - 1))
+  bvColors=c("#e8e8e8","#e4acac","#c85a5a",
+             "#b0d5df","#ad9ea5","#985356",
+             "#64acbe","#627f8c","#574249")
+  bivmap <- tm_shape(bivmap.sdf) + 
+    tm_fill("bicat", style="cat", palette=bvColors, border.alpha=0, 
+            legend.show=FALSE, auto.palette.mapping = FALSE) +
+    tm_borders(col = 'white',lwd = 1) +
+    tm_scale_bar(width=0.15,position=c("left","bottom"),breaks = SCALE_BREAKS) + #tm_credits("\n\n\n\n\nContains data from Office for National Statistics\nand Ordnance Survey. Crown copyright & database right 2016.",size=0.6,position=c("left","bottom")) + 
+    tm_layout(frame=FALSE) + tm_legend(scale=0.75)
+  suppressWarnings(print( bivmap ))
+  vp <- viewport(x=.85, y=.15, width=.3, height=.3)
+  pushViewport(vp)
+  print(levelplot(matrix(1:9, nrow=3), axes=FALSE, col.regions=bvColors,
+                  xlab=list(label=bivmap.labels[1],cex=0.7), ylab=list(label=bivmap.labels[2],cex=0.7), 
+                  cuts=8, colorkey=FALSE,
+                  scales=list(draw=0)),
+        newpage=FALSE)
+  popViewport()
+  dev.off()
 }
 
 # create outfolders
@@ -171,6 +204,7 @@ ams_gm_sdf_simpl = rmapshaper::ms_simplify(ams_gm_sdf, keep = .01, keep_shapes =
 utmprj = CRS('+proj=utm +zone=31 +datum=WGS84 +units=m +no_defs ')
 ams_gm_sdf_simpl = spTransform(ams_gm_sdf_simpl, utmprj)
 
+ams_gm_sdf_simpl$tot_pop = ams_gm_sdf_simpl$AANT_INW
 
 ```
 
@@ -427,6 +461,15 @@ FUN_subgroups(gtgmyear_diff_df, c('year'), function(block){
 })
 
 
+# bivariate pop vs gtrends 2017
+df = gtgmyear_diff_df
+df$gt_sum_2017 = df$gt_sum_last_year
+sdf = merge(ams_gm_sdf_simpl, df, by.x='CODE', by.y='geocode', all.x=T)
+names(sdf)
+nrow(sdf)
+fn = paste0(OUT_DIR,'gm_trend_map-between_gm-2017-pop_vs_gtrends.pdf')
+bivariate.choropleth(fn, sdf,c('gt_sum_2017','tot_pop'),c('GTrends idx 2017','Population'))
+rm(df,sdf,fn)
 ```
 
 # Analyse NL global flow data
