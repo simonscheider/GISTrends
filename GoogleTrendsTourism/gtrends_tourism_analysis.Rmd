@@ -469,6 +469,8 @@ names(sdf)
 nrow(sdf)
 fn = paste0(OUT_DIR,'gm_trend_map-between_gm-2017-pop_vs_gtrends.pdf')
 bivariate.choropleth(fn, sdf,c('gt_sum_2017','tot_pop'),c('GTrends idx 2017','Population'))
+writexl::write_xlsx(sdf@data, paste0(OUT_DIR,'gm_trend_map-between_gm-2017-pop_vs_gtrends.xlsx'))
+
 rm(df,sdf,fn)
 ```
 
