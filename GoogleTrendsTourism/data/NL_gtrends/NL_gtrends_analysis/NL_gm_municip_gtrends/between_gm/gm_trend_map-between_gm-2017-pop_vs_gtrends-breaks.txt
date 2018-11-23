@@ -1,0 +1,22 @@
+gt_sum_2017 breaks (x-axis):
+style: kmeans
+  one of 435 possible partitions of this variable into 3 classes
+     [0,27.285) [27.285,425.78)    [425.78,789]
+             28               4               1
+tot_pop breaks (y-axis):
+style: kmeans
+  one of 496 possible partitions of this variable into 3 classes
+     [5665,72278)  [72278,522930.5) [522930.5,844947]
+               24                 8                 1
+
+
+gt_sum_2017 breaks (x-axis):
+style: quantile
+  one of 435 possible partitions of this variable into 3 classes
+       [0,2.893333) [2.893333,12.01333)      [12.01333,789]
+                 11                  11                  11
+tot_pop breaks (y-axis):
+style: quantile
+  one of 496 possible partitions of this variable into 3 classes
+     [5665,18264)  [18264,46566.33) [46566.33,844947]
+               11                11                11

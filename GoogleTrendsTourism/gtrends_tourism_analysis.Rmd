@@ -82,7 +82,7 @@ FUN_subgroups <- function( df, splitcols, funct ){
   return(resdf)
 }
 
-bivariate.choropleth <- function(fnout, bivmap.dataset, bivmap.vars, bivmap.labels, bivmap.style='quantile'){
+bivariate.choropleth <- function(fnout, bivmap.dataset, bivmap.vars, bivmap.labels, bivmap.style){
   pdf(fnout)
   bivmap.sdf <- bivmap.dataset[
     !is.na(bivmap.dataset@data[,bivmap.vars[1]]) &
@@ -91,8 +91,15 @@ bivariate.choropleth <- function(fnout, bivmap.dataset, bivmap.vars, bivmap.labe
     !is.infinite(bivmap.dataset@data[,bivmap.vars[2]])
     ,bivmap.vars]
   colnames(bivmap.sdf@data) <- c("xvar","yvar")
+  
+  # find bins for 2 vars
   bivmap.sdf@data$xcat <- findCols(classIntervals( bivmap.sdf@data$xvar, n=3, bivmap.style))
+  cat(bivmap.vars[1], "breaks (x-axis):\n")
+  print(classIntervals( bivmap.sdf@data$xvar, n=3, bivmap.style))
   bivmap.sdf@data$ycat <- findCols(classIntervals( bivmap.sdf@data$yvar, n=3, bivmap.style))
+  cat(bivmap.vars[2], "breaks (y-axis):\n")
+  print(classIntervals( bivmap.sdf@data$yvar, n=3, bivmap.style))
+  
   bivmap.sdf@data$bicat <- bivmap.sdf@data$xcat + (3 * (bivmap.sdf@data$ycat - 1))
   bvColors=c("#e8e8e8","#e4acac","#c85a5a",
              "#b0d5df","#ad9ea5","#985356",
@@ -467,22 +474,27 @@ df$gt_sum_2017 = df$gt_sum_last_year
 sdf = merge(ams_gm_sdf_simpl, df, by.x='CODE', by.y='geocode', all.x=T)
 names(sdf)
 nrow(sdf)
-fn = paste0(OUT_DIR,'gm_trend_map-between_gm-2017-pop_vs_gtrends.pdf')
-bivariate.choropleth(fn, sdf,c('gt_sum_2017','tot_pop'),c('GTrends idx 2017','Population'))
+fn = paste0(OUT_DIR,'gm_trend_map-between_gm-2017-pop_vs_gtrends-quantile.pdf')
+bivariate.choropleth(fn, sdf, c('gt_sum_2017','tot_pop'),c('GTrends idx 2017','Population'), 'quantile')
+
+fn = paste0(OUT_DIR,'gm_trend_map-between_gm-2017-pop_vs_gtrends-kmeans.pdf')
+bivariate.choropleth(fn, sdf, c('gt_sum_2017','tot_pop'),c('GTrends idx 2017','Population'), 'kmeans')
+
 
 # gtrends interest per 100k people (2017)
 sdf$gt_per100kppl = sdf$gt_sum_2017 / (sdf$tot_pop/100000)
 
-m <- tm_shape(sdf) +
-    tm_fill(col="gt_per100kppl", style='quantile', palette="Blues", n = 5) + #quantile , PRGn
-    #tm_credits("\n\n\n\n\nContains data from Office for National Statistics\nand Ordnance Survey. Crown copyright & database right 2016.",size=0.6,position=c("left","bottom")) + 
-    tm_layout(frame=FALSE,title = 'Google Trends interest per 100k residents (2017)',legend.position = c('right','bottom'), title.size = 1) +
-    tm_legend(scale=0.75) + tm_scale_bar(position=c("left", "bottom"),breaks = SCALE_BREAKS) +
-    #tm_text(text = "ISO_A2",size = 0.1) +
-    tm_borders(col = 'white',lty = 1.3)
-    
-save_tmap(m,paste0(OUT_DIR,'gm_trend_map-between_gm-2017-gtrends_100k_people.pdf'))
-rm(m)
+for (c in c('gt_per100kppl','gt_sum_2017','tot_pop')){
+  m <- tm_shape(sdf) +
+      tm_fill(col=c, style='quantile', palette="Blues", n = 5) + #quantile , PRGn
+      #tm_credits("\n\n\n\n\nContains data from Office for National Statistics\nand Ordnance Survey. Crown copyright & database right 2016.",size=0.6,position=c("left","bottom")) + 
+      tm_layout(frame=FALSE,title = paste0(c,' (2017)'),legend.position = c('right','bottom'), title.size = 1) +
+      tm_legend(scale=0.75) + tm_scale_bar(position=c("left", "bottom"),breaks = SCALE_BREAKS) +
+      #tm_text(text = "ISO_A2",size = 0.1) +
+      tm_borders(col = 'white',lty = 1.3)
+  save_tmap(m, paste0(OUT_DIR,'gm_trend_map-between_gm-2017-',c,'.pdf'))
+  rm(m)
+}
 
 # write dataset
 writexl::write_xlsx(sdf@data, paste0(OUT_DIR,'gm_trend_map-between_gm-2017-pop_vs_gtrends.xlsx'))
