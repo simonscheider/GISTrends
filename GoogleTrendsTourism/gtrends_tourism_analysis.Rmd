@@ -477,9 +477,8 @@ nrow(sdf)
 fn = paste0(OUT_DIR,'gm_trend_map-between_gm-2017-pop_vs_gtrends-quantile.pdf')
 bivariate.choropleth(fn, sdf, c('gt_sum_2017','tot_pop'),c('GTrends idx 2017','Population'), 'quantile')
 
-fn = paste0(OUT_DIR,'gm_trend_map-between_gm-2017-pop_vs_gtrends-kmeans.pdf')
-bivariate.choropleth(fn, sdf, c('gt_sum_2017','tot_pop'),c('GTrends idx 2017','Population'), 'kmeans')
-
+fn = paste0(OUT_DIR,'gm_trend_map-between_gm-2017-pop_vs_gtrends-jenks.pdf')
+bivariate.choropleth(fn, sdf, c('gt_sum_2017','tot_pop'),c('GTrends idx 2017','Population'), 'jenks')
 
 # gtrends interest per 100k people (2017)
 sdf$gt_per100kppl = sdf$gt_sum_2017 / (sdf$tot_pop/100000)
@@ -493,7 +492,7 @@ for (c in c('gt_per100kppl','gt_sum_2017','tot_pop')){
       #tm_text(text = "ISO_A2",size = 0.1) +
       tm_borders(col = 'white',lty = 1.3)
   save_tmap(m, paste0(OUT_DIR,'gm_trend_map-between_gm-2017-',c,'.pdf'))
-  rm(m)
+  rm(m,c)
 }
 
 # write dataset
