@@ -20,18 +20,25 @@ library(pacman)
 #devtools::install_github("PMassicotte/gtrendsR") # not working
 #devtools::install_github('diplodata/gtrendsR') # fix that also doesn't work
 pacman::p_load(readr,rvest,urltools,uuid,RSQLite,rjson,rgdal,curl,gtrendsR,jsonlite,classInt,grid,
-               dplyr,tmap,rmapshaper,ggplot2,reshape2,foreach,gtools,tmaptools,lattice)
+               dplyr,tmap,rmapshaper,ggplot2,reshape2,foreach,gtools,tmaptools,lattice,rgeos,raster)
 
 CUR_DATE = substr(as.character(Sys.time()),0,10)
-OUT_DIR = paste0('tmp/NL_gtrends_',CUR_DATE,'/')
+#OUT_DIR = paste0('tmp/NL_gtrends_',CUR_DATE,'/')
+OUT_DIR = paste0('tmp/NL_gtrends/')
 dir.create(OUT_DIR, showWarnings = FALSE)
 
-SCALE_BREAKS = c(0,5,10)
-
-EU_COUNTRIES = c(
+EU_COUNTRIES = c( 
  'AT', 'BE', 'HR', 'BG', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE',
  'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'GB'
 )
+
+gClip <- function(shp, bb, prj, buff){
+  if(class(bb) == "matrix") b_poly <- as(extent(as.vector(t(bb))), "SpatialPolygons")
+  else b_poly <- as(extent(bb), "SpatialPolygons")
+  proj4string(b_poly) = prj
+  b_poly = gBuffer( b_poly, width = buff, byid = T )
+  gIntersection(shp, b_poly, byid = TRUE)
+}
 
 parse_gt_hits <- function( hits ){
   hits = replace(hits, hits=='<1', .5) # <1 ----> 0.5
@@ -50,8 +57,11 @@ sort_df <- function( df, col, asc=T ){
 }
 
 countries_sdf = readOGR('geodata/world_borders/ne_50m_admin_0_countries_2017/ne_50m_admin_0_countries.shp')
-countries_sdf_simpl = rmapshaper::ms_simplify(countries_sdf, keep = .5, keep_shapes = T )
+
+countries_sdf_simpl = rmapshaper::ms_simplify(countries_sdf, keep = .08, keep_shapes = T )
 countries_sdf_simpl = spTransform(countries_sdf_simpl, CRS('+proj=robin'))
+countries_sdf_simpl = subset( countries_sdf_simpl, countries_sdf_simpl$ISO_A2 != 'AQ' )
+
 # +proj=robin +proj=wintri
 
 # get countries generic data
@@ -63,7 +73,6 @@ countries_data = subset(countries_data, countries_data$ISO_A2 != '-99')
 summary(countries_data)
 
 save_results <- function( df, filename ){
-  
   dir.create(OUT_DIR, showWarnings = FALSE)
   fn = paste0(OUT_DIR,filename,'.tsv')
   fnbin = paste0(OUT_DIR,filename,'.rds')
@@ -104,12 +113,14 @@ bivariate.choropleth <- function(fnout, bivmap.dataset, bivmap.vars, bivmap.labe
   bvColors=c("#e8e8e8","#e4acac","#c85a5a",
              "#b0d5df","#ad9ea5","#985356",
              "#64acbe","#627f8c","#574249")
-  bivmap <- tm_shape(bivmap.sdf) + 
+  bivmap <- 
+    add_nl_basemap() +
+    tm_shape(bivmap.sdf) + 
     tm_fill("bicat", style="cat", palette=bvColors, border.alpha=0, 
             legend.show=FALSE, auto.palette.mapping = FALSE) +
-    tm_borders(col = 'white',lwd = 1) +
-    tm_scale_bar(width=0.15,position=c("left","bottom"),breaks = SCALE_BREAKS) + #tm_credits("\n\n\n\n\nContains data from Office for National Statistics\nand Ordnance Survey. Crown copyright & database right 2016.",size=0.6,position=c("left","bottom")) + 
-    tm_layout(frame=FALSE) + tm_legend(scale=0.75)
+    tm_borders(col = 'white',lwd = 0.6) +
+    my_scale_bar() + #tm_credits("\n\n\n\n\nContains data from Office for National Statistics\nand Ordnance Survey. Crown copyright & database right 2016.",size=0.6,position=c("left","bottom")) + 
+    tm_layout(frame=FALSE,bg.color = SEA_COLOUR) + tm_legend(scale=0.75)
   suppressWarnings(print( bivmap ))
   vp <- viewport(x=.85, y=.15, width=.3, height=.3)
   pushViewport(vp)
@@ -126,6 +137,47 @@ bivariate.choropleth <- function(fnout, bivmap.dataset, bivmap.vars, bivmap.labe
 dir.create('tmp',showWarnings = F)
 #dir.create('tmp/pages',showWarnings = F)
 
+# ------------
+# Load GM shapefile
+# ------------
+ams_gm_sdf = readRDS('geodata/netherlands_L1_gm_sdf.rds')
+ams_gm_sdf_simpl = rmapshaper::ms_simplify(ams_gm_sdf, keep = .007, keep_shapes = T )
+# projection for the Netherlands
+utmprj = CRS('+proj=utm +zone=31 +datum=WGS84 +units=m +no_defs ')
+ams_gm_sdf_simpl = spTransform(ams_gm_sdf_simpl, utmprj)
+
+ams_gm_sdf_simpl$tot_pop = ams_gm_sdf_simpl$AANT_INW
+
+# ------------
+# Load NL bounds shapefile
+# ------------
+nl_bounds = readOGR('geodata/NL_admin_boundaries/NLD_adm1.shp')
+nl_bounds = subset( nl_bounds, nl_bounds$ID_1 != 6) # remove water object
+nl_bounds_sdf_simpl = rmapshaper::ms_simplify(nl_bounds, keep = .12, keep_shapes = T )
+nl_bounds_sdf_simpl = spTransform(nl_bounds_sdf_simpl, utmprj)
+rm(nl_bounds)
+
+#bbox(nl_bounds_sdf_simpl)
+buff = 20000
+nl_bounds_sdf_simpl_un = gUnaryUnion(nl_bounds_sdf_simpl)
+nl_bounds_sdf_clipped = gClip( nl_bounds_sdf_simpl_un, bbox(ams_gm_sdf_simpl), utmprj, buff)
+#plot(nl_bounds_sdf_clipped)
+rm(nl_bounds_sdf_simpl_un,nl_bounds_sdf_simpl,buff)
+
+SCALE_BREAKS = c(0,5,10)
+SEA_COLOUR = 'white'
+#SEA_COLOUR = 'lightblue1'
+
+add_nl_basemap = function(){
+  sdf = gBuffer(nl_bounds_sdf_clipped, byid = T, width = -400)
+  tm_shape(sdf) +
+  #tm_borders(col = 'gray80', lty = 'dashed', alpha = 1)
+  tm_borders(col = 'gray93', lty = 'solid', alpha = 1, lwd = 2.5)
+}
+
+my_scale_bar = function(){
+  tm_scale_bar(width=0.15,position=c("left","bottom"),breaks = SCALE_BREAKS, size=1.04)
+}
 ```
 
 
@@ -201,18 +253,6 @@ gt_time_df_summary$hits_mean = round(gt_time_df_summary$hits_mean,1)
 View(gt_time_df_summary)
 
 write_tsv( gt_time_df_summary, 'tmp/gt_time_summary.tsv', append = F, na = '')
-
-# ------------
-# Load GM shapefile
-# ------------
-ams_gm_sdf = readRDS('geodata/netherlands_L1_gm_sdf.rds')
-ams_gm_sdf_simpl = rmapshaper::ms_simplify(ams_gm_sdf, keep = .01, keep_shapes = T )
-# projection for the Netherlands
-utmprj = CRS('+proj=utm +zone=31 +datum=WGS84 +units=m +no_defs ')
-ams_gm_sdf_simpl = spTransform(ams_gm_sdf_simpl, utmprj)
-
-ams_gm_sdf_simpl$tot_pop = ams_gm_sdf_simpl$AANT_INW
-
 ```
 
 ## Growth maps within GM
@@ -354,7 +394,7 @@ FUN_subgroups(gt_df_quart_sum_yearly_diff, c('GTRENDS_MODE','geo','period_years'
       #tm_credits("\n\n\n\n\nContains data from Office for National Statistics\nand Ordnance Survey. Crown copyright & database right 2016.",size=0.6,position=c("left","bottom")) + 
       tm_layout(frame=FALSE,title = tit,legend.position = c('right','bottom'), title.size = 1) + tm_legend(scale=0.75) +
       #tm_text(text = "ISO_A2",size = 0.1) +
-    tm_scale_bar(position=c("left", "bottom"),breaks = SCALE_BREAKS)+
+      my_scale_bar() + 
       tm_borders(col = 'white',lty = 1.1)
     
   save_tmap(gtrends_map,fn)
@@ -460,13 +500,13 @@ FUN_subgroups(gtgmyear_diff_df, c('year'), function(block){
       tm_fill(col="gt_diff", style=binning, palette="PRGn", n = 5) + #quantile , PRGn
       #tm_credits("\n\n\n\n\nContains data from Office for National Statistics\nand Ordnance Survey. Crown copyright & database right 2016.",size=0.6,position=c("left","bottom")) + 
       tm_layout(frame=FALSE,title = tit,legend.position = c('right','bottom'), title.size = 1) +
-      tm_legend(scale=0.75) + tm_scale_bar(position=c("left", "bottom"),breaks = SCALE_BREAKS) +
+      tm_legend(scale=0.75) + 
+      my_scale_bar() +
       #tm_text(text = "ISO_A2",size = 0.1) +
       tm_borders(col = 'white',lty = 1.3)
     
   save_tmap(gtrends_map,fn)
 })
-
 
 # bivariate pop vs gtrends 2017
 df = gtgmyear_diff_df
@@ -477,8 +517,8 @@ nrow(sdf)
 fn = paste0(OUT_DIR,'gm_trend_map-between_gm-2017-pop_vs_gtrends-quantile.pdf')
 bivariate.choropleth(fn, sdf, c('gt_sum_2017','tot_pop'),c('GTrends idx 2017','Population'), 'quantile')
 
-fn = paste0(OUT_DIR,'gm_trend_map-between_gm-2017-pop_vs_gtrends-jenks.pdf')
-bivariate.choropleth(fn, sdf, c('gt_sum_2017','tot_pop'),c('GTrends idx 2017','Population'), 'jenks')
+#fn = paste0(OUT_DIR,'gm_trend_map-between_gm-2017-pop_vs_gtrends-jenks.pdf')
+#bivariate.choropleth(fn, sdf, c('gt_sum_2017','tot_pop'),c('GTrends idx 2017','Population'), 'jenks')
 
 # gtrends interest per 100k people (2017)
 sdf$gt_per100kppl = sdf$gt_sum_2017 / (sdf$tot_pop/100000)
@@ -517,7 +557,7 @@ gt_countries$origin_country = as.factor(gt_countries$location)
 gt_countries$location = NULL
 
 # merge with Google labels to get ISO2 country codes
-m = merge(gt_countries,google_countries_df,by.x="origin_country",by.y="GOOGLE_NAME",all.x=T)
+m = merge(gt_countries, google_countries_df, by.x="origin_country",by.y="GOOGLE_NAME",all.x=T)
 m$origin_country_iso2 = m$ISO_A2
 m$ISO_A2 = NULL
 #summary(m)
@@ -556,7 +596,7 @@ gen_barchart = function( df, targetvar, measure ){
     theme(axis.text.x = element_text(angle = 45, hjust = 1))+
     facet_grid(. ~ low_search_volume)
   
-  ggsave(fn,p,width = 10, height = 6)
+  ggsave(fn,p,width = 7, height = 6)
   #View(df)
 }
 
@@ -613,6 +653,11 @@ m$EU_COUNTRY = as.factor(m$EU_COUNTRY)
 
 countries_gt_summary_df = data.frame()
 names(m)
+# IMPORTANT: filter data out for analysis 
+m = subset(m, m$low_search_volume == F)
+m = subset(m, m$CONTINENT!='Antarctica' & !is.na(m$CONTINENT) & 
+             m$CONTINENT!='Seven seas (open ocean)')
+stopifnot(nrow(m)>0)
 
 group_vars = c('CONTINENT','REGION_WB','INCOME_GRP','REGION_UN',"SUBREGION",'EU_COUNTRY')
 measures = c('hits_sum','hits_mean','hits_asinh_sum','hits_asinh_mean')
@@ -670,35 +715,51 @@ save_results(countries_gt_summary_df,'nl_gt_global_groups')
 rm(group_vars)
 ```
 
-## Maps by year
+## World maps by year
 
 ```{r}
 # Maps by year
 gt_countries = subset(gt_countries, gt_countries$hits > 0)
 
-for( y in unique(gt_countries$year)){
-  for( kw in unique(gt_countries$keyword)){
-    df = subset(gt_countries, gt_countries$low_search_volume==T & 
-              gt_countries$year == y & gt_countries$keyword == kw )
-    mdf = merge(countries_sdf_simpl, df, 
-                by.x='ISO_A2', by.y='origin_country_iso2' )
-    
-    gtrends_map <- tm_shape(mdf) +
-      tm_fill(col="hits_asinh", style="equal", palette="Blues") + #quantile , 
-      #tm_scale_bar(width=0.15,position=c("left","bottom")) +   
-      #tm_credits("\n\n\n\n\nContains data from Office for National Statistics\nand Ordnance Survey. Crown copyright & database right 2016.",size=0.6,position=c("left","bottom")) + 
-      tm_layout(frame=FALSE) + tm_legend(scale=0.75) +
-      tm_text(text = "ISO_A2",size = 0.1) +
-      tm_borders(col = 'white',lty = .7)
-    fn = paste0(outdir,'gtrends_countries_map-',kw,'-',y)
-    print(fn)
-    save_tmap(gtrends_map,paste0(fn,'.pdf'))
-    df = sort_df(df,'hits',F)
-    write_tsv(df,paste0(fn,'.tsv'))
-    rm(df,mdf,gtrends_map)
-  }
-}
-
+FUN_subgroups( gt_countries, c('year','keyword','low_search_volume'), function(df){
+  y = unique(df$year)
+  if (!(y %in% c(2007,2012,2017))) return(NULL)
+  kw = unique(df$keyword)
+  low = unique(df$low_search_volume)
+  mdf = merge(countries_sdf_simpl, df,
+              by.x='ISO_A2', by.y='origin_country_iso2' )
+  fn = paste0(outdir,'gtrends_countries_map-',low,'-',kw,'-',y)
+  print(fn)
+  
+  border_width = 1
+  missing_col = "grey90"
+  
+  # MAP without labels (for paper)
+  gtrends_map <- tm_shape(mdf) +
+    tm_fill(col="hits_asinh", style="equal", palette="Oranges", 
+            legend.format=list(list(digits=1)), colorNA = missing_col) +
+              #quantile , 
+    #tm_scale_bar(width=0.15,position=c("left","bottom")) +   
+    #tm_credits("\n\n\n\n\nContains data from Office for National Statistics\nand Ordnance Survey. Crown copyright & database right 2016.",size=0.6,position=c("left","bottom")) + 
+    tm_layout(frame=FALSE) + tm_legend(scale=0.75) +
+    tm_borders(col = 'white',lty = border_width)
+  save_tmap(gtrends_map,paste0(fn,'.pdf'))
+  df = sort_df(df,'hits',F)
+  write_tsv(df,paste0(fn,'-data.tsv'))
+  
+  # MAP with labels
+  gtrends_map <- tm_shape(mdf) +
+    tm_fill(col="hits_asinh", style="equal", palette="Blues", colorNA = missing_col) + #quantile , 
+    #tm_scale_bar(width=0.15,position=c("left","bottom")) +   
+    #tm_credits("\n\n\n\n\nContains data from Office for National Statistics\nand Ordnance Survey. Crown copyright & database right 2016.",size=0.6,position=c("left","bottom")) + 
+    tm_layout(frame=FALSE) + tm_legend(scale=0.75) +
+    tm_text(text = "ISO_A2",size = 0.2) +
+    tm_borders(col = 'white',lty = border_width)
+  print(fn)
+  save_tmap(gtrends_map,paste0(fn,'-labels.pdf'))
+  
+  rm(df,mdf,gtrends_map)
+})
 
 ```
 

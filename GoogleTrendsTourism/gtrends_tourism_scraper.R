@@ -83,6 +83,18 @@ names(wk_sdf)[1:2]=cols
 bu_sdf = readOGR(dsn="geodata/MetrABuurt.shp") # level 3
 names(bu_sdf)[1:2]=cols
 
+if (F){
+  # transform to latlon 
+  epsg4326 = CRS("+init=epsg:4326")
+  gm_llsdf = spTransform(gm_sdf,epsg4326)
+  writeOGR(gm_llsdf,'geodata/NL_admin_boundaries/netherlands_L1_gm_latlon_sdf.geojson','netherlands_L1_gm',driver = 'GeoJSON')
+  gm_llsdf = spTransform(wk_sdf,epsg4326)
+  writeOGR(gm_llsdf,'geodata/NL_admin_boundaries/netherlands_L2_wk_latlon_sdf.geojson','netherlands_L3_bu',driver = 'GeoJSON')
+  gm_llsdf = spTransform(bu_sdf,epsg4326)
+  writeOGR(gm_llsdf,'geodata/NL_admin_boundaries/netherlands_L3_bu_latlon_sdf.geojson','netherlands_L3_bu',driver = 'GeoJSON')
+  rm(gm_llsdf)
+}
+
 # save geodata as R data
 saveRDS( gm_sdf, file = 'geodata/netherlands_L1_gm_sdf.rds', compress=T )
 saveRDS( wk_sdf, file = 'geodata/netherlands_L2_wk_sdf.rds', compress=T )
