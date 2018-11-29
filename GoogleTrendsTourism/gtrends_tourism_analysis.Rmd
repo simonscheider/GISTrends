@@ -98,9 +98,9 @@ bivariate.choropleth <- function(fnout, bivmap.dataset, bivmap.vars, bivmap.labe
     !is.na(bivmap.dataset@data[,bivmap.vars[2]]) &
     !is.infinite(bivmap.dataset@data[,bivmap.vars[1]]) &
     !is.infinite(bivmap.dataset@data[,bivmap.vars[2]])
-    ,bivmap.vars]
-  colnames(bivmap.sdf@data) <- c("xvar","yvar")
-  
+    ,c(bivmap.vars,'NAME')]
+  colnames(bivmap.sdf@data) <- c("xvar","yvar",'NAME')
+  #View(bivmap.sdf@data)
   # find bins for 2 vars
   bivmap.sdf@data$xcat <- findCols(classIntervals( bivmap.sdf@data$xvar, n=3, bivmap.style))
   cat(bivmap.vars[1], "breaks (x-axis):\n")
@@ -113,14 +113,19 @@ bivariate.choropleth <- function(fnout, bivmap.dataset, bivmap.vars, bivmap.labe
   bvColors=c("#e8e8e8","#e4acac","#c85a5a",
              "#b0d5df","#ad9ea5","#985356",
              "#64acbe","#627f8c","#574249")
+  #bvColors <- c("#f3f3f3","#c2f0ce","#8ae1ae",
+  #            "#eac5dd","#9ec5d3","#7ec5b1",
+  #            "#e6a2d0","#bb9fce","#7a8eae")
   bivmap <- 
-    add_nl_basemap() +
-    tm_shape(bivmap.sdf) + 
+    add_nl_basemap(bivmap.sdf,'gray89') +
+    tm_shape(bivmap.sdf) +
     tm_fill("bicat", style="cat", palette=bvColors, border.alpha=0, 
             legend.show=FALSE, auto.palette.mapping = FALSE) +
-    tm_borders(col = 'white',lwd = 0.6) +
+    tm_borders(col = 'white',lwd = 0.8) +
+    tm_text('NAME', size = .7, auto.placement = T) +
     my_scale_bar() + #tm_credits("\n\n\n\n\nContains data from Office for National Statistics\nand Ordnance Survey. Crown copyright & database right 2016.",size=0.6,position=c("left","bottom")) + 
     tm_layout(frame=FALSE,bg.color = SEA_COLOUR) + tm_legend(scale=0.75)
+  
   suppressWarnings(print( bivmap ))
   vp <- viewport(x=.85, y=.15, width=.3, height=.3)
   pushViewport(vp)
@@ -177,15 +182,28 @@ SEA_COLOUR = 'white'
 #DIV_PALETTE = 'RdYlBu'
 DIV_PALETTE = 'PRGn'
 
-CHORO_BORDER_COL = 'gray70'
+#CHORO_BORDER_COL = 'gray70'
+CHORO_BORDER_COL = 'white'
 
-add_nl_basemap = function(){
-  sdf = gBuffer(nl_bounds_sdf_clipped, byid = T, width = -400)
-  tm_shape(sdf) +
+add_nl_basemap = function( content_sdf, land_col = 'gray93' ){
+  nl_bnds = nl_bounds_sdf_clipped
+  content_sdf = spTransform(content_sdf, proj4string(nl_bnds))
+  env = gEnvelope(gUnionCascaded(content_sdf), byid = T)
+  env = gEnvelope(gBuffer(env, byid = T, width = 3000))
+  #print(sdf)
+  nl_bnds = gBuffer(nl_bnds, byid = T, width = -300)
+  nl_bnds = gIntersection(nl_bnds, env, byid = T)
+  #env = as(extent(gUnionCascaded(content_sdf)), "SpatialPolygons")
+  proj4string(env) = proj4string(content_sdf)
+  #, byid = T, width=5000, capStyle = 'SQUARE')
+  tm_shape(nl_bnds) +
   #tm_borders(col = 'gray80', lty = 'dashed', alpha = 1)
-  tm_borders(col = 'gray93', lty = 'solid', alpha = 1, lwd = 3)
-  #tm_fill(col = 'gray30')
+  tm_borders(col = 'gray93', lty = 'solid', alpha = 1, lwd = 3) +
+  tm_fill(col = land_col) +
+  tm_shape(env) +
+  tm_borders(col = 'gray50', lty = 'solid', alpha = 1, lwd = 1)
 }
+print(add_nl_basemap(gm_sdf,'red'))
 
 my_scale_bar = function(){
   tm_scale_bar(width=0.11,position=c("left","bottom"),breaks = SCALE_BREAKS, size=.7)
@@ -350,7 +368,7 @@ FUN_subgroups(gt_df_quart_sum_diff2017, c('low_search_volume','GTRENDS_MODE','ge
   
   gm_gtrends_sdf = merge(ams_gm_sdf_simpl, block, by.x='CODE', by.y='GEOUNIT_CODE', all.x=T)
   
-  gtrends_map <- add_nl_basemap() + 
+  gtrends_map <- add_nl_basemap(gm_gtrends_sdf) + 
     tm_shape(gm_gtrends_sdf) +
       tm_fill(col="hits_sum_diff_pc", style="equal", palette=DIV_PALETTE, n = 5, 
               legend.format=list(list(digits=0))) + #quantile , 
@@ -359,8 +377,8 @@ FUN_subgroups(gt_df_quart_sum_diff2017, c('low_search_volume','GTRENDS_MODE','ge
       tm_layout(frame=FALSE,title = tit,legend.position = c('right','bottom'), title.size = 1) + tm_legend(scale=0.75) +
      tm_scale_bar(position=c("left", "bottom"),breaks = SCALE_BREAKS)+
       #tm_text(text = "ISO_A2",size = 0.1) +
-      tm_borders(col = CHORO_BORDER_COL, lty = 1.1)
-    
+      tm_borders(col = CHORO_BORDER_COL, lty = 1.1) +
+      tm_text('NAME',size = 0.65)
   save_tmap(gtrends_map,fn)
 })
 
@@ -403,7 +421,7 @@ FUN_subgroups(gt_df_quart_sum_yearly_diff, c('GTRENDS_MODE','geo','period_years'
   gm_gtrends_sdf = merge(ams_gm_sdf_simpl, block, by.x='CODE', by.y='GEOUNIT_CODE', all.x=T)
   
   gtrends_map <- 
-      add_nl_basemap() + 
+      add_nl_basemap(gm_gtrends_sdf) + 
       tm_shape(gm_gtrends_sdf) +
       tm_fill(col="hits_sum_diff_pc", style="equal", palette=DIV_PALETTE, n = 5,
               legend.format=list(list(digits=0))) + #quantile , 
@@ -412,7 +430,7 @@ FUN_subgroups(gt_df_quart_sum_yearly_diff, c('GTRENDS_MODE','geo','period_years'
       tm_layout(frame=FALSE,title = tit,legend.position = c('right','bottom'), title.size = 1) + tm_legend(scale=0.75) +
       #tm_text(text = "ISO_A2",size = 0.1) +
       my_scale_bar() + 
-      tm_borders(col = CHORO_BORDER_COL,lty = 1.1)
+      tm_borders(col = 'white',lty = 1.1)
     
   save_tmap(gtrends_map,fn)
 })
@@ -461,13 +479,15 @@ FUN_subgroups(gtgmyear_df, c('year'), function(block){
   gm_gtrends_sdf = merge(ams_gm_sdf_simpl, block, by.x='CODE', by.y='geocode', all.x=T)
   #stopifnot(nrow(gm_gtrends_sdf)==nrow(block))
   # palette_explorer()
-  gtrends_map <- add_nl_basemap() + tm_shape(gm_gtrends_sdf) +
-      tm_fill(col="gt_sum", style=binning, palette="Blues", n = 5) + #quantile , PRGn
-      #tm_scale_bar(width=0.15,position=c("left","bottom")) +
-      #tm_credits("\n\n\n\n\nContains data from Office for National Statistics\nand Ordnance Survey. Crown copyright & database right 2016.",size=0.6,position=c("left","bottom")) + 
-      tm_layout(frame=FALSE,title = tit,legend.position = c('right','bottom'), title.size = 1) + tm_legend(scale=0.75) + my_scale_bar() +
-      #tm_text(text = "ISO_A2",size = 0.1) +
-      tm_borders(col = CHORO_BORDER_COL,lty = 1.3)
+  gtrends_map <- add_nl_basemap(gm_gtrends_sdf) + 
+    tm_shape(gm_gtrends_sdf,'black') +
+    tm_fill(col="gt_sum", style=binning, palette="Blues", n = 5) + #quantile , PRGn
+    #tm_scale_bar(width=0.15,position=c("left","bottom")) +
+    #tm_credits("\n\n\n\n\nContains data from Office for National Statistics\nand Ordnance Survey. Crown copyright & database right 2016.",size=0.6,position=c("left","bottom")) + 
+    tm_layout(frame=FALSE,title = tit,legend.position = c('right','bottom'), title.size = 1) + tm_legend(scale=0.75) + my_scale_bar() +
+    #tm_text(text = "ISO_A2",size = 0.1) +
+    tm_borders(col = 'white', lty = 1.3) +
+    tm_text('NAME',size = 0.65)
     
   save_tmap(gtrends_map,fn)
 })
@@ -513,7 +533,7 @@ FUN_subgroups(gtgmyear_diff_df, c('year'), function(block){
   gm_gtrends_sdf = merge(ams_gm_sdf_simpl, block, by.x='CODE', by.y='geocode', all.x=T)
   #stopifnot(nrow(gm_gtrends_sdf)==nrow(block))
   # palette_explorer()
-  gtrends_map <- add_nl_basemap() + tm_shape(gm_gtrends_sdf) +
+  gtrends_map <- add_nl_basemap(gm_gtrends_sdf) + tm_shape(gm_gtrends_sdf) +
       tm_fill(col="gt_diff", style=binning, palette="PRGn", n = 5) + #quantile , PRGn
       #tm_credits("\n\n\n\n\nContains data from Office for National Statistics\nand Ordnance Survey. Crown copyright & database right 2016.",size=0.6,position=c("left","bottom")) + 
       tm_layout(frame=FALSE,title = tit,legend.position = c('right','bottom'), title.size = 1) +
@@ -532,7 +552,8 @@ sdf = merge(ams_gm_sdf_simpl, df, by.x='CODE', by.y='geocode', all.x=T)
 names(sdf)
 nrow(sdf)
 fn = paste0(OUT_DIR,'gm_trend_map-between_gm-2017-pop_vs_gtrends-quantile.pdf')
-bivariate.choropleth(fn, sdf, c('gt_sum_2017','tot_pop'),c('GTrends idx 2017','Population'), 'quantile')
+bivariate.choropleth(fn, sdf, c('gt_sum_2017','tot_pop'),
+                     c('GTrends idx 2017','Population'), 'quantile')
 
 #fn = paste0(OUT_DIR,'gm_trend_map-between_gm-2017-pop_vs_gtrends-jenks.pdf')
 #bivariate.choropleth(fn, sdf, c('gt_sum_2017','tot_pop'),c('GTrends idx 2017','Population'), 'jenks')
@@ -541,7 +562,7 @@ bivariate.choropleth(fn, sdf, c('gt_sum_2017','tot_pop'),c('GTrends idx 2017','P
 sdf$gt_per100kppl = sdf$gt_sum_2017 / (sdf$tot_pop/100000)
 
 for (c in c('gt_per100kppl','gt_sum_2017','tot_pop')){
-  m <- add_nl_basemap() + tm_shape(sdf) +
+  m <- add_nl_basemap(sdf) + tm_shape(sdf) +
       tm_fill(col=c, style='quantile', palette="Blues", n = 5) + #quantile , PRGn
       #tm_credits("\n\n\n\n\nContains data from Office for National Statistics\nand Ordnance Survey. Crown copyright & database right 2016.",size=0.6,position=c("left","bottom")) + 
       tm_layout(frame=FALSE,title = paste0(c,' (2017)'),legend.position = c('right','bottom'), title.size = 1) +
