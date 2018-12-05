@@ -153,8 +153,6 @@ ams_gm_sdf_simpl = spTransform(ams_gm_sdf_simpl, utmprj)
 
 ams_gm_sdf_simpl$tot_pop = ams_gm_sdf_simpl$AANT_INW
 
-
-
 # ------------
 # Load NL bounds shapefile
 # ------------
@@ -170,6 +168,8 @@ rm(nl_bounds)
 #bbox(nl_bounds_sdf_simpl)
 buff = 20000
 nl_bounds_sdf_simpl_un = gUnaryUnion(nl_bounds_sdf_simpl)
+ # write file for inset map
+writeOGR(obj = nl_bounds_sdf_simpl, 'tmp/nl_boundary_simplified.shp',driver = 'ESRI Shapefile',layer = 'nl_bounds_sdf_simpl')
 nl_bounds_sdf_clipped = gClip( nl_bounds_sdf_simpl_un, bbox(ams_gm_sdf_simpl), utmprj, buff)
 #plot(nl_bounds_sdf_clipped)
 rm(nl_bounds_sdf_simpl_un,nl_bounds_sdf_simpl,buff)
