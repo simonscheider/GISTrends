@@ -361,7 +361,7 @@ FUN_subgroups(gt_df_quart_sum_diff2017, c('low_search_volume','GTRENDS_MODE','ge
     geo = unique(block$geo)
   )
   tit = paste(map_label,'low volume:',row$low_search_volume,'; mode:',row$GTRENDS_MODE,'; source:',row$geo,'; date: 2007-2017')
-  fn = paste0(OUT_DIR,'gm_trend_map-',row$low_search_volume,'-',row$GTRENDS_MODE,'-',row$geo,'-diff_2007_2017.pdf')
+  fn = paste0(OUT_DIR,'gm_trend_map-within-10y-',row$low_search_volume,'-',row$GTRENDS_MODE,'-',row$geo,'-diff_2007_2017.pdf')
   print(fn)
   print(nrow(block))
   stopifnot(nrow(ams_gm_sdf_simpl)==nrow(block))
@@ -405,6 +405,10 @@ gt_df_quart_sum_yearly_diff$period_years = as.factor(gt_df_quart_sum_yearly_diff
 writexl::write_xlsx(gt_df_quart_sum_yearly_diff,paste0(OUT_DIR,'gt_gm_withingm_sum_diff_yearly.xlsx'))
 
 # generate maps from gt_df_quart_sum_yearly_diff
+
+#bin_breaks = classIntervals(gt_df_quart_sum_yearly_diff$hits_sum_diff_pc, 5, style = 'quantile')$brks
+bin_breaks = c(-65, -15,  -5,  5,   15,  65)
+TODO
 FUN_subgroups(gt_df_quart_sum_yearly_diff, c('GTRENDS_MODE','geo','period_years'), function(block){
    row = data.frame(
     GTRENDS_MODE = unique(block$GTRENDS_MODE),
@@ -412,7 +416,7 @@ FUN_subgroups(gt_df_quart_sum_yearly_diff, c('GTRENDS_MODE','geo','period_years'
     period_years = unique(block$period_years)
   )
   tit = paste(map_label,'mode:',row$GTRENDS_MODE,'; source:',row$geo,'; period:', row$period_years)
-  fn = paste0(OUT_DIR,'gm_trend_map-','-',row$GTRENDS_MODE,'-',row$geo,
+  fn = paste0(OUT_DIR,'gm_trend_map-within-','-',row$GTRENDS_MODE,'-',row$geo,
               '--',row$period_years,'.pdf')
   print(fn)
   print(nrow(block))
@@ -423,7 +427,9 @@ FUN_subgroups(gt_df_quart_sum_yearly_diff, c('GTRENDS_MODE','geo','period_years'
   gtrends_map <- 
       add_nl_basemap(gm_gtrends_sdf) + 
       tm_shape(gm_gtrends_sdf) +
-      tm_fill(col="hits_sum_diff_pc", style="equal", palette=DIV_PALETTE, n = 5,
+      tm_fill(col="hits_sum_diff_pc", style="fixed", palette=DIV_PALETTE, 
+              #n = 5,
+              breaks = bin_breaks,
               legend.format=list(list(digits=0))) + #quantile , 
       #tm_scale_bar(width=0.15,position=c("left","bottom")) +   
       #tm_credits("\n\n\n\n\nContains data from Office for National Statistics\nand Ordnance Survey. Crown copyright & database right 2016.",size=0.6,position=c("left","bottom")) + 
@@ -434,6 +440,8 @@ FUN_subgroups(gt_df_quart_sum_yearly_diff, c('GTRENDS_MODE','geo','period_years'
     
   save_tmap(gtrends_map,fn)
 })
+
+rm(bin_breaks)
 
 rm(gt_df_quart_sum_diff2017,gt_df_quart_sum_10y,gt_df,gt_df_quart,gt_df_quart_diff)
 ```
@@ -759,7 +767,7 @@ rm(group_vars)
 # Maps by year
 gt_countries_nonz = subset(gt_countries, gt_countries$hits > 0)
 #bin_breaks = classIntervals(gt_countries$hits_asinh, 5)$brks
-gt_countries_nonz = classIntervals(gt_countries_nonz$hits_asinh, 4, style = 'quantile')$brks
+bin_breaks = classIntervals(gt_countries_nonz$hits_asinh, 4, style = 'quantile')$brks
 #bin_breaks = classIntervals(gt_countries$hits_asinh, 4, style = 'equal')$brks
 
 FUN_subgroups( gt_countries_nonz, c('year','keyword','low_search_volume'), function(df){
